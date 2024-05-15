@@ -40,6 +40,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/opt/homebrew/Cellar/cmake/3.28.1/share/cmake/Modules/FindPackageHandleStandardArgs.cmake"
   "/opt/homebrew/Cellar/cmake/3.28.1/share/cmake/Modules/FindPackageMessage.cmake"
   "/opt/homebrew/Cellar/cmake/3.28.1/share/cmake/Modules/FindThreads.cmake"
+  "/opt/homebrew/Cellar/cmake/3.28.1/share/cmake/Modules/FindVulkan.cmake"
   "/opt/homebrew/Cellar/cmake/3.28.1/share/cmake/Modules/GNUInstallDirs.cmake"
   "/opt/homebrew/Cellar/cmake/3.28.1/share/cmake/Modules/Internal/CheckSourceCompiles.cmake"
   "/opt/homebrew/Cellar/cmake/3.28.1/share/cmake/Modules/Platform/Apple-AppleClang-C.cmake"
@@ -73,7 +74,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/App.dir/DependInfo.cmake"
+  "CMakeFiles/Vulkan2D.dir/DependInfo.cmake"
   "CMakeFiles/Shaders.dir/DependInfo.cmake"
   "External/glfw/src/CMakeFiles/update_mappings.dir/DependInfo.cmake"
   "External/glfw/src/CMakeFiles/glfw.dir/DependInfo.cmake"

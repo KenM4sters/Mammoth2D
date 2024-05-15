@@ -117,17 +117,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named App
+# Target rules for targets named Vulkan2D
 
 # Build rule for target.
-App: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 App
-.PHONY : App
+Vulkan2D: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Vulkan2D
+.PHONY : Vulkan2D
 
 # fast build rule for target.
-App/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/App.dir/build.make CMakeFiles/App.dir/build
-.PHONY : App/fast
+Vulkan2D/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/build
+.PHONY : Vulkan2D/fast
 
 #=============================================================================
 # Target rules for targets named Shaders
@@ -173,7 +173,7 @@ Sources/Device.o: Sources/Device.cpp.o
 
 # target to build an object file
 Sources/Device.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/App.dir/build.make CMakeFiles/App.dir/Sources/Device.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Device.cpp.o
 .PHONY : Sources/Device.cpp.o
 
 Sources/Device.i: Sources/Device.cpp.i
@@ -181,7 +181,7 @@ Sources/Device.i: Sources/Device.cpp.i
 
 # target to preprocess a source file
 Sources/Device.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/App.dir/build.make CMakeFiles/App.dir/Sources/Device.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Device.cpp.i
 .PHONY : Sources/Device.cpp.i
 
 Sources/Device.s: Sources/Device.cpp.s
@@ -189,7 +189,7 @@ Sources/Device.s: Sources/Device.cpp.s
 
 # target to generate assembly for a file
 Sources/Device.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/App.dir/build.make CMakeFiles/App.dir/Sources/Device.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Device.cpp.s
 .PHONY : Sources/Device.cpp.s
 
 Sources/Pipeline.o: Sources/Pipeline.cpp.o
@@ -197,7 +197,7 @@ Sources/Pipeline.o: Sources/Pipeline.cpp.o
 
 # target to build an object file
 Sources/Pipeline.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/App.dir/build.make CMakeFiles/App.dir/Sources/Pipeline.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Pipeline.cpp.o
 .PHONY : Sources/Pipeline.cpp.o
 
 Sources/Pipeline.i: Sources/Pipeline.cpp.i
@@ -205,7 +205,7 @@ Sources/Pipeline.i: Sources/Pipeline.cpp.i
 
 # target to preprocess a source file
 Sources/Pipeline.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/App.dir/build.make CMakeFiles/App.dir/Sources/Pipeline.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Pipeline.cpp.i
 .PHONY : Sources/Pipeline.cpp.i
 
 Sources/Pipeline.s: Sources/Pipeline.cpp.s
@@ -213,7 +213,7 @@ Sources/Pipeline.s: Sources/Pipeline.cpp.s
 
 # target to generate assembly for a file
 Sources/Pipeline.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/App.dir/build.make CMakeFiles/App.dir/Sources/Pipeline.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Pipeline.cpp.s
 .PHONY : Sources/Pipeline.cpp.s
 
 Sources/Program.o: Sources/Program.cpp.o
@@ -221,7 +221,7 @@ Sources/Program.o: Sources/Program.cpp.o
 
 # target to build an object file
 Sources/Program.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/App.dir/build.make CMakeFiles/App.dir/Sources/Program.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Program.cpp.o
 .PHONY : Sources/Program.cpp.o
 
 Sources/Program.i: Sources/Program.cpp.i
@@ -229,7 +229,7 @@ Sources/Program.i: Sources/Program.cpp.i
 
 # target to preprocess a source file
 Sources/Program.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/App.dir/build.make CMakeFiles/App.dir/Sources/Program.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Program.cpp.i
 .PHONY : Sources/Program.cpp.i
 
 Sources/Program.s: Sources/Program.cpp.s
@@ -237,7 +237,7 @@ Sources/Program.s: Sources/Program.cpp.s
 
 # target to generate assembly for a file
 Sources/Program.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/App.dir/build.make CMakeFiles/App.dir/Sources/Program.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Program.cpp.s
 .PHONY : Sources/Program.cpp.s
 
 Sources/Window.o: Sources/Window.cpp.o
@@ -245,7 +245,7 @@ Sources/Window.o: Sources/Window.cpp.o
 
 # target to build an object file
 Sources/Window.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/App.dir/build.make CMakeFiles/App.dir/Sources/Window.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Window.cpp.o
 .PHONY : Sources/Window.cpp.o
 
 Sources/Window.i: Sources/Window.cpp.i
@@ -253,7 +253,7 @@ Sources/Window.i: Sources/Window.cpp.i
 
 # target to preprocess a source file
 Sources/Window.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/App.dir/build.make CMakeFiles/App.dir/Sources/Window.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Window.cpp.i
 .PHONY : Sources/Window.cpp.i
 
 Sources/Window.s: Sources/Window.cpp.s
@@ -261,7 +261,7 @@ Sources/Window.s: Sources/Window.cpp.s
 
 # target to generate assembly for a file
 Sources/Window.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/App.dir/build.make CMakeFiles/App.dir/Sources/Window.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Window.cpp.s
 .PHONY : Sources/Window.cpp.s
 
 main.o: main.cpp.o
@@ -269,7 +269,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/App.dir/build.make CMakeFiles/App.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -277,7 +277,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/App.dir/build.make CMakeFiles/App.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -285,7 +285,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/App.dir/build.make CMakeFiles/App.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -298,7 +298,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... Shaders"
 	@echo "... update_mappings"
-	@echo "... App"
+	@echo "... Vulkan2D"
 	@echo "... glfw"
 	@echo "... Sources/Device.o"
 	@echo "... Sources/Device.i"

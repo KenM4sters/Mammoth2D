@@ -15,7 +15,7 @@ add_subdirectory(External/glm)
 # Vulkan.
 include_directories("/usr/local/macOS/include")
 
-add_executable(App
+add_executable(${PROJECT_NAME}
 	main.cpp
   Sources/Program.cpp
   Sources/Window.cpp
@@ -38,8 +38,15 @@ else()
     message(STATUS "Using vulkan include at: ${Vulkan_INCLUDE_DIRS}")
 endif()
 
-target_link_libraries(App PRIVATE glfw glm)
-set_target_properties(App PROPERTIES CXX_STANDARD 17)
+set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 17)
+
+
+message(STATUS "CREATING BUILD FOR UNIX")
+target_include_directories(${PROJECT_NAME} PUBLIC
+  ${PROJECT_SOURCE_DIR}/Sources
+  ${Vulkan_INCLUDE_DIRS}
+)
+target_link_libraries(${PROJECT_NAME} glfw glm ${Vulkan_LIBRARIES})
 
 ############## Build SHADERS #######################
 

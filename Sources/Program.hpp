@@ -1,6 +1,7 @@
 #pragma once
 #include "Window.hpp"
 #include "Pipeline.hpp"
+#include "Device.hpp"
 
 namespace Super
 {
@@ -16,9 +17,11 @@ public:
 
 private:
 
-    std::unique_ptr<Window> mWindow = nullptr;
+    std::shared_ptr<Window> mWindow = nullptr;
 
-    Pipeline mPipeline{"Shaders/simple.vert.spv", "Shaders/simple.frag.spv"};
+    std::shared_ptr<Device> mDevice = nullptr;
+
+    std::unique_ptr<Pipeline> mPipeline = nullptr;
 
 };
 }

@@ -1,6 +1,7 @@
 #pragma once
-#include <vulkan/vulkan.hpp>
 #include <GLFW/glfw3.h>
+#include <vulkan/vulkan.hpp>
+#include <vulkan/vulkan_beta.h>
 #include "Window.hpp"
 
 namespace Super 
@@ -23,7 +24,7 @@ struct Queue_Family_Indices {
 class Device 
 {
 public:
-    Device();
+    Device(std::shared_ptr<Window>& window);
     ~Device();
 
     #ifdef NDEBUG
@@ -101,7 +102,7 @@ private:
 
     bool IsDeviceSuitable(VkPhysicalDevice device) const;
     bool CheckValidationLayerSupport() const;
-    bool HasGLFWRequiredExtensions() const;
+    void HasGLFWRequiredExtensions() const;
     bool CheckDeviceExtensionSupport(VkPhysicalDevice device) const;
     Swap_Chain_Support_Details CheckSwapChainSupport(VkPhysicalDevice device) const;
 

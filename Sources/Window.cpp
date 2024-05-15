@@ -8,6 +8,7 @@ bool Window::mIsRunning = true;
 Window::Window(const char* name, uint32_t width, uint32_t height)
     : mWidth{width}, mHeight{height}, mName{name}
 {
+    Init();
 }
 
 Window::~Window()
