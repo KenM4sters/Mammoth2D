@@ -11,7 +11,7 @@ Program::Program(uint32_t width, uint32_t height, const char* name)
 
     mPipeline = std::make_unique<Pipeline>(
         mDevice, 
-        Pipeline::DefaultPipelineDesc(width, height),
+        std::move(Pipeline::DefaultPipelineDesc(width, height)),
         "Shaders/simple.vert.spv", 
         "Shaders/simple.frag.spv"
     );
