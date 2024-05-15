@@ -37,11 +37,11 @@ public:
 
     // Getters.
     //
-    const VkDevice GetDevice() const { return mDevice; }
-    const VkSurfaceKHR GetSurface() const { return mSurface; }
-    const VkCommandPool GetCommandPool() const { return mCommandPool; }
-    const VkQueue GetGraphicsQueue() const { return mGraphicsQueue; }
-    const VkQueue GetPresentQueue() const { return mPresentQueue; }
+    inline const VkDevice GetDevice() const { return mDevice; }
+    inline const VkSurfaceKHR GetSurface() const { return mSurface; }
+    inline const VkCommandPool GetCommandPool() const { return mCommandPool; }
+    inline const VkQueue GetGraphicsQueue() const { return mGraphicsQueue; }
+    inline const VkQueue GetPresentQueue() const { return mPresentQueue; }
     
     // Even though we already run call these functions from within the implementation, we're choosing
     // not to store them within the class since they're not really required by all but a handful of
@@ -66,7 +66,8 @@ public:
         VkBufferUsageFlags usage,
         VkMemoryPropertyFlags properties,
         VkBuffer &buffer,
-        VkDeviceMemory &bufferMemory);
+        VkDeviceMemory &bufferMemory
+    );
 
     void CopyBufferToImage(
         VkBuffer buffer, 

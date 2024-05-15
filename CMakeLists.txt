@@ -21,6 +21,7 @@ add_executable(${PROJECT_NAME}
   Sources/Window.cpp
   Sources/Pipeline.cpp
   Sources/Device.cpp
+  Sources/SwapChain.cpp
 )
 
 if (DEFINED VULKAN_SDK_PATH)
