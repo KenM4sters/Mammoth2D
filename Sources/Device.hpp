@@ -34,13 +34,70 @@ public:
 
     VkPhysicalDeviceProperties mPhysicalDeviceProps;
 
+    // Getters.
+    //
+    const VkDevice GetDevice() const { return mDevice; }
+    const VkSurfaceKHR GetSurface() const { return mSurface; }
+    const VkCommandPool GetCommandPool() const { return mCommandPool; }
+    const VkQueue GetGraphicsQueue() const { return mGraphicsQueue; }
+    const VkQueue GetPresentQueue() const { return mPresentQueue; }
+    
+    // Even though we already run call these functions from within the implementation, we're choosing
+    // not to store them within the class since they're not really required by all but a handful of
+    // other classes, so we'll make getters for these private functions as well.
+    //
+    Swap_Chain_Support_Details GetSwapChainSupport() { return CheckSwapChainSupport(mPhysicalDevice); }
+    Queue_Family_Indices FindPhysicalQueueFamilies() { return FindQueueFamilies(mPhysicalDevice); }
+
+    // Helper functions for interacting with buffers from outside of this class
+    // (typically from the pipeline class).
+    //
+    uint32_t FindMemoryType(uint32_t typeFilter, VkMemoryPropertyFlags properties);
+
+    VkFormat FindSupportedFormat(
+        const std::vector<VkFormat> &candidates, 
+        VkImageTiling tiling, 
+        VkFormatFeatureFlags features
+    );
+
+    void CreateBuffer(
+        VkDeviceSize size,
+        VkBufferUsageFlags usage,
+        VkMemoryPropertyFlags properties,
+        VkBuffer &buffer,
+        VkDeviceMemory &bufferMemory);
+
+    void CopyBufferToImage(
+        VkBuffer buffer, 
+        VkImage image, 
+        uint32_t width, 
+        uint32_t height, 
+        uint32_t layerCount
+    );
+
+    void CreateImageFromInfo(
+        const VkImageCreateInfo &imageInfo,
+        VkMemoryPropertyFlags properties,
+        VkImage &image,
+        VkDeviceMemory &imageMemory
+    );
+
+    void CopyBuffer(VkBuffer srcBuffer, VkBuffer dstBuffer, VkDeviceSize size);
+
+    VkCommandBuffer BeginSingleTimeCommands();
+
+    void EndSingleTimeCommands(VkCommandBuffer commandBuffer);
+
 
 private:
 
     void CreateInstance();
     void CreateSurface();
     void ChoosePhysicalDevice();
+    void CreateLogicalDevice();
     void SetupDebugMessenger();
+    void CreateCommandPool();
+
 
     bool IsDeviceSuitable(VkPhysicalDevice device) const;
     bool CheckValidationLayerSupport() const;
@@ -48,8 +105,8 @@ private:
     bool CheckDeviceExtensionSupport(VkPhysicalDevice device) const;
     Swap_Chain_Support_Details CheckSwapChainSupport(VkPhysicalDevice device) const;
 
-
     void ConfigureDebugMessengerCallback(VkDebugUtilsMessengerCreateInfoEXT& createInfo) const;
+    
     Queue_Family_Indices FindQueueFamilies(VkPhysicalDevice device) const;
 
     const std::vector<const char*> GetAllRequiredExtensions() const;

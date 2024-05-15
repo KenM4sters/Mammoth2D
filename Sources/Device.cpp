@@ -135,6 +135,74 @@ void Device::ChoosePhysicalDevice()
     std::cout << "physical device: " << mPhysicalDeviceProps.deviceName << std::endl;
 }
 
+
+void Device::CreateLogicalDevice() 
+{
+    Queue_Family_Indices indices = FindQueueFamilies(mPhysicalDevice);
+
+    std::vector<VkDeviceQueueCreateInfo> queueCreateInfos;
+    std::set<uint32_t> uniqueQueueFamilies = {indices.graphicsFamily, indices.presentFamily};
+
+    float queuePriority = 1.0f;
+    for (uint32_t queueFamily : uniqueQueueFamilies) 
+    {
+        VkDeviceQueueCreateInfo queueCreateInfo = {};
+        queueCreateInfo.sType = VK_STRUCTURE_TYPE_DEVICE_QUEUE_CREATE_INFO;
+        queueCreateInfo.queueFamilyIndex = queueFamily;
+        queueCreateInfo.queueCount = 1;
+        queueCreateInfo.pQueuePriorities = &queuePriority;
+        queueCreateInfos.push_back(queueCreateInfo);
+    }
+
+    VkPhysicalDeviceFeatures deviceFeatures = {};
+    deviceFeatures.samplerAnisotropy = VK_TRUE;
+
+    VkDeviceCreateInfo createInfo = {};
+    createInfo.sType = VK_STRUCTURE_TYPE_DEVICE_CREATE_INFO;
+
+    createInfo.queueCreateInfoCount = static_cast<uint32_t>(queueCreateInfos.size());
+    createInfo.pQueueCreateInfos = queueCreateInfos.data();
+
+    createInfo.pEnabledFeatures = &deviceFeatures;
+    createInfo.enabledExtensionCount = static_cast<uint32_t>(mDeviceExtensions.size());
+    createInfo.ppEnabledExtensionNames = mDeviceExtensions.data();
+
+    // might not really be necessary anymore because device specific validation layers
+    // have been deprecated
+    if (enableValidationLayers) 
+    {
+        createInfo.enabledLayerCount = static_cast<uint32_t>(mValidationLayers.size());
+        createInfo.ppEnabledLayerNames = mValidationLayers.data();
+    } 
+    else {
+        createInfo.enabledLayerCount = 0;
+    }
+
+    if (vkCreateDevice(mPhysicalDevice, &createInfo, nullptr, &mDevice) != VK_SUCCESS) 
+    {
+        throw std::runtime_error("failed to create logical device!");
+    }
+
+    vkGetDeviceQueue(mDevice, indices.graphicsFamily, 0, &mGraphicsQueue);
+    vkGetDeviceQueue(mDevice, indices.presentFamily, 0, &mPresentQueue);
+}
+
+void Device::CreateCommandPool() 
+{
+    Queue_Family_Indices queueFamilyIndices = FindQueueFamilies(mPhysicalDevice);
+
+    VkCommandPoolCreateInfo poolInfo = {};
+    poolInfo.sType = VK_STRUCTURE_TYPE_COMMAND_POOL_CREATE_INFO;
+    poolInfo.queueFamilyIndex = queueFamilyIndices.graphicsFamily;
+    poolInfo.flags =
+        VK_COMMAND_POOL_CREATE_TRANSIENT_BIT | VK_COMMAND_POOL_CREATE_RESET_COMMAND_BUFFER_BIT;
+
+    if (vkCreateCommandPool(mDevice, &poolInfo, nullptr, &mCommandPool) != VK_SUCCESS) 
+    {
+        throw std::runtime_error("failed to create command pool!");
+    }
+}
+
 bool Device::IsDeviceSuitable(VkPhysicalDevice device) const 
 {
     Queue_Family_Indices indices = FindQueueFamilies(device);
@@ -348,5 +416,147 @@ bool Device::HasGLFWRequiredExtensions() const
         }
     }
 }
+
+
+
+// Helper Functions for interacting with buffers from outside of this class.
+//----------------------------------------------------------------
+uint32_t Device::FindMemoryType(uint32_t typeFilter, VkMemoryPropertyFlags properties) 
+{
+    VkPhysicalDeviceMemoryProperties memProperties;
+
+    vkGetPhysicalDeviceMemoryProperties(mPhysicalDevice, &memProperties);
+
+    for (uint32_t i = 0; i < memProperties.memoryTypeCount; i++) 
+    {
+        if ((typeFilter & (1 << i)) && (memProperties.memoryTypes[i].propertyFlags & properties) == properties) 
+        {
+            return i;
+        }
+    }
+
+    throw std::runtime_error("failed to find suitable memory type!");
+}
+
+VkFormat Device::FindSupportedFormat(const std::vector<VkFormat> &candidates, VkImageTiling tiling, VkFormatFeatureFlags features) 
+{
+  for (VkFormat format : candidates) 
+  {
+    VkFormatProperties props;
+    vkGetPhysicalDeviceFormatProperties(mPhysicalDevice, format, &props);
+
+    if (tiling == VK_IMAGE_TILING_LINEAR && (props.linearTilingFeatures & features) == features) 
+    {
+      return format;
+    } 
+    else if (tiling == VK_IMAGE_TILING_OPTIMAL && (props.optimalTilingFeatures & features) == features) 
+    {
+      return format;
+    }
+  }
+  throw std::runtime_error("failed to find supported format!");
+}
+
+void Device::CreateBuffer(
+    VkDeviceSize size,
+    VkBufferUsageFlags usage,
+    VkMemoryPropertyFlags properties,
+    VkBuffer &buffer,
+    VkDeviceMemory &bufferMemory) 
+{
+    VkBufferCreateInfo bufferInfo{};
+    bufferInfo.sType = VK_STRUCTURE_TYPE_BUFFER_CREATE_INFO;
+    bufferInfo.size = size;
+    bufferInfo.usage = usage;
+    bufferInfo.sharingMode = VK_SHARING_MODE_EXCLUSIVE;
+
+    if (vkCreateBuffer(mDevice, &bufferInfo, nullptr, &buffer) != VK_SUCCESS) 
+    {
+    throw std::runtime_error("failed to create vertex buffer!");
+    }
+
+    VkMemoryRequirements memRequirements;
+    vkGetBufferMemoryRequirements(mDevice, buffer, &memRequirements);
+
+    VkMemoryAllocateInfo allocInfo{};
+    allocInfo.sType = VK_STRUCTURE_TYPE_MEMORY_ALLOCATE_INFO;
+    allocInfo.allocationSize = memRequirements.size;
+    allocInfo.memoryTypeIndex = FindMemoryType(memRequirements.memoryTypeBits, properties);
+
+    if (vkAllocateMemory(mDevice, &allocInfo, nullptr, &bufferMemory) != VK_SUCCESS) 
+    {
+    throw std::runtime_error("failed to allocate vertex buffer memory!");
+    }
+
+    vkBindBufferMemory(mDevice, buffer, bufferMemory, 0);
+}
+
+void Device::CopyBufferToImage(
+    VkBuffer buffer, 
+    VkImage image, 
+    uint32_t width, 
+    uint32_t height, 
+    uint32_t layerCount
+) 
+{
+    VkCommandBuffer commandBuffer = BeginSingleTimeCommands();
+
+    VkBufferImageCopy region{};
+    region.bufferOffset = 0;
+    region.bufferRowLength = 0;
+    region.bufferImageHeight = 0;
+
+    region.imageSubresource.aspectMask = VK_IMAGE_ASPECT_COLOR_BIT;
+    region.imageSubresource.mipLevel = 0;
+    region.imageSubresource.baseArrayLayer = 0;
+    region.imageSubresource.layerCount = layerCount;
+
+    region.imageOffset = {0, 0, 0};
+    region.imageExtent = {width, height, 1};
+
+    vkCmdCopyBufferToImage(
+        commandBuffer,
+        buffer,
+        image,
+        VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL,
+        1,
+        &region);
+        
+    EndSingleTimeCommands(commandBuffer);
+}
+
+void Device::CreateImageFromInfo(
+    const VkImageCreateInfo &imageInfo,
+    VkMemoryPropertyFlags properties,
+    VkImage &image,
+    VkDeviceMemory &imageMemory
+) 
+{
+
+}
+
+void Device::CopyBuffer(VkBuffer srcBuffer, VkBuffer dstBuffer, VkDeviceSize size) 
+{
+  VkCommandBuffer commandBuffer = BeginSingleTimeCommands();
+
+  VkBufferCopy copyRegion{};
+  copyRegion.srcOffset = 0;  // Optional
+  copyRegion.dstOffset = 0;  // Optional
+  copyRegion.size = size;
+  vkCmdCopyBuffer(commandBuffer, srcBuffer, dstBuffer, 1, &copyRegion);
+
+  EndSingleTimeCommands(commandBuffer);
+}
+
+VkCommandBuffer BeginSingleTimeCommands() 
+{
+
+}
+
+void Device::EndSingleTimeCommands(VkCommandBuffer commandBuffer) 
+{
+
+}
+//----------------------------------------------------------------
 
 }
