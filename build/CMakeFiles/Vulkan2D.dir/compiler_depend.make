@@ -2701,6 +2701,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Program.cpp.o: /Users/samuelbrookman/Desktop/Vul
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Device.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Pipeline.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Program.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/SwapChain.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Window.hpp \
   /usr/local/macOS/include/vk_video/vulkan_video_codec_h264std.h \
   /usr/local/macOS/include/vk_video/vulkan_video_codec_h264std_decode.h \
@@ -5368,6 +5369,7 @@ CMakeFiles/Vulkan2D.dir/main.cpp.o: /Users/samuelbrookman/Desktop/Vulkan2D/main.
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Device.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Pipeline.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Program.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/SwapChain.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Window.hpp \
   /usr/local/macOS/include/vk_video/vulkan_video_codec_h264std.h \
   /usr/local/macOS/include/vk_video/vulkan_video_codec_h264std_decode.h \

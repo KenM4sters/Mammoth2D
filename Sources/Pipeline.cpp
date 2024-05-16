@@ -5,10 +5,10 @@
 
 namespace Super 
 {
-Pipeline::Pipeline(std::shared_ptr<Device> device, std::unique_ptr<Pipeline_Desc> desc, const char* vertSrc, const char* fragSrc)
+Pipeline::Pipeline(std::shared_ptr<Device> device, Pipeline_Desc desc, const char* vertSrc, const char* fragSrc)
     : mDevice{device}
 {
-    CreateGraphicsPipeline(std::move(desc), vertSrc, fragSrc);
+    CreateGraphicsPipeline(desc, vertSrc, fragSrc);
 }
 
 Pipeline::~Pipeline() 
@@ -36,15 +36,15 @@ const std::vector<char> Pipeline::ReadFromFile(const char* filePath) const
     return buffer;
 }
 
-void Pipeline::CreateGraphicsPipeline(std::unique_ptr<Pipeline_Desc> desc, const char* vertSrc, const char* fragSrc) 
+void Pipeline::CreateGraphicsPipeline(Pipeline_Desc& desc, const char* vertSrc, const char* fragSrc) 
 {
     // Before we begin to create the pipeline, make sure that a layout and render pass was properly
     // defined in the pipeline descriptor, since by default they're set to nullptrs.
     //
-    assert(desc->pipelineLayout != VK_NULL_HANDLE 
+    assert(desc.pipelineLayout != VK_NULL_HANDLE 
         && "Attempting to create a pipeline from a Pipeline_Desc with a layout set to VK_NULL_HANDLE!"); 
 
-    assert(desc->renderPass != VK_NULL_HANDLE 
+    assert(desc.renderPass != VK_NULL_HANDLE 
         && "Attempting to create a pipeline from a Pipeline_Desc with a renderPass set to VK_NULL_HANDLE!"); 
 
 
@@ -85,26 +85,26 @@ void Pipeline::CreateGraphicsPipeline(std::unique_ptr<Pipeline_Desc> desc, const
     VkPipelineViewportStateCreateInfo viewportInfo{};
     viewportInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_VIEWPORT_STATE_CREATE_INFO;
     viewportInfo.viewportCount = 1;
-    viewportInfo.pViewports = &desc->viewport;
+    viewportInfo.pViewports = &desc.viewport;
     viewportInfo.scissorCount = 1;
-    viewportInfo.pScissors = &desc->scissor;
+    viewportInfo.pScissors = &desc.scissor;
 
     VkGraphicsPipelineCreateInfo pipelineInfo{};
     pipelineInfo.sType = VK_STRUCTURE_TYPE_GRAPHICS_PIPELINE_CREATE_INFO;
     pipelineInfo.stageCount = 2;
     pipelineInfo.pStages = shaderStages;
     pipelineInfo.pVertexInputState = &vertexInputInfo;
-    pipelineInfo.pInputAssemblyState = &desc->inputAssemblyInfo;
+    pipelineInfo.pInputAssemblyState = &desc.inputAssemblyInfo;
     pipelineInfo.pViewportState = &viewportInfo;
-    pipelineInfo.pRasterizationState = &desc->rasterizationInfo;
-    pipelineInfo.pMultisampleState = &desc->multisampleInfo;
-    pipelineInfo.pColorBlendState = &desc->colorBlendInfo;
-    pipelineInfo.pDepthStencilState = &desc->depthStencilInfo;
+    pipelineInfo.pRasterizationState = &desc.rasterizationInfo;
+    pipelineInfo.pMultisampleState = &desc.multisampleInfo;
+    pipelineInfo.pColorBlendState = &desc.colorBlendInfo;
+    pipelineInfo.pDepthStencilState = &desc.depthStencilInfo;
     pipelineInfo.pDynamicState = nullptr;
 
-    pipelineInfo.layout = desc->pipelineLayout;
-    pipelineInfo.renderPass = desc->renderPass;
-    pipelineInfo.subpass = desc->subpass;
+    pipelineInfo.layout = desc.pipelineLayout;
+    pipelineInfo.renderPass = desc.renderPass;
+    pipelineInfo.subpass = desc.subpass;
 
     pipelineInfo.basePipelineIndex = -1;
     pipelineInfo.basePipelineHandle = VK_NULL_HANDLE;
@@ -130,10 +130,9 @@ void Pipeline::CreateShaderModule(const std::vector<char>& code, VkShaderModule*
 
 }
 
-std::unique_ptr<Pipeline_Desc> Pipeline::DefaultPipelineDesc(uint32_t width, uint32_t height) 
+Pipeline_Desc Pipeline::DefaultPipelineDesc(uint32_t width, uint32_t height) 
 {
-    std::unique_ptr<Pipeline_Desc> pipelineDescriptor = std::make_unique<Pipeline_Desc>();
-    auto& desc = *pipelineDescriptor;
+    Pipeline_Desc desc{};
 
     desc.inputAssemblyInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_INPUT_ASSEMBLY_STATE_CREATE_INFO;
     desc.inputAssemblyInfo.topology = VK_PRIMITIVE_TOPOLOGY_TRIANGLE_LIST;
@@ -208,8 +207,12 @@ std::unique_ptr<Pipeline_Desc> Pipeline::DefaultPipelineDesc(uint32_t width, uin
 
 
 
-    return std::move(pipelineDescriptor);
+    return desc;
 }
 
+void Pipeline::Bind(VkCommandBuffer commandBuffer) 
+{
+    vkCmdBindPipeline(commandBuffer, VK_PIPELINE_BIND_POINT_GRAPHICS, mPipeline);
+}
 
 }

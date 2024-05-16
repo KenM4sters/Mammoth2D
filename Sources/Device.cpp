@@ -62,7 +62,7 @@ Device::Device(std::shared_ptr<Window>& window)
 
 Device::~Device() 
 {
-    
+    vkDestroyCommandPool(mDevice, mCommandPool, nullptr);
 }
 
 void Device::CreateInstance() 

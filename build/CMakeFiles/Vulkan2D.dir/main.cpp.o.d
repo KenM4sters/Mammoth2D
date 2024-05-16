@@ -825,23 +825,6 @@ CMakeFiles/Vulkan2D.dir/main.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__locale_dir/locale_base_api/bsd_locale_defaults.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/cstdarg \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Program.hpp \
-  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Window.hpp \
-  /Users/samuelbrookman/Desktop/Vulkan2D/External/glfw/include/GLFW/glfw3.h \
-  /usr/local/macOS/include/vulkan/vulkan.h \
-  /usr/local/macOS/include/vulkan/vk_platform.h \
-  /usr/local/macOS/include/vulkan/vulkan_core.h \
-  /usr/local/macOS/include/vk_video/vulkan_video_codec_h264std.h \
-  /usr/local/macOS/include/vk_video/vulkan_video_codecs_common.h \
-  /usr/local/macOS/include/vk_video/vulkan_video_codec_h264std_decode.h \
-  /usr/local/macOS/include/vk_video/vulkan_video_codec_h265std.h \
-  /usr/local/macOS/include/vk_video/vulkan_video_codec_h265std_decode.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/OpenGL.framework/Headers/gl.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/OpenGL.framework/Headers/gltypes.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/OpenGL.framework/Headers/OpenGLAvailability.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/os/availability.h \
-  /usr/local/macOS/include/vulkan/vulkan.hpp \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/array \
-  /usr/local/macOS/include/vulkan/vulkan_hpp_macros.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/vector \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__format/formatter.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__format/format_fwd.h \
@@ -865,8 +848,25 @@ CMakeFiles/Vulkan2D.dir/main.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__format/unicode.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__format/extended_grapheme_cluster_table.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__format/width_estimation_table.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/array \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/temp_value.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__split_buffer \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Window.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/External/glfw/include/GLFW/glfw3.h \
+  /usr/local/macOS/include/vulkan/vulkan.h \
+  /usr/local/macOS/include/vulkan/vk_platform.h \
+  /usr/local/macOS/include/vulkan/vulkan_core.h \
+  /usr/local/macOS/include/vk_video/vulkan_video_codec_h264std.h \
+  /usr/local/macOS/include/vk_video/vulkan_video_codecs_common.h \
+  /usr/local/macOS/include/vk_video/vulkan_video_codec_h264std_decode.h \
+  /usr/local/macOS/include/vk_video/vulkan_video_codec_h265std.h \
+  /usr/local/macOS/include/vk_video/vulkan_video_codec_h265std_decode.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/OpenGL.framework/Headers/gl.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/OpenGL.framework/Headers/gltypes.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/OpenGL.framework/Headers/OpenGLAvailability.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/os/availability.h \
+  /usr/local/macOS/include/vulkan/vulkan.hpp \
+  /usr/local/macOS/include/vulkan/vulkan_hpp_macros.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/cassert \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/assert.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/dlfcn.h \
@@ -902,4 +902,5 @@ CMakeFiles/Vulkan2D.dir/main.cpp.o: \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Device.hpp \
   /usr/local/macOS/include/vulkan/vulkan_beta.h \
   /usr/local/macOS/include/vk_video/vulkan_video_codec_h264std_encode.h \
-  /usr/local/macOS/include/vk_video/vulkan_video_codec_h265std_encode.h
+  /usr/local/macOS/include/vk_video/vulkan_video_codec_h265std_encode.h \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/SwapChain.hpp
