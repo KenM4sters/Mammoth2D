@@ -8,9 +8,12 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/Users/samuelbrookman/Desktop/Vulkan2D/Sources/Camera.cpp" "CMakeFiles/Vulkan2D.dir/Sources/Camera.cpp.o" "gcc" "CMakeFiles/Vulkan2D.dir/Sources/Camera.cpp.o.d"
   "/Users/samuelbrookman/Desktop/Vulkan2D/Sources/Device.cpp" "CMakeFiles/Vulkan2D.dir/Sources/Device.cpp.o" "gcc" "CMakeFiles/Vulkan2D.dir/Sources/Device.cpp.o.d"
   "/Users/samuelbrookman/Desktop/Vulkan2D/Sources/Pipeline.cpp" "CMakeFiles/Vulkan2D.dir/Sources/Pipeline.cpp.o" "gcc" "CMakeFiles/Vulkan2D.dir/Sources/Pipeline.cpp.o.d"
   "/Users/samuelbrookman/Desktop/Vulkan2D/Sources/Program.cpp" "CMakeFiles/Vulkan2D.dir/Sources/Program.cpp.o" "gcc" "CMakeFiles/Vulkan2D.dir/Sources/Program.cpp.o.d"
+  "/Users/samuelbrookman/Desktop/Vulkan2D/Sources/RenderSystems/PlayerSystem.cpp" "CMakeFiles/Vulkan2D.dir/Sources/RenderSystems/PlayerSystem.cpp.o" "gcc" "CMakeFiles/Vulkan2D.dir/Sources/RenderSystems/PlayerSystem.cpp.o.d"
+  "/Users/samuelbrookman/Desktop/Vulkan2D/Sources/Renderer.cpp" "CMakeFiles/Vulkan2D.dir/Sources/Renderer.cpp.o" "gcc" "CMakeFiles/Vulkan2D.dir/Sources/Renderer.cpp.o.d"
   "/Users/samuelbrookman/Desktop/Vulkan2D/Sources/SwapChain.cpp" "CMakeFiles/Vulkan2D.dir/Sources/SwapChain.cpp.o" "gcc" "CMakeFiles/Vulkan2D.dir/Sources/SwapChain.cpp.o.d"
   "/Users/samuelbrookman/Desktop/Vulkan2D/Sources/Window.cpp" "CMakeFiles/Vulkan2D.dir/Sources/Window.cpp.o" "gcc" "CMakeFiles/Vulkan2D.dir/Sources/Window.cpp.o.d"
   "/Users/samuelbrookman/Desktop/Vulkan2D/main.cpp" "CMakeFiles/Vulkan2D.dir/main.cpp.o" "gcc" "CMakeFiles/Vulkan2D.dir/main.cpp.o.d"

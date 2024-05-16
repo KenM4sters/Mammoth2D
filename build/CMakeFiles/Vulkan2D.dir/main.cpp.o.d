@@ -903,4 +903,7 @@ CMakeFiles/Vulkan2D.dir/main.cpp.o: \
   /usr/local/macOS/include/vulkan/vulkan_beta.h \
   /usr/local/macOS/include/vk_video/vulkan_video_codec_h264std_encode.h \
   /usr/local/macOS/include/vk_video/vulkan_video_codec_h265std_encode.h \
-  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/SwapChain.hpp
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/SwapChain.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Renderer.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/RenderSystems/RenderSystem.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/RenderSystems/../Pipeline.hpp

@@ -22,6 +22,9 @@ add_executable(${PROJECT_NAME}
   Sources/Pipeline.cpp
   Sources/Device.cpp
   Sources/SwapChain.cpp
+  Sources/Camera.cpp
+  Sources/Renderer.cpp
+  Sources/RenderSystems/PlayerSystem.cpp
 )
 
 if (DEFINED VULKAN_SDK_PATH)

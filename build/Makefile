@@ -168,6 +168,30 @@ glfw/fast:
 	$(MAKE) $(MAKESILENT) -f External/glfw/src/CMakeFiles/glfw.dir/build.make External/glfw/src/CMakeFiles/glfw.dir/build
 .PHONY : glfw/fast
 
+Sources/Camera.o: Sources/Camera.cpp.o
+.PHONY : Sources/Camera.o
+
+# target to build an object file
+Sources/Camera.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Camera.cpp.o
+.PHONY : Sources/Camera.cpp.o
+
+Sources/Camera.i: Sources/Camera.cpp.i
+.PHONY : Sources/Camera.i
+
+# target to preprocess a source file
+Sources/Camera.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Camera.cpp.i
+.PHONY : Sources/Camera.cpp.i
+
+Sources/Camera.s: Sources/Camera.cpp.s
+.PHONY : Sources/Camera.s
+
+# target to generate assembly for a file
+Sources/Camera.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Camera.cpp.s
+.PHONY : Sources/Camera.cpp.s
+
 Sources/Device.o: Sources/Device.cpp.o
 .PHONY : Sources/Device.o
 
@@ -239,6 +263,54 @@ Sources/Program.s: Sources/Program.cpp.s
 Sources/Program.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Program.cpp.s
 .PHONY : Sources/Program.cpp.s
+
+Sources/RenderSystems/PlayerSystem.o: Sources/RenderSystems/PlayerSystem.cpp.o
+.PHONY : Sources/RenderSystems/PlayerSystem.o
+
+# target to build an object file
+Sources/RenderSystems/PlayerSystem.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/RenderSystems/PlayerSystem.cpp.o
+.PHONY : Sources/RenderSystems/PlayerSystem.cpp.o
+
+Sources/RenderSystems/PlayerSystem.i: Sources/RenderSystems/PlayerSystem.cpp.i
+.PHONY : Sources/RenderSystems/PlayerSystem.i
+
+# target to preprocess a source file
+Sources/RenderSystems/PlayerSystem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/RenderSystems/PlayerSystem.cpp.i
+.PHONY : Sources/RenderSystems/PlayerSystem.cpp.i
+
+Sources/RenderSystems/PlayerSystem.s: Sources/RenderSystems/PlayerSystem.cpp.s
+.PHONY : Sources/RenderSystems/PlayerSystem.s
+
+# target to generate assembly for a file
+Sources/RenderSystems/PlayerSystem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/RenderSystems/PlayerSystem.cpp.s
+.PHONY : Sources/RenderSystems/PlayerSystem.cpp.s
+
+Sources/Renderer.o: Sources/Renderer.cpp.o
+.PHONY : Sources/Renderer.o
+
+# target to build an object file
+Sources/Renderer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Renderer.cpp.o
+.PHONY : Sources/Renderer.cpp.o
+
+Sources/Renderer.i: Sources/Renderer.cpp.i
+.PHONY : Sources/Renderer.i
+
+# target to preprocess a source file
+Sources/Renderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Renderer.cpp.i
+.PHONY : Sources/Renderer.cpp.i
+
+Sources/Renderer.s: Sources/Renderer.cpp.s
+.PHONY : Sources/Renderer.s
+
+# target to generate assembly for a file
+Sources/Renderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Renderer.cpp.s
+.PHONY : Sources/Renderer.cpp.s
 
 Sources/SwapChain.o: Sources/SwapChain.cpp.o
 .PHONY : Sources/SwapChain.o
@@ -324,6 +396,9 @@ help:
 	@echo "... update_mappings"
 	@echo "... Vulkan2D"
 	@echo "... glfw"
+	@echo "... Sources/Camera.o"
+	@echo "... Sources/Camera.i"
+	@echo "... Sources/Camera.s"
 	@echo "... Sources/Device.o"
 	@echo "... Sources/Device.i"
 	@echo "... Sources/Device.s"
@@ -333,6 +408,12 @@ help:
 	@echo "... Sources/Program.o"
 	@echo "... Sources/Program.i"
 	@echo "... Sources/Program.s"
+	@echo "... Sources/RenderSystems/PlayerSystem.o"
+	@echo "... Sources/RenderSystems/PlayerSystem.i"
+	@echo "... Sources/RenderSystems/PlayerSystem.s"
+	@echo "... Sources/Renderer.o"
+	@echo "... Sources/Renderer.i"
+	@echo "... Sources/Renderer.s"
 	@echo "... Sources/SwapChain.o"
 	@echo "... Sources/SwapChain.i"
 	@echo "... Sources/SwapChain.s"

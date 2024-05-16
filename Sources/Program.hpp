@@ -4,6 +4,7 @@
 #include "Pipeline.hpp"
 #include "Device.hpp"
 #include "SwapChain.hpp"
+#include "Renderer.hpp"
 
 namespace Super
 {
@@ -20,24 +21,13 @@ public:
 
     void Run();
 
-    void CreatePipelineLayout();
-    void CreatePipeline();
-    void CreateCommandBuffers();
-    void DrawFrame();
-
 private:
 
     std::shared_ptr<Window> mWindow = nullptr;
 
     std::shared_ptr<Device> mDevice = nullptr;
 
-    std::unique_ptr<Pipeline> mPipeline = nullptr;
-
-    std::unique_ptr<SwapChain> mSwapChain = nullptr;
-
-    VkPipelineLayout mPipelineLayout;
-    
-    std::vector<VkCommandBuffer> mCommandBuffers;
+    std::unique_ptr<Renderer> mRenderer = nullptr;
 
 };
 }
