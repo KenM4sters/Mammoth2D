@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Vulkan2D.dir/Sources/Pipeline.cpp.o.d"
   "CMakeFiles/Vulkan2D.dir/Sources/Program.cpp.o"
   "CMakeFiles/Vulkan2D.dir/Sources/Program.cpp.o.d"
+  "CMakeFiles/Vulkan2D.dir/Sources/SwapChain.cpp.o"
+  "CMakeFiles/Vulkan2D.dir/Sources/SwapChain.cpp.o.d"
   "CMakeFiles/Vulkan2D.dir/Sources/Window.cpp.o"
   "CMakeFiles/Vulkan2D.dir/Sources/Window.cpp.o.d"
   "CMakeFiles/Vulkan2D.dir/main.cpp.o"

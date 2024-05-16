@@ -11,7 +11,6 @@ struct Pipeline_Desc
     // A static member funciton of Pipeline configures these to their default values.
     VkViewport viewport;
     VkRect2D scissor;
-    VkPipelineViewportStateCreateInfo viewportInfo;
     VkPipelineInputAssemblyStateCreateInfo inputAssemblyInfo;
     VkPipelineRasterizationStateCreateInfo rasterizationInfo;
     VkPipelineMultisampleStateCreateInfo multisampleInfo;

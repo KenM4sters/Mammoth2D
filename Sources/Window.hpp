@@ -18,9 +18,11 @@ public:
 
     void Init();
 
-    const static bool IsRunning() { return mIsRunning; }
+    inline const static bool IsRunning() { return mIsRunning; }
 
-    const GLFWwindow* GetNativeWindow() const { return mWindow; } 
+    inline VkExtent2D GetExtent() const { return {mWidth, mHeight}; }
+
+    inline const GLFWwindow* GetNativeWindow() const { return mWindow; } 
 
     void CreateWindowSurface(VkInstance instance, VkSurfaceKHR* surface) const;
 

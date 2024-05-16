@@ -82,13 +82,20 @@ void Pipeline::CreateGraphicsPipeline(std::unique_ptr<Pipeline_Desc> desc, const
     vertexInputInfo.pVertexAttributeDescriptions = nullptr;
     vertexInputInfo.pVertexBindingDescriptions = nullptr;
 
+    VkPipelineViewportStateCreateInfo viewportInfo{};
+    viewportInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_VIEWPORT_STATE_CREATE_INFO;
+    viewportInfo.viewportCount = 1;
+    viewportInfo.pViewports = &desc->viewport;
+    viewportInfo.scissorCount = 1;
+    viewportInfo.pScissors = &desc->scissor;
+
     VkGraphicsPipelineCreateInfo pipelineInfo{};
     pipelineInfo.sType = VK_STRUCTURE_TYPE_GRAPHICS_PIPELINE_CREATE_INFO;
     pipelineInfo.stageCount = 2;
     pipelineInfo.pStages = shaderStages;
     pipelineInfo.pVertexInputState = &vertexInputInfo;
     pipelineInfo.pInputAssemblyState = &desc->inputAssemblyInfo;
-    pipelineInfo.pViewportState = &desc->viewportInfo;
+    pipelineInfo.pViewportState = &viewportInfo;
     pipelineInfo.pRasterizationState = &desc->rasterizationInfo;
     pipelineInfo.pMultisampleState = &desc->multisampleInfo;
     pipelineInfo.pColorBlendState = &desc->colorBlendInfo;
@@ -141,12 +148,6 @@ std::unique_ptr<Pipeline_Desc> Pipeline::DefaultPipelineDesc(uint32_t width, uin
 
     desc.scissor.offset = {0, 0};
     desc.scissor.extent = {width, height};
-
-    desc.viewportInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_VIEWPORT_STATE_CREATE_INFO;
-    desc.viewportInfo.viewportCount = 1;
-    desc.viewportInfo.pViewports = &desc.viewport;
-    desc.viewportInfo.scissorCount = 1;
-    desc.viewportInfo.pScissors = &desc.scissor;
 
 
     desc.rasterizationInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_RASTERIZATION_STATE_CREATE_INFO;

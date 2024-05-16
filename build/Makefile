@@ -240,6 +240,30 @@ Sources/Program.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Program.cpp.s
 .PHONY : Sources/Program.cpp.s
 
+Sources/SwapChain.o: Sources/SwapChain.cpp.o
+.PHONY : Sources/SwapChain.o
+
+# target to build an object file
+Sources/SwapChain.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/SwapChain.cpp.o
+.PHONY : Sources/SwapChain.cpp.o
+
+Sources/SwapChain.i: Sources/SwapChain.cpp.i
+.PHONY : Sources/SwapChain.i
+
+# target to preprocess a source file
+Sources/SwapChain.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/SwapChain.cpp.i
+.PHONY : Sources/SwapChain.cpp.i
+
+Sources/SwapChain.s: Sources/SwapChain.cpp.s
+.PHONY : Sources/SwapChain.s
+
+# target to generate assembly for a file
+Sources/SwapChain.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/SwapChain.cpp.s
+.PHONY : Sources/SwapChain.cpp.s
+
 Sources/Window.o: Sources/Window.cpp.o
 .PHONY : Sources/Window.o
 
@@ -309,6 +333,9 @@ help:
 	@echo "... Sources/Program.o"
 	@echo "... Sources/Program.i"
 	@echo "... Sources/Program.s"
+	@echo "... Sources/SwapChain.o"
+	@echo "... Sources/SwapChain.i"
+	@echo "... Sources/SwapChain.s"
 	@echo "... Sources/Window.o"
 	@echo "... Sources/Window.i"
 	@echo "... Sources/Window.s"
