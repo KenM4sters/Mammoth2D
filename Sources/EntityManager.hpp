@@ -20,13 +20,10 @@ public:
         }
     }
 
-    static Entity* CreateEntity() 
+    static EntityID CreateEntity(Entity* ent) 
     {
-        Entity* ent = new Entity{};
-        ent->id = idCounter++;
         mEntities.push_back(ent);
-
-        return ent;
+        return idCounter++;
     }
 
 private:

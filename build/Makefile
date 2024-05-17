@@ -168,6 +168,30 @@ glfw/fast:
 	$(MAKE) $(MAKESILENT) -f External/glfw/src/CMakeFiles/glfw.dir/build.make External/glfw/src/CMakeFiles/glfw.dir/build
 .PHONY : glfw/fast
 
+Sources/Buffer.o: Sources/Buffer.cpp.o
+.PHONY : Sources/Buffer.o
+
+# target to build an object file
+Sources/Buffer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Buffer.cpp.o
+.PHONY : Sources/Buffer.cpp.o
+
+Sources/Buffer.i: Sources/Buffer.cpp.i
+.PHONY : Sources/Buffer.i
+
+# target to preprocess a source file
+Sources/Buffer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Buffer.cpp.i
+.PHONY : Sources/Buffer.cpp.i
+
+Sources/Buffer.s: Sources/Buffer.cpp.s
+.PHONY : Sources/Buffer.s
+
+# target to generate assembly for a file
+Sources/Buffer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Buffer.cpp.s
+.PHONY : Sources/Buffer.cpp.s
+
 Sources/Camera.o: Sources/Camera.cpp.o
 .PHONY : Sources/Camera.o
 
@@ -215,6 +239,30 @@ Sources/Device.s: Sources/Device.cpp.s
 Sources/Device.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Device.cpp.s
 .PHONY : Sources/Device.cpp.s
+
+Sources/EntityManager.o: Sources/EntityManager.cpp.o
+.PHONY : Sources/EntityManager.o
+
+# target to build an object file
+Sources/EntityManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/EntityManager.cpp.o
+.PHONY : Sources/EntityManager.cpp.o
+
+Sources/EntityManager.i: Sources/EntityManager.cpp.i
+.PHONY : Sources/EntityManager.i
+
+# target to preprocess a source file
+Sources/EntityManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/EntityManager.cpp.i
+.PHONY : Sources/EntityManager.cpp.i
+
+Sources/EntityManager.s: Sources/EntityManager.cpp.s
+.PHONY : Sources/EntityManager.s
+
+# target to generate assembly for a file
+Sources/EntityManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/EntityManager.cpp.s
+.PHONY : Sources/EntityManager.cpp.s
 
 Sources/Pipeline.o: Sources/Pipeline.cpp.o
 .PHONY : Sources/Pipeline.o
@@ -396,12 +444,18 @@ help:
 	@echo "... update_mappings"
 	@echo "... Vulkan2D"
 	@echo "... glfw"
+	@echo "... Sources/Buffer.o"
+	@echo "... Sources/Buffer.i"
+	@echo "... Sources/Buffer.s"
 	@echo "... Sources/Camera.o"
 	@echo "... Sources/Camera.i"
 	@echo "... Sources/Camera.s"
 	@echo "... Sources/Device.o"
 	@echo "... Sources/Device.i"
 	@echo "... Sources/Device.s"
+	@echo "... Sources/EntityManager.o"
+	@echo "... Sources/EntityManager.i"
+	@echo "... Sources/EntityManager.s"
 	@echo "... Sources/Pipeline.o"
 	@echo "... Sources/Pipeline.i"
 	@echo "... Sources/Pipeline.s"

@@ -1,5 +1,8 @@
 #include "PlayerSystem.hpp"
 #include "../EntityManager.hpp"
+#include "../Entity.hpp"
+
+static Super::Vertex_Buffer_Desc vertexDesc{};
 
 namespace Super
 {
@@ -31,6 +34,14 @@ void PlayerSystem::CreatePipeline(uint32_t width, uint32_t height, VkRenderPass 
 {
     Pipeline_Desc pipelineConfig = Pipeline::DefaultPipelineDesc(width, height);
 
+    // Vertex Info.
+    //
+    pipelineConfig.vertexInfo.vertexAttributeDescriptionCount = vertexDesc.attribsDesc.size();
+    pipelineConfig.vertexInfo.vertexBindingDescriptionCount = 1;
+    pipelineConfig.vertexInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_STATE_CREATE_INFO;
+    pipelineConfig.vertexInfo.pVertexBindingDescriptions = &vertexDesc.bindingDesc;
+    pipelineConfig.vertexInfo.pVertexAttributeDescriptions = vertexDesc.attribsDesc.data();
+
     pipelineConfig.renderPass = renderPass;
 
     pipelineConfig.pipelineLayout = mPipelineLayout;
@@ -60,28 +71,25 @@ void PlayerSystem::CreatePlayerEntity()
 {
     // Initial player props.
     //
-    Entity* player = EntityManager::CreateEntity();
-    player->flags = Entity_Flags::ACTIVE | Entity_Flags::HAS_HEALTH | Entity_Flags::IS_RIGID 
+    mPlayer = new Entity{};
+    mPlayer->id = EntityManager::CreateEntity(mPlayer);
+    mPlayer->flags = Entity_Flags::ACTIVE | Entity_Flags::HAS_HEALTH | Entity_Flags::IS_RIGID 
                     | Entity_Flags::HAS_MOTION | Entity_Flags::PLAYER_CONTROLLED;
-    player->color = glm::vec3(0.5f, 0.1f, 1.0f);
-    player->position = glm::vec2(400, 400);
-    player->size = glm::vec2(50, 50);
-    player->physics = {glm::vec2(0.0f, 0.0f), glm::vec2(0.0f, 0.0f)};
+    mPlayer->color = glm::vec3(0.5f, 0.1f, 1.0f);
+    mPlayer->position = glm::vec2(400, 400);
+    mPlayer->size = glm::vec2(50, 50);
+    mPlayer->physics = {glm::vec2(0.0f, 0.0f), glm::vec2(0.0f, 0.0f)};
 
-    // Player renderables.
-    //
-    std::vector<Vertex> vertices = 
+    std::vector<BufferAttribute> attribs = 
     {
-        {{0.0f, 1.0f}},
-        {{1.0f, 0.0f}},
-        {{0.0f, 0.0f}},
-
-        {{0.0f, 1.0f}},
-        {{1.0f, 1.0f}},
-        {{1.0f, 0.0f}},
+        BufferAttribute(0, VK_FORMAT_R32G32_SFLOAT),
     };
 
-    
+    BufferLayout layout = BufferLayout(attribs);
+
+    layout.SetVertexBufferDesc(&vertexDesc);
+
+    SetVertexBufferFromVertices(mDevice, &mPlayer->renderable.vertexBuffer, SQUARE_VERTICES);
 
 }
 }

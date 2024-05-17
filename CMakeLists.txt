@@ -24,6 +24,8 @@ add_executable(${PROJECT_NAME}
   Sources/SwapChain.cpp
   Sources/Camera.cpp
   Sources/Renderer.cpp
+  Sources/Buffer.cpp
+  Sources/EntityManager.cpp
   Sources/RenderSystems/PlayerSystem.cpp
 )
 

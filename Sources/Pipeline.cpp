@@ -75,12 +75,7 @@ void Pipeline::CreateGraphicsPipeline(Pipeline_Desc& desc, const char* vertSrc, 
     shaderStages[1].pSpecializationInfo = nullptr;
     shaderStages[1].pNext = nullptr;
 
-    VkPipelineVertexInputStateCreateInfo vertexInputInfo{};
-    vertexInputInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_STATE_CREATE_INFO;
-    vertexInputInfo.vertexAttributeDescriptionCount = 0;
-    vertexInputInfo.pVertexBindingDescriptions = 0;
-    vertexInputInfo.pVertexAttributeDescriptions = nullptr;
-    vertexInputInfo.pVertexBindingDescriptions = nullptr;
+
 
     VkPipelineViewportStateCreateInfo viewportInfo{};
     viewportInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_VIEWPORT_STATE_CREATE_INFO;
@@ -93,7 +88,7 @@ void Pipeline::CreateGraphicsPipeline(Pipeline_Desc& desc, const char* vertSrc, 
     pipelineInfo.sType = VK_STRUCTURE_TYPE_GRAPHICS_PIPELINE_CREATE_INFO;
     pipelineInfo.stageCount = 2;
     pipelineInfo.pStages = shaderStages;
-    pipelineInfo.pVertexInputState = &vertexInputInfo;
+    pipelineInfo.pVertexInputState = &desc.vertexInfo;
     pipelineInfo.pInputAssemblyState = &desc.inputAssemblyInfo;
     pipelineInfo.pViewportState = &viewportInfo;
     pipelineInfo.pRasterizationState = &desc.rasterizationInfo;
@@ -204,8 +199,6 @@ Pipeline_Desc Pipeline::DefaultPipelineDesc(uint32_t width, uint32_t height)
     desc.depthStencilInfo.maxDepthBounds = 1.0f;
     desc.depthStencilInfo.front = {};
     desc.depthStencilInfo.back = {};
-
-
 
     return desc;
 }

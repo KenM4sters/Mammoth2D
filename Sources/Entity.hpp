@@ -2,6 +2,7 @@
 #include <glm/glm.hpp>
 #include <vulkan/vulkan.hpp>
 #include <vector>
+#include "Buffer.hpp"
 
 namespace Super 
 {
@@ -16,16 +17,11 @@ typedef enum entity_flags
     HAS_HEALTH          = 1 << 4,    
 } Entity_Flags;
 
-typedef struct vertex 
-{
-    glm::vec2 position;
-    glm::vec3 color;
-} Vertex;
 
 typedef struct renderable 
 {
     VkBuffer vertexBuffer;
-    std::vector<Vertex> vertices;
+    VkDeviceMemory vertexBufferMemory;
 } Renderable;
 
 typedef struct bounds 

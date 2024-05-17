@@ -6,7 +6,7 @@
 namespace Super 
 {
 
-struct Pipeline_Desc 
+typedef struct pipeline_desc 
 {
     // A static member funciton of Pipeline configures these to their default values.
     VkViewport viewport;
@@ -21,7 +21,9 @@ struct Pipeline_Desc
     VkPipelineLayout pipelineLayout = nullptr;
     VkRenderPass renderPass = nullptr;
     uint32_t subpass = 0;
-};
+    // Vertices - not set by default.
+    VkPipelineVertexInputStateCreateInfo vertexInfo;
+} Pipeline_Desc;
 
 class Pipeline 
 {

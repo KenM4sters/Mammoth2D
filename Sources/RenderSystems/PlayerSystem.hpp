@@ -19,5 +19,9 @@ public:
     void UpdateBuffers() override;
 
     void Run(VkCommandBuffer commandBuffer) override;
+
+private:
+    Entity* mPlayer = nullptr;
+    
 };
 }
