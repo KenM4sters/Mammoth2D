@@ -63,8 +63,10 @@ void PlayerSystem::Run(VkCommandBuffer commandBuffer)
 {
     mPipeline->Bind(commandBuffer);
 
-
-    vkCmdDraw(commandBuffer, 3, 1, 0, 0);
+    VkBuffer buffers[] = {mPlayer->renderable.vertexBuffer};
+    VkDeviceSize offsets[] = {0};
+    vkCmdBindVertexBuffers(commandBuffer, 0, 1, buffers, offsets);
+    vkCmdDraw(commandBuffer, 6, 1, 0, 0);
 }
 
 void PlayerSystem::CreatePlayerEntity() 
@@ -89,7 +91,8 @@ void PlayerSystem::CreatePlayerEntity()
 
     layout.SetVertexBufferDesc(&vertexDesc);
 
-    SetVertexBufferFromVertices(mDevice, &mPlayer->renderable.vertexBuffer, SQUARE_VERTICES);
+    SetVertexBufferFromVertices(mDevice, mPlayer->renderable.vertexBuffer, mPlayer->renderable.vertexBufferMemory, SQUARE_VERTICES);
+
 
 }
 }

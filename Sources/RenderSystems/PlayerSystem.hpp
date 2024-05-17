@@ -8,7 +8,11 @@ class PlayerSystem : public RenderSystem
 public:
     PlayerSystem(const std::shared_ptr<Device>& device, VkRenderPass renderPass, uint32_t height, uint32_t width);
 
-    ~PlayerSystem() {}
+    ~PlayerSystem() 
+    {
+        vkDestroyBuffer(mDevice->GetDevice(), mPlayer->renderable.vertexBuffer, nullptr);
+        vkFreeMemory(mDevice->GetDevice(), mPlayer->renderable.vertexBufferMemory, nullptr);
+    }
 
     void CreatePlayerEntity();
 
