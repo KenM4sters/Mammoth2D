@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Vulkan2D.dir/Sources/Buffer.cpp.o"
   "CMakeFiles/Vulkan2D.dir/Sources/Buffer.cpp.o.d"
+  "CMakeFiles/Vulkan2D.dir/Sources/BufferLayout.cpp.o"
+  "CMakeFiles/Vulkan2D.dir/Sources/BufferLayout.cpp.o.d"
   "CMakeFiles/Vulkan2D.dir/Sources/Camera.cpp.o"
   "CMakeFiles/Vulkan2D.dir/Sources/Camera.cpp.o.d"
   "CMakeFiles/Vulkan2D.dir/Sources/Device.cpp.o"

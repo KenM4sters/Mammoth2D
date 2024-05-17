@@ -1,8 +1,7 @@
 #include "PlayerSystem.hpp"
 #include "../EntityManager.hpp"
 #include "../Entity.hpp"
-
-static Super::Vertex_Buffer_Desc vertexDesc{};
+#include "BufferLayout.hpp"
 
 
 namespace Super
@@ -37,11 +36,11 @@ void PlayerSystem::CreatePipeline(uint32_t width, uint32_t height, VkRenderPass 
 
     // Vertex Info.
     //
-    pipelineConfig.vertexInfo.vertexAttributeDescriptionCount = vertexDesc.attribsDesc.size();
+    pipelineConfig.vertexInfo.vertexAttributeDescriptionCount = mVertexAttribsDesc.size();
     pipelineConfig.vertexInfo.vertexBindingDescriptionCount = 1;
     pipelineConfig.vertexInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_STATE_CREATE_INFO;
-    pipelineConfig.vertexInfo.pVertexBindingDescriptions = &vertexDesc.bindingDesc;
-    pipelineConfig.vertexInfo.pVertexAttributeDescriptions = vertexDesc.attribsDesc.data();
+    pipelineConfig.vertexInfo.pVertexBindingDescriptions = &mVertexBindingDesc;
+    pipelineConfig.vertexInfo.pVertexAttributeDescriptions = mVertexAttribsDesc.data();
 
     pipelineConfig.renderPass = renderPass;
 
@@ -64,9 +63,11 @@ void PlayerSystem::Run(VkCommandBuffer commandBuffer)
 {
     mPipeline->Bind(commandBuffer);
 
-    VkBuffer buffers[] = {mPlayer->renderable.vertexBuffer};
+    VkBuffer buffers[] = {mVertexBuffer->GetBuffer()};
     VkDeviceSize offsets[] = {0};
+
     vkCmdBindVertexBuffers(commandBuffer, 0, 1, buffers, offsets);
+    
     vkCmdDraw(commandBuffer, 6, 1, 0, 0);
 }
 
@@ -76,24 +77,41 @@ void PlayerSystem::CreatePlayerEntity()
     //
     mPlayer = new Entity{};
     mPlayer->id = EntityManager::CreateEntity(mPlayer);
+    mPlayer->color = glm::vec3(0.5f, 0.1f, 1.0f);
+    mPlayer->transform = {glm::vec2(400, 400), glm::vec2(50, 50), glm::mat3{1.0f}};
+    mPlayer->physics = {glm::vec2(0.0f, 0.0f), glm::vec2(0.0f, 0.0f)};
     mPlayer->flags = Entity_Flags::ACTIVE | Entity_Flags::HAS_HEALTH | Entity_Flags::IS_RIGID 
                     | Entity_Flags::HAS_MOTION | Entity_Flags::PLAYER_CONTROLLED;
-    mPlayer->color = glm::vec3(0.5f, 0.1f, 1.0f);
-    mPlayer->position = glm::vec2(400, 400);
-    mPlayer->size = glm::vec2(50, 50);
-    mPlayer->physics = {glm::vec2(0.0f, 0.0f), glm::vec2(0.0f, 0.0f)};
 
+
+    // A buffer layout takes in a vector of buffer attributes, where each buffer attribute
+    // describes a portion (or in this simple case 100%) of the vertex data (position, color, normals etc..)
+    //
     std::vector<BufferAttribute> attribs = 
     {
         BufferAttribute(0, VK_FORMAT_R32G32_SFLOAT),
     };
-
     BufferLayout layout = BufferLayout(attribs);
 
-    layout.SetVertexBufferDesc(&vertexDesc);
 
-    SetVertexBufferFromVertices(mDevice, mPlayer->renderable.vertexBuffer, mPlayer->renderable.vertexBufferMemory, SQUARE_VERTICES);
+    
+    // (!) This member function must be called in order to configure the vertex description which
+    // eventually gets passed into the wider pipeline config.
+    layout.SetVertexBufferDesc(&mVertexBindingDesc, &mVertexAttribsDesc);
 
+
+
+    // Finally create the vertex buffer which handled the entire creation and mapping of memory
+    // (in this case an array of vertices) into a conveniant place in GPU VRAM.
+    mVertexBuffer = std::make_unique<Buffer>(
+        mDevice, 
+        SQUARE_VERTICES.size()*sizeof(float), 
+        VK_BUFFER_USAGE_VERTEX_BUFFER_BIT,
+        VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT,
+        (void*)SQUARE_VERTICES.data()
+    );
+
+    vkBindBufferMemory(mDevice->GetDevice(), mVertexBuffer->GetBuffer(), mVertexBuffer->GetBufferMemory(), 0);
 
 }
 }

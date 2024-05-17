@@ -18,17 +18,12 @@ typedef enum entity_flags
 } Entity_Flags;
 
 
-typedef struct renderable 
-{
-    VkBuffer vertexBuffer;
-    VkDeviceMemory vertexBufferMemory;
-} Renderable;
-
-typedef struct bounds 
+typedef struct transform 
 {
     glm::vec2 position;
-    glm::vec2 size;
-} Bounds;
+    glm::vec2 scale;
+    glm::mat3 modelMatrix;
+} Transform;
 
 typedef struct physics 
 {
@@ -41,9 +36,8 @@ typedef struct entity
     EntityID id;
     int flags;
     glm::vec3 color;
-    glm::vec2 position;
-    glm::vec2 size;
+    Transform transform;
     Physics physics;
-    Renderable renderable;
 } Entity;
+
 }

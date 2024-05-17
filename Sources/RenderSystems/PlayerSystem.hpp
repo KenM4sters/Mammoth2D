@@ -1,5 +1,6 @@
 #include "RenderSystem.hpp"
 #include "../Entity.hpp"
+#include "Buffer.hpp"
 
 namespace Super 
 {
@@ -10,8 +11,6 @@ public:
 
     ~PlayerSystem() 
     {
-        vkDestroyBuffer(mDevice->GetDevice(), mPlayer->renderable.vertexBuffer, nullptr);
-        vkFreeMemory(mDevice->GetDevice(), mPlayer->renderable.vertexBufferMemory, nullptr);
     }
 
     void CreatePlayerEntity();
@@ -26,5 +25,10 @@ public:
 
 private:
     Entity* mPlayer = nullptr;
+
+    std::shared_ptr<Buffer> mVertexBuffer = nullptr;
+
+    VkVertexInputBindingDescription mVertexBindingDesc{};
+    std::vector<VkVertexInputAttributeDescription> mVertexAttribsDesc{};
 };
 }

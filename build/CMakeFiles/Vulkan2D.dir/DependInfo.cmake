@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/samuelbrookman/Desktop/Vulkan2D/Sources/Buffer.cpp" "CMakeFiles/Vulkan2D.dir/Sources/Buffer.cpp.o" "gcc" "CMakeFiles/Vulkan2D.dir/Sources/Buffer.cpp.o.d"
+  "/Users/samuelbrookman/Desktop/Vulkan2D/Sources/BufferLayout.cpp" "CMakeFiles/Vulkan2D.dir/Sources/BufferLayout.cpp.o" "gcc" "CMakeFiles/Vulkan2D.dir/Sources/BufferLayout.cpp.o.d"
   "/Users/samuelbrookman/Desktop/Vulkan2D/Sources/Camera.cpp" "CMakeFiles/Vulkan2D.dir/Sources/Camera.cpp.o" "gcc" "CMakeFiles/Vulkan2D.dir/Sources/Camera.cpp.o.d"
   "/Users/samuelbrookman/Desktop/Vulkan2D/Sources/Device.cpp" "CMakeFiles/Vulkan2D.dir/Sources/Device.cpp.o" "gcc" "CMakeFiles/Vulkan2D.dir/Sources/Device.cpp.o.d"
   "/Users/samuelbrookman/Desktop/Vulkan2D/Sources/EntityManager.cpp" "CMakeFiles/Vulkan2D.dir/Sources/EntityManager.cpp.o" "gcc" "CMakeFiles/Vulkan2D.dir/Sources/EntityManager.cpp.o.d"

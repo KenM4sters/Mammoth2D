@@ -192,6 +192,30 @@ Sources/Buffer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Buffer.cpp.s
 .PHONY : Sources/Buffer.cpp.s
 
+Sources/BufferLayout.o: Sources/BufferLayout.cpp.o
+.PHONY : Sources/BufferLayout.o
+
+# target to build an object file
+Sources/BufferLayout.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/BufferLayout.cpp.o
+.PHONY : Sources/BufferLayout.cpp.o
+
+Sources/BufferLayout.i: Sources/BufferLayout.cpp.i
+.PHONY : Sources/BufferLayout.i
+
+# target to preprocess a source file
+Sources/BufferLayout.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/BufferLayout.cpp.i
+.PHONY : Sources/BufferLayout.cpp.i
+
+Sources/BufferLayout.s: Sources/BufferLayout.cpp.s
+.PHONY : Sources/BufferLayout.s
+
+# target to generate assembly for a file
+Sources/BufferLayout.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/BufferLayout.cpp.s
+.PHONY : Sources/BufferLayout.cpp.s
+
 Sources/Camera.o: Sources/Camera.cpp.o
 .PHONY : Sources/Camera.o
 
@@ -447,6 +471,9 @@ help:
 	@echo "... Sources/Buffer.o"
 	@echo "... Sources/Buffer.i"
 	@echo "... Sources/Buffer.s"
+	@echo "... Sources/BufferLayout.o"
+	@echo "... Sources/BufferLayout.i"
+	@echo "... Sources/BufferLayout.s"
 	@echo "... Sources/Camera.o"
 	@echo "... Sources/Camera.i"
 	@echo "... Sources/Camera.s"
