@@ -27,6 +27,7 @@ add_executable(${PROJECT_NAME}
   Sources/Buffer.cpp
   Sources/BufferLayout.cpp
   Sources/EntityManager.cpp
+  Sources/Scene.cpp
   Sources/RenderSystems/PlayerSystem.cpp
 )
 
@@ -57,8 +58,8 @@ target_link_libraries(${PROJECT_NAME} glfw glm ${Vulkan_LIBRARIES})
 
 ############## Build SHADERS #######################
 
-# Find all vertex and fragment sources within shaders directory
-# taken from VBlancos vulkan tutorial
+# Finds all vertex and fragment sources within the Shaders directory.
+# Taken from VBlancos vulkan tutorial.
 # https://github.com/vblanco20-1/vulkan-guide/blob/all-chapters/CMakeLists.txt
 find_program(GLSL_VALIDATOR glslangValidator HINTS
   ${Vulkan_GLSLANG_VALIDATOR_EXECUTABLE}

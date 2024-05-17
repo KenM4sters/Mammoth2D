@@ -25,9 +25,9 @@ public:
 
     // Getters
     //
-    const VkBuffer& GetBuffer() const { return mBuffer; }
-    const VkDeviceMemory& GetBufferMemory() const { return mBufferMemory; }
-    VkDeviceSize& GetSize() { return mSize; }
+    inline const VkBuffer& GetBuffer() const { return mBuffer; }
+    inline const VkDeviceMemory& GetBufferMemory() const { return mBufferMemory; }
+    inline VkDeviceSize& GetSize() { return mSize; }
 
 
 protected:

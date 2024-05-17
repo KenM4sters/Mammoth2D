@@ -17,6 +17,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Vulkan2D.dir/Sources/RenderSystems/PlayerSystem.cpp.o.d"
   "CMakeFiles/Vulkan2D.dir/Sources/Renderer.cpp.o"
   "CMakeFiles/Vulkan2D.dir/Sources/Renderer.cpp.o.d"
+  "CMakeFiles/Vulkan2D.dir/Sources/Scene.cpp.o"
+  "CMakeFiles/Vulkan2D.dir/Sources/Scene.cpp.o.d"
   "CMakeFiles/Vulkan2D.dir/Sources/SwapChain.cpp.o"
   "CMakeFiles/Vulkan2D.dir/Sources/SwapChain.cpp.o.d"
   "CMakeFiles/Vulkan2D.dir/Sources/Window.cpp.o"

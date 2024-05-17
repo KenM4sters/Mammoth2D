@@ -5,6 +5,7 @@
 #include "Device.hpp"
 #include "SwapChain.hpp"
 #include "Renderer.hpp"
+#include "Scene.hpp"
 
 namespace Super
 {
@@ -28,6 +29,9 @@ private:
     std::shared_ptr<Device> mDevice = nullptr;
 
     std::unique_ptr<Renderer> mRenderer = nullptr;
+    
+    std::shared_ptr<Scene> mScene = nullptr;
+
 
 };
 }

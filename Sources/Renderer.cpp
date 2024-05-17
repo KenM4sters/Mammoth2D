@@ -20,6 +20,10 @@ Renderer::Renderer(std::shared_ptr<Device>& device, std::shared_ptr<Window>& win
 Renderer::~Renderer() 
 {
     FreeCommandBuffers();
+    for(const auto& system : mRenderSystems) 
+    {
+        delete system;
+    }
 }
 
 

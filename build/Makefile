@@ -384,6 +384,30 @@ Sources/Renderer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Renderer.cpp.s
 .PHONY : Sources/Renderer.cpp.s
 
+Sources/Scene.o: Sources/Scene.cpp.o
+.PHONY : Sources/Scene.o
+
+# target to build an object file
+Sources/Scene.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Scene.cpp.o
+.PHONY : Sources/Scene.cpp.o
+
+Sources/Scene.i: Sources/Scene.cpp.i
+.PHONY : Sources/Scene.i
+
+# target to preprocess a source file
+Sources/Scene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Scene.cpp.i
+.PHONY : Sources/Scene.cpp.i
+
+Sources/Scene.s: Sources/Scene.cpp.s
+.PHONY : Sources/Scene.s
+
+# target to generate assembly for a file
+Sources/Scene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Scene.cpp.s
+.PHONY : Sources/Scene.cpp.s
+
 Sources/SwapChain.o: Sources/SwapChain.cpp.o
 .PHONY : Sources/SwapChain.o
 
@@ -495,6 +519,9 @@ help:
 	@echo "... Sources/Renderer.o"
 	@echo "... Sources/Renderer.i"
 	@echo "... Sources/Renderer.s"
+	@echo "... Sources/Scene.o"
+	@echo "... Sources/Scene.i"
+	@echo "... Sources/Scene.s"
 	@echo "... Sources/SwapChain.o"
 	@echo "... Sources/SwapChain.i"
 	@echo "... Sources/SwapChain.s"

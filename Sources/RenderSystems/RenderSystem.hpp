@@ -1,9 +1,18 @@
 #pragma once
+#include <glm/glm.hpp>
 #include <vulkan/vulkan.hpp>
 #include "../Pipeline.hpp"
+#include "Entity.hpp"
 
 namespace Super 
 {
+typedef struct SimplePushConstants {
+    Transform transform;
+    glm::vec3 color{1.0f, 0.0f, 1.0f};
+    glm::mat3 projectionViewMatrix{1.0f};
+
+} SimplePushConstants;
+
 class RenderSystem 
 {
 public: 

@@ -13,6 +13,8 @@ Program::Program(uint32_t width, uint32_t height, const char* name)
 
     mRenderer = std::make_unique<Renderer>(mDevice, mWindow);
 
+    mScene = std::make_shared<Scene>(width, height);
+
 }
 
 Program::~Program()

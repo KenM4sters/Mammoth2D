@@ -30,5 +30,7 @@ private:
 
     VkVertexInputBindingDescription mVertexBindingDesc{};
     std::vector<VkVertexInputAttributeDescription> mVertexAttribsDesc{};
+
+    SimplePushConstants mPushConstants{};
 };
 }

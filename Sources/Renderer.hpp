@@ -23,6 +23,7 @@ public:
     void End();
     void FreeCommandBuffers();
 
+
 private:
     std::shared_ptr<Device> mDevice = nullptr;
 

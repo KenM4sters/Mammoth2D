@@ -1,6 +1,5 @@
 #include "PlayerSystem.hpp"
 #include "../EntityManager.hpp"
-#include "../Entity.hpp"
 #include "BufferLayout.hpp"
 
 
@@ -80,8 +79,8 @@ void PlayerSystem::CreatePlayerEntity()
     mPlayer->color = glm::vec3(0.5f, 0.1f, 1.0f);
     mPlayer->transform = {glm::vec2(400, 400), glm::vec2(50, 50), glm::mat3{1.0f}};
     mPlayer->physics = {glm::vec2(0.0f, 0.0f), glm::vec2(0.0f, 0.0f)};
-    mPlayer->flags = Entity_Flags::ACTIVE | Entity_Flags::HAS_HEALTH | Entity_Flags::IS_RIGID 
-                    | Entity_Flags::HAS_MOTION | Entity_Flags::PLAYER_CONTROLLED;
+    mPlayer->flags = EntityFlags::ACTIVE | EntityFlags::HAS_HEALTH | EntityFlags::IS_RIGID 
+                    | EntityFlags::HAS_MOTION | EntityFlags::PLAYER_CONTROLLED;
 
 
     // A buffer layout takes in a vector of buffer attributes, where each buffer attribute

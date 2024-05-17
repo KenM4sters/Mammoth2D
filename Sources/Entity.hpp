@@ -8,14 +8,14 @@ namespace Super
 {
 using EntityID = uint16_t;
 
-typedef enum entity_flags 
+typedef enum entityflags 
 {
     ACTIVE              = 1,
     PLAYER_CONTROLLED   = 1 << 1,
     IS_RIGID            = 1 << 2,
     HAS_MOTION          = 1 << 3,
     HAS_HEALTH          = 1 << 4,    
-} Entity_Flags;
+} EntityFlags;
 
 
 typedef struct transform 
