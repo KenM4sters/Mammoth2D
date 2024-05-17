@@ -26,6 +26,5 @@ public:
 
 private:
     Entity* mPlayer = nullptr;
-    
 };
 }
