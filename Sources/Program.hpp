@@ -1,11 +1,12 @@
 #pragma once
 #include <vector>
 #include "Window.hpp"
-#include "Pipeline.hpp"
+#include "Graphics/Pipelines/Pipeline.hpp"
 #include "Device.hpp"
-#include "SwapChain.hpp"
-#include "Renderer.hpp"
-#include "Scene.hpp"
+#include "Graphics/Renderer/SwapChain.hpp"
+#include "Graphics/Renderer/Renderer.hpp"
+#include "Scene/Scene.hpp"
+#include "Input.hpp"
 
 namespace Super
 {
@@ -24,14 +25,13 @@ public:
 
 private:
 
-    std::shared_ptr<Window> mWindow = nullptr;
-
-    std::shared_ptr<Device> mDevice = nullptr;
+    Window mWindow;
+    Device mDevice{mWindow};
 
     std::unique_ptr<Renderer> mRenderer = nullptr;
-    
-    std::shared_ptr<Scene> mScene = nullptr;
+    std::unique_ptr<Scene> mScene = nullptr;
 
+    Input mInput{};
 
 };
 }

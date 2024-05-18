@@ -22,7 +22,7 @@ public:
 
     inline VkExtent2D GetExtent() const { return {mWidth, mHeight}; }
 
-    inline const GLFWwindow* GetNativeWindow() const { return mWindow; } 
+    inline GLFWwindow* GetNativeWindow() const { return mWindow; } 
 
     void CreateWindowSurface(VkInstance instance, VkSurfaceKHR* surface) const;
 

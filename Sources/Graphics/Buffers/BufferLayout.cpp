@@ -15,7 +15,7 @@ std::vector<float> SQUARE_VERTICES =
     1.0f, 0.0f, // bottom-right
 };   
 
-void SetVertexBufferFromVertices(std::shared_ptr<Device>& device, VkBuffer& buffer, VkDeviceMemory& deviceMemory, const std::vector<float>& vertices) 
+void SetVertexBufferFromVertices(Device& device, VkBuffer& buffer, VkDeviceMemory& deviceMemory, const std::vector<float>& vertices) 
 {
     VkBufferCreateInfo bufferInfo{};
     bufferInfo.sType = VK_STRUCTURE_TYPE_BUFFER_CREATE_INFO;
@@ -23,16 +23,16 @@ void SetVertexBufferFromVertices(std::shared_ptr<Device>& device, VkBuffer& buff
     bufferInfo.usage = VK_BUFFER_USAGE_VERTEX_BUFFER_BIT;
     bufferInfo.sharingMode = VK_SHARING_MODE_EXCLUSIVE;
 
-    if(vkCreateBuffer(device->GetDevice(), &bufferInfo, nullptr, &buffer) != VK_SUCCESS) 
+    if(vkCreateBuffer(device.GetDevice(), &bufferInfo, nullptr, &buffer) != VK_SUCCESS) 
     {
         throw std::runtime_error("Failed to create vertex buffer!");
     }
 
     VkMemoryRequirements requirements;
-    vkGetBufferMemoryRequirements(device->GetDevice(), buffer, &requirements);
+    vkGetBufferMemoryRequirements(device.GetDevice(), buffer, &requirements);
 
     VkPhysicalDeviceMemoryProperties memProperties;
-    vkGetPhysicalDeviceMemoryProperties(device->GetPhysicalDevice(), &memProperties);
+    vkGetPhysicalDeviceMemoryProperties(device.GetPhysicalDevice(), &memProperties);
 
     VkMemoryAllocateInfo allocInfo{};
     allocInfo.sType = VK_STRUCTURE_TYPE_MEMORY_ALLOCATE_INFO;
@@ -43,19 +43,19 @@ void SetVertexBufferFromVertices(std::shared_ptr<Device>& device, VkBuffer& buff
         VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT
     );
 
-    if(vkAllocateMemory(device->GetDevice(), &allocInfo, nullptr, &deviceMemory) != VK_SUCCESS) 
+    if(vkAllocateMemory(device.GetDevice(), &allocInfo, nullptr, &deviceMemory) != VK_SUCCESS) 
     {
         throw std::runtime_error("Failed to allocate memory for vertex buffer!");
     }
 
-    vkBindBufferMemory(device->GetDevice(), buffer, deviceMemory, 0);
+    vkBindBufferMemory(device.GetDevice(), buffer, deviceMemory, 0);
 
     void* data;
-    vkMapMemory(device->GetDevice(), deviceMemory, 0, bufferInfo.size, 0, &data);
+    vkMapMemory(device.GetDevice(), deviceMemory, 0, bufferInfo.size, 0, &data);
 
     memcpy(data, vertices.data(), (size_t)bufferInfo.size);
 
-    vkUnmapMemory(device->GetDevice(), deviceMemory);
+    vkUnmapMemory(device.GetDevice(), deviceMemory);
 
 }
 

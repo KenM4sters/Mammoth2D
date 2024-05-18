@@ -1,13 +1,13 @@
 #include "Renderer.hpp"
-#include "RenderSystems/PlayerSystem.hpp"
+#include "PlayerSystem.hpp"
 #include <cassert>
 
 namespace Super 
 {
-Renderer::Renderer(std::shared_ptr<Device>& device, std::shared_ptr<Window>& window) 
+Renderer::Renderer(Device& device, Window& window) 
     : mDevice{device}, mWindow{window}
 {
-    mSwapChain = std::make_unique<SwapChain>(mDevice, mWindow->GetExtent());
+    mSwapChain = std::make_unique<SwapChain>(mDevice, mWindow.GetExtent());
 
     RenderSystem* playerSystem = new PlayerSystem(mDevice, mSwapChain->GetRenderPass(), mSwapChain->GetWidth(), mSwapChain->GetHeight());
     mRenderSystems.push_back(playerSystem);  
@@ -29,14 +29,14 @@ Renderer::~Renderer()
 
 void Renderer::RecreateSwapChain() 
 {
-    auto extent = mWindow->GetExtent();
+    auto extent = mWindow.GetExtent();
     while(extent.width == 0 || extent.height == 0) 
     {
-        extent = mWindow->GetExtent();
+        extent = mWindow.GetExtent();
         glfwWaitEvents();
     }
 
-    vkDeviceWaitIdle(mDevice->GetDevice());
+    vkDeviceWaitIdle(mDevice.GetDevice());
 
     if(mSwapChain == nullptr) 
     {
@@ -66,10 +66,10 @@ void Renderer::CreateCommandBufffers()
     VkCommandBufferAllocateInfo allocInfo{};
     allocInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO;
     allocInfo.level = VK_COMMAND_BUFFER_LEVEL_PRIMARY;
-    allocInfo.commandPool = mDevice->GetCommandPool();
+    allocInfo.commandPool = mDevice.GetCommandPool();
     allocInfo.commandBufferCount = static_cast<uint32_t>(mCommandBuffers.size());
 
-    if(vkAllocateCommandBuffers(mDevice->GetDevice(), &allocInfo, mCommandBuffers.data()) != VK_SUCCESS) 
+    if(vkAllocateCommandBuffers(mDevice.GetDevice(), &allocInfo, mCommandBuffers.data()) != VK_SUCCESS) 
     {
         throw std::runtime_error("Failed to create command buffers!");
     }
@@ -116,7 +116,7 @@ void Renderer::Render(VkCommandBuffer commandBuffer, std::vector<Entity>& entiti
 
 void Renderer::FreeCommandBuffers() 
 {
-    vkFreeCommandBuffers(mDevice->GetDevice(), mDevice->GetCommandPool(), 
+    vkFreeCommandBuffers(mDevice.GetDevice(), mDevice.GetCommandPool(), 
         static_cast<uint32_t>(mCommandBuffers.size()), mCommandBuffers.data());
 
     mCommandBuffers.clear();
@@ -143,7 +143,7 @@ void Renderer::BeginRenderPass(VkCommandBuffer commandBuffer)
     renderPassInfo.pClearValues = clearValues.data();
 
     vkCmdBeginRenderPass(commandBuffer, &renderPassInfo, VK_SUBPASS_CONTENTS_INLINE);
-
+    
     VkViewport viewport{};
     viewport.x = 0.0f;
     viewport.y = 0.0f;

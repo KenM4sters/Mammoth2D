@@ -168,54 +168,6 @@ glfw/fast:
 	$(MAKE) $(MAKESILENT) -f External/glfw/src/CMakeFiles/glfw.dir/build.make External/glfw/src/CMakeFiles/glfw.dir/build
 .PHONY : glfw/fast
 
-Sources/Buffer.o: Sources/Buffer.cpp.o
-.PHONY : Sources/Buffer.o
-
-# target to build an object file
-Sources/Buffer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Buffer.cpp.o
-.PHONY : Sources/Buffer.cpp.o
-
-Sources/Buffer.i: Sources/Buffer.cpp.i
-.PHONY : Sources/Buffer.i
-
-# target to preprocess a source file
-Sources/Buffer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Buffer.cpp.i
-.PHONY : Sources/Buffer.cpp.i
-
-Sources/Buffer.s: Sources/Buffer.cpp.s
-.PHONY : Sources/Buffer.s
-
-# target to generate assembly for a file
-Sources/Buffer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Buffer.cpp.s
-.PHONY : Sources/Buffer.cpp.s
-
-Sources/BufferLayout.o: Sources/BufferLayout.cpp.o
-.PHONY : Sources/BufferLayout.o
-
-# target to build an object file
-Sources/BufferLayout.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/BufferLayout.cpp.o
-.PHONY : Sources/BufferLayout.cpp.o
-
-Sources/BufferLayout.i: Sources/BufferLayout.cpp.i
-.PHONY : Sources/BufferLayout.i
-
-# target to preprocess a source file
-Sources/BufferLayout.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/BufferLayout.cpp.i
-.PHONY : Sources/BufferLayout.cpp.i
-
-Sources/BufferLayout.s: Sources/BufferLayout.cpp.s
-.PHONY : Sources/BufferLayout.s
-
-# target to generate assembly for a file
-Sources/BufferLayout.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/BufferLayout.cpp.s
-.PHONY : Sources/BufferLayout.cpp.s
-
 Sources/Camera.o: Sources/Camera.cpp.o
 .PHONY : Sources/Camera.o
 
@@ -264,29 +216,197 @@ Sources/Device.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Device.cpp.s
 .PHONY : Sources/Device.cpp.s
 
-Sources/Pipeline.o: Sources/Pipeline.cpp.o
-.PHONY : Sources/Pipeline.o
+Sources/Events/EventSystem.o: Sources/Events/EventSystem.cpp.o
+.PHONY : Sources/Events/EventSystem.o
 
 # target to build an object file
-Sources/Pipeline.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Pipeline.cpp.o
-.PHONY : Sources/Pipeline.cpp.o
+Sources/Events/EventSystem.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Events/EventSystem.cpp.o
+.PHONY : Sources/Events/EventSystem.cpp.o
 
-Sources/Pipeline.i: Sources/Pipeline.cpp.i
-.PHONY : Sources/Pipeline.i
+Sources/Events/EventSystem.i: Sources/Events/EventSystem.cpp.i
+.PHONY : Sources/Events/EventSystem.i
 
 # target to preprocess a source file
-Sources/Pipeline.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Pipeline.cpp.i
-.PHONY : Sources/Pipeline.cpp.i
+Sources/Events/EventSystem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Events/EventSystem.cpp.i
+.PHONY : Sources/Events/EventSystem.cpp.i
 
-Sources/Pipeline.s: Sources/Pipeline.cpp.s
-.PHONY : Sources/Pipeline.s
+Sources/Events/EventSystem.s: Sources/Events/EventSystem.cpp.s
+.PHONY : Sources/Events/EventSystem.s
 
 # target to generate assembly for a file
-Sources/Pipeline.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Pipeline.cpp.s
-.PHONY : Sources/Pipeline.cpp.s
+Sources/Events/EventSystem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Events/EventSystem.cpp.s
+.PHONY : Sources/Events/EventSystem.cpp.s
+
+Sources/Graphics/Buffers/Buffer.o: Sources/Graphics/Buffers/Buffer.cpp.o
+.PHONY : Sources/Graphics/Buffers/Buffer.o
+
+# target to build an object file
+Sources/Graphics/Buffers/Buffer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/Buffer.cpp.o
+.PHONY : Sources/Graphics/Buffers/Buffer.cpp.o
+
+Sources/Graphics/Buffers/Buffer.i: Sources/Graphics/Buffers/Buffer.cpp.i
+.PHONY : Sources/Graphics/Buffers/Buffer.i
+
+# target to preprocess a source file
+Sources/Graphics/Buffers/Buffer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/Buffer.cpp.i
+.PHONY : Sources/Graphics/Buffers/Buffer.cpp.i
+
+Sources/Graphics/Buffers/Buffer.s: Sources/Graphics/Buffers/Buffer.cpp.s
+.PHONY : Sources/Graphics/Buffers/Buffer.s
+
+# target to generate assembly for a file
+Sources/Graphics/Buffers/Buffer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/Buffer.cpp.s
+.PHONY : Sources/Graphics/Buffers/Buffer.cpp.s
+
+Sources/Graphics/Buffers/BufferLayout.o: Sources/Graphics/Buffers/BufferLayout.cpp.o
+.PHONY : Sources/Graphics/Buffers/BufferLayout.o
+
+# target to build an object file
+Sources/Graphics/Buffers/BufferLayout.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/BufferLayout.cpp.o
+.PHONY : Sources/Graphics/Buffers/BufferLayout.cpp.o
+
+Sources/Graphics/Buffers/BufferLayout.i: Sources/Graphics/Buffers/BufferLayout.cpp.i
+.PHONY : Sources/Graphics/Buffers/BufferLayout.i
+
+# target to preprocess a source file
+Sources/Graphics/Buffers/BufferLayout.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/BufferLayout.cpp.i
+.PHONY : Sources/Graphics/Buffers/BufferLayout.cpp.i
+
+Sources/Graphics/Buffers/BufferLayout.s: Sources/Graphics/Buffers/BufferLayout.cpp.s
+.PHONY : Sources/Graphics/Buffers/BufferLayout.s
+
+# target to generate assembly for a file
+Sources/Graphics/Buffers/BufferLayout.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/BufferLayout.cpp.s
+.PHONY : Sources/Graphics/Buffers/BufferLayout.cpp.s
+
+Sources/Graphics/Pipelines/Pipeline.o: Sources/Graphics/Pipelines/Pipeline.cpp.o
+.PHONY : Sources/Graphics/Pipelines/Pipeline.o
+
+# target to build an object file
+Sources/Graphics/Pipelines/Pipeline.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Pipeline.cpp.o
+.PHONY : Sources/Graphics/Pipelines/Pipeline.cpp.o
+
+Sources/Graphics/Pipelines/Pipeline.i: Sources/Graphics/Pipelines/Pipeline.cpp.i
+.PHONY : Sources/Graphics/Pipelines/Pipeline.i
+
+# target to preprocess a source file
+Sources/Graphics/Pipelines/Pipeline.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Pipeline.cpp.i
+.PHONY : Sources/Graphics/Pipelines/Pipeline.cpp.i
+
+Sources/Graphics/Pipelines/Pipeline.s: Sources/Graphics/Pipelines/Pipeline.cpp.s
+.PHONY : Sources/Graphics/Pipelines/Pipeline.s
+
+# target to generate assembly for a file
+Sources/Graphics/Pipelines/Pipeline.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Pipeline.cpp.s
+.PHONY : Sources/Graphics/Pipelines/Pipeline.cpp.s
+
+Sources/Graphics/Renderer/PlayerSystem.o: Sources/Graphics/Renderer/PlayerSystem.cpp.o
+.PHONY : Sources/Graphics/Renderer/PlayerSystem.o
+
+# target to build an object file
+Sources/Graphics/Renderer/PlayerSystem.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/PlayerSystem.cpp.o
+.PHONY : Sources/Graphics/Renderer/PlayerSystem.cpp.o
+
+Sources/Graphics/Renderer/PlayerSystem.i: Sources/Graphics/Renderer/PlayerSystem.cpp.i
+.PHONY : Sources/Graphics/Renderer/PlayerSystem.i
+
+# target to preprocess a source file
+Sources/Graphics/Renderer/PlayerSystem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/PlayerSystem.cpp.i
+.PHONY : Sources/Graphics/Renderer/PlayerSystem.cpp.i
+
+Sources/Graphics/Renderer/PlayerSystem.s: Sources/Graphics/Renderer/PlayerSystem.cpp.s
+.PHONY : Sources/Graphics/Renderer/PlayerSystem.s
+
+# target to generate assembly for a file
+Sources/Graphics/Renderer/PlayerSystem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/PlayerSystem.cpp.s
+.PHONY : Sources/Graphics/Renderer/PlayerSystem.cpp.s
+
+Sources/Graphics/Renderer/Renderer.o: Sources/Graphics/Renderer/Renderer.cpp.o
+.PHONY : Sources/Graphics/Renderer/Renderer.o
+
+# target to build an object file
+Sources/Graphics/Renderer/Renderer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/Renderer.cpp.o
+.PHONY : Sources/Graphics/Renderer/Renderer.cpp.o
+
+Sources/Graphics/Renderer/Renderer.i: Sources/Graphics/Renderer/Renderer.cpp.i
+.PHONY : Sources/Graphics/Renderer/Renderer.i
+
+# target to preprocess a source file
+Sources/Graphics/Renderer/Renderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/Renderer.cpp.i
+.PHONY : Sources/Graphics/Renderer/Renderer.cpp.i
+
+Sources/Graphics/Renderer/Renderer.s: Sources/Graphics/Renderer/Renderer.cpp.s
+.PHONY : Sources/Graphics/Renderer/Renderer.s
+
+# target to generate assembly for a file
+Sources/Graphics/Renderer/Renderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/Renderer.cpp.s
+.PHONY : Sources/Graphics/Renderer/Renderer.cpp.s
+
+Sources/Graphics/Renderer/SwapChain.o: Sources/Graphics/Renderer/SwapChain.cpp.o
+.PHONY : Sources/Graphics/Renderer/SwapChain.o
+
+# target to build an object file
+Sources/Graphics/Renderer/SwapChain.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/SwapChain.cpp.o
+.PHONY : Sources/Graphics/Renderer/SwapChain.cpp.o
+
+Sources/Graphics/Renderer/SwapChain.i: Sources/Graphics/Renderer/SwapChain.cpp.i
+.PHONY : Sources/Graphics/Renderer/SwapChain.i
+
+# target to preprocess a source file
+Sources/Graphics/Renderer/SwapChain.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/SwapChain.cpp.i
+.PHONY : Sources/Graphics/Renderer/SwapChain.cpp.i
+
+Sources/Graphics/Renderer/SwapChain.s: Sources/Graphics/Renderer/SwapChain.cpp.s
+.PHONY : Sources/Graphics/Renderer/SwapChain.s
+
+# target to generate assembly for a file
+Sources/Graphics/Renderer/SwapChain.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/SwapChain.cpp.s
+.PHONY : Sources/Graphics/Renderer/SwapChain.cpp.s
+
+Sources/Input.o: Sources/Input.cpp.o
+.PHONY : Sources/Input.o
+
+# target to build an object file
+Sources/Input.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Input.cpp.o
+.PHONY : Sources/Input.cpp.o
+
+Sources/Input.i: Sources/Input.cpp.i
+.PHONY : Sources/Input.i
+
+# target to preprocess a source file
+Sources/Input.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Input.cpp.i
+.PHONY : Sources/Input.cpp.i
+
+Sources/Input.s: Sources/Input.cpp.s
+.PHONY : Sources/Input.s
+
+# target to generate assembly for a file
+Sources/Input.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Input.cpp.s
+.PHONY : Sources/Input.cpp.s
 
 Sources/Program.o: Sources/Program.cpp.o
 .PHONY : Sources/Program.o
@@ -312,101 +432,29 @@ Sources/Program.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Program.cpp.s
 .PHONY : Sources/Program.cpp.s
 
-Sources/RenderSystems/PlayerSystem.o: Sources/RenderSystems/PlayerSystem.cpp.o
-.PHONY : Sources/RenderSystems/PlayerSystem.o
+Sources/Scene/Scene.o: Sources/Scene/Scene.cpp.o
+.PHONY : Sources/Scene/Scene.o
 
 # target to build an object file
-Sources/RenderSystems/PlayerSystem.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/RenderSystems/PlayerSystem.cpp.o
-.PHONY : Sources/RenderSystems/PlayerSystem.cpp.o
+Sources/Scene/Scene.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Scene/Scene.cpp.o
+.PHONY : Sources/Scene/Scene.cpp.o
 
-Sources/RenderSystems/PlayerSystem.i: Sources/RenderSystems/PlayerSystem.cpp.i
-.PHONY : Sources/RenderSystems/PlayerSystem.i
-
-# target to preprocess a source file
-Sources/RenderSystems/PlayerSystem.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/RenderSystems/PlayerSystem.cpp.i
-.PHONY : Sources/RenderSystems/PlayerSystem.cpp.i
-
-Sources/RenderSystems/PlayerSystem.s: Sources/RenderSystems/PlayerSystem.cpp.s
-.PHONY : Sources/RenderSystems/PlayerSystem.s
-
-# target to generate assembly for a file
-Sources/RenderSystems/PlayerSystem.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/RenderSystems/PlayerSystem.cpp.s
-.PHONY : Sources/RenderSystems/PlayerSystem.cpp.s
-
-Sources/Renderer.o: Sources/Renderer.cpp.o
-.PHONY : Sources/Renderer.o
-
-# target to build an object file
-Sources/Renderer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Renderer.cpp.o
-.PHONY : Sources/Renderer.cpp.o
-
-Sources/Renderer.i: Sources/Renderer.cpp.i
-.PHONY : Sources/Renderer.i
+Sources/Scene/Scene.i: Sources/Scene/Scene.cpp.i
+.PHONY : Sources/Scene/Scene.i
 
 # target to preprocess a source file
-Sources/Renderer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Renderer.cpp.i
-.PHONY : Sources/Renderer.cpp.i
+Sources/Scene/Scene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Scene/Scene.cpp.i
+.PHONY : Sources/Scene/Scene.cpp.i
 
-Sources/Renderer.s: Sources/Renderer.cpp.s
-.PHONY : Sources/Renderer.s
-
-# target to generate assembly for a file
-Sources/Renderer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Renderer.cpp.s
-.PHONY : Sources/Renderer.cpp.s
-
-Sources/Scene.o: Sources/Scene.cpp.o
-.PHONY : Sources/Scene.o
-
-# target to build an object file
-Sources/Scene.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Scene.cpp.o
-.PHONY : Sources/Scene.cpp.o
-
-Sources/Scene.i: Sources/Scene.cpp.i
-.PHONY : Sources/Scene.i
-
-# target to preprocess a source file
-Sources/Scene.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Scene.cpp.i
-.PHONY : Sources/Scene.cpp.i
-
-Sources/Scene.s: Sources/Scene.cpp.s
-.PHONY : Sources/Scene.s
+Sources/Scene/Scene.s: Sources/Scene/Scene.cpp.s
+.PHONY : Sources/Scene/Scene.s
 
 # target to generate assembly for a file
-Sources/Scene.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Scene.cpp.s
-.PHONY : Sources/Scene.cpp.s
-
-Sources/SwapChain.o: Sources/SwapChain.cpp.o
-.PHONY : Sources/SwapChain.o
-
-# target to build an object file
-Sources/SwapChain.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/SwapChain.cpp.o
-.PHONY : Sources/SwapChain.cpp.o
-
-Sources/SwapChain.i: Sources/SwapChain.cpp.i
-.PHONY : Sources/SwapChain.i
-
-# target to preprocess a source file
-Sources/SwapChain.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/SwapChain.cpp.i
-.PHONY : Sources/SwapChain.cpp.i
-
-Sources/SwapChain.s: Sources/SwapChain.cpp.s
-.PHONY : Sources/SwapChain.s
-
-# target to generate assembly for a file
-Sources/SwapChain.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/SwapChain.cpp.s
-.PHONY : Sources/SwapChain.cpp.s
+Sources/Scene/Scene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Scene/Scene.cpp.s
+.PHONY : Sources/Scene/Scene.cpp.s
 
 Sources/Window.o: Sources/Window.cpp.o
 .PHONY : Sources/Window.o
@@ -468,36 +516,42 @@ help:
 	@echo "... update_mappings"
 	@echo "... Vulkan2D"
 	@echo "... glfw"
-	@echo "... Sources/Buffer.o"
-	@echo "... Sources/Buffer.i"
-	@echo "... Sources/Buffer.s"
-	@echo "... Sources/BufferLayout.o"
-	@echo "... Sources/BufferLayout.i"
-	@echo "... Sources/BufferLayout.s"
 	@echo "... Sources/Camera.o"
 	@echo "... Sources/Camera.i"
 	@echo "... Sources/Camera.s"
 	@echo "... Sources/Device.o"
 	@echo "... Sources/Device.i"
 	@echo "... Sources/Device.s"
-	@echo "... Sources/Pipeline.o"
-	@echo "... Sources/Pipeline.i"
-	@echo "... Sources/Pipeline.s"
+	@echo "... Sources/Events/EventSystem.o"
+	@echo "... Sources/Events/EventSystem.i"
+	@echo "... Sources/Events/EventSystem.s"
+	@echo "... Sources/Graphics/Buffers/Buffer.o"
+	@echo "... Sources/Graphics/Buffers/Buffer.i"
+	@echo "... Sources/Graphics/Buffers/Buffer.s"
+	@echo "... Sources/Graphics/Buffers/BufferLayout.o"
+	@echo "... Sources/Graphics/Buffers/BufferLayout.i"
+	@echo "... Sources/Graphics/Buffers/BufferLayout.s"
+	@echo "... Sources/Graphics/Pipelines/Pipeline.o"
+	@echo "... Sources/Graphics/Pipelines/Pipeline.i"
+	@echo "... Sources/Graphics/Pipelines/Pipeline.s"
+	@echo "... Sources/Graphics/Renderer/PlayerSystem.o"
+	@echo "... Sources/Graphics/Renderer/PlayerSystem.i"
+	@echo "... Sources/Graphics/Renderer/PlayerSystem.s"
+	@echo "... Sources/Graphics/Renderer/Renderer.o"
+	@echo "... Sources/Graphics/Renderer/Renderer.i"
+	@echo "... Sources/Graphics/Renderer/Renderer.s"
+	@echo "... Sources/Graphics/Renderer/SwapChain.o"
+	@echo "... Sources/Graphics/Renderer/SwapChain.i"
+	@echo "... Sources/Graphics/Renderer/SwapChain.s"
+	@echo "... Sources/Input.o"
+	@echo "... Sources/Input.i"
+	@echo "... Sources/Input.s"
 	@echo "... Sources/Program.o"
 	@echo "... Sources/Program.i"
 	@echo "... Sources/Program.s"
-	@echo "... Sources/RenderSystems/PlayerSystem.o"
-	@echo "... Sources/RenderSystems/PlayerSystem.i"
-	@echo "... Sources/RenderSystems/PlayerSystem.s"
-	@echo "... Sources/Renderer.o"
-	@echo "... Sources/Renderer.i"
-	@echo "... Sources/Renderer.s"
-	@echo "... Sources/Scene.o"
-	@echo "... Sources/Scene.i"
-	@echo "... Sources/Scene.s"
-	@echo "... Sources/SwapChain.o"
-	@echo "... Sources/SwapChain.i"
-	@echo "... Sources/SwapChain.s"
+	@echo "... Sources/Scene/Scene.o"
+	@echo "... Sources/Scene/Scene.i"
+	@echo "... Sources/Scene/Scene.s"
 	@echo "... Sources/Window.o"
 	@echo "... Sources/Window.i"
 	@echo "... Sources/Window.s"

@@ -1,8 +1,8 @@
 #pragma once
 #include <glm/glm.hpp>
 #include <vulkan/vulkan.hpp>
-#include "../Pipeline.hpp"
-#include "Entity.hpp"
+#include "Graphics/Pipelines/Pipeline.hpp"
+#include "Scene/Entity.hpp"
 
 namespace Super 
 {
@@ -16,14 +16,14 @@ typedef struct SimplePushConstants {
 class RenderSystem 
 {
 public: 
-    RenderSystem(const std::shared_ptr<Device>& device, VkRenderPass renderPass, uint32_t width, uint32_t height)
+    RenderSystem(Device& device, VkRenderPass renderPass, uint32_t width, uint32_t height)
         : mDevice{device} 
     {
     }
 
     virtual ~RenderSystem() 
     {
-        vkDestroyPipelineLayout(mDevice->GetDevice(), mPipelineLayout, nullptr);
+        vkDestroyPipelineLayout(mDevice.GetDevice(), mPipelineLayout, nullptr);
     }
 
     virtual void CreatePipelineLayout() = 0;
@@ -36,7 +36,7 @@ public:
 
 protected:
 
-    std::shared_ptr<Device> mDevice = nullptr;
+    Device& mDevice;
     std::unique_ptr<Pipeline> mPipeline = nullptr;
     VkPipelineLayout mPipelineLayout{};
 };

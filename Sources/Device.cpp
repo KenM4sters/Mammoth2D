@@ -12,7 +12,8 @@ static VKAPI_ATTR VkBool32 VKAPI_CALL DebugCallback(
     VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity,
     VkDebugUtilsMessageTypeFlagsEXT messageType,
     const VkDebugUtilsMessengerCallbackDataEXT *pCallbackData,
-    void *pUserData) {
+    void *pUserData) 
+{
   std::cerr << "validation layer: " << pCallbackData->pMessage << std::endl;
 
   return VK_FALSE;
@@ -22,7 +23,8 @@ VkResult CreateDebugUtilsMessengerEXT(
     VkInstance instance,
     const VkDebugUtilsMessengerCreateInfoEXT *pCreateInfo,
     const VkAllocationCallbacks *pAllocator,
-    VkDebugUtilsMessengerEXT *pDebugMessenger) {
+    VkDebugUtilsMessengerEXT *pDebugMessenger) 
+{
   auto func = (PFN_vkCreateDebugUtilsMessengerEXT)vkGetInstanceProcAddr(
       instance,
       "vkCreateDebugUtilsMessengerEXT");
@@ -36,7 +38,8 @@ VkResult CreateDebugUtilsMessengerEXT(
 void DestroyDebugUtilsMessengerEXT(
     VkInstance instance,
     VkDebugUtilsMessengerEXT debugMessenger,
-    const VkAllocationCallbacks *pAllocator) {
+    const VkAllocationCallbacks *pAllocator) 
+{
   auto func = (PFN_vkDestroyDebugUtilsMessengerEXT)vkGetInstanceProcAddr(
       instance,
       "vkDestroyDebugUtilsMessengerEXT");
@@ -49,7 +52,7 @@ void DestroyDebugUtilsMessengerEXT(
 
 // Class Implementation.
 //
-Device::Device(std::shared_ptr<Window>& window)
+Device::Device(Window& window)
     : mWindow{window}
 {
     CreateInstance();
@@ -113,7 +116,7 @@ void Device::CreateInstance()
 
 void Device::CreateSurface() 
 {
-    mWindow->CreateWindowSurface(mInstance, &mSurface);
+    mWindow.CreateWindowSurface(mInstance, &mSurface);
 }
 
 void Device::ChoosePhysicalDevice() 

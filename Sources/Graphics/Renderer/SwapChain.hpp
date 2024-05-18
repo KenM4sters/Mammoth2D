@@ -7,8 +7,8 @@ namespace Super
 class SwapChain 
 {
 public:
-    SwapChain(std::shared_ptr<Device>& device, VkExtent2D extent);
-    SwapChain(std::shared_ptr<Device>& device, VkExtent2D extent, std::shared_ptr<SwapChain>& previous);
+    SwapChain(Device& device, VkExtent2D extent);
+    SwapChain(Device& device, VkExtent2D extent, std::shared_ptr<SwapChain>& previous);
     ~SwapChain();
 
     SwapChain(const SwapChain& other) = delete;
@@ -57,7 +57,7 @@ private:
     VkPresentModeKHR ChooseSwapPresentMode(const std::vector<VkPresentModeKHR> &availablePresentModes);
     VkExtent2D ChooseSwapExtent(const VkSurfaceCapabilitiesKHR &capabilities);
 
-    std::shared_ptr<Device> mDevice = nullptr;
+    Device& mDevice;
     std::shared_ptr<SwapChain> mPreviousSwapChain = nullptr;
     VkExtent2D mWindowExtent;
     VkSwapchainKHR mSwapChain;

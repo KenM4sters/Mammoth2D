@@ -7,13 +7,15 @@
 namespace Super 
 {
 
-struct Swap_Chain_Support_Details {
+struct Swap_Chain_Support_Details 
+{
   VkSurfaceCapabilitiesKHR capabilities;
   std::vector<VkSurfaceFormatKHR> formats;
   std::vector<VkPresentModeKHR> presentModes;
 };
 
-struct Queue_Family_Indices {
+struct Queue_Family_Indices 
+{
   uint32_t graphicsFamily;
   uint32_t presentFamily;
   bool graphicsFamilyHasValue = false;
@@ -24,7 +26,7 @@ struct Queue_Family_Indices {
 class Device 
 {
 public:
-    Device(std::shared_ptr<Window>& window);
+    Device(Window& window);
     ~Device();
 
     #ifdef NDEBUG
@@ -114,7 +116,7 @@ private:
 
     const std::vector<const char*> GetAllRequiredExtensions() const;
     
-    std::shared_ptr<Window> mWindow = nullptr;
+    Window& mWindow;
 
     VkInstance mInstance;
     VkDevice mDevice;

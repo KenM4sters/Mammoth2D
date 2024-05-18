@@ -1,14 +1,14 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include "PlayerSystem.hpp"
-#include "../EntityManager.hpp"
-#include "../BufferLayout.hpp"
-#include "../Scene.hpp"
+#include "Scene/EntityManager.hpp"
+#include "Graphics/Buffers/BufferLayout.hpp"
+#include "Scene/Scene.hpp"
 
 
 namespace Super
 {
 
-PlayerSystem::PlayerSystem(const std::shared_ptr<Device>& device, VkRenderPass renderPass, uint32_t height, uint32_t width)
+PlayerSystem::PlayerSystem(Device& device, VkRenderPass renderPass, uint32_t height, uint32_t width)
     : RenderSystem(device, renderPass, width, height)
 {
     CreatePlayerEntity();
@@ -31,7 +31,7 @@ void PlayerSystem::CreatePipelineLayout()
     pipelineLayoutInfo.pushConstantRangeCount = 1;
     pipelineLayoutInfo.pPushConstantRanges = &pushConstantRange;
     
-    if(vkCreatePipelineLayout(mDevice->GetDevice(), &pipelineLayoutInfo, nullptr, &mPipelineLayout) != VK_SUCCESS) 
+    if(vkCreatePipelineLayout(mDevice.GetDevice(), &pipelineLayoutInfo, nullptr, &mPipelineLayout) != VK_SUCCESS) 
     {
         throw std::runtime_error("Failed to create pipeline layout!");
     }
@@ -119,7 +119,7 @@ void PlayerSystem::CreatePlayerEntity()
         (void*)SQUARE_VERTICES.data()
     );
 
-    vkBindBufferMemory(mDevice->GetDevice(), mVertexBuffer->GetBuffer(), mVertexBuffer->GetBufferMemory(), 0);
+    vkBindBufferMemory(mDevice.GetDevice(), mVertexBuffer->GetBuffer(), mVertexBuffer->GetBufferMemory(), 0);
 
 }
 
@@ -133,9 +133,7 @@ void PlayerSystem::UpdatePushConstants(Entity& player)
     mPushConstants.transform.scale = player.transform.scale;
     mPushConstants.transform.modelMatrix = player.transform.modelMatrix;
 
-    const glm::mat4 projectionView = Scene::GetCamera()->GetProjectionViewMatrix();
-
-    mPushConstants.projectionViewMatrix = projectionView;
+    mPushConstants.projectionViewMatrix = Scene::GetCamera()->GetProjectionMatrix();
 }
 
 

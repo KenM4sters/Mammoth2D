@@ -1,4 +1,5 @@
 #include "Scene.hpp"
+#include "PlayerController.hpp"
 
 namespace Super 
 {
@@ -24,13 +25,16 @@ void Scene::CreateScene(uint32_t width, uint32_t height)
     //
     Entity player = Entity{};
     player.color = glm::vec3(0.5f, 0.1f, 1.0f);
-    player.transform = {glm::vec2(400, 400), glm::vec2(50, 50), glm::mat4{1.0f}};
+    player.transform = {glm::vec2(750, 450), glm::vec2(50, 50), glm::mat4{1.0f}};
     player.physics = {glm::vec2(0.0f, 0.0f), glm::vec2(0.0f, 0.0f)};
     player.flags = EntityFlags::ACTIVE | EntityFlags::HAS_HEALTH | EntityFlags::IS_RIGID 
     | EntityFlags::HAS_MOTION | EntityFlags::IS_PLAYER;
-    player.id = mEntityManager.CreateEntity(player);
+    player.id = mEntityManager.CreateEntity(std::move(player));
 
+    // Event Systems.
+    //
 
+    mEventSystems.emplace_back(std::move(std::make_unique<PlayerController>(mEntityManager.GetAllEntities()[0])));
     
 }
 }

@@ -19,15 +19,17 @@ add_executable(${PROJECT_NAME}
 	main.cpp
   Sources/Program.cpp
   Sources/Window.cpp
-  Sources/Pipeline.cpp
   Sources/Device.cpp
-  Sources/SwapChain.cpp
   Sources/Camera.cpp
-  Sources/Renderer.cpp
-  Sources/Buffer.cpp
-  Sources/BufferLayout.cpp
-  Sources/Scene.cpp
-  Sources/RenderSystems/PlayerSystem.cpp
+  Sources/Input.cpp
+  Sources/Graphics/Renderer/SwapChain.cpp
+  Sources/Graphics/Renderer/Renderer.cpp
+  Sources/Graphics/Renderer/PlayerSystem.cpp
+  Sources/Graphics/Pipelines/Pipeline.cpp
+  Sources/Graphics/Buffers/Buffer.cpp
+  Sources/Graphics/Buffers/BufferLayout.cpp
+  Sources/Scene/Scene.cpp
+  Sources/Events/EventSystem.cpp
 )
 
 if (DEFINED VULKAN_SDK_PATH)

@@ -5,20 +5,16 @@
 namespace Super
 {
 Program::Program(uint32_t width, uint32_t height, const char* name)
+    : mWindow{name, width, height}
 {
-
-    mWindow = std::make_shared<Window>(name, width, height);
-    
-    mDevice = std::make_shared<Device>(mWindow);
-
     mRenderer = std::make_unique<Renderer>(mDevice, mWindow);
 
-    mScene = std::make_shared<Scene>(width, height);
-
+    mScene = std::make_unique<Scene>(width, height);
 }
 
 Program::~Program()
 {
+    
 }
 
 void Program::Init()
@@ -31,6 +27,7 @@ void Program::Run()
     while(Window::IsRunning()) 
     {
         glfwPollEvents();
+        mInput.ListenToKeyboard(mWindow.GetNativeWindow());
         if(auto commandBuffer = mRenderer->Begin()) 
         {
             mRenderer->BeginRenderPass(commandBuffer);
@@ -40,6 +37,6 @@ void Program::Run()
         }
     }
 
-    vkDeviceWaitIdle(mDevice->GetDevice());
+    vkDeviceWaitIdle(mDevice.GetDevice());
 }
 }

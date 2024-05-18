@@ -8,16 +8,18 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/samuelbrookman/Desktop/Vulkan2D/Sources/Buffer.cpp" "CMakeFiles/Vulkan2D.dir/Sources/Buffer.cpp.o" "gcc" "CMakeFiles/Vulkan2D.dir/Sources/Buffer.cpp.o.d"
-  "/Users/samuelbrookman/Desktop/Vulkan2D/Sources/BufferLayout.cpp" "CMakeFiles/Vulkan2D.dir/Sources/BufferLayout.cpp.o" "gcc" "CMakeFiles/Vulkan2D.dir/Sources/BufferLayout.cpp.o.d"
   "/Users/samuelbrookman/Desktop/Vulkan2D/Sources/Camera.cpp" "CMakeFiles/Vulkan2D.dir/Sources/Camera.cpp.o" "gcc" "CMakeFiles/Vulkan2D.dir/Sources/Camera.cpp.o.d"
   "/Users/samuelbrookman/Desktop/Vulkan2D/Sources/Device.cpp" "CMakeFiles/Vulkan2D.dir/Sources/Device.cpp.o" "gcc" "CMakeFiles/Vulkan2D.dir/Sources/Device.cpp.o.d"
-  "/Users/samuelbrookman/Desktop/Vulkan2D/Sources/Pipeline.cpp" "CMakeFiles/Vulkan2D.dir/Sources/Pipeline.cpp.o" "gcc" "CMakeFiles/Vulkan2D.dir/Sources/Pipeline.cpp.o.d"
+  "/Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/EventSystem.cpp" "CMakeFiles/Vulkan2D.dir/Sources/Events/EventSystem.cpp.o" "gcc" "CMakeFiles/Vulkan2D.dir/Sources/Events/EventSystem.cpp.o.d"
+  "/Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Buffers/Buffer.cpp" "CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/Buffer.cpp.o" "gcc" "CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/Buffer.cpp.o.d"
+  "/Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Buffers/BufferLayout.cpp" "CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/BufferLayout.cpp.o" "gcc" "CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/BufferLayout.cpp.o.d"
+  "/Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/Pipeline.cpp" "CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Pipeline.cpp.o" "gcc" "CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Pipeline.cpp.o.d"
+  "/Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Renderer/PlayerSystem.cpp" "CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/PlayerSystem.cpp.o" "gcc" "CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/PlayerSystem.cpp.o.d"
+  "/Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Renderer/Renderer.cpp" "CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/Renderer.cpp.o" "gcc" "CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/Renderer.cpp.o.d"
+  "/Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Renderer/SwapChain.cpp" "CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/SwapChain.cpp.o" "gcc" "CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/SwapChain.cpp.o.d"
+  "/Users/samuelbrookman/Desktop/Vulkan2D/Sources/Input.cpp" "CMakeFiles/Vulkan2D.dir/Sources/Input.cpp.o" "gcc" "CMakeFiles/Vulkan2D.dir/Sources/Input.cpp.o.d"
   "/Users/samuelbrookman/Desktop/Vulkan2D/Sources/Program.cpp" "CMakeFiles/Vulkan2D.dir/Sources/Program.cpp.o" "gcc" "CMakeFiles/Vulkan2D.dir/Sources/Program.cpp.o.d"
-  "/Users/samuelbrookman/Desktop/Vulkan2D/Sources/RenderSystems/PlayerSystem.cpp" "CMakeFiles/Vulkan2D.dir/Sources/RenderSystems/PlayerSystem.cpp.o" "gcc" "CMakeFiles/Vulkan2D.dir/Sources/RenderSystems/PlayerSystem.cpp.o.d"
-  "/Users/samuelbrookman/Desktop/Vulkan2D/Sources/Renderer.cpp" "CMakeFiles/Vulkan2D.dir/Sources/Renderer.cpp.o" "gcc" "CMakeFiles/Vulkan2D.dir/Sources/Renderer.cpp.o.d"
-  "/Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene.cpp" "CMakeFiles/Vulkan2D.dir/Sources/Scene.cpp.o" "gcc" "CMakeFiles/Vulkan2D.dir/Sources/Scene.cpp.o.d"
-  "/Users/samuelbrookman/Desktop/Vulkan2D/Sources/SwapChain.cpp" "CMakeFiles/Vulkan2D.dir/Sources/SwapChain.cpp.o" "gcc" "CMakeFiles/Vulkan2D.dir/Sources/SwapChain.cpp.o.d"
+  "/Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/Scene.cpp" "CMakeFiles/Vulkan2D.dir/Sources/Scene/Scene.cpp.o" "gcc" "CMakeFiles/Vulkan2D.dir/Sources/Scene/Scene.cpp.o.d"
   "/Users/samuelbrookman/Desktop/Vulkan2D/Sources/Window.cpp" "CMakeFiles/Vulkan2D.dir/Sources/Window.cpp.o" "gcc" "CMakeFiles/Vulkan2D.dir/Sources/Window.cpp.o.d"
   "/Users/samuelbrookman/Desktop/Vulkan2D/main.cpp" "CMakeFiles/Vulkan2D.dir/main.cpp.o" "gcc" "CMakeFiles/Vulkan2D.dir/main.cpp.o.d"
   )

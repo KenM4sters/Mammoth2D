@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-#include "RenderSystems/RenderSystem.hpp"
+#include "RenderSystem.hpp"
 #include "Device.hpp"
 #include "SwapChain.hpp"
 
@@ -9,7 +9,7 @@ namespace Super
 class Renderer 
 {
 public:
-    Renderer(std::shared_ptr<Device>& device, std::shared_ptr<Window>& window);
+    Renderer(Device& device, Window& window);
     ~Renderer();
 
     VkCommandBuffer GetCurrentCommandBuffer() const;
@@ -25,11 +25,11 @@ public:
 
 
 private:
-    std::shared_ptr<Device> mDevice = nullptr;
+    Device& mDevice;
+
+    Window& mWindow;
 
     std::unique_ptr<SwapChain> mSwapChain = nullptr;
-
-    std::shared_ptr<Window> mWindow = nullptr;
     
     std::vector<VkCommandBuffer> mCommandBuffers{};
 

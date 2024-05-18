@@ -5,7 +5,7 @@
 
 namespace Super 
 {
-Pipeline::Pipeline(std::shared_ptr<Device> device, Pipeline_Desc desc, const char* vertSrc, const char* fragSrc)
+Pipeline::Pipeline(Device& device, Pipeline_Desc desc, const char* vertSrc, const char* fragSrc)
     : mDevice{device}
 {
     CreateGraphicsPipeline(desc, vertSrc, fragSrc);
@@ -13,9 +13,9 @@ Pipeline::Pipeline(std::shared_ptr<Device> device, Pipeline_Desc desc, const cha
 
 Pipeline::~Pipeline() 
 {
-    vkDestroyShaderModule(mDevice->GetDevice(), mVertexModule, nullptr);
-    vkDestroyShaderModule(mDevice->GetDevice(), mFragmentModule, nullptr);
-    vkDestroyPipeline(mDevice->GetDevice(), mPipeline, nullptr);
+    vkDestroyShaderModule(mDevice.GetDevice(), mVertexModule, nullptr);
+    vkDestroyShaderModule(mDevice.GetDevice(), mFragmentModule, nullptr);
+    vkDestroyPipeline(mDevice.GetDevice(), mPipeline, nullptr);
 }
 
 const std::vector<char> Pipeline::ReadFromFile(const char* filePath) const 
@@ -104,7 +104,7 @@ void Pipeline::CreateGraphicsPipeline(Pipeline_Desc& desc, const char* vertSrc, 
     pipelineInfo.basePipelineIndex = -1;
     pipelineInfo.basePipelineHandle = VK_NULL_HANDLE;
 
-    if(vkCreateGraphicsPipelines(mDevice->GetDevice(), VK_NULL_HANDLE, 1, &pipelineInfo, nullptr, &mPipeline) != VK_SUCCESS) 
+    if(vkCreateGraphicsPipelines(mDevice.GetDevice(), VK_NULL_HANDLE, 1, &pipelineInfo, nullptr, &mPipeline) != VK_SUCCESS) 
     {
         throw std::runtime_error("Failed to create graphics pipeline!");
     }
@@ -118,7 +118,7 @@ void Pipeline::CreateShaderModule(const std::vector<char>& code, VkShaderModule*
     createInfo.sType = VK_STRUCTURE_TYPE_SHADER_MODULE_CREATE_INFO;
     createInfo.pCode = reinterpret_cast<const uint32_t*>(code.data());
 
-    if(vkCreateShaderModule(mDevice->GetDevice(), &createInfo, nullptr, shaderModule) != VK_SUCCESS) 
+    if(vkCreateShaderModule(mDevice.GetDevice(), &createInfo, nullptr, shaderModule) != VK_SUCCESS) 
     {
         throw std::runtime_error("Failed to create shader module!");
     }

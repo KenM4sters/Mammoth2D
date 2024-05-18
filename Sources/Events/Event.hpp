@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-#include "../Entity.hpp"
+#include "../Scene/Entity.hpp"
 
 namespace Super
 {
@@ -25,4 +25,17 @@ public:
     Entity* mEntityA = nullptr;
     Entity* mEntityB = nullptr;
 };
+
+class KeyPressEvent : public IEvent 
+{
+public:
+    KeyPressEvent(const int key)
+        : mKey{key} 
+    {}
+
+    inline const std::string GetEventType() const override { return "KeyPressEvent";}
+
+    int mKey{0};
+};
+
 }

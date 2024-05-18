@@ -13,6 +13,15 @@ typedef std::list<IHandler*> HandlerList;
 class EventBus 
 {
 public:
+
+    ~EventBus() 
+    {
+        for(const auto& sub : mSubscribers) 
+        {
+            delete sub.second;
+        }
+    }
+
     template <typename EventType>
     void Publish(EventType* event)  
     {
@@ -30,6 +39,8 @@ public:
                 handler->Execute(event);   
             }
         }
+
+        delete event;
     }
 
 

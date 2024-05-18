@@ -2,7 +2,7 @@
 
 namespace Super 
 {
-Buffer::Buffer(const std::shared_ptr<Device>& device, VkDeviceSize deviceSize, VkBufferUsageFlags usage, VkMemoryPropertyFlags properties, const void* data)
+Buffer::Buffer(Device& device, VkDeviceSize deviceSize, VkBufferUsageFlags usage, VkMemoryPropertyFlags properties, const void* data)
     : mDevice{device}, mSize{deviceSize}
 {
     VkBufferCreateInfo bufferInfo{};
@@ -11,16 +11,16 @@ Buffer::Buffer(const std::shared_ptr<Device>& device, VkDeviceSize deviceSize, V
     bufferInfo.usage = usage;
     bufferInfo.sharingMode = VK_SHARING_MODE_EXCLUSIVE;
 
-    if(vkCreateBuffer(device->GetDevice(), &bufferInfo, nullptr, &mBuffer) != VK_SUCCESS) 
+    if(vkCreateBuffer(device.GetDevice(), &bufferInfo, nullptr, &mBuffer) != VK_SUCCESS) 
     {
         throw std::runtime_error("Failed to create vertex buffer!");
     }
 
     VkMemoryRequirements requirements;
-    vkGetBufferMemoryRequirements(device->GetDevice(), mBuffer, &requirements);
+    vkGetBufferMemoryRequirements(device.GetDevice(), mBuffer, &requirements);
 
     VkPhysicalDeviceMemoryProperties memProperties;
-    vkGetPhysicalDeviceMemoryProperties(device->GetPhysicalDevice(), &memProperties);
+    vkGetPhysicalDeviceMemoryProperties(device.GetPhysicalDevice(), &memProperties);
 
     VkMemoryAllocateInfo allocInfo{};
     allocInfo.sType = VK_STRUCTURE_TYPE_MEMORY_ALLOCATE_INFO;
@@ -31,7 +31,7 @@ Buffer::Buffer(const std::shared_ptr<Device>& device, VkDeviceSize deviceSize, V
         properties
     );
 
-    if(vkAllocateMemory(device->GetDevice(), &allocInfo, nullptr, &mBufferMemory) != VK_SUCCESS) 
+    if(vkAllocateMemory(device.GetDevice(), &allocInfo, nullptr, &mBufferMemory) != VK_SUCCESS) 
     {
         throw std::runtime_error("Failed to allocate memory for vertex buffer!");
     }
@@ -67,12 +67,12 @@ uint32_t Buffer::FindSuitableMemoryType(const uint32_t typeFilter, const VkPhysi
 //
 void Buffer::MapMemory(void** data) 
 {
-    vkMapMemory(mDevice->GetDevice(), mBufferMemory, 0, mSize, 0, data);
+    vkMapMemory(mDevice.GetDevice(), mBufferMemory, 0, mSize, 0, data);
 }
 
 void Buffer::UnMapMemory() 
 {
-    vkUnmapMemory(mDevice->GetDevice(), mBufferMemory);
+    vkUnmapMemory(mDevice.GetDevice(), mBufferMemory);
 }
 
 }

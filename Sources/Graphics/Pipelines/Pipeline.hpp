@@ -28,7 +28,7 @@ typedef struct pipeline_desc
 class Pipeline 
 {
 public:
-    Pipeline(std::shared_ptr<Device> device, Pipeline_Desc desc, const char* vertSrc, const char* fragSrc);
+    Pipeline(Device& device, Pipeline_Desc desc, const char* vertSrc, const char* fragSrc);
     ~Pipeline();
 
     // This class should not be copied or moved.
@@ -47,9 +47,9 @@ private:
 
     void CreateShaderModule(const std::vector<char>& code, VkShaderModule* shaderModule);
 
-    std::shared_ptr<Device> mDevice = nullptr;
+    Device& mDevice;
     VkPipeline mPipeline;
-    VkShaderModule mVertexModule;
-    VkShaderModule mFragmentModule;
+    VkShaderModule mVertexModule = VK_NULL_HANDLE;
+    VkShaderModule mFragmentModule = VK_NULL_HANDLE;
 };
 }

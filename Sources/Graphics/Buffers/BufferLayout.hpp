@@ -16,7 +16,7 @@ typedef struct vertex_buffer_desc
 } Vertex_Buffer_Desc;
 
 
-void SetVertexBufferFromVertices(std::shared_ptr<Device>& device, VkBuffer& buffer, VkDeviceMemory& deviceMemory, const std::vector<float>& vertices);
+void SetVertexBufferFromVertices(Device& device, VkBuffer& buffer, VkDeviceMemory& deviceMemory, const std::vector<float>& vertices);
 
 uint32_t FindSutiableMemoryType(uint32_t typeFilter, VkPhysicalDeviceMemoryProperties* memProperties, VkMemoryPropertyFlags properties);
 

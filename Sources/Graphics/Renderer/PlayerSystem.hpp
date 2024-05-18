@@ -1,13 +1,13 @@
 #include "RenderSystem.hpp"
-#include "../Entity.hpp"
-#include "Buffer.hpp"
+#include "Scene/Entity.hpp"
+#include "Graphics/Buffers/Buffer.hpp"
 
 namespace Super 
 {
 class PlayerSystem : public RenderSystem 
 {
 public:
-    PlayerSystem(const std::shared_ptr<Device>& device, VkRenderPass renderPass, uint32_t height, uint32_t width);
+    PlayerSystem(Device& device, VkRenderPass renderPass, uint32_t height, uint32_t width);
 
     ~PlayerSystem() 
     {

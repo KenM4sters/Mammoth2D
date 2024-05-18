@@ -7,11 +7,11 @@ namespace Super
 class Buffer 
 {
 public: 
-    Buffer(const std::shared_ptr<Device>& device, VkDeviceSize deviceSize, VkBufferUsageFlags usage, VkMemoryPropertyFlags properties, const void* data = nullptr);
+    Buffer(Device& device, VkDeviceSize deviceSize, VkBufferUsageFlags usage, VkMemoryPropertyFlags properties, const void* data = nullptr);
     virtual ~Buffer() 
     {
-        vkDestroyBuffer(mDevice->GetDevice(), mBuffer, nullptr);
-        vkFreeMemory(mDevice->GetDevice(), mBufferMemory, nullptr);
+        vkDestroyBuffer(mDevice.GetDevice(), mBuffer, nullptr);
+        vkFreeMemory(mDevice.GetDevice(), mBufferMemory, nullptr);
     }
 
     // Utility function to find the appropriate memory type that considers both the buffer and the
@@ -31,7 +31,7 @@ public:
 
 
 protected:
-    std::shared_ptr<Device> mDevice = nullptr;
+    Device& mDevice;
     VkBuffer mBuffer = VK_NULL_HANDLE;
     VkDeviceMemory mBufferMemory = VK_NULL_HANDLE;
     VkDeviceSize mSize{0};

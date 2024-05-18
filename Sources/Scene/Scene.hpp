@@ -4,6 +4,7 @@
 #include "Entity.hpp"
 #include "EntityManager.hpp"
 #include "Camera.hpp"
+#include "Events/EventSystem.hpp"
 
 namespace Super 
 {
@@ -28,5 +29,7 @@ private:
     static std::shared_ptr<OrthographicCamera> mCamera;
 
     EntityManager mEntityManager = EntityManager();
+
+    std::vector<std::unique_ptr<EventSystem>> mEventSystems{};
 };
 }
