@@ -18,7 +18,7 @@ public:
 
     VkCommandBuffer Begin();
     void BeginRenderPass(VkCommandBuffer commandBuffer);
-    void Render(VkCommandBuffer commandBuffer);
+    void Render(VkCommandBuffer commandBuffer, std::vector<Entity>& entities);
     void EndRenderPass(VkCommandBuffer commandBuffer);
     void End();
     void FreeCommandBuffers();

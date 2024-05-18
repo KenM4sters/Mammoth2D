@@ -7,8 +7,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/Vulkan2D.dir/Sources/Camera.cpp.o.d"
   "CMakeFiles/Vulkan2D.dir/Sources/Device.cpp.o"
   "CMakeFiles/Vulkan2D.dir/Sources/Device.cpp.o.d"
-  "CMakeFiles/Vulkan2D.dir/Sources/EntityManager.cpp.o"
-  "CMakeFiles/Vulkan2D.dir/Sources/EntityManager.cpp.o.d"
   "CMakeFiles/Vulkan2D.dir/Sources/Pipeline.cpp.o"
   "CMakeFiles/Vulkan2D.dir/Sources/Pipeline.cpp.o.d"
   "CMakeFiles/Vulkan2D.dir/Sources/Program.cpp.o"

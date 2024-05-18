@@ -2,14 +2,23 @@
 
 layout(location = 0) in vec2 aPosition;
 
-// vec2 positions[3] = vec2[] (
-//     vec2(0.0, -0.5),
-//     vec2(0.5, 0.5),
-//     vec2(-0.5, 0.5)
-// );
+struct Transform 
+{
+    vec2 position;
+    vec2 scale;
+    mat4 modelMatrix;
+};
+
+layout(push_constant) uniform Push 
+{
+    Transform transform;
+    vec3 color;
+    mat4 viewProjectionMatrix;
+} push;
+
 
 void main() 
 {
-    gl_Position = vec4(aPosition, 0.0, 1.0);
+    gl_Position = push.viewProjectionMatrix * push.transform.modelMatrix * vec4(aPosition, 0.0, 1.0);
 }
 

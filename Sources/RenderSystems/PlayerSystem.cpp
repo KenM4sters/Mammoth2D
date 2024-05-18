@@ -1,6 +1,8 @@
+#include <glm/gtc/matrix_transform.hpp>
 #include "PlayerSystem.hpp"
 #include "../EntityManager.hpp"
-#include "BufferLayout.hpp"
+#include "../BufferLayout.hpp"
+#include "../Scene.hpp"
 
 
 namespace Super
@@ -16,12 +18,18 @@ PlayerSystem::PlayerSystem(const std::shared_ptr<Device>& device, VkRenderPass r
 
 void PlayerSystem::CreatePipelineLayout() 
 {
+    VkPushConstantRange pushConstantRange{};
+    pushConstantRange.stageFlags = VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT;
+    pushConstantRange.offset = 0;
+    pushConstantRange.size = sizeof(SimplePushConstants);
+
+ 
     VkPipelineLayoutCreateInfo pipelineLayoutInfo{};
     pipelineLayoutInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO;
     pipelineLayoutInfo.setLayoutCount = 0;
     pipelineLayoutInfo.pSetLayouts = nullptr;
-    pipelineLayoutInfo.pPushConstantRanges = 0;
-    pipelineLayoutInfo.pPushConstantRanges = nullptr;
+    pipelineLayoutInfo.pushConstantRangeCount = 1;
+    pipelineLayoutInfo.pPushConstantRanges = &pushConstantRange;
     
     if(vkCreatePipelineLayout(mDevice->GetDevice(), &pipelineLayoutInfo, nullptr, &mPipelineLayout) != VK_SUCCESS) 
     {
@@ -58,7 +66,7 @@ void PlayerSystem::UpdateBuffers()
     
 }
 
-void PlayerSystem::Run(VkCommandBuffer commandBuffer) 
+void PlayerSystem::Run(VkCommandBuffer commandBuffer, std::vector<Entity>& entities) 
 {
     mPipeline->Bind(commandBuffer);
 
@@ -66,22 +74,23 @@ void PlayerSystem::Run(VkCommandBuffer commandBuffer)
     VkDeviceSize offsets[] = {0};
 
     vkCmdBindVertexBuffers(commandBuffer, 0, 1, buffers, offsets);
+
+    UpdatePushConstants(entities[0]);
+
+    vkCmdPushConstants(
+        commandBuffer, 
+        mPipelineLayout, 
+        VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT, 
+        0, 
+        sizeof(SimplePushConstants), 
+        &mPushConstants
+    );
     
     vkCmdDraw(commandBuffer, 6, 1, 0, 0);
 }
 
 void PlayerSystem::CreatePlayerEntity() 
 {
-    // Initial player props.
-    //
-    mPlayer = new Entity{};
-    mPlayer->id = EntityManager::CreateEntity(mPlayer);
-    mPlayer->color = glm::vec3(0.5f, 0.1f, 1.0f);
-    mPlayer->transform = {glm::vec2(400, 400), glm::vec2(50, 50), glm::mat3{1.0f}};
-    mPlayer->physics = {glm::vec2(0.0f, 0.0f), glm::vec2(0.0f, 0.0f)};
-    mPlayer->flags = EntityFlags::ACTIVE | EntityFlags::HAS_HEALTH | EntityFlags::IS_RIGID 
-                    | EntityFlags::HAS_MOTION | EntityFlags::PLAYER_CONTROLLED;
-
 
     // A buffer layout takes in a vector of buffer attributes, where each buffer attribute
     // describes a portion (or in this simple case 100%) of the vertex data (position, color, normals etc..)
@@ -113,4 +122,21 @@ void PlayerSystem::CreatePlayerEntity()
     vkBindBufferMemory(mDevice->GetDevice(), mVertexBuffer->GetBuffer(), mVertexBuffer->GetBufferMemory(), 0);
 
 }
+
+void PlayerSystem::UpdatePushConstants(Entity& player) 
+{
+    player.transform.modelMatrix = glm::mat4(1.0f);
+    player.transform.modelMatrix = glm::translate(player.transform.modelMatrix, glm::vec3(player.transform.position, 0.0f));
+    player.transform.modelMatrix = glm::scale(player.transform.modelMatrix, glm::vec3(player.transform.scale, 1.0f));
+
+    mPushConstants.transform.position = player.transform.position;
+    mPushConstants.transform.scale = player.transform.scale;
+    mPushConstants.transform.modelMatrix = player.transform.modelMatrix;
+
+    const glm::mat4 projectionView = Scene::GetCamera()->GetProjectionViewMatrix();
+
+    mPushConstants.projectionViewMatrix = projectionView;
+}
+
+
 }

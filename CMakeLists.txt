@@ -26,7 +26,6 @@ add_executable(${PROJECT_NAME}
   Sources/Renderer.cpp
   Sources/Buffer.cpp
   Sources/BufferLayout.cpp
-  Sources/EntityManager.cpp
   Sources/Scene.cpp
   Sources/RenderSystems/PlayerSystem.cpp
 )

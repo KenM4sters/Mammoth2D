@@ -1,3 +1,4 @@
+#pragma once
 #include "Entity.hpp"
 
 
@@ -9,27 +10,22 @@ static EntityID idCounter = 0;
 class EntityManager 
 {
 public:
+    EntityManager() {}
+
     EntityManager(const EntityManager& other) = delete;
     EntityManager& operator=(const EntityManager& other) = delete;
 
-    static void Destroy() 
-    {
-        for(const auto& entity : mEntities) 
-        {
-            delete entity;
-        }
-    }
-
-    static EntityID CreateEntity(Entity* ent) 
+    EntityID CreateEntity(Entity ent) 
     {
         mEntities.push_back(ent);
-        return idCounter++;
+        return idCounter++; 
     }
 
-private:
-    EntityManager() {}
+    // Getter for the vector of entities.
+    inline std::vector<Entity>& GetAllEntities() { return mEntities; }
 
-    static std::vector<Entity*> mEntities;
+private:
+    std::vector<Entity> mEntities;
 
 };
 }

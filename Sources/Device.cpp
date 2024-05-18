@@ -97,7 +97,8 @@ void Device::CreateInstance()
 
         ConfigureDebugMessengerCallback(debugCreateInfo);
         createInfo.pNext = (VkDebugUtilsMessengerCreateInfoEXT *)&debugCreateInfo;
-    } else {
+    } 
+    else {
         createInfo.enabledLayerCount = 0;
         createInfo.pNext = nullptr;
     }
@@ -119,26 +120,32 @@ void Device::ChoosePhysicalDevice()
 {
     uint32_t deviceCount = 0;
     vkEnumeratePhysicalDevices(mInstance, &deviceCount, nullptr);
-    if (deviceCount == 0) {
-    throw std::runtime_error("failed to find GPUs with Vulkan support!");
+    if (deviceCount == 0) 
+    {
+        throw std::runtime_error("failed to find GPUs with Vulkan support!");
     }
     std::cout << "Device count: " << deviceCount << std::endl;
     std::vector<VkPhysicalDevice> devices(deviceCount);
     vkEnumeratePhysicalDevices(mInstance, &deviceCount, devices.data());
 
-    for (const auto &device : devices) {
-    if (IsDeviceSuitable(device)) {
-    mPhysicalDevice = device;
-    break;
-    }
+    for (const auto &device : devices) 
+    {
+        if (IsDeviceSuitable(device)) 
+        {
+            mPhysicalDevice = device;
+            break;
+        }
     }
 
-    if (mPhysicalDevice == VK_NULL_HANDLE) {
-    throw std::runtime_error("failed to find a suitable GPU!");
+    if (mPhysicalDevice == VK_NULL_HANDLE) 
+    {
+        throw std::runtime_error("failed to find a suitable GPU!");
     }
 
     vkGetPhysicalDeviceProperties(mPhysicalDevice, &mPhysicalDeviceProps);
     std::cout << "physical device: " << mPhysicalDeviceProps.deviceName << std::endl;
+    std::cout << "max push constant size: " << mPhysicalDeviceProps.limits.maxPushConstantsSize << std::endl; 
+
 }
 
 
@@ -244,8 +251,9 @@ bool Device::CheckDeviceExtensionSupport(VkPhysicalDevice device) const
 
     std::set<std::string> requiredExtensions(mDeviceExtensions.begin(), mDeviceExtensions.end());
 
-    for (const auto &extension : availableExtensions) {
-    requiredExtensions.erase(extension.extensionName);
+    for (const auto &extension : availableExtensions) 
+    {
+        requiredExtensions.erase(extension.extensionName);
     }
 
     return requiredExtensions.empty();
@@ -359,7 +367,7 @@ void Device::SetupDebugMessenger()
     ConfigureDebugMessengerCallback(createInfo);
     if (CreateDebugUtilsMessengerEXT(mInstance, &createInfo, nullptr, &mDebugMessenger) != VK_SUCCESS) 
     {
-    throw std::runtime_error("failed to set up debug messenger!");
+        throw std::runtime_error("failed to set up debug messenger!");
     }
 }
 
@@ -478,7 +486,7 @@ void Device::CreateBuffer(
 
     if (vkCreateBuffer(mDevice, &bufferInfo, nullptr, &buffer) != VK_SUCCESS) 
     {
-    throw std::runtime_error("failed to create vertex buffer!");
+        throw std::runtime_error("failed to create vertex buffer!");
     }
 
     VkMemoryRequirements memRequirements;
@@ -491,19 +499,14 @@ void Device::CreateBuffer(
 
     if (vkAllocateMemory(mDevice, &allocInfo, nullptr, &bufferMemory) != VK_SUCCESS) 
     {
-    throw std::runtime_error("failed to allocate vertex buffer memory!");
+        throw std::runtime_error("failed to allocate vertex buffer memory!");
     }
 
     vkBindBufferMemory(mDevice, buffer, bufferMemory, 0);
 }
 
-void Device::CopyBufferToImage(
-    VkBuffer buffer, 
-    VkImage image, 
-    uint32_t width, 
-    uint32_t height, 
-    uint32_t layerCount
-) 
+void Device::CopyBufferToImage(VkBuffer buffer, VkImage image, uint32_t width, 
+    uint32_t height, uint32_t layerCount) 
 {
     VkCommandBuffer commandBuffer = BeginSingleTimeCommands();
 
@@ -531,12 +534,8 @@ void Device::CopyBufferToImage(
     EndSingleTimeCommands(commandBuffer);
 }
 
-void Device::CreateImageFromInfo(
-    const VkImageCreateInfo &imageInfo,
-    VkMemoryPropertyFlags properties,
-    VkImage &image,
-    VkDeviceMemory &imageMemory
-) 
+void Device::CreateImageFromInfo(const VkImageCreateInfo &imageInfo,VkMemoryPropertyFlags properties,
+    VkImage &image, VkDeviceMemory &imageMemory) 
 {
   if (vkCreateImage(mDevice, &imageInfo, nullptr, &image) != VK_SUCCESS) 
   {

@@ -106,11 +106,11 @@ VkCommandBuffer Renderer::Begin()
     return commandBuffer;
 }
 
-void Renderer::Render(VkCommandBuffer commandBuffer) 
+void Renderer::Render(VkCommandBuffer commandBuffer, std::vector<Entity>& entities) 
 {
     for(auto& system : mRenderSystems) 
     {
-        system->Run(commandBuffer);
+        system->Run(commandBuffer, entities);
     }
 }
 

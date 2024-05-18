@@ -21,9 +21,12 @@ public:
     
     void UpdateBuffers() override;
 
-    void Run(VkCommandBuffer commandBuffer) override;
+    void Run(VkCommandBuffer commandBuffer, std::vector<Entity>& entities) override;
 
 private:
+
+    void UpdatePushConstants(Entity& player);
+
     Entity* mPlayer = nullptr;
 
     std::shared_ptr<Buffer> mVertexBuffer = nullptr;

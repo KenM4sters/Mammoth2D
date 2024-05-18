@@ -7,9 +7,9 @@
 namespace Super 
 {
 typedef struct SimplePushConstants {
-    Transform transform;
-    glm::vec3 color{1.0f, 0.0f, 1.0f};
-    glm::mat3 projectionViewMatrix{1.0f};
+    Transform transform{};
+    alignas(16) glm::vec3 color{0.4f, 0.1f, 1.0f};
+    alignas(16) glm::mat4 projectionViewMatrix{1.0f};
 
 } SimplePushConstants;
 
@@ -32,9 +32,10 @@ public:
 
     virtual void UpdateBuffers() = 0;
 
-    virtual void Run(VkCommandBuffer commandBuffer) = 0;
+    virtual void Run(VkCommandBuffer commandBuffer, std::vector<Entity>& entities) = 0;
 
 protected:
+
     std::shared_ptr<Device> mDevice = nullptr;
     std::unique_ptr<Pipeline> mPipeline = nullptr;
     VkPipelineLayout mPipelineLayout{};

@@ -264,30 +264,6 @@ Sources/Device.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Device.cpp.s
 .PHONY : Sources/Device.cpp.s
 
-Sources/EntityManager.o: Sources/EntityManager.cpp.o
-.PHONY : Sources/EntityManager.o
-
-# target to build an object file
-Sources/EntityManager.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/EntityManager.cpp.o
-.PHONY : Sources/EntityManager.cpp.o
-
-Sources/EntityManager.i: Sources/EntityManager.cpp.i
-.PHONY : Sources/EntityManager.i
-
-# target to preprocess a source file
-Sources/EntityManager.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/EntityManager.cpp.i
-.PHONY : Sources/EntityManager.cpp.i
-
-Sources/EntityManager.s: Sources/EntityManager.cpp.s
-.PHONY : Sources/EntityManager.s
-
-# target to generate assembly for a file
-Sources/EntityManager.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/EntityManager.cpp.s
-.PHONY : Sources/EntityManager.cpp.s
-
 Sources/Pipeline.o: Sources/Pipeline.cpp.o
 .PHONY : Sources/Pipeline.o
 
@@ -504,9 +480,6 @@ help:
 	@echo "... Sources/Device.o"
 	@echo "... Sources/Device.i"
 	@echo "... Sources/Device.s"
-	@echo "... Sources/EntityManager.o"
-	@echo "... Sources/EntityManager.i"
-	@echo "... Sources/EntityManager.s"
 	@echo "... Sources/Pipeline.o"
 	@echo "... Sources/Pipeline.i"
 	@echo "... Sources/Pipeline.s"

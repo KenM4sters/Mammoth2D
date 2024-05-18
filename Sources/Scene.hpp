@@ -18,20 +18,15 @@ public:
 
     void CreateScene(uint32_t width, uint32_t height);
 
-    // Getters
-    //
-    inline const Entity& GetPlayer() const { return mPlayer; }
-    inline const std::shared_ptr<OrthographicCamera>& GetCamera() const { return mCamera; }
-    inline const std::vector<Entity>& GetEnemies() const { return mEnemies; }
-    inline const std::vector<Entity>& GetBullets() const { return mBullets; }
-    inline const std::vector<Entity>& GetPlatforms() const { return mPlatforms; }
+    // Getter for the entity manager (which has a getter for all the entiies).
+    inline EntityManager& GetEntityManager() { return mEntityManager; }
 
+    // Static getter for the camera.
+    static inline const std::shared_ptr<OrthographicCamera>& GetCamera() { return mCamera; }
 
 private:
-    std::shared_ptr<OrthographicCamera> mCamera = nullptr;
-    Entity mPlayer;
-    std::vector<Entity> mEnemies{};
-    std::vector<Entity> mBullets{};
-    std::vector<Entity> mPlatforms{};
+    static std::shared_ptr<OrthographicCamera> mCamera;
+
+    EntityManager mEntityManager = EntityManager();
 };
 }

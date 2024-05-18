@@ -34,7 +34,7 @@ void Program::Run()
         if(auto commandBuffer = mRenderer->Begin()) 
         {
             mRenderer->BeginRenderPass(commandBuffer);
-            mRenderer->Render(commandBuffer);
+            mRenderer->Render(commandBuffer, mScene->GetEntityManager().GetAllEntities());
             mRenderer->EndRenderPass(commandBuffer);
             mRenderer->End();
         }
