@@ -11,6 +11,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/BufferLayout.cpp.o.d"
   "CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Pipeline.cpp.o"
   "CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Pipeline.cpp.o.d"
+  "CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/EnemySystem.cpp.o"
+  "CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/EnemySystem.cpp.o.d"
   "CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/PlayerSystem.cpp.o"
   "CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/PlayerSystem.cpp.o.d"
   "CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/Renderer.cpp.o"

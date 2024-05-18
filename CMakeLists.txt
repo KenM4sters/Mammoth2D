@@ -25,6 +25,7 @@ add_executable(${PROJECT_NAME}
   Sources/Graphics/Renderer/SwapChain.cpp
   Sources/Graphics/Renderer/Renderer.cpp
   Sources/Graphics/Renderer/PlayerSystem.cpp
+  Sources/Graphics/Renderer/EnemySystem.cpp
   Sources/Graphics/Pipelines/Pipeline.cpp
   Sources/Graphics/Buffers/Buffer.cpp
   Sources/Graphics/Buffers/BufferLayout.cpp

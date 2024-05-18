@@ -312,6 +312,30 @@ Sources/Graphics/Pipelines/Pipeline.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Pipeline.cpp.s
 .PHONY : Sources/Graphics/Pipelines/Pipeline.cpp.s
 
+Sources/Graphics/Renderer/EnemySystem.o: Sources/Graphics/Renderer/EnemySystem.cpp.o
+.PHONY : Sources/Graphics/Renderer/EnemySystem.o
+
+# target to build an object file
+Sources/Graphics/Renderer/EnemySystem.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/EnemySystem.cpp.o
+.PHONY : Sources/Graphics/Renderer/EnemySystem.cpp.o
+
+Sources/Graphics/Renderer/EnemySystem.i: Sources/Graphics/Renderer/EnemySystem.cpp.i
+.PHONY : Sources/Graphics/Renderer/EnemySystem.i
+
+# target to preprocess a source file
+Sources/Graphics/Renderer/EnemySystem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/EnemySystem.cpp.i
+.PHONY : Sources/Graphics/Renderer/EnemySystem.cpp.i
+
+Sources/Graphics/Renderer/EnemySystem.s: Sources/Graphics/Renderer/EnemySystem.cpp.s
+.PHONY : Sources/Graphics/Renderer/EnemySystem.s
+
+# target to generate assembly for a file
+Sources/Graphics/Renderer/EnemySystem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/EnemySystem.cpp.s
+.PHONY : Sources/Graphics/Renderer/EnemySystem.cpp.s
+
 Sources/Graphics/Renderer/PlayerSystem.o: Sources/Graphics/Renderer/PlayerSystem.cpp.o
 .PHONY : Sources/Graphics/Renderer/PlayerSystem.o
 
@@ -534,6 +558,9 @@ help:
 	@echo "... Sources/Graphics/Pipelines/Pipeline.o"
 	@echo "... Sources/Graphics/Pipelines/Pipeline.i"
 	@echo "... Sources/Graphics/Pipelines/Pipeline.s"
+	@echo "... Sources/Graphics/Renderer/EnemySystem.o"
+	@echo "... Sources/Graphics/Renderer/EnemySystem.i"
+	@echo "... Sources/Graphics/Renderer/EnemySystem.s"
 	@echo "... Sources/Graphics/Renderer/PlayerSystem.o"
 	@echo "... Sources/Graphics/Renderer/PlayerSystem.i"
 	@echo "... Sources/Graphics/Renderer/PlayerSystem.s"

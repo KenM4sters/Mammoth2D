@@ -1,5 +1,5 @@
 #include <glm/gtc/matrix_transform.hpp>
-#include "PlayerSystem.hpp"
+#include "EnemySystem.hpp"
 #include "Scene/EntityManager.hpp"
 #include "Graphics/Buffers/BufferLayout.hpp"
 #include "Scene/Scene.hpp"
@@ -8,15 +8,15 @@
 namespace Super
 {
 
-PlayerSystem::PlayerSystem(Device& device, VkRenderPass renderPass, uint32_t height, uint32_t width)
+EnemySystem::EnemySystem(Device& device, VkRenderPass renderPass, uint32_t height, uint32_t width)
     : RenderSystem(device, renderPass, width, height)
 {
-    CreatePlayerEntity();
+    CreateEnemyEntity();
     CreatePipelineLayout();
     CreatePipeline(width, height, renderPass);
 }
 
-void PlayerSystem::CreatePipelineLayout() 
+void EnemySystem::CreatePipelineLayout() 
 {
     VkPushConstantRange pushConstantRange{};
     pushConstantRange.stageFlags = VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT;
@@ -37,7 +37,7 @@ void PlayerSystem::CreatePipelineLayout()
     }
 }
 
-void PlayerSystem::CreatePipeline(uint32_t width, uint32_t height, VkRenderPass renderPass) 
+void EnemySystem::CreatePipeline(uint32_t width, uint32_t height, VkRenderPass renderPass) 
 {
     Pipeline_Desc pipelineConfig = Pipeline::DefaultPipelineDesc(width, height);
 
@@ -61,12 +61,12 @@ void PlayerSystem::CreatePipeline(uint32_t width, uint32_t height, VkRenderPass 
     );
 }
 
-void PlayerSystem::UpdateBuffers() 
+void EnemySystem::UpdateBuffers() 
 {
     
 }
 
-void PlayerSystem::Run(VkCommandBuffer commandBuffer, std::vector<Entity>& entities) 
+void EnemySystem::Run(VkCommandBuffer commandBuffer, std::vector<Entity>& entities) 
 {
     mPipeline->Bind(commandBuffer);
 
@@ -75,7 +75,7 @@ void PlayerSystem::Run(VkCommandBuffer commandBuffer, std::vector<Entity>& entit
 
     vkCmdBindVertexBuffers(commandBuffer, 0, 1, buffers, offsets);
 
-    UpdatePushConstants(entities[0]);
+    UpdatePushConstants(entities[1]);
 
     vkCmdPushConstants(
         commandBuffer, 
@@ -89,7 +89,7 @@ void PlayerSystem::Run(VkCommandBuffer commandBuffer, std::vector<Entity>& entit
     vkCmdDraw(commandBuffer, 6, 1, 0, 0);
 }
 
-void PlayerSystem::CreatePlayerEntity() 
+void EnemySystem::CreateEnemyEntity() 
 {
 
     // A buffer layout takes in a vector of buffer attributes, where each buffer attribute
@@ -123,16 +123,16 @@ void PlayerSystem::CreatePlayerEntity()
 
 }
 
-void PlayerSystem::UpdatePushConstants(Entity& player) 
+void EnemySystem::UpdatePushConstants(Entity& enemy) 
 {
-    player.transform.modelMatrix = glm::mat4(1.0f);
-    player.transform.modelMatrix = glm::translate(player.transform.modelMatrix, glm::vec3(player.transform.position, 0.0f));
-    player.transform.modelMatrix = glm::scale(player.transform.modelMatrix, glm::vec3(player.transform.scale, 1.0f));
+    enemy.transform.modelMatrix = glm::mat4(1.0f);
+    enemy.transform.modelMatrix = glm::translate(enemy.transform.modelMatrix, glm::vec3(enemy.transform.position, 0.0f));
+    enemy.transform.modelMatrix = glm::scale(enemy.transform.modelMatrix, glm::vec3(enemy.transform.scale, 1.0f));
 
-    mPushConstants.color = player.color;
-    mPushConstants.transform.position = player.transform.position;
-    mPushConstants.transform.scale = player.transform.scale;
-    mPushConstants.transform.modelMatrix = player.transform.modelMatrix;
+    mPushConstants.color = enemy.color;
+    mPushConstants.transform.position = enemy.transform.position;
+    mPushConstants.transform.scale = enemy.transform.scale;
+    mPushConstants.transform.modelMatrix = enemy.transform.modelMatrix;
 
     mPushConstants.projectionViewMatrix = Scene::GetCamera()->GetProjectionMatrix();
 }

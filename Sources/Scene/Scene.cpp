@@ -31,6 +31,16 @@ void Scene::CreateScene(uint32_t width, uint32_t height)
     | EntityFlags::HAS_MOTION | EntityFlags::IS_PLAYER;
     player.id = mEntityManager.CreateEntity(std::move(player));
 
+    // Enemy Entity.
+    //
+    Entity enemy = Entity{};
+    enemy.color = glm::vec3(0.5f, 1.0f, 0.1f);
+    enemy.transform = {glm::vec2(400, 300), glm::vec2(50, 50), glm::mat4{1.0f}};
+    enemy.physics = {glm::vec2(0.0f, 0.0f), glm::vec2(0.0f, 0.0f)};
+    enemy.flags = EntityFlags::ACTIVE | EntityFlags::HAS_HEALTH | EntityFlags::IS_RIGID 
+    | EntityFlags::HAS_MOTION | EntityFlags::IS_ENEMY;
+    enemy.id = mEntityManager.CreateEntity(std::move(enemy));
+
     // Event Systems.
     //
 
