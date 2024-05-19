@@ -24,9 +24,10 @@ add_executable(${PROJECT_NAME}
   Sources/Input.cpp
   Sources/Graphics/Renderer/SwapChain.cpp
   Sources/Graphics/Renderer/Renderer.cpp
-  Sources/Graphics/Renderer/PlayerSystem.cpp
-  Sources/Graphics/Renderer/EnemySystem.cpp
+  Sources/Graphics/Renderer/Sprite2DSystem.cpp
   Sources/Graphics/Pipelines/Pipeline.cpp
+  Sources/Graphics/Pipelines/Shader.cpp
+  Sources/Graphics/Pipelines/VertexInput.cpp
   Sources/Graphics/Buffers/Buffer.cpp
   Sources/Graphics/Buffers/BufferLayout.cpp
   Sources/Scene/Scene.cpp

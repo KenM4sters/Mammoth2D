@@ -1,6 +1,5 @@
 #include "Renderer.hpp"
-#include "PlayerSystem.hpp"
-#include "EnemySystem.hpp"
+#include "Sprite2DSystem.hpp"
 #include <cassert>
 
 namespace Super 
@@ -10,10 +9,8 @@ Renderer::Renderer(Device& device, Window& window)
 {
     mSwapChain = std::make_unique<SwapChain>(mDevice, mWindow.GetExtent());
 
-    RenderSystem* playerSystem = new PlayerSystem(mDevice, mSwapChain->GetRenderPass(), mSwapChain->GetWidth(), mSwapChain->GetHeight());
-    mRenderSystems.push_back(playerSystem);  
-    RenderSystem* enemySystem = new EnemySystem(mDevice, mSwapChain->GetRenderPass(), mSwapChain->GetWidth(), mSwapChain->GetHeight());
-    mRenderSystems.push_back(enemySystem);  
+    RenderSystem* spriteSystem = new Sprite2DSystem(mDevice, mSwapChain->GetRenderPass(), mSwapChain->GetWidth(), mSwapChain->GetHeight());
+    mRenderSystems.push_back(spriteSystem);   
 
     RecreateSwapChain();
     CreateCommandBufffers();

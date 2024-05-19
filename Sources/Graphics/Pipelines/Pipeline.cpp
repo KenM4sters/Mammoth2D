@@ -1,43 +1,65 @@
 #include <cassert>
 #include <iostream>
-
 #include "Pipeline.hpp"
+#include "Graphics/Renderer/RenderSystem.hpp"
 
 namespace Super 
 {
-Pipeline::Pipeline(Device& device, Pipeline_Desc desc, const char* vertSrc, const char* fragSrc)
+Pipeline::Pipeline(Device& device, VkRenderPass renderPass, VertexInput vertexInput, const char* vertSrc, const char* fragSrc, uint32_t width, uint32_t height)
     : mDevice{device}
 {
-    CreateGraphicsPipeline(desc, vertSrc, fragSrc);
+    mShader = std::make_unique<Shader>(
+        device,
+        vertSrc,
+        fragSrc
+    );
+    
+    CreatePipelineLayout();
+    CreateGraphicsPipeline(std::move(vertexInput), std::move(renderPass), width, height);
 }
 
 Pipeline::~Pipeline() 
 {
-    vkDestroyShaderModule(mDevice.GetDevice(), mVertexModule, nullptr);
-    vkDestroyShaderModule(mDevice.GetDevice(), mFragmentModule, nullptr);
+    vkDestroyPipelineLayout(mDevice.GetDevice(), mPipelineLayout, nullptr);
     vkDestroyPipeline(mDevice.GetDevice(), mPipeline, nullptr);
 }
 
-const std::vector<char> Pipeline::ReadFromFile(const char* filePath) const 
+void Pipeline::CreatePipelineLayout() 
 {
-    std::ifstream file{filePath, std::ios::ate | std::ios::binary};
-
-    assert(file.is_open() && "File could not be opened!"); // check for errors - if thrown, double check file path.
-
-    size_t fileSize = static_cast<size_t>(file.tellg());
-
-    std::vector<char> buffer(fileSize);
-
-    file.seekg(0);
-    file.read(buffer.data(), fileSize);
-
-    file.close();
-
-    return buffer;
+    VkPushConstantRange pushConstantRange{};
+    pushConstantRange.stageFlags = VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT;
+    pushConstantRange.offset = 0;
+    pushConstantRange.size = sizeof(SimplePushConstants);
+ 
+    VkPipelineLayoutCreateInfo pipelineLayoutInfo{};
+    pipelineLayoutInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO;
+    pipelineLayoutInfo.setLayoutCount = 0;
+    pipelineLayoutInfo.pSetLayouts = nullptr;
+    pipelineLayoutInfo.pushConstantRangeCount = 1;
+    pipelineLayoutInfo.pPushConstantRanges = &pushConstantRange;
+    
+    if(vkCreatePipelineLayout(mDevice.GetDevice(), &pipelineLayoutInfo, nullptr, &mPipelineLayout) != VK_SUCCESS) 
+    {
+        throw std::runtime_error("Failed to create pipeline layout!");
+    }
 }
 
-void Pipeline::CreateGraphicsPipeline(Pipeline_Desc& desc, const char* vertSrc, const char* fragSrc) 
+void Pipeline::CreateGraphicsPipeline(VertexInput vertexInput, VkRenderPass renderPass, uint32_t width, uint32_t height) 
 {
+
+    PipelineDesc desc = SetDefaultPipelineDesc(width, height);
+
+    // Vertex Info.
+    //
+    desc.vertexInfo.vertexAttributeDescriptionCount = vertexInput.GetAttribDescriptions().size();
+    desc.vertexInfo.vertexBindingDescriptionCount = 1;
+    desc.vertexInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_STATE_CREATE_INFO;
+    desc.vertexInfo.pVertexBindingDescriptions = &vertexInput.GetBindingDescriptions()[0];
+    desc.vertexInfo.pVertexAttributeDescriptions = vertexInput.GetAttribDescriptions().data();
+
+    desc.renderPass = renderPass;
+    desc.pipelineLayout = mPipelineLayout;
+
     // Before we begin to create the pipeline, make sure that a layout and render pass was properly
     // defined in the pipeline descriptor, since by default they're set to nullptrs.
     //
@@ -46,35 +68,6 @@ void Pipeline::CreateGraphicsPipeline(Pipeline_Desc& desc, const char* vertSrc, 
 
     assert(desc.renderPass != VK_NULL_HANDLE 
         && "Attempting to create a pipeline from a Pipeline_Desc with a renderPass set to VK_NULL_HANDLE!"); 
-
-
-    auto vertCode = ReadFromFile(vertSrc);
-    auto fragCode = ReadFromFile(fragSrc);
-
-    CreateShaderModule(vertCode, &mVertexModule);
-    CreateShaderModule(fragCode, &mFragmentModule);
-
-    VkPipelineShaderStageCreateInfo shaderStages[2];
-
-    // Vertex shader.
-    //
-    shaderStages[0].sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO;
-    shaderStages[0].stage = VK_SHADER_STAGE_VERTEX_BIT;
-    shaderStages[0].module = mVertexModule;
-    shaderStages[0].pName = "main";
-    shaderStages[0].flags = 0;
-    shaderStages[0].pSpecializationInfo = nullptr;
-    shaderStages[0].pNext = nullptr;
-    // Fragment shader.
-    //
-    shaderStages[1].sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO;
-    shaderStages[1].stage = VK_SHADER_STAGE_FRAGMENT_BIT;
-    shaderStages[1].module = mFragmentModule;
-    shaderStages[1].pName = "main";
-    shaderStages[1].flags = 0;
-    shaderStages[1].pSpecializationInfo = nullptr;
-    shaderStages[1].pNext = nullptr;
-
 
 
     VkPipelineViewportStateCreateInfo viewportInfo{};
@@ -87,7 +80,7 @@ void Pipeline::CreateGraphicsPipeline(Pipeline_Desc& desc, const char* vertSrc, 
     VkGraphicsPipelineCreateInfo pipelineInfo{};
     pipelineInfo.sType = VK_STRUCTURE_TYPE_GRAPHICS_PIPELINE_CREATE_INFO;
     pipelineInfo.stageCount = 2;
-    pipelineInfo.pStages = shaderStages;
+    pipelineInfo.pStages = mShader->GetShaderStages().data();
     pipelineInfo.pVertexInputState = &desc.vertexInfo;
     pipelineInfo.pInputAssemblyState = &desc.inputAssemblyInfo;
     pipelineInfo.pViewportState = &viewportInfo;
@@ -111,23 +104,10 @@ void Pipeline::CreateGraphicsPipeline(Pipeline_Desc& desc, const char* vertSrc, 
 
 }
 
-void Pipeline::CreateShaderModule(const std::vector<char>& code, VkShaderModule* shaderModule) 
+
+PipelineDesc Pipeline::SetDefaultPipelineDesc(uint32_t width, uint32_t height) 
 {
-    VkShaderModuleCreateInfo createInfo{};
-    createInfo.codeSize = code.size();
-    createInfo.sType = VK_STRUCTURE_TYPE_SHADER_MODULE_CREATE_INFO;
-    createInfo.pCode = reinterpret_cast<const uint32_t*>(code.data());
-
-    if(vkCreateShaderModule(mDevice.GetDevice(), &createInfo, nullptr, shaderModule) != VK_SUCCESS) 
-    {
-        throw std::runtime_error("Failed to create shader module!");
-    }
-
-}
-
-Pipeline_Desc Pipeline::DefaultPipelineDesc(uint32_t width, uint32_t height) 
-{
-    Pipeline_Desc desc{};
+    PipelineDesc desc{};
 
     desc.inputAssemblyInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_INPUT_ASSEMBLY_STATE_CREATE_INFO;
     desc.inputAssemblyInfo.topology = VK_PRIMITIVE_TOPOLOGY_TRIANGLE_LIST;

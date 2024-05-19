@@ -312,53 +312,53 @@ Sources/Graphics/Pipelines/Pipeline.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Pipeline.cpp.s
 .PHONY : Sources/Graphics/Pipelines/Pipeline.cpp.s
 
-Sources/Graphics/Renderer/EnemySystem.o: Sources/Graphics/Renderer/EnemySystem.cpp.o
-.PHONY : Sources/Graphics/Renderer/EnemySystem.o
+Sources/Graphics/Pipelines/Shader.o: Sources/Graphics/Pipelines/Shader.cpp.o
+.PHONY : Sources/Graphics/Pipelines/Shader.o
 
 # target to build an object file
-Sources/Graphics/Renderer/EnemySystem.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/EnemySystem.cpp.o
-.PHONY : Sources/Graphics/Renderer/EnemySystem.cpp.o
+Sources/Graphics/Pipelines/Shader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Shader.cpp.o
+.PHONY : Sources/Graphics/Pipelines/Shader.cpp.o
 
-Sources/Graphics/Renderer/EnemySystem.i: Sources/Graphics/Renderer/EnemySystem.cpp.i
-.PHONY : Sources/Graphics/Renderer/EnemySystem.i
+Sources/Graphics/Pipelines/Shader.i: Sources/Graphics/Pipelines/Shader.cpp.i
+.PHONY : Sources/Graphics/Pipelines/Shader.i
 
 # target to preprocess a source file
-Sources/Graphics/Renderer/EnemySystem.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/EnemySystem.cpp.i
-.PHONY : Sources/Graphics/Renderer/EnemySystem.cpp.i
+Sources/Graphics/Pipelines/Shader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Shader.cpp.i
+.PHONY : Sources/Graphics/Pipelines/Shader.cpp.i
 
-Sources/Graphics/Renderer/EnemySystem.s: Sources/Graphics/Renderer/EnemySystem.cpp.s
-.PHONY : Sources/Graphics/Renderer/EnemySystem.s
+Sources/Graphics/Pipelines/Shader.s: Sources/Graphics/Pipelines/Shader.cpp.s
+.PHONY : Sources/Graphics/Pipelines/Shader.s
 
 # target to generate assembly for a file
-Sources/Graphics/Renderer/EnemySystem.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/EnemySystem.cpp.s
-.PHONY : Sources/Graphics/Renderer/EnemySystem.cpp.s
+Sources/Graphics/Pipelines/Shader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Shader.cpp.s
+.PHONY : Sources/Graphics/Pipelines/Shader.cpp.s
 
-Sources/Graphics/Renderer/PlayerSystem.o: Sources/Graphics/Renderer/PlayerSystem.cpp.o
-.PHONY : Sources/Graphics/Renderer/PlayerSystem.o
+Sources/Graphics/Pipelines/VertexInput.o: Sources/Graphics/Pipelines/VertexInput.cpp.o
+.PHONY : Sources/Graphics/Pipelines/VertexInput.o
 
 # target to build an object file
-Sources/Graphics/Renderer/PlayerSystem.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/PlayerSystem.cpp.o
-.PHONY : Sources/Graphics/Renderer/PlayerSystem.cpp.o
+Sources/Graphics/Pipelines/VertexInput.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/VertexInput.cpp.o
+.PHONY : Sources/Graphics/Pipelines/VertexInput.cpp.o
 
-Sources/Graphics/Renderer/PlayerSystem.i: Sources/Graphics/Renderer/PlayerSystem.cpp.i
-.PHONY : Sources/Graphics/Renderer/PlayerSystem.i
+Sources/Graphics/Pipelines/VertexInput.i: Sources/Graphics/Pipelines/VertexInput.cpp.i
+.PHONY : Sources/Graphics/Pipelines/VertexInput.i
 
 # target to preprocess a source file
-Sources/Graphics/Renderer/PlayerSystem.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/PlayerSystem.cpp.i
-.PHONY : Sources/Graphics/Renderer/PlayerSystem.cpp.i
+Sources/Graphics/Pipelines/VertexInput.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/VertexInput.cpp.i
+.PHONY : Sources/Graphics/Pipelines/VertexInput.cpp.i
 
-Sources/Graphics/Renderer/PlayerSystem.s: Sources/Graphics/Renderer/PlayerSystem.cpp.s
-.PHONY : Sources/Graphics/Renderer/PlayerSystem.s
+Sources/Graphics/Pipelines/VertexInput.s: Sources/Graphics/Pipelines/VertexInput.cpp.s
+.PHONY : Sources/Graphics/Pipelines/VertexInput.s
 
 # target to generate assembly for a file
-Sources/Graphics/Renderer/PlayerSystem.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/PlayerSystem.cpp.s
-.PHONY : Sources/Graphics/Renderer/PlayerSystem.cpp.s
+Sources/Graphics/Pipelines/VertexInput.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/VertexInput.cpp.s
+.PHONY : Sources/Graphics/Pipelines/VertexInput.cpp.s
 
 Sources/Graphics/Renderer/Renderer.o: Sources/Graphics/Renderer/Renderer.cpp.o
 .PHONY : Sources/Graphics/Renderer/Renderer.o
@@ -383,6 +383,30 @@ Sources/Graphics/Renderer/Renderer.s: Sources/Graphics/Renderer/Renderer.cpp.s
 Sources/Graphics/Renderer/Renderer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/Renderer.cpp.s
 .PHONY : Sources/Graphics/Renderer/Renderer.cpp.s
+
+Sources/Graphics/Renderer/Sprite2DSystem.o: Sources/Graphics/Renderer/Sprite2DSystem.cpp.o
+.PHONY : Sources/Graphics/Renderer/Sprite2DSystem.o
+
+# target to build an object file
+Sources/Graphics/Renderer/Sprite2DSystem.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/Sprite2DSystem.cpp.o
+.PHONY : Sources/Graphics/Renderer/Sprite2DSystem.cpp.o
+
+Sources/Graphics/Renderer/Sprite2DSystem.i: Sources/Graphics/Renderer/Sprite2DSystem.cpp.i
+.PHONY : Sources/Graphics/Renderer/Sprite2DSystem.i
+
+# target to preprocess a source file
+Sources/Graphics/Renderer/Sprite2DSystem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/Sprite2DSystem.cpp.i
+.PHONY : Sources/Graphics/Renderer/Sprite2DSystem.cpp.i
+
+Sources/Graphics/Renderer/Sprite2DSystem.s: Sources/Graphics/Renderer/Sprite2DSystem.cpp.s
+.PHONY : Sources/Graphics/Renderer/Sprite2DSystem.s
+
+# target to generate assembly for a file
+Sources/Graphics/Renderer/Sprite2DSystem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/Sprite2DSystem.cpp.s
+.PHONY : Sources/Graphics/Renderer/Sprite2DSystem.cpp.s
 
 Sources/Graphics/Renderer/SwapChain.o: Sources/Graphics/Renderer/SwapChain.cpp.o
 .PHONY : Sources/Graphics/Renderer/SwapChain.o
@@ -630,15 +654,18 @@ help:
 	@echo "... Sources/Graphics/Pipelines/Pipeline.o"
 	@echo "... Sources/Graphics/Pipelines/Pipeline.i"
 	@echo "... Sources/Graphics/Pipelines/Pipeline.s"
-	@echo "... Sources/Graphics/Renderer/EnemySystem.o"
-	@echo "... Sources/Graphics/Renderer/EnemySystem.i"
-	@echo "... Sources/Graphics/Renderer/EnemySystem.s"
-	@echo "... Sources/Graphics/Renderer/PlayerSystem.o"
-	@echo "... Sources/Graphics/Renderer/PlayerSystem.i"
-	@echo "... Sources/Graphics/Renderer/PlayerSystem.s"
+	@echo "... Sources/Graphics/Pipelines/Shader.o"
+	@echo "... Sources/Graphics/Pipelines/Shader.i"
+	@echo "... Sources/Graphics/Pipelines/Shader.s"
+	@echo "... Sources/Graphics/Pipelines/VertexInput.o"
+	@echo "... Sources/Graphics/Pipelines/VertexInput.i"
+	@echo "... Sources/Graphics/Pipelines/VertexInput.s"
 	@echo "... Sources/Graphics/Renderer/Renderer.o"
 	@echo "... Sources/Graphics/Renderer/Renderer.i"
 	@echo "... Sources/Graphics/Renderer/Renderer.s"
+	@echo "... Sources/Graphics/Renderer/Sprite2DSystem.o"
+	@echo "... Sources/Graphics/Renderer/Sprite2DSystem.i"
+	@echo "... Sources/Graphics/Renderer/Sprite2DSystem.s"
 	@echo "... Sources/Graphics/Renderer/SwapChain.o"
 	@echo "... Sources/Graphics/Renderer/SwapChain.i"
 	@echo "... Sources/Graphics/Renderer/SwapChain.s"

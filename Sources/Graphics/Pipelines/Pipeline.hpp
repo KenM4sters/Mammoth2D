@@ -2,11 +2,13 @@
 #include <fstream>
 #include <vector>
 #include "Device.hpp"
+#include "VertexInput.hpp"
+#include "Shader.hpp"
 
 namespace Super 
 {
 
-typedef struct pipeline_desc 
+typedef struct pipelinedesc 
 {
     // A static member funciton of Pipeline configures these to their default values.
     VkViewport viewport;
@@ -23,33 +25,36 @@ typedef struct pipeline_desc
     uint32_t subpass = 0;
     // Vertices - not set by default.
     VkPipelineVertexInputStateCreateInfo vertexInfo;
-} Pipeline_Desc;
+} PipelineDesc;
 
 class Pipeline 
 {
 public:
-    Pipeline(Device& device, Pipeline_Desc desc, const char* vertSrc, const char* fragSrc);
+    Pipeline(Device& device, VkRenderPass renderPass, VertexInput vertexInput, const char* vertSrc, const char* fragSrc, uint32_t width, uint32_t height);
     ~Pipeline();
 
-    // This class should not be copied or moved.
     Pipeline(const Pipeline& other) = delete;
-    Pipeline operator=(const Pipeline& other) = delete;
+    Pipeline& operator=(const Pipeline& other) = delete;
 
     void Bind(VkCommandBuffer commandBuffer);
-
-    static Pipeline_Desc DefaultPipelineDesc(uint32_t width, uint32_t height);
     
-    void CreateGraphicsPipeline(Pipeline_Desc& desc, const char* vertSrc, const char* fragSrc);
+
+    // Getters.
+    //
+    inline const VkPipelineLayout GetPipelineLayout() const { return mPipelineLayout; }
 
 private:
-    // Reads the shader code from a file and returns the code as a vector of characters.
-    const std::vector<char> ReadFromFile(const char* filePath) const;
+    void CreatePipelineLayout();
 
-    void CreateShaderModule(const std::vector<char>& code, VkShaderModule* shaderModule);
+    void CreateGraphicsPipeline(VertexInput input, VkRenderPass renderPass, uint32_t width, uint32_t height);
+
+    PipelineDesc SetDefaultPipelineDesc(uint32_t width, uint32_t height);
 
     Device& mDevice;
-    VkPipeline mPipeline;
-    VkShaderModule mVertexModule = VK_NULL_HANDLE;
-    VkShaderModule mFragmentModule = VK_NULL_HANDLE;
+
+    std::unique_ptr<Shader> mShader = nullptr;
+
+    VkPipeline mPipeline = VK_NULL_HANDLE;
+    VkPipelineLayout mPipelineLayout = VK_NULL_HANDLE;
 };
 }

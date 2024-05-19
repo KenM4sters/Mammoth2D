@@ -902,9 +902,12 @@ CMakeFiles/Vulkan2D.dir/Sources/Program.cpp.o: \
   /usr/local/macOS/include/vulkan/vulkan_beta.h \
   /usr/local/macOS/include/vk_video/vulkan_video_codec_h264std_encode.h \
   /usr/local/macOS/include/vk_video/vulkan_video_codec_h265std_encode.h \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/VertexInput.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Buffers/BufferLayout.hpp \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/iostream \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/Shader.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Renderer/SwapChain.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Renderer/Renderer.hpp \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/iostream \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Renderer/RenderSystem.hpp \
   /usr/local/macOS/include/glm/glm.hpp \
   /usr/local/macOS/include/glm/detail/_fixes.hpp \
@@ -1059,7 +1062,14 @@ CMakeFiles/Vulkan2D.dir/Sources/Program.cpp.o: \
   /usr/local/macOS/include/glm/vector_relational.hpp \
   /usr/local/macOS/include/glm/integer.hpp \
   /usr/local/macOS/include/glm/detail/func_integer.inl \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/unordered_map \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/is_transparent.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__hash_table \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/ranges_iterator_traits.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__node_handle \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/optional \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/Entity.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Buffers/Buffer.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/Scene.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/EntityManager.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Camera.hpp \
@@ -1098,12 +1108,6 @@ CMakeFiles/Vulkan2D.dir/Sources/Program.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/binder1st.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/binder2nd.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/boyer_moore_searcher.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/unordered_map \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/is_transparent.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__hash_table \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/ranges_iterator_traits.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__node_handle \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/optional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/compose.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/default_searcher.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/function.h \
