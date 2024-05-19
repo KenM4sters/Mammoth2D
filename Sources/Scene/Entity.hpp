@@ -19,6 +19,10 @@ typedef enum entityflags
     IS_PLATFORM         = 1 << 7,
 } EntityFlags;
 
+typedef struct bounds 
+{
+    glm::vec2 size;
+} Bounds;
 
 typedef struct transform 
 {
@@ -27,11 +31,11 @@ typedef struct transform
     alignas(16) glm::mat4 modelMatrix{1.0f};
 } Transform;
 
-typedef struct physics 
+typedef struct motion 
 {
     glm::vec2 velocity;
     glm::vec2 acceleration;
-} Physics;
+} Motion;
 
 typedef struct entity 
 {
@@ -39,7 +43,8 @@ typedef struct entity
     int flags;
     glm::vec3 color;
     Transform transform;
-    Physics physics;
+    Motion motion;
+    Bounds bounds;
 } Entity;
 
 }

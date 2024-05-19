@@ -30,6 +30,9 @@ add_executable(${PROJECT_NAME}
   Sources/Graphics/Buffers/Buffer.cpp
   Sources/Graphics/Buffers/BufferLayout.cpp
   Sources/Scene/Scene.cpp
+  Sources/Physics/Physics.cpp
+  Sources/Physics/Collision.cpp
+  Sources/Physics/SpatialGrid.cpp
   Sources/Events/EventSystem.cpp
 )
 

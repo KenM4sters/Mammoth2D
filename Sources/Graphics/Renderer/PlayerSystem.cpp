@@ -125,10 +125,6 @@ void PlayerSystem::CreatePlayerEntity()
 
 void PlayerSystem::UpdatePushConstants(Entity& player) 
 {
-    player.transform.modelMatrix = glm::mat4(1.0f);
-    player.transform.modelMatrix = glm::translate(player.transform.modelMatrix, glm::vec3(player.transform.position, 0.0f));
-    player.transform.modelMatrix = glm::scale(player.transform.modelMatrix, glm::vec3(player.transform.scale, 1.0f));
-
     mPushConstants.color = player.color;
     mPushConstants.transform.position = player.transform.position;
     mPushConstants.transform.scale = player.transform.scale;

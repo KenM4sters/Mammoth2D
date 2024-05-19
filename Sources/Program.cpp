@@ -35,6 +35,8 @@ void Program::Run()
             mRenderer->EndRenderPass(commandBuffer);
             mRenderer->End();
         }
+        
+        mScene->Update();
     }
 
     vkDeviceWaitIdle(mDevice.GetDevice());

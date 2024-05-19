@@ -1,5 +1,7 @@
 #include "Scene.hpp"
 #include "PlayerController.hpp"
+#include "Physics/Physics.hpp"
+#include "Physics/Collision.hpp"
 
 namespace Super 
 {
@@ -16,6 +18,14 @@ Scene::~Scene()
 {
 }
 
+void Scene::Update() 
+{
+    for(const auto& sys : mSystems) 
+    {
+        sys->Update(mEntityManager.GetAllEntities());
+    }
+}
+
 
 void Scene::CreateScene(uint32_t width, uint32_t height) 
 {
@@ -25,8 +35,9 @@ void Scene::CreateScene(uint32_t width, uint32_t height)
     //
     Entity player = Entity{};
     player.color = glm::vec3(0.5f, 0.1f, 1.0f);
-    player.transform = {glm::vec2(750, 450), glm::vec2(50, 50), glm::mat4{1.0f}};
-    player.physics = {glm::vec2(0.0f, 0.0f), glm::vec2(0.0f, 0.0f)};
+    player.transform = {glm::vec2(400, 100), glm::vec2(50, 50), glm::mat4{1.0f}};
+    player.bounds.size = player.transform.scale;
+    player.motion = {glm::vec2(0.0f, 0.0f), glm::vec2(0.0f, 0.0f)};
     player.flags = EntityFlags::ACTIVE | EntityFlags::HAS_HEALTH | EntityFlags::IS_RIGID 
     | EntityFlags::HAS_MOTION | EntityFlags::IS_PLAYER;
     player.id = mEntityManager.CreateEntity(std::move(player));
@@ -35,8 +46,9 @@ void Scene::CreateScene(uint32_t width, uint32_t height)
     //
     Entity enemy = Entity{};
     enemy.color = glm::vec3(0.5f, 1.0f, 0.1f);
-    enemy.transform = {glm::vec2(400, 300), glm::vec2(50, 50), glm::mat4{1.0f}};
-    enemy.physics = {glm::vec2(0.0f, 0.0f), glm::vec2(0.0f, 0.0f)};
+    enemy.transform = {glm::vec2(200, 100), glm::vec2(50, 50), glm::mat4{1.0f}};
+    enemy.bounds.size = enemy.transform.scale;
+    enemy.motion = {glm::vec2(0.0f, 0.0f), glm::vec2(0.0f, 0.0f)};
     enemy.flags = EntityFlags::ACTIVE | EntityFlags::HAS_HEALTH | EntityFlags::IS_RIGID 
     | EntityFlags::HAS_MOTION | EntityFlags::IS_ENEMY;
     enemy.id = mEntityManager.CreateEntity(std::move(enemy));
@@ -45,6 +57,11 @@ void Scene::CreateScene(uint32_t width, uint32_t height)
     //
 
     mEventSystems.emplace_back(std::move(std::make_unique<PlayerController>(mEntityManager.GetAllEntities()[0])));
-    
+
+
+    // ECS Systems.
+    //   
+    mSystems.emplace_back(std::move(std::make_unique<Physics>()));
+    mSystems.emplace_back(std::move(std::make_unique<Collision>(width, height)));
 }
 }
