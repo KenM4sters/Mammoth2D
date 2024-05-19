@@ -18,7 +18,7 @@ Sprite2DSystem::Sprite2DSystem(Device& device, VkRenderPass renderPass, uint32_t
 
     VertexInput vertexInput = VertexInput(std::move(bufferLayout));
 
-
+    // Memory is deleted in the destructor of the base class.
     Pipeline* playerPipeline = new Pipeline(
         device, 
         renderPass,

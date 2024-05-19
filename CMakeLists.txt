@@ -9,7 +9,7 @@ project(
 # Window.
 add_subdirectory(External/glfw)
 
-# Math.
+# Maths.
 add_subdirectory(External/glm)
 
 # Vulkan.
@@ -38,11 +38,11 @@ add_executable(${PROJECT_NAME}
 )
 
 if (DEFINED VULKAN_SDK_PATH)
-  set(Vulkan_INCLUDE_DIRS "${VULKAN_SDK_PATH}/include") # 1.1 Make sure this include path is correct
-  set(Vulkan_LIBRARIES "${VULKAN_SDK_PATH}/lib") # 1.2 Make sure lib path is correct
+  set(Vulkan_INCLUDE_DIRS "${VULKAN_SDK_PATH}/include") # 1.1 Make sure this include path is correct.
+  set(Vulkan_LIBRARIES "${VULKAN_SDK_PATH}/lib") # 1.2 Make sure lib path is correct.
   set(Vulkan_FOUND "True")
 else()
-  find_package(Vulkan REQUIRED) # throws error if could not find Vulkan
+  find_package(Vulkan REQUIRED) # throws an error if the Vulkan SDK could not be found.
   message(STATUS "Found Vulkan: $ENV{VULKAN_SDK}")
 endif()
 if (NOT Vulkan_FOUND)
@@ -72,7 +72,7 @@ find_program(GLSL_VALIDATOR glslangValidator HINTS
   ${VULKAN_SDK_PATH}/bin
 )
 
-# get all .vert and .frag files in shaders directory
+# Get all .vert and .frag files in shaders directory.s
 file(GLOB_RECURSE GLSL_SOURCE_FILES
   "${PROJECT_SOURCE_DIR}/Shaders/*.frag"
   "${PROJECT_SOURCE_DIR}/Shaders/*.vert"
@@ -95,9 +95,9 @@ add_custom_target(
 )
 
 
-# Enable AddressSanitizer and UndefinedBehaviorSanitizer
+# Enable AddressSanitizer and UndefinedBehaviorSanitizer.
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address,undefined")
-# Link with sanitizer runtime libraries
+# Link with sanitizer runtime libraries.
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fsanitize=address,undefined")
-# Set optimization and debugging flags
+# Set optimization and debugging flags.
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -O0 -g")

@@ -24,6 +24,9 @@ public:
     // Public Getter for the entire map.
     inline std::unordered_map<std::string, std::vector<Entity*>>& GetMap() { return *mMap; }
 
+    inline uint32_t GetGridWidth() const { return mGridWidth; }
+    inline uint32_t GetGridHeight() const { return mGridHeight; }
+
     void Update(std::vector<Entity>& entities);
 
 private:

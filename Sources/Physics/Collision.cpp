@@ -21,6 +21,15 @@ void Collision::Update(std::vector<Entity>& entities)
         auto& v = cell.second;
         for(int i = 0; i < v.size(); i++) 
         {
+            // Checks collisions against the window boundaries.
+            //
+            if(CheckCollision(v[i])) 
+            {
+                if(v[i]->flags & EntityFlags::HAS_MOTION) v[i]->flags &= ~EntityFlags::HAS_MOTION;
+            }
+
+            // Iterates over each entity in the same cell and check for collisions.
+            //
             for(int j = 0; j < v.size(); j++) 
             {
                 if(i == j) continue;
@@ -30,6 +39,7 @@ void Collision::Update(std::vector<Entity>& entities)
                     if(v[j]->flags & EntityFlags::HAS_MOTION) v[j]->flags &= ~EntityFlags::HAS_MOTION;
                 } 
             }
+            
         }
     }
 }
@@ -54,6 +64,29 @@ bool Collision::CheckCollision(Entity* ent1, Entity* ent2)
         p2.y + h2 >= p1.y;
     // collision only if on both axes
     return collisionX && collisionY;
+}
+
+bool Collision::CheckCollision(Entity* ent1) 
+{
+    const int w1 = ent1->bounds.size.x;
+    const int h1 = ent1->bounds.size.y;
+
+    const glm::vec2& p1 = ent1->transform.position;
+
+    const uint32_t gridWidth = mSpatialGrid->GetGridWidth();
+    const uint32_t gridHeight = mSpatialGrid->GetGridHeight();
+
+    // x-axis collision.
+    //
+    if(p1.x <= 0.0f)            return true;
+    if(p1.x + w1 >= gridWidth)  return true;
+
+    // y-axis collision.
+    //
+    if(p1.y - h1 <= 0.0f)       return true;
+    if(p1.y >= gridHeight)      return true;
+
+    return false;
 }
 
 void Collision::HandleCollision(Entity* ent1, Entity* ent2) 
