@@ -34,7 +34,6 @@ add_executable(${PROJECT_NAME}
   Sources/Physics/Physics.cpp
   Sources/Physics/Collision.cpp
   Sources/Physics/SpatialGrid.cpp
-  Sources/Events/EventSystem.cpp
 )
 
 if (DEFINED VULKAN_SDK_PATH)

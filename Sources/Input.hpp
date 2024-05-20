@@ -1,16 +1,18 @@
 #pragma once
 #include <GLFW/glfw3.h>
-#include "Events/EventSystem.hpp"
+#include "Events/Bus.hpp"
 
 namespace Super 
 {
-class Input : public EventSystem
+class Input 
 {
 public:
-    Input();
+    Input(EventBus& eventBus);
     ~Input();
 
     void ListenToKeyboard(GLFWwindow* window) const;
-
+    
+private:
+    EventBus& mEventBus;
 };
 }

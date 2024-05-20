@@ -38,9 +38,9 @@ void Window::CreateWindowSurface(VkInstance instance, VkSurfaceKHR* surface) con
     }
 }
 
-
 void Window::OnWindowCloseCallback(GLFWwindow* window) 
 {
     mIsRunning = false;
 }
+
 }

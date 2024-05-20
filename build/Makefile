@@ -216,30 +216,6 @@ Sources/Device.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Device.cpp.s
 .PHONY : Sources/Device.cpp.s
 
-Sources/Events/EventSystem.o: Sources/Events/EventSystem.cpp.o
-.PHONY : Sources/Events/EventSystem.o
-
-# target to build an object file
-Sources/Events/EventSystem.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Events/EventSystem.cpp.o
-.PHONY : Sources/Events/EventSystem.cpp.o
-
-Sources/Events/EventSystem.i: Sources/Events/EventSystem.cpp.i
-.PHONY : Sources/Events/EventSystem.i
-
-# target to preprocess a source file
-Sources/Events/EventSystem.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Events/EventSystem.cpp.i
-.PHONY : Sources/Events/EventSystem.cpp.i
-
-Sources/Events/EventSystem.s: Sources/Events/EventSystem.cpp.s
-.PHONY : Sources/Events/EventSystem.s
-
-# target to generate assembly for a file
-Sources/Events/EventSystem.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Events/EventSystem.cpp.s
-.PHONY : Sources/Events/EventSystem.cpp.s
-
 Sources/Graphics/Buffers/Buffer.o: Sources/Graphics/Buffers/Buffer.cpp.o
 .PHONY : Sources/Graphics/Buffers/Buffer.o
 
@@ -642,9 +618,6 @@ help:
 	@echo "... Sources/Device.o"
 	@echo "... Sources/Device.i"
 	@echo "... Sources/Device.s"
-	@echo "... Sources/Events/EventSystem.o"
-	@echo "... Sources/Events/EventSystem.i"
-	@echo "... Sources/Events/EventSystem.s"
 	@echo "... Sources/Graphics/Buffers/Buffer.o"
 	@echo "... Sources/Graphics/Buffers/Buffer.i"
 	@echo "... Sources/Graphics/Buffers/Buffer.s"

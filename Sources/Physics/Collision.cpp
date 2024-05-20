@@ -35,8 +35,8 @@ void Collision::Update(std::vector<Entity>& entities)
                 if(i == j) continue;
                 if(CheckCollision(v[i], v[j])) 
                 {
-                    if(v[i]->flags & EntityFlags::HAS_MOTION) v[i]->flags &= ~EntityFlags::HAS_MOTION;
-                    if(v[j]->flags & EntityFlags::HAS_MOTION) v[j]->flags &= ~EntityFlags::HAS_MOTION;
+                    // if(v[i]->flags & EntityFlags::HAS_MOTION) v[i]->flags &= ~EntityFlags::HAS_MOTION;
+                    // if(v[j]->flags & EntityFlags::HAS_MOTION) v[j]->flags &= ~EntityFlags::HAS_MOTION;
                 } 
             }
             
@@ -57,7 +57,7 @@ bool Collision::CheckCollision(Entity* ent1, Entity* ent2)
     const glm::vec2& p2 = ent2->transform.position;
 
     // collision x-axis?
-    bool collisionX = p1.x + h1 >= p2.x &&
+    bool collisionX = p1.x + w1 >= p2.x &&
         p2.x + w2 >= p1.x;
     // collision y-axis?
     bool collisionY = p1.y + h1 >= p2.y &&
@@ -83,8 +83,8 @@ bool Collision::CheckCollision(Entity* ent1)
 
     // y-axis collision.
     //
-    if(p1.y - h1 <= 0.0f)       return true;
-    if(p1.y >= gridHeight)      return true;
+    if(p1.y <= 0.0f)            return true;
+    if(p1.y + h1 >= gridHeight) return true;
 
     return false;
 }

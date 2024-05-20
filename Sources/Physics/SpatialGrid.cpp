@@ -49,19 +49,42 @@ void SpatialGrid::ResetGrid()
 
 void SpatialGrid::AssignEntityToGridCell(Entity& entity) 
 {
-    const int cXcell = round((float)entity.transform.position.x / mGridWidth);
-    const int cYcell = round((float)entity.transform.position.y / mGridHeight);
+    // Checks which cell the most left vertex is in.
+    //
+    const int xCellLeft = round((float)entity.transform.position.x / mGridWidth);
+    const int yCellLeft = round((float)entity.transform.position.y / mGridHeight);
+    const std::string leftCell = std::to_string(xCellLeft) + std::to_string(yCellLeft);
 
-    const std::string cell = std::to_string(cXcell) + std::to_string(cYcell);
-
-
-    if(mMap->count(cell)) 
+    // Pushes the entity into the appropriate cell.
+    //
+    if(mMap->count(leftCell)) 
     {
-        mMap->operator[](cell).push_back(&entity);
+        mMap->operator[](leftCell).push_back(&entity);
     }
     else 
     {
-        mMap->operator[](cell) = std::vector<Entity*>{&entity};
+        mMap->operator[](leftCell) = std::vector<Entity*>{&entity};
+    }
+
+    // Checks which cell the most right vetex is in.
+    //
+    const int xCellRight = round((float)(entity.transform.position.x + entity.bounds.size.x) / mGridWidth);
+    const int yCellRight = round((float)(entity.transform.position.y + entity.bounds.size.y) / mGridHeight);
+    const std::string rightCell = std::to_string(xCellRight) + std::to_string(yCellRight);
+
+    // Only pushes the entity into the appropriate cell if its different
+    // from the other cell (we don't want duplicates in the same cell).
+    //
+    if(rightCell != leftCell) 
+    {
+        if(mMap->count(rightCell)) 
+        {
+            mMap->operator[](rightCell).push_back(&entity);
+        }
+        else 
+        {
+            mMap->operator[](rightCell) = std::vector<Entity*>{&entity};
+        }
     }
 }
 

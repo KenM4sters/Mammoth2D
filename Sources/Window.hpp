@@ -4,6 +4,7 @@
 #include <GLFW/glfw3.h>
 #include <vulkan/vulkan.hpp>
 #include <string>
+#include "Events/Bus.hpp"
 
 namespace Super
 {

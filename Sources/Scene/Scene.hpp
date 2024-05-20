@@ -4,8 +4,10 @@
 #include "Entity.hpp"
 #include "EntityManager.hpp"
 #include "Camera.hpp"
-#include "Events/EventSystem.hpp"
 #include "System.hpp"
+#include "Events/Bus.hpp"
+#include "PlayerController.hpp"
+
 
 namespace Super 
 {
@@ -14,11 +16,9 @@ class Scene
 public:
     // @param width Width of the swapchain. 
     // @param height Height of the swapchain.
-    Scene(uint32_t width, uint32_t height);
+    Scene(EventBus& eventBus, uint32_t width, uint32_t height);
     
     ~Scene();
-
-    void CreateScene(uint32_t width, uint32_t height);
 
     void Update();
 
@@ -33,7 +33,7 @@ private:
 
     EntityManager mEntityManager = EntityManager();
 
-    std::vector<std::unique_ptr<EventSystem>> mEventSystems{};
+    std::unique_ptr<PlayerController> mPlayerController{nullptr};
 
     std::vector<std::unique_ptr<System>> mSystems{};
 };

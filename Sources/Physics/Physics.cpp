@@ -2,6 +2,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <iostream>
 #include "Physics.hpp"
+
 namespace Super 
 {
 void Physics::Update(std::vector<Entity>& entities) 
@@ -11,6 +12,13 @@ void Physics::Update(std::vector<Entity>& entities)
         if(entity.flags & EntityFlags::HAS_MOTION) 
         {
             UpdateMotion(entity);
+        } else 
+        {
+            // IMPORTANT - the transforms still need to be updated at least once even
+            // if the entity shouldn't move. We're using an orthographic camera where everything
+            // is scaled relative to the viewport (800, 600), so entities already in device coordinates
+            // will appear incredibly small (too small to even see).
+            UpdateTransformMatrix(entity);
         }
     }
 }
@@ -22,6 +30,7 @@ void Physics::UpdateMotion(Entity& entity)
     ResetMotion(entity);
 
     m.acceleration += glm::vec2(0.0f, G);
+
     m.velocity += m.acceleration;
     entity.transform.position += glm::vec2(m.velocity.x, -m.velocity.y);
 

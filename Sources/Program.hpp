@@ -7,6 +7,7 @@
 #include "Graphics/Renderer/Renderer.hpp"
 #include "Scene/Scene.hpp"
 #include "Input.hpp"
+#include "Events/Bus.hpp"
 
 namespace Super
 {
@@ -25,13 +26,15 @@ public:
 
 private:
 
+    EventBus mEventBus{};
+
     Window mWindow;
     Device mDevice{mWindow};
 
     std::unique_ptr<Renderer> mRenderer = nullptr;
     std::unique_ptr<Scene> mScene = nullptr;
 
-    Input mInput{};
+    Input mInput{mEventBus};
 
 };
 }
