@@ -9,38 +9,31 @@ void Physics::Update(std::vector<Entity>& entities)
 {
     for(auto& entity : entities) 
     {
-        if(entity.flags & EntityFlags::HAS_MOTION) 
-        {
-            UpdateMotion(entity);
-        } else 
-        {
-            // IMPORTANT - the transforms still need to be updated at least once even
-            // if the entity shouldn't move. We're using an orthographic camera where everything
-            // is scaled relative to the viewport (800, 600), so entities already in device coordinates
-            // will appear incredibly small (too small to even see).
-            UpdateTransformMatrix(entity);
-        }
+        UpdateMotion(entity);
     }
 }
 
 void Physics::UpdateMotion(Entity& entity) 
 {
-    auto& m = entity.motion;
+    auto& p = entity.body;
+    
+    p.force += glm::vec2(0.0f, G);
 
-    ResetMotion(entity);
+    const glm::vec2 acceleration = p.force * p.inverseMass;
 
-    m.acceleration += glm::vec2(0.0f, G);
+    p.velocity += acceleration;
 
-    m.velocity += m.acceleration;
-    entity.transform.position += glm::vec2(m.velocity.x, -m.velocity.y);
+    entity.transform.position += glm::vec2(p.velocity.x, -p.velocity.y);
 
     UpdateTransformMatrix(entity);
+
+    ResetMotion(entity);
 
 }
 
 void Physics::ResetMotion(Entity& entity) 
 {
-    entity.motion.acceleration = glm::vec2(0.0f);
+    entity.body.force = {0.0f, 0.0f};
 }
 
 void Physics::UpdateTransformMatrix(Entity& entity) 

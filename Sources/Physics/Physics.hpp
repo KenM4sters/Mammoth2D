@@ -8,7 +8,7 @@ namespace Super
 class Physics : public System 
 {
 public:
-    Physics() {}
+    Physics(EventBus& eventBus) : System(eventBus) {}
     ~Physics() {}
 
     virtual void Update(std::vector<Entity>& entities) override;

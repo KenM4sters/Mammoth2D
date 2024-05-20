@@ -28,7 +28,7 @@ public:
 
     void JumpPlayer() 
     {
-        mPlayer.motion.acceleration += glm::vec2(0.0f, 10000.0f);
+        mPlayer.body.force += glm::vec2(0.0f, 1.0f);
     }
 
     Entity& mPlayer;

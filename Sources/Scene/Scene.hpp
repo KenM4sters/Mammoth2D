@@ -8,7 +8,6 @@
 #include "Events/Bus.hpp"
 #include "PlayerController.hpp"
 
-
 namespace Super 
 {
 class Scene 

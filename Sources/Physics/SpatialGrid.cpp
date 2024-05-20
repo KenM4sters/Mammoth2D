@@ -2,6 +2,16 @@
 
 namespace Super
 {
+
+bool SortPairs(CollisionPair lhs, CollisionPair rhs) 
+{
+    if(lhs.A < rhs.A)
+        return true;
+    if(lhs.A == rhs.A)
+        return lhs.B < rhs.B;
+    return false;
+}
+
 SpatialGrid::SpatialGrid(uint32_t gridWidth, uint32_t gridHeight, uint32_t numCellsX, uint32_t numCellsY)
     : mGridWidth{gridWidth}, mGridHeight{gridHeight}
 {
@@ -32,13 +42,43 @@ SpatialGrid::~SpatialGrid()
 
 }
 
-void SpatialGrid::Update(std::vector<Entity>& entities) 
+void SpatialGrid::Update(std::vector<Entity>& entities, std::vector<std::vector<CollisionPair>>* pairs) 
 {
     ResetGrid();
     for(auto& entity : entities) 
     {
         AssignEntityToGridCell(entity);
     }
+
+    pairs->clear();
+
+    for(auto& cell : *mMap.get()) 
+    {
+        pairs->push_back(GetPairsPerCell(cell.second));
+    }
+}
+
+std::vector<CollisionPair> SpatialGrid::GetPairsPerCell(std::vector<Entity*>& entities) const 
+{
+    std::vector<CollisionPair> pairs{};
+
+    for(int i = 0; i < entities.size(); i++) 
+    {
+        for(int j = 0; j < entities.size(); j++) 
+        {
+            if(i == j) continue;
+            pairs.push_back({entities[i], entities[j]});
+        }
+    }
+
+    RemoveDuplicates(&pairs);
+
+    return pairs;
+}
+
+void SpatialGrid::RemoveDuplicates(std::vector<CollisionPair>* pairs) const 
+{
+    std::sort(pairs->begin(), pairs->end(), SortPairs);
 }
 
 
@@ -51,8 +91,8 @@ void SpatialGrid::AssignEntityToGridCell(Entity& entity)
 {
     // Checks which cell the most left vertex is in.
     //
-    const int xCellLeft = round((float)entity.transform.position.x / mGridWidth);
-    const int yCellLeft = round((float)entity.transform.position.y / mGridHeight);
+    const int xCellLeft = round((float)entity.bounds.min.x / mGridWidth);
+    const int yCellLeft = round((float)entity.bounds.min.y / mGridHeight);
     const std::string leftCell = std::to_string(xCellLeft) + std::to_string(yCellLeft);
 
     // Pushes the entity into the appropriate cell.
@@ -68,8 +108,8 @@ void SpatialGrid::AssignEntityToGridCell(Entity& entity)
 
     // Checks which cell the most right vetex is in.
     //
-    const int xCellRight = round((float)(entity.transform.position.x + entity.bounds.size.x) / mGridWidth);
-    const int yCellRight = round((float)(entity.transform.position.y + entity.bounds.size.y) / mGridHeight);
+    const int xCellRight = round((float)(entity.bounds.max.x) / mGridWidth);
+    const int yCellRight = round((float)(entity.bounds.max.y) / mGridHeight);
     const std::string rightCell = std::to_string(xCellRight) + std::to_string(yCellRight);
 
     // Only pushes the entity into the appropriate cell if its different

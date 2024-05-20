@@ -19,10 +19,6 @@ typedef enum entityflags
     IS_PLATFORM         = 1 << 7,
 } EntityFlags;
 
-typedef struct bounds 
-{
-    glm::vec2 size;
-} Bounds;
 
 typedef struct transform 
 {
@@ -31,20 +27,29 @@ typedef struct transform
     alignas(16) glm::mat4 modelMatrix{1.0f};
 } Transform;
 
-typedef struct motion 
+typedef struct rigidbody 
 {
+    float inverseMass;
+    float denisty;
+    float restitution;
+    glm::vec2 force;
     glm::vec2 velocity;
-    glm::vec2 acceleration;
-} Motion;
+} RigidBody;
+
+typedef struct bounds 
+{
+    glm::vec2 min;
+    glm::vec2 max;
+} Bounds;
 
 typedef struct entity 
 {
     EntityID id;
-    int flags;
-    glm::vec3 color;
+    int flags; 
     Transform transform;
-    Motion motion;
+    RigidBody body;
     Bounds bounds;
+    glm::vec3 color;
 } Entity;
 
 }

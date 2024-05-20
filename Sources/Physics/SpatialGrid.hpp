@@ -4,14 +4,21 @@
 #include <unordered_map>
 #include "Scene/Entity.hpp"
 
+
+namespace Super
+{
 typedef struct cell 
 {
     glm::vec2 position; // bottom left point for the cell.
     glm::vec2 size;
 } Cell;
 
-namespace Super
+typedef struct collisionpair 
 {
+    Entity* A;
+    Entity* B;
+} CollisionPair;
+
 class SpatialGrid 
 {
 public:
@@ -27,9 +34,12 @@ public:
     inline uint32_t GetGridWidth() const { return mGridWidth; }
     inline uint32_t GetGridHeight() const { return mGridHeight; }
 
-    void Update(std::vector<Entity>& entities);
+
+    void Update(std::vector<Entity>& entities, std::vector<std::vector<CollisionPair>>* pairs);
 
 private:
+    std::vector<CollisionPair>  GetPairsPerCell(std::vector<Entity*>& entities) const;
+    void RemoveDuplicates(std::vector<CollisionPair>* pairs) const;
     void ResetGrid();
     void AssignEntityToGridCell(Entity& entity);
     

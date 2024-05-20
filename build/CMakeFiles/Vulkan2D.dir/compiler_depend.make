@@ -1100,6 +1100,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Device.cpp.o: /Users/samuelbrookman/Desktop/Vulk
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/cassert \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/cctype \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/cerrno \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/cfloat \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/climits \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/clocale \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/cmath \
@@ -1118,6 +1119,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Device.cpp.o: /Users/samuelbrookman/Desktop/Vulk
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/errno.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/exception \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/execution \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/float.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/functional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/initializer_list \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/ios \
@@ -1127,6 +1129,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Device.cpp.o: /Users/samuelbrookman/Desktop/Vulk
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/iterator \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/limits \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/limits.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/list \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/locale \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/locale.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/math.h \
@@ -1151,6 +1154,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Device.cpp.o: /Users/samuelbrookman/Desktop/Vulk
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/system_error \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/tuple \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/type_traits \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/typeindex \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/typeinfo \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/unordered_map \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/unordered_set \
@@ -1163,6 +1167,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Device.cpp.o: /Users/samuelbrookman/Desktop/Vulk
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/ctype.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/dlfcn.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/errno.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/float.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/libkern/_OSByteOrder.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/libkern/arm/OSByteOrder.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/limits.h \
@@ -1290,6 +1295,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Device.cpp.o: /Users/samuelbrookman/Desktop/Vulk
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/xlocale/_wchar.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/xlocale/_wctype.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/__stddef_max_align_t.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/float.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/limits.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/stdarg.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/stdbool.h \
@@ -1298,7 +1304,160 @@ CMakeFiles/Vulkan2D.dir/Sources/Device.cpp.o: /Users/samuelbrookman/Desktop/Vulk
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/share/asan_ignorelist.txt \
   /Users/samuelbrookman/Desktop/Vulkan2D/External/glfw/include/GLFW/glfw3.h \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Device.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/Entity.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Event.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Handler.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Bus.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Window.hpp \
+  /usr/local/macOS/include/glm/detail/setup.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat2x2.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat2x3.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat2x4.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat3x2.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat3x3.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat3x4.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat4x2.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat4x3.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat4x4.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec2.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec3.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec4.hpp \
+  /usr/local/macOS/include/glm/ext/scalar_int_sized.hpp \
+  /usr/local/macOS/include/glm/ext/scalar_uint_sized.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int4.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double2x2.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double2x2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double2x3.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double2x3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double2x4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double2x4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double3x2.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double3x2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double3x3.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double3x3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double3x4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double3x4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double4x2.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double4x2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double4x3.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double4x3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double4x4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double4x4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float2x2.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float2x2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float2x3.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float2x3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float2x4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float2x4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float3x2.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float3x2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float3x3.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float3x3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float3x4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float3x4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float4x2.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float4x2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float4x3.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float4x3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float4x4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float4x4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_bool2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_bool2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_bool3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_bool3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_bool4.hpp \
+  /usr/local/macOS/include/glm/ext/vector_bool4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_double2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_double2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_double3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_double3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_double4.hpp \
+  /usr/local/macOS/include/glm/ext/vector_double4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_float2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_float2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_float3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_float3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_float4.hpp \
+  /usr/local/macOS/include/glm/ext/vector_float4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int2_sized.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int3_sized.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int4.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int4_sized.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint2_sized.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint3_sized.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint4.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint4_sized.hpp \
+  /usr/local/macOS/include/glm/common.hpp \
+  /usr/local/macOS/include/glm/common.hpp \
+  /usr/local/macOS/include/glm/exponential.hpp \
+  /usr/local/macOS/include/glm/geometric.hpp \
+  /usr/local/macOS/include/glm/matrix.hpp \
+  /usr/local/macOS/include/glm/simd/platform.h \
+  /usr/local/macOS/include/glm/vector_relational.hpp \
+  /usr/local/macOS/include/glm/detail/compute_vector_relational.hpp \
+  /usr/local/macOS/include/glm/detail/_fixes.hpp \
+  /usr/local/macOS/include/glm/detail/_vectorize.hpp \
+  /usr/local/macOS/include/glm/detail/compute_common.hpp \
+  /usr/local/macOS/include/glm/detail/compute_vector_relational.hpp \
+  /usr/local/macOS/include/glm/detail/func_common.inl \
+  /usr/local/macOS/include/glm/detail/func_exponential.inl \
+  /usr/local/macOS/include/glm/detail/func_geometric.inl \
+  /usr/local/macOS/include/glm/detail/func_integer.inl \
+  /usr/local/macOS/include/glm/detail/func_matrix.inl \
+  /usr/local/macOS/include/glm/detail/func_packing.inl \
+  /usr/local/macOS/include/glm/detail/func_trigonometric.inl \
+  /usr/local/macOS/include/glm/detail/func_vector_relational.inl \
+  /usr/local/macOS/include/glm/detail/qualifier.hpp \
+  /usr/local/macOS/include/glm/detail/setup.hpp \
+  /usr/local/macOS/include/glm/detail/type_half.hpp \
+  /usr/local/macOS/include/glm/detail/type_half.inl \
+  /usr/local/macOS/include/glm/detail/type_mat2x2.inl \
+  /usr/local/macOS/include/glm/detail/type_mat2x3.inl \
+  /usr/local/macOS/include/glm/detail/type_mat2x4.inl \
+  /usr/local/macOS/include/glm/detail/type_mat3x2.inl \
+  /usr/local/macOS/include/glm/detail/type_mat3x3.inl \
+  /usr/local/macOS/include/glm/detail/type_mat3x4.inl \
+  /usr/local/macOS/include/glm/detail/type_mat4x2.inl \
+  /usr/local/macOS/include/glm/detail/type_mat4x3.inl \
+  /usr/local/macOS/include/glm/detail/type_mat4x4.inl \
+  /usr/local/macOS/include/glm/detail/type_vec1.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec1.inl \
+  /usr/local/macOS/include/glm/detail/type_vec2.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec2.inl \
+  /usr/local/macOS/include/glm/detail/type_vec3.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec3.inl \
+  /usr/local/macOS/include/glm/detail/type_vec4.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec4.inl \
+  /usr/local/macOS/include/glm/exponential.hpp \
+  /usr/local/macOS/include/glm/fwd.hpp \
+  /usr/local/macOS/include/glm/geometric.hpp \
+  /usr/local/macOS/include/glm/glm.hpp \
+  /usr/local/macOS/include/glm/integer.hpp \
+  /usr/local/macOS/include/glm/mat2x2.hpp \
+  /usr/local/macOS/include/glm/mat2x3.hpp \
+  /usr/local/macOS/include/glm/mat2x4.hpp \
+  /usr/local/macOS/include/glm/mat3x2.hpp \
+  /usr/local/macOS/include/glm/mat3x3.hpp \
+  /usr/local/macOS/include/glm/mat3x4.hpp \
+  /usr/local/macOS/include/glm/mat4x2.hpp \
+  /usr/local/macOS/include/glm/mat4x3.hpp \
+  /usr/local/macOS/include/glm/mat4x4.hpp \
+  /usr/local/macOS/include/glm/matrix.hpp \
+  /usr/local/macOS/include/glm/packing.hpp \
+  /usr/local/macOS/include/glm/trigonometric.hpp \
+  /usr/local/macOS/include/glm/vec2.hpp \
+  /usr/local/macOS/include/glm/vec3.hpp \
+  /usr/local/macOS/include/glm/vec4.hpp \
+  /usr/local/macOS/include/glm/vector_relational.hpp \
   /usr/local/macOS/include/vk_video/vulkan_video_codec_h264std.h \
   /usr/local/macOS/include/vk_video/vulkan_video_codec_h264std_decode.h \
   /usr/local/macOS/include/vk_video/vulkan_video_codec_h264std_encode.h \
@@ -1678,13 +1837,31 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/Buffer.cpp.o: /Users/samuelbroo
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__format/unicode.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__format/width_estimation_table.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/binary_function.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/binary_negate.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/bind.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/bind_back.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/bind_front.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/binder1st.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/binder2nd.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/boyer_moore_searcher.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/compose.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/default_searcher.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/function.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/hash.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/identity.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/invoke.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/is_transparent.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/mem_fn.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/mem_fun_ref.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/not_fn.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/operations.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/perfect_forward.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/pointer_to_binary_function.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/pointer_to_unary_function.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/ranges_operations.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/reference_wrapper.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/unary_function.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/unary_negate.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/weak_result_type.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__fwd/array.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__fwd/fstream.h \
@@ -1701,6 +1878,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/Buffer.cpp.o: /Users/samuelbroo
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__fwd/string_view.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__fwd/subrange.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__fwd/tuple.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__hash_table \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__ios/fpos.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/access.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/advance.h \
@@ -1734,6 +1912,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/Buffer.cpp.o: /Users/samuelbroo
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/permutable.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/prev.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/projected.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/ranges_iterator_traits.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/readable_traits.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/reverse_access.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/reverse_iterator.h \
@@ -1755,6 +1934,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/Buffer.cpp.o: /Users/samuelbroo
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/allocator_traits.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/assume_aligned.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/auto_ptr.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/builtin_new_allocator.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/compressed_pair.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/concepts.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/construct_at.h \
@@ -1778,6 +1958,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/Buffer.cpp.o: /Users/samuelbroo
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__mutex/mutex.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__mutex/tag_types.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__mutex/unique_lock.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__node_handle \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__numeric/pstl_transform_reduce.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__numeric/reduce.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__numeric/transform_reduce.h \
@@ -1951,6 +2132,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/Buffer.cpp.o: /Users/samuelbroo
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/remove_reference.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/remove_volatile.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/result_of.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/strip_signature.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/type_identity.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/type_list.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/underlying_type.h \
@@ -1988,6 +2170,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/Buffer.cpp.o: /Users/samuelbroo
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/cassert \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/cctype \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/cerrno \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/cfloat \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/climits \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/clocale \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/cmath \
@@ -2006,6 +2189,8 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/Buffer.cpp.o: /Users/samuelbroo
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/errno.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/exception \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/execution \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/float.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/functional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/initializer_list \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/ios \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/iosfwd \
@@ -2013,12 +2198,14 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/Buffer.cpp.o: /Users/samuelbroo
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/iterator \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/limits \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/limits.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/list \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/locale \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/locale.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/math.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/memory \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/mutex \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/new \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/optional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/ostream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/ratio \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/sstream \
@@ -2035,7 +2222,9 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/Buffer.cpp.o: /Users/samuelbroo
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/system_error \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/tuple \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/type_traits \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/typeindex \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/typeinfo \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/unordered_map \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/utility \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/variant \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/vector \
@@ -2045,6 +2234,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/Buffer.cpp.o: /Users/samuelbroo
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/ctype.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/dlfcn.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/errno.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/float.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/libkern/_OSByteOrder.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/libkern/arm/OSByteOrder.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/limits.h \
@@ -2172,6 +2362,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/Buffer.cpp.o: /Users/samuelbroo
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/xlocale/_wchar.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/xlocale/_wctype.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/__stddef_max_align_t.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/float.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/limits.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/stdarg.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/stdbool.h \
@@ -2180,8 +2371,161 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/Buffer.cpp.o: /Users/samuelbroo
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/share/asan_ignorelist.txt \
   /Users/samuelbrookman/Desktop/Vulkan2D/External/glfw/include/GLFW/glfw3.h \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Device.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/Entity.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Event.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Handler.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Bus.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Buffers/Buffer.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Window.hpp \
+  /usr/local/macOS/include/glm/detail/setup.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat2x2.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat2x3.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat2x4.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat3x2.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat3x3.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat3x4.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat4x2.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat4x3.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat4x4.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec2.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec3.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec4.hpp \
+  /usr/local/macOS/include/glm/ext/scalar_int_sized.hpp \
+  /usr/local/macOS/include/glm/ext/scalar_uint_sized.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int4.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double2x2.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double2x2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double2x3.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double2x3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double2x4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double2x4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double3x2.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double3x2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double3x3.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double3x3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double3x4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double3x4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double4x2.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double4x2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double4x3.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double4x3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double4x4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double4x4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float2x2.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float2x2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float2x3.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float2x3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float2x4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float2x4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float3x2.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float3x2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float3x3.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float3x3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float3x4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float3x4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float4x2.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float4x2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float4x3.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float4x3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float4x4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float4x4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_bool2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_bool2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_bool3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_bool3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_bool4.hpp \
+  /usr/local/macOS/include/glm/ext/vector_bool4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_double2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_double2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_double3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_double3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_double4.hpp \
+  /usr/local/macOS/include/glm/ext/vector_double4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_float2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_float2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_float3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_float3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_float4.hpp \
+  /usr/local/macOS/include/glm/ext/vector_float4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int2_sized.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int3_sized.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int4.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int4_sized.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint2_sized.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint3_sized.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint4.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint4_sized.hpp \
+  /usr/local/macOS/include/glm/common.hpp \
+  /usr/local/macOS/include/glm/common.hpp \
+  /usr/local/macOS/include/glm/exponential.hpp \
+  /usr/local/macOS/include/glm/geometric.hpp \
+  /usr/local/macOS/include/glm/matrix.hpp \
+  /usr/local/macOS/include/glm/simd/platform.h \
+  /usr/local/macOS/include/glm/vector_relational.hpp \
+  /usr/local/macOS/include/glm/detail/compute_vector_relational.hpp \
+  /usr/local/macOS/include/glm/detail/_fixes.hpp \
+  /usr/local/macOS/include/glm/detail/_vectorize.hpp \
+  /usr/local/macOS/include/glm/detail/compute_common.hpp \
+  /usr/local/macOS/include/glm/detail/compute_vector_relational.hpp \
+  /usr/local/macOS/include/glm/detail/func_common.inl \
+  /usr/local/macOS/include/glm/detail/func_exponential.inl \
+  /usr/local/macOS/include/glm/detail/func_geometric.inl \
+  /usr/local/macOS/include/glm/detail/func_integer.inl \
+  /usr/local/macOS/include/glm/detail/func_matrix.inl \
+  /usr/local/macOS/include/glm/detail/func_packing.inl \
+  /usr/local/macOS/include/glm/detail/func_trigonometric.inl \
+  /usr/local/macOS/include/glm/detail/func_vector_relational.inl \
+  /usr/local/macOS/include/glm/detail/qualifier.hpp \
+  /usr/local/macOS/include/glm/detail/setup.hpp \
+  /usr/local/macOS/include/glm/detail/type_half.hpp \
+  /usr/local/macOS/include/glm/detail/type_half.inl \
+  /usr/local/macOS/include/glm/detail/type_mat2x2.inl \
+  /usr/local/macOS/include/glm/detail/type_mat2x3.inl \
+  /usr/local/macOS/include/glm/detail/type_mat2x4.inl \
+  /usr/local/macOS/include/glm/detail/type_mat3x2.inl \
+  /usr/local/macOS/include/glm/detail/type_mat3x3.inl \
+  /usr/local/macOS/include/glm/detail/type_mat3x4.inl \
+  /usr/local/macOS/include/glm/detail/type_mat4x2.inl \
+  /usr/local/macOS/include/glm/detail/type_mat4x3.inl \
+  /usr/local/macOS/include/glm/detail/type_mat4x4.inl \
+  /usr/local/macOS/include/glm/detail/type_vec1.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec1.inl \
+  /usr/local/macOS/include/glm/detail/type_vec2.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec2.inl \
+  /usr/local/macOS/include/glm/detail/type_vec3.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec3.inl \
+  /usr/local/macOS/include/glm/detail/type_vec4.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec4.inl \
+  /usr/local/macOS/include/glm/exponential.hpp \
+  /usr/local/macOS/include/glm/fwd.hpp \
+  /usr/local/macOS/include/glm/geometric.hpp \
+  /usr/local/macOS/include/glm/glm.hpp \
+  /usr/local/macOS/include/glm/integer.hpp \
+  /usr/local/macOS/include/glm/mat2x2.hpp \
+  /usr/local/macOS/include/glm/mat2x3.hpp \
+  /usr/local/macOS/include/glm/mat2x4.hpp \
+  /usr/local/macOS/include/glm/mat3x2.hpp \
+  /usr/local/macOS/include/glm/mat3x3.hpp \
+  /usr/local/macOS/include/glm/mat3x4.hpp \
+  /usr/local/macOS/include/glm/mat4x2.hpp \
+  /usr/local/macOS/include/glm/mat4x3.hpp \
+  /usr/local/macOS/include/glm/mat4x4.hpp \
+  /usr/local/macOS/include/glm/matrix.hpp \
+  /usr/local/macOS/include/glm/packing.hpp \
+  /usr/local/macOS/include/glm/trigonometric.hpp \
+  /usr/local/macOS/include/glm/vec2.hpp \
+  /usr/local/macOS/include/glm/vec3.hpp \
+  /usr/local/macOS/include/glm/vec4.hpp \
+  /usr/local/macOS/include/glm/vector_relational.hpp \
   /usr/local/macOS/include/vk_video/vulkan_video_codec_h264std.h \
   /usr/local/macOS/include/vk_video/vulkan_video_codec_h264std_decode.h \
   /usr/local/macOS/include/vk_video/vulkan_video_codec_h264std_encode.h \
@@ -2561,13 +2905,31 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/BufferLayout.cpp.o: /Users/samu
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__format/unicode.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__format/width_estimation_table.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/binary_function.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/binary_negate.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/bind.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/bind_back.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/bind_front.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/binder1st.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/binder2nd.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/boyer_moore_searcher.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/compose.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/default_searcher.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/function.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/hash.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/identity.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/invoke.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/is_transparent.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/mem_fn.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/mem_fun_ref.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/not_fn.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/operations.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/perfect_forward.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/pointer_to_binary_function.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/pointer_to_unary_function.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/ranges_operations.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/reference_wrapper.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/unary_function.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/unary_negate.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/weak_result_type.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__fwd/array.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__fwd/fstream.h \
@@ -2584,6 +2946,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/BufferLayout.cpp.o: /Users/samu
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__fwd/string_view.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__fwd/subrange.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__fwd/tuple.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__hash_table \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__ios/fpos.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/access.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/advance.h \
@@ -2617,6 +2980,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/BufferLayout.cpp.o: /Users/samu
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/permutable.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/prev.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/projected.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/ranges_iterator_traits.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/readable_traits.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/reverse_access.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/reverse_iterator.h \
@@ -2638,6 +3002,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/BufferLayout.cpp.o: /Users/samu
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/allocator_traits.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/assume_aligned.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/auto_ptr.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/builtin_new_allocator.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/compressed_pair.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/concepts.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/construct_at.h \
@@ -2661,6 +3026,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/BufferLayout.cpp.o: /Users/samu
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__mutex/mutex.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__mutex/tag_types.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__mutex/unique_lock.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__node_handle \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__numeric/pstl_transform_reduce.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__numeric/reduce.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__numeric/transform_reduce.h \
@@ -2834,6 +3200,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/BufferLayout.cpp.o: /Users/samu
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/remove_reference.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/remove_volatile.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/result_of.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/strip_signature.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/type_identity.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/type_list.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/underlying_type.h \
@@ -2871,6 +3238,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/BufferLayout.cpp.o: /Users/samu
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/cassert \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/cctype \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/cerrno \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/cfloat \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/climits \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/clocale \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/cmath \
@@ -2889,6 +3257,8 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/BufferLayout.cpp.o: /Users/samu
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/errno.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/exception \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/execution \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/float.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/functional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/initializer_list \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/ios \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/iosfwd \
@@ -2897,12 +3267,14 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/BufferLayout.cpp.o: /Users/samu
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/iterator \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/limits \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/limits.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/list \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/locale \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/locale.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/math.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/memory \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/mutex \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/new \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/optional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/ostream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/ratio \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/sstream \
@@ -2919,7 +3291,9 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/BufferLayout.cpp.o: /Users/samu
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/system_error \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/tuple \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/type_traits \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/typeindex \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/typeinfo \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/unordered_map \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/utility \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/variant \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/vector \
@@ -2929,6 +3303,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/BufferLayout.cpp.o: /Users/samu
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/ctype.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/dlfcn.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/errno.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/float.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/libkern/_OSByteOrder.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/libkern/arm/OSByteOrder.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/limits.h \
@@ -3056,6 +3431,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/BufferLayout.cpp.o: /Users/samu
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/xlocale/_wchar.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/xlocale/_wctype.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/__stddef_max_align_t.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/float.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/limits.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/stdarg.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/stdbool.h \
@@ -3064,8 +3440,161 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/BufferLayout.cpp.o: /Users/samu
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/share/asan_ignorelist.txt \
   /Users/samuelbrookman/Desktop/Vulkan2D/External/glfw/include/GLFW/glfw3.h \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Device.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/Entity.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Event.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Handler.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Bus.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Buffers/BufferLayout.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Window.hpp \
+  /usr/local/macOS/include/glm/detail/setup.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat2x2.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat2x3.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat2x4.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat3x2.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat3x3.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat3x4.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat4x2.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat4x3.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat4x4.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec2.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec3.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec4.hpp \
+  /usr/local/macOS/include/glm/ext/scalar_int_sized.hpp \
+  /usr/local/macOS/include/glm/ext/scalar_uint_sized.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int4.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double2x2.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double2x2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double2x3.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double2x3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double2x4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double2x4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double3x2.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double3x2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double3x3.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double3x3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double3x4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double3x4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double4x2.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double4x2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double4x3.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double4x3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double4x4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double4x4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float2x2.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float2x2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float2x3.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float2x3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float2x4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float2x4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float3x2.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float3x2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float3x3.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float3x3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float3x4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float3x4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float4x2.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float4x2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float4x3.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float4x3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float4x4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float4x4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_bool2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_bool2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_bool3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_bool3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_bool4.hpp \
+  /usr/local/macOS/include/glm/ext/vector_bool4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_double2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_double2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_double3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_double3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_double4.hpp \
+  /usr/local/macOS/include/glm/ext/vector_double4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_float2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_float2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_float3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_float3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_float4.hpp \
+  /usr/local/macOS/include/glm/ext/vector_float4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int2_sized.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int3_sized.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int4.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int4_sized.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint2_sized.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint3_sized.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint4.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint4_sized.hpp \
+  /usr/local/macOS/include/glm/common.hpp \
+  /usr/local/macOS/include/glm/common.hpp \
+  /usr/local/macOS/include/glm/exponential.hpp \
+  /usr/local/macOS/include/glm/geometric.hpp \
+  /usr/local/macOS/include/glm/matrix.hpp \
+  /usr/local/macOS/include/glm/simd/platform.h \
+  /usr/local/macOS/include/glm/vector_relational.hpp \
+  /usr/local/macOS/include/glm/detail/compute_vector_relational.hpp \
+  /usr/local/macOS/include/glm/detail/_fixes.hpp \
+  /usr/local/macOS/include/glm/detail/_vectorize.hpp \
+  /usr/local/macOS/include/glm/detail/compute_common.hpp \
+  /usr/local/macOS/include/glm/detail/compute_vector_relational.hpp \
+  /usr/local/macOS/include/glm/detail/func_common.inl \
+  /usr/local/macOS/include/glm/detail/func_exponential.inl \
+  /usr/local/macOS/include/glm/detail/func_geometric.inl \
+  /usr/local/macOS/include/glm/detail/func_integer.inl \
+  /usr/local/macOS/include/glm/detail/func_matrix.inl \
+  /usr/local/macOS/include/glm/detail/func_packing.inl \
+  /usr/local/macOS/include/glm/detail/func_trigonometric.inl \
+  /usr/local/macOS/include/glm/detail/func_vector_relational.inl \
+  /usr/local/macOS/include/glm/detail/qualifier.hpp \
+  /usr/local/macOS/include/glm/detail/setup.hpp \
+  /usr/local/macOS/include/glm/detail/type_half.hpp \
+  /usr/local/macOS/include/glm/detail/type_half.inl \
+  /usr/local/macOS/include/glm/detail/type_mat2x2.inl \
+  /usr/local/macOS/include/glm/detail/type_mat2x3.inl \
+  /usr/local/macOS/include/glm/detail/type_mat2x4.inl \
+  /usr/local/macOS/include/glm/detail/type_mat3x2.inl \
+  /usr/local/macOS/include/glm/detail/type_mat3x3.inl \
+  /usr/local/macOS/include/glm/detail/type_mat3x4.inl \
+  /usr/local/macOS/include/glm/detail/type_mat4x2.inl \
+  /usr/local/macOS/include/glm/detail/type_mat4x3.inl \
+  /usr/local/macOS/include/glm/detail/type_mat4x4.inl \
+  /usr/local/macOS/include/glm/detail/type_vec1.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec1.inl \
+  /usr/local/macOS/include/glm/detail/type_vec2.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec2.inl \
+  /usr/local/macOS/include/glm/detail/type_vec3.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec3.inl \
+  /usr/local/macOS/include/glm/detail/type_vec4.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec4.inl \
+  /usr/local/macOS/include/glm/exponential.hpp \
+  /usr/local/macOS/include/glm/fwd.hpp \
+  /usr/local/macOS/include/glm/geometric.hpp \
+  /usr/local/macOS/include/glm/glm.hpp \
+  /usr/local/macOS/include/glm/integer.hpp \
+  /usr/local/macOS/include/glm/mat2x2.hpp \
+  /usr/local/macOS/include/glm/mat2x3.hpp \
+  /usr/local/macOS/include/glm/mat2x4.hpp \
+  /usr/local/macOS/include/glm/mat3x2.hpp \
+  /usr/local/macOS/include/glm/mat3x3.hpp \
+  /usr/local/macOS/include/glm/mat3x4.hpp \
+  /usr/local/macOS/include/glm/mat4x2.hpp \
+  /usr/local/macOS/include/glm/mat4x3.hpp \
+  /usr/local/macOS/include/glm/mat4x4.hpp \
+  /usr/local/macOS/include/glm/matrix.hpp \
+  /usr/local/macOS/include/glm/packing.hpp \
+  /usr/local/macOS/include/glm/trigonometric.hpp \
+  /usr/local/macOS/include/glm/vec2.hpp \
+  /usr/local/macOS/include/glm/vec3.hpp \
+  /usr/local/macOS/include/glm/vec4.hpp \
+  /usr/local/macOS/include/glm/vector_relational.hpp \
   /usr/local/macOS/include/vk_video/vulkan_video_codec_h264std.h \
   /usr/local/macOS/include/vk_video/vulkan_video_codec_h264std_decode.h \
   /usr/local/macOS/include/vk_video/vulkan_video_codec_h264std_encode.h \
@@ -3462,14 +3991,31 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Pipeline.cpp.o: /Users/samuel
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__format/unicode.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__format/width_estimation_table.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/binary_function.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/binary_negate.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/bind.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/bind_back.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/bind_front.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/binder1st.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/binder2nd.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/boyer_moore_searcher.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/compose.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/default_searcher.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/function.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/hash.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/identity.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/invoke.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/is_transparent.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/mem_fn.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/mem_fun_ref.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/not_fn.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/operations.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/perfect_forward.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/pointer_to_binary_function.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/pointer_to_unary_function.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/ranges_operations.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/reference_wrapper.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/unary_function.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/unary_negate.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/weak_result_type.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__fwd/array.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__fwd/fstream.h \
@@ -3542,6 +4088,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Pipeline.cpp.o: /Users/samuel
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/allocator_traits.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/assume_aligned.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/auto_ptr.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/builtin_new_allocator.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/compressed_pair.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/concepts.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/construct_at.h \
@@ -3739,6 +4286,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Pipeline.cpp.o: /Users/samuel
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/remove_reference.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/remove_volatile.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/result_of.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/strip_signature.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/type_identity.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/type_list.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/underlying_type.h \
@@ -3798,6 +4346,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Pipeline.cpp.o: /Users/samuel
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/filesystem \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/float.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/fstream \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/functional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/initializer_list \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/iomanip \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/ios \
@@ -3807,6 +4356,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Pipeline.cpp.o: /Users/samuel
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/iterator \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/limits \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/limits.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/list \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/locale \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/locale.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/math.h \
@@ -3830,6 +4380,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Pipeline.cpp.o: /Users/samuel
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/system_error \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/tuple \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/type_traits \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/typeindex \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/typeinfo \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/unordered_map \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/utility \
@@ -3978,6 +4529,10 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Pipeline.cpp.o: /Users/samuel
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/share/asan_ignorelist.txt \
   /Users/samuelbrookman/Desktop/Vulkan2D/External/glfw/include/GLFW/glfw3.h \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Device.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/Entity.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Event.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Handler.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Bus.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Buffers/Buffer.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Buffers/BufferLayout.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/Pipeline.hpp \
@@ -4531,13 +5086,31 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Shader.cpp.o: /Users/samuelbr
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__format/unicode.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__format/width_estimation_table.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/binary_function.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/binary_negate.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/bind.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/bind_back.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/bind_front.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/binder1st.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/binder2nd.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/boyer_moore_searcher.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/compose.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/default_searcher.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/function.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/hash.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/identity.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/invoke.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/is_transparent.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/mem_fn.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/mem_fun_ref.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/not_fn.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/operations.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/perfect_forward.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/pointer_to_binary_function.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/pointer_to_unary_function.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/ranges_operations.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/reference_wrapper.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/unary_function.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/unary_negate.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/weak_result_type.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__fwd/array.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__fwd/fstream.h \
@@ -4554,6 +5127,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Shader.cpp.o: /Users/samuelbr
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__fwd/string_view.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__fwd/subrange.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__fwd/tuple.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__hash_table \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__ios/fpos.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/access.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/advance.h \
@@ -4587,6 +5161,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Shader.cpp.o: /Users/samuelbr
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/permutable.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/prev.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/projected.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/ranges_iterator_traits.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/readable_traits.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/reverse_access.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/reverse_iterator.h \
@@ -4608,6 +5183,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Shader.cpp.o: /Users/samuelbr
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/allocator_traits.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/assume_aligned.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/auto_ptr.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/builtin_new_allocator.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/compressed_pair.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/concepts.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/construct_at.h \
@@ -4631,6 +5207,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Shader.cpp.o: /Users/samuelbr
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__mutex/mutex.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__mutex/tag_types.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__mutex/unique_lock.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__node_handle \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__numeric/pstl_transform_reduce.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__numeric/reduce.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__numeric/transform_reduce.h \
@@ -4804,6 +5381,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Shader.cpp.o: /Users/samuelbr
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/remove_reference.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/remove_volatile.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/result_of.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/strip_signature.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/type_identity.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/type_list.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/underlying_type.h \
@@ -4841,6 +5419,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Shader.cpp.o: /Users/samuelbr
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/cassert \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/cctype \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/cerrno \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/cfloat \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/climits \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/clocale \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/cmath \
@@ -4860,7 +5439,9 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Shader.cpp.o: /Users/samuelbr
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/exception \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/execution \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/filesystem \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/float.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/fstream \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/functional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/initializer_list \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/iomanip \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/ios \
@@ -4869,12 +5450,14 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Shader.cpp.o: /Users/samuelbr
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/iterator \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/limits \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/limits.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/list \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/locale \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/locale.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/math.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/memory \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/mutex \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/new \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/optional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/ostream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/ratio \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/sstream \
@@ -4891,7 +5474,9 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Shader.cpp.o: /Users/samuelbr
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/system_error \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/tuple \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/type_traits \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/typeindex \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/typeinfo \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/unordered_map \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/utility \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/variant \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/vector \
@@ -4901,6 +5486,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Shader.cpp.o: /Users/samuelbr
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/ctype.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/dlfcn.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/errno.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/float.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/libkern/_OSByteOrder.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/libkern/arm/OSByteOrder.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/limits.h \
@@ -5028,6 +5614,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Shader.cpp.o: /Users/samuelbr
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/xlocale/_wchar.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/xlocale/_wctype.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/__stddef_max_align_t.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/float.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/limits.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/stdarg.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/stdbool.h \
@@ -5036,8 +5623,161 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Shader.cpp.o: /Users/samuelbr
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/share/asan_ignorelist.txt \
   /Users/samuelbrookman/Desktop/Vulkan2D/External/glfw/include/GLFW/glfw3.h \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Device.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/Entity.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Event.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Handler.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Bus.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/Shader.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Window.hpp \
+  /usr/local/macOS/include/glm/detail/setup.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat2x2.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat2x3.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat2x4.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat3x2.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat3x3.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat3x4.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat4x2.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat4x3.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat4x4.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec2.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec3.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec4.hpp \
+  /usr/local/macOS/include/glm/ext/scalar_int_sized.hpp \
+  /usr/local/macOS/include/glm/ext/scalar_uint_sized.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int4.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double2x2.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double2x2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double2x3.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double2x3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double2x4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double2x4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double3x2.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double3x2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double3x3.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double3x3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double3x4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double3x4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double4x2.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double4x2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double4x3.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double4x3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double4x4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double4x4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float2x2.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float2x2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float2x3.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float2x3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float2x4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float2x4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float3x2.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float3x2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float3x3.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float3x3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float3x4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float3x4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float4x2.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float4x2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float4x3.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float4x3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float4x4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float4x4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_bool2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_bool2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_bool3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_bool3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_bool4.hpp \
+  /usr/local/macOS/include/glm/ext/vector_bool4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_double2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_double2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_double3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_double3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_double4.hpp \
+  /usr/local/macOS/include/glm/ext/vector_double4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_float2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_float2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_float3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_float3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_float4.hpp \
+  /usr/local/macOS/include/glm/ext/vector_float4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int2_sized.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int3_sized.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int4.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int4_sized.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint2_sized.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint3_sized.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint4.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint4_sized.hpp \
+  /usr/local/macOS/include/glm/common.hpp \
+  /usr/local/macOS/include/glm/common.hpp \
+  /usr/local/macOS/include/glm/exponential.hpp \
+  /usr/local/macOS/include/glm/geometric.hpp \
+  /usr/local/macOS/include/glm/matrix.hpp \
+  /usr/local/macOS/include/glm/simd/platform.h \
+  /usr/local/macOS/include/glm/vector_relational.hpp \
+  /usr/local/macOS/include/glm/detail/compute_vector_relational.hpp \
+  /usr/local/macOS/include/glm/detail/_fixes.hpp \
+  /usr/local/macOS/include/glm/detail/_vectorize.hpp \
+  /usr/local/macOS/include/glm/detail/compute_common.hpp \
+  /usr/local/macOS/include/glm/detail/compute_vector_relational.hpp \
+  /usr/local/macOS/include/glm/detail/func_common.inl \
+  /usr/local/macOS/include/glm/detail/func_exponential.inl \
+  /usr/local/macOS/include/glm/detail/func_geometric.inl \
+  /usr/local/macOS/include/glm/detail/func_integer.inl \
+  /usr/local/macOS/include/glm/detail/func_matrix.inl \
+  /usr/local/macOS/include/glm/detail/func_packing.inl \
+  /usr/local/macOS/include/glm/detail/func_trigonometric.inl \
+  /usr/local/macOS/include/glm/detail/func_vector_relational.inl \
+  /usr/local/macOS/include/glm/detail/qualifier.hpp \
+  /usr/local/macOS/include/glm/detail/setup.hpp \
+  /usr/local/macOS/include/glm/detail/type_half.hpp \
+  /usr/local/macOS/include/glm/detail/type_half.inl \
+  /usr/local/macOS/include/glm/detail/type_mat2x2.inl \
+  /usr/local/macOS/include/glm/detail/type_mat2x3.inl \
+  /usr/local/macOS/include/glm/detail/type_mat2x4.inl \
+  /usr/local/macOS/include/glm/detail/type_mat3x2.inl \
+  /usr/local/macOS/include/glm/detail/type_mat3x3.inl \
+  /usr/local/macOS/include/glm/detail/type_mat3x4.inl \
+  /usr/local/macOS/include/glm/detail/type_mat4x2.inl \
+  /usr/local/macOS/include/glm/detail/type_mat4x3.inl \
+  /usr/local/macOS/include/glm/detail/type_mat4x4.inl \
+  /usr/local/macOS/include/glm/detail/type_vec1.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec1.inl \
+  /usr/local/macOS/include/glm/detail/type_vec2.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec2.inl \
+  /usr/local/macOS/include/glm/detail/type_vec3.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec3.inl \
+  /usr/local/macOS/include/glm/detail/type_vec4.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec4.inl \
+  /usr/local/macOS/include/glm/exponential.hpp \
+  /usr/local/macOS/include/glm/fwd.hpp \
+  /usr/local/macOS/include/glm/geometric.hpp \
+  /usr/local/macOS/include/glm/glm.hpp \
+  /usr/local/macOS/include/glm/integer.hpp \
+  /usr/local/macOS/include/glm/mat2x2.hpp \
+  /usr/local/macOS/include/glm/mat2x3.hpp \
+  /usr/local/macOS/include/glm/mat2x4.hpp \
+  /usr/local/macOS/include/glm/mat3x2.hpp \
+  /usr/local/macOS/include/glm/mat3x3.hpp \
+  /usr/local/macOS/include/glm/mat3x4.hpp \
+  /usr/local/macOS/include/glm/mat4x2.hpp \
+  /usr/local/macOS/include/glm/mat4x3.hpp \
+  /usr/local/macOS/include/glm/mat4x4.hpp \
+  /usr/local/macOS/include/glm/matrix.hpp \
+  /usr/local/macOS/include/glm/packing.hpp \
+  /usr/local/macOS/include/glm/trigonometric.hpp \
+  /usr/local/macOS/include/glm/vec2.hpp \
+  /usr/local/macOS/include/glm/vec3.hpp \
+  /usr/local/macOS/include/glm/vec4.hpp \
+  /usr/local/macOS/include/glm/vector_relational.hpp \
   /usr/local/macOS/include/vk_video/vulkan_video_codec_h264std.h \
   /usr/local/macOS/include/vk_video/vulkan_video_codec_h264std_decode.h \
   /usr/local/macOS/include/vk_video/vulkan_video_codec_h264std_encode.h \
@@ -5417,13 +6157,31 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/VertexInput.cpp.o: /Users/sam
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__format/unicode.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__format/width_estimation_table.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/binary_function.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/binary_negate.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/bind.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/bind_back.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/bind_front.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/binder1st.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/binder2nd.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/boyer_moore_searcher.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/compose.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/default_searcher.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/function.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/hash.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/identity.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/invoke.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/is_transparent.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/mem_fn.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/mem_fun_ref.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/not_fn.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/operations.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/perfect_forward.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/pointer_to_binary_function.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/pointer_to_unary_function.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/ranges_operations.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/reference_wrapper.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/unary_function.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/unary_negate.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/weak_result_type.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__fwd/array.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__fwd/fstream.h \
@@ -5440,6 +6198,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/VertexInput.cpp.o: /Users/sam
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__fwd/string_view.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__fwd/subrange.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__fwd/tuple.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__hash_table \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__ios/fpos.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/access.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/advance.h \
@@ -5473,6 +6232,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/VertexInput.cpp.o: /Users/sam
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/permutable.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/prev.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/projected.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/ranges_iterator_traits.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/readable_traits.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/reverse_access.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/reverse_iterator.h \
@@ -5494,6 +6254,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/VertexInput.cpp.o: /Users/sam
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/allocator_traits.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/assume_aligned.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/auto_ptr.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/builtin_new_allocator.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/compressed_pair.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/concepts.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/construct_at.h \
@@ -5517,6 +6278,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/VertexInput.cpp.o: /Users/sam
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__mutex/mutex.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__mutex/tag_types.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__mutex/unique_lock.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__node_handle \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__numeric/pstl_transform_reduce.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__numeric/reduce.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__numeric/transform_reduce.h \
@@ -5690,6 +6452,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/VertexInput.cpp.o: /Users/sam
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/remove_reference.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/remove_volatile.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/result_of.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/strip_signature.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/type_identity.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/type_list.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/underlying_type.h \
@@ -5727,6 +6490,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/VertexInput.cpp.o: /Users/sam
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/cassert \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/cctype \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/cerrno \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/cfloat \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/climits \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/clocale \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/cmath \
@@ -5745,6 +6509,8 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/VertexInput.cpp.o: /Users/sam
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/errno.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/exception \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/execution \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/float.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/functional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/initializer_list \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/ios \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/iosfwd \
@@ -5753,12 +6519,14 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/VertexInput.cpp.o: /Users/sam
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/iterator \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/limits \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/limits.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/list \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/locale \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/locale.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/math.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/memory \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/mutex \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/new \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/optional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/ostream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/ratio \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/sstream \
@@ -5775,7 +6543,9 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/VertexInput.cpp.o: /Users/sam
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/system_error \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/tuple \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/type_traits \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/typeindex \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/typeinfo \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/unordered_map \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/utility \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/variant \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/vector \
@@ -5785,6 +6555,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/VertexInput.cpp.o: /Users/sam
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/ctype.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/dlfcn.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/errno.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/float.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/libkern/_OSByteOrder.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/libkern/arm/OSByteOrder.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/limits.h \
@@ -5912,6 +6683,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/VertexInput.cpp.o: /Users/sam
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/xlocale/_wchar.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/xlocale/_wctype.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/__stddef_max_align_t.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/float.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/limits.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/stdarg.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/stdbool.h \
@@ -5920,9 +6692,162 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/VertexInput.cpp.o: /Users/sam
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/share/asan_ignorelist.txt \
   /Users/samuelbrookman/Desktop/Vulkan2D/External/glfw/include/GLFW/glfw3.h \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Device.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/Entity.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Event.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Handler.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Bus.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Buffers/BufferLayout.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/VertexInput.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Window.hpp \
+  /usr/local/macOS/include/glm/detail/setup.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat2x2.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat2x3.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat2x4.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat3x2.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat3x3.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat3x4.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat4x2.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat4x3.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat4x4.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec2.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec3.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec4.hpp \
+  /usr/local/macOS/include/glm/ext/scalar_int_sized.hpp \
+  /usr/local/macOS/include/glm/ext/scalar_uint_sized.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int4.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double2x2.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double2x2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double2x3.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double2x3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double2x4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double2x4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double3x2.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double3x2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double3x3.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double3x3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double3x4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double3x4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double4x2.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double4x2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double4x3.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double4x3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double4x4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double4x4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float2x2.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float2x2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float2x3.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float2x3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float2x4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float2x4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float3x2.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float3x2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float3x3.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float3x3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float3x4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float3x4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float4x2.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float4x2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float4x3.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float4x3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float4x4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float4x4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_bool2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_bool2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_bool3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_bool3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_bool4.hpp \
+  /usr/local/macOS/include/glm/ext/vector_bool4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_double2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_double2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_double3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_double3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_double4.hpp \
+  /usr/local/macOS/include/glm/ext/vector_double4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_float2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_float2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_float3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_float3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_float4.hpp \
+  /usr/local/macOS/include/glm/ext/vector_float4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int2_sized.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int3_sized.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int4.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int4_sized.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint2_sized.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint3_sized.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint4.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint4_sized.hpp \
+  /usr/local/macOS/include/glm/common.hpp \
+  /usr/local/macOS/include/glm/common.hpp \
+  /usr/local/macOS/include/glm/exponential.hpp \
+  /usr/local/macOS/include/glm/geometric.hpp \
+  /usr/local/macOS/include/glm/matrix.hpp \
+  /usr/local/macOS/include/glm/simd/platform.h \
+  /usr/local/macOS/include/glm/vector_relational.hpp \
+  /usr/local/macOS/include/glm/detail/compute_vector_relational.hpp \
+  /usr/local/macOS/include/glm/detail/_fixes.hpp \
+  /usr/local/macOS/include/glm/detail/_vectorize.hpp \
+  /usr/local/macOS/include/glm/detail/compute_common.hpp \
+  /usr/local/macOS/include/glm/detail/compute_vector_relational.hpp \
+  /usr/local/macOS/include/glm/detail/func_common.inl \
+  /usr/local/macOS/include/glm/detail/func_exponential.inl \
+  /usr/local/macOS/include/glm/detail/func_geometric.inl \
+  /usr/local/macOS/include/glm/detail/func_integer.inl \
+  /usr/local/macOS/include/glm/detail/func_matrix.inl \
+  /usr/local/macOS/include/glm/detail/func_packing.inl \
+  /usr/local/macOS/include/glm/detail/func_trigonometric.inl \
+  /usr/local/macOS/include/glm/detail/func_vector_relational.inl \
+  /usr/local/macOS/include/glm/detail/qualifier.hpp \
+  /usr/local/macOS/include/glm/detail/setup.hpp \
+  /usr/local/macOS/include/glm/detail/type_half.hpp \
+  /usr/local/macOS/include/glm/detail/type_half.inl \
+  /usr/local/macOS/include/glm/detail/type_mat2x2.inl \
+  /usr/local/macOS/include/glm/detail/type_mat2x3.inl \
+  /usr/local/macOS/include/glm/detail/type_mat2x4.inl \
+  /usr/local/macOS/include/glm/detail/type_mat3x2.inl \
+  /usr/local/macOS/include/glm/detail/type_mat3x3.inl \
+  /usr/local/macOS/include/glm/detail/type_mat3x4.inl \
+  /usr/local/macOS/include/glm/detail/type_mat4x2.inl \
+  /usr/local/macOS/include/glm/detail/type_mat4x3.inl \
+  /usr/local/macOS/include/glm/detail/type_mat4x4.inl \
+  /usr/local/macOS/include/glm/detail/type_vec1.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec1.inl \
+  /usr/local/macOS/include/glm/detail/type_vec2.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec2.inl \
+  /usr/local/macOS/include/glm/detail/type_vec3.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec3.inl \
+  /usr/local/macOS/include/glm/detail/type_vec4.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec4.inl \
+  /usr/local/macOS/include/glm/exponential.hpp \
+  /usr/local/macOS/include/glm/fwd.hpp \
+  /usr/local/macOS/include/glm/geometric.hpp \
+  /usr/local/macOS/include/glm/glm.hpp \
+  /usr/local/macOS/include/glm/integer.hpp \
+  /usr/local/macOS/include/glm/mat2x2.hpp \
+  /usr/local/macOS/include/glm/mat2x3.hpp \
+  /usr/local/macOS/include/glm/mat2x4.hpp \
+  /usr/local/macOS/include/glm/mat3x2.hpp \
+  /usr/local/macOS/include/glm/mat3x3.hpp \
+  /usr/local/macOS/include/glm/mat3x4.hpp \
+  /usr/local/macOS/include/glm/mat4x2.hpp \
+  /usr/local/macOS/include/glm/mat4x3.hpp \
+  /usr/local/macOS/include/glm/mat4x4.hpp \
+  /usr/local/macOS/include/glm/matrix.hpp \
+  /usr/local/macOS/include/glm/packing.hpp \
+  /usr/local/macOS/include/glm/trigonometric.hpp \
+  /usr/local/macOS/include/glm/vec2.hpp \
+  /usr/local/macOS/include/glm/vec3.hpp \
+  /usr/local/macOS/include/glm/vec4.hpp \
+  /usr/local/macOS/include/glm/vector_relational.hpp \
   /usr/local/macOS/include/vk_video/vulkan_video_codec_h264std.h \
   /usr/local/macOS/include/vk_video/vulkan_video_codec_h264std_decode.h \
   /usr/local/macOS/include/vk_video/vulkan_video_codec_h264std_encode.h \
@@ -6319,14 +7244,31 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/Renderer.cpp.o: /Users/samuelb
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__format/unicode.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__format/width_estimation_table.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/binary_function.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/binary_negate.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/bind.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/bind_back.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/bind_front.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/binder1st.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/binder2nd.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/boyer_moore_searcher.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/compose.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/default_searcher.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/function.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/hash.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/identity.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/invoke.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/is_transparent.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/mem_fn.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/mem_fun_ref.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/not_fn.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/operations.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/perfect_forward.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/pointer_to_binary_function.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/pointer_to_unary_function.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/ranges_operations.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/reference_wrapper.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/unary_function.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/unary_negate.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/weak_result_type.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__fwd/array.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__fwd/fstream.h \
@@ -6399,6 +7341,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/Renderer.cpp.o: /Users/samuelb
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/allocator_traits.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/assume_aligned.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/auto_ptr.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/builtin_new_allocator.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/compressed_pair.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/concepts.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/construct_at.h \
@@ -6596,6 +7539,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/Renderer.cpp.o: /Users/samuelb
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/remove_reference.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/remove_volatile.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/result_of.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/strip_signature.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/type_identity.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/type_list.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/underlying_type.h \
@@ -6655,6 +7599,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/Renderer.cpp.o: /Users/samuelb
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/filesystem \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/float.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/fstream \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/functional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/initializer_list \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/iomanip \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/ios \
@@ -6664,6 +7609,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/Renderer.cpp.o: /Users/samuelb
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/iterator \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/limits \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/limits.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/list \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/locale \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/locale.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/math.h \
@@ -6687,6 +7633,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/Renderer.cpp.o: /Users/samuelb
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/system_error \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/tuple \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/type_traits \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/typeindex \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/typeinfo \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/unordered_map \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/utility \
@@ -6835,6 +7782,10 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/Renderer.cpp.o: /Users/samuelb
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/share/asan_ignorelist.txt \
   /Users/samuelbrookman/Desktop/Vulkan2D/External/glfw/include/GLFW/glfw3.h \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Device.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/Entity.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Event.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Handler.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Bus.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Buffers/Buffer.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Buffers/BufferLayout.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/Pipeline.hpp \
@@ -7931,11 +8882,12 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/Sprite2DSystem.cpp.o: /Users/s
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Camera.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Device.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/Entity.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/EntityManager.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/PlayerController.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/System.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Event.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Handler.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Bus.hpp \
-  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Event.hpp \
-  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/EventSystem.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Buffers/Buffer.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Buffers/BufferLayout.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/Pipeline.hpp \
@@ -7944,9 +8896,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/Sprite2DSystem.cpp.o: /Users/s
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Renderer/RenderSystem.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Renderer/Sprite2DSystem.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/Entity.hpp \
-  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/EntityManager.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/Scene.hpp \
-  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/System.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Window.hpp \
   /usr/local/macOS/include/glm/detail/setup.hpp \
   /usr/local/macOS/include/glm/detail/type_mat2x2.hpp \
@@ -8499,13 +9449,31 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/SwapChain.cpp.o: /Users/samuel
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__format/unicode.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__format/width_estimation_table.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/binary_function.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/binary_negate.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/bind.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/bind_back.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/bind_front.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/binder1st.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/binder2nd.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/boyer_moore_searcher.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/compose.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/default_searcher.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/function.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/hash.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/identity.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/invoke.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/is_transparent.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/mem_fn.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/mem_fun_ref.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/not_fn.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/operations.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/perfect_forward.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/pointer_to_binary_function.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/pointer_to_unary_function.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/ranges_operations.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/reference_wrapper.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/unary_function.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/unary_negate.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/weak_result_type.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__fwd/array.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__fwd/fstream.h \
@@ -8522,6 +9490,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/SwapChain.cpp.o: /Users/samuel
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__fwd/string_view.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__fwd/subrange.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__fwd/tuple.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__hash_table \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__ios/fpos.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/access.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/advance.h \
@@ -8555,6 +9524,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/SwapChain.cpp.o: /Users/samuel
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/permutable.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/prev.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/projected.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/ranges_iterator_traits.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/readable_traits.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/reverse_access.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/reverse_iterator.h \
@@ -8576,6 +9546,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/SwapChain.cpp.o: /Users/samuel
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/allocator_traits.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/assume_aligned.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/auto_ptr.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/builtin_new_allocator.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/compressed_pair.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/concepts.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/construct_at.h \
@@ -8599,6 +9570,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/SwapChain.cpp.o: /Users/samuel
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__mutex/mutex.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__mutex/tag_types.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__mutex/unique_lock.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__node_handle \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__numeric/pstl_transform_reduce.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__numeric/reduce.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__numeric/transform_reduce.h \
@@ -8772,6 +9744,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/SwapChain.cpp.o: /Users/samuel
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/remove_reference.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/remove_volatile.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/result_of.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/strip_signature.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/type_identity.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/type_list.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/underlying_type.h \
@@ -8809,6 +9782,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/SwapChain.cpp.o: /Users/samuel
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/cassert \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/cctype \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/cerrno \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/cfloat \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/climits \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/clocale \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/cmath \
@@ -8827,6 +9801,8 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/SwapChain.cpp.o: /Users/samuel
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/errno.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/exception \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/execution \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/float.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/functional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/initializer_list \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/ios \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/iosfwd \
@@ -8835,12 +9811,14 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/SwapChain.cpp.o: /Users/samuel
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/iterator \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/limits \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/limits.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/list \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/locale \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/locale.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/math.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/memory \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/mutex \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/new \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/optional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/ostream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/ratio \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/sstream \
@@ -8857,7 +9835,9 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/SwapChain.cpp.o: /Users/samuel
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/system_error \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/tuple \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/type_traits \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/typeindex \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/typeinfo \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/unordered_map \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/utility \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/variant \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/vector \
@@ -8867,6 +9847,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/SwapChain.cpp.o: /Users/samuel
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/ctype.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/dlfcn.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/errno.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/float.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/libkern/_OSByteOrder.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/libkern/arm/OSByteOrder.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/limits.h \
@@ -8994,6 +9975,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/SwapChain.cpp.o: /Users/samuel
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/xlocale/_wchar.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/xlocale/_wctype.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/__stddef_max_align_t.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/float.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/limits.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/stdarg.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/stdbool.h \
@@ -9002,8 +9984,161 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/SwapChain.cpp.o: /Users/samuel
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/share/asan_ignorelist.txt \
   /Users/samuelbrookman/Desktop/Vulkan2D/External/glfw/include/GLFW/glfw3.h \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Device.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/Entity.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Event.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Handler.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Bus.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Renderer/SwapChain.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Window.hpp \
+  /usr/local/macOS/include/glm/detail/setup.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat2x2.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat2x3.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat2x4.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat3x2.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat3x3.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat3x4.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat4x2.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat4x3.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat4x4.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec2.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec3.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec4.hpp \
+  /usr/local/macOS/include/glm/ext/scalar_int_sized.hpp \
+  /usr/local/macOS/include/glm/ext/scalar_uint_sized.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int4.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double2x2.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double2x2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double2x3.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double2x3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double2x4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double2x4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double3x2.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double3x2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double3x3.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double3x3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double3x4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double3x4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double4x2.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double4x2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double4x3.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double4x3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double4x4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double4x4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float2x2.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float2x2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float2x3.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float2x3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float2x4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float2x4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float3x2.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float3x2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float3x3.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float3x3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float3x4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float3x4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float4x2.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float4x2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float4x3.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float4x3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float4x4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float4x4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_bool2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_bool2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_bool3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_bool3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_bool4.hpp \
+  /usr/local/macOS/include/glm/ext/vector_bool4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_double2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_double2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_double3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_double3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_double4.hpp \
+  /usr/local/macOS/include/glm/ext/vector_double4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_float2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_float2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_float3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_float3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_float4.hpp \
+  /usr/local/macOS/include/glm/ext/vector_float4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int2_sized.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int3_sized.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int4.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int4_sized.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint2_sized.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint3_sized.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint4.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint4_sized.hpp \
+  /usr/local/macOS/include/glm/common.hpp \
+  /usr/local/macOS/include/glm/common.hpp \
+  /usr/local/macOS/include/glm/exponential.hpp \
+  /usr/local/macOS/include/glm/geometric.hpp \
+  /usr/local/macOS/include/glm/matrix.hpp \
+  /usr/local/macOS/include/glm/simd/platform.h \
+  /usr/local/macOS/include/glm/vector_relational.hpp \
+  /usr/local/macOS/include/glm/detail/compute_vector_relational.hpp \
+  /usr/local/macOS/include/glm/detail/_fixes.hpp \
+  /usr/local/macOS/include/glm/detail/_vectorize.hpp \
+  /usr/local/macOS/include/glm/detail/compute_common.hpp \
+  /usr/local/macOS/include/glm/detail/compute_vector_relational.hpp \
+  /usr/local/macOS/include/glm/detail/func_common.inl \
+  /usr/local/macOS/include/glm/detail/func_exponential.inl \
+  /usr/local/macOS/include/glm/detail/func_geometric.inl \
+  /usr/local/macOS/include/glm/detail/func_integer.inl \
+  /usr/local/macOS/include/glm/detail/func_matrix.inl \
+  /usr/local/macOS/include/glm/detail/func_packing.inl \
+  /usr/local/macOS/include/glm/detail/func_trigonometric.inl \
+  /usr/local/macOS/include/glm/detail/func_vector_relational.inl \
+  /usr/local/macOS/include/glm/detail/qualifier.hpp \
+  /usr/local/macOS/include/glm/detail/setup.hpp \
+  /usr/local/macOS/include/glm/detail/type_half.hpp \
+  /usr/local/macOS/include/glm/detail/type_half.inl \
+  /usr/local/macOS/include/glm/detail/type_mat2x2.inl \
+  /usr/local/macOS/include/glm/detail/type_mat2x3.inl \
+  /usr/local/macOS/include/glm/detail/type_mat2x4.inl \
+  /usr/local/macOS/include/glm/detail/type_mat3x2.inl \
+  /usr/local/macOS/include/glm/detail/type_mat3x3.inl \
+  /usr/local/macOS/include/glm/detail/type_mat3x4.inl \
+  /usr/local/macOS/include/glm/detail/type_mat4x2.inl \
+  /usr/local/macOS/include/glm/detail/type_mat4x3.inl \
+  /usr/local/macOS/include/glm/detail/type_mat4x4.inl \
+  /usr/local/macOS/include/glm/detail/type_vec1.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec1.inl \
+  /usr/local/macOS/include/glm/detail/type_vec2.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec2.inl \
+  /usr/local/macOS/include/glm/detail/type_vec3.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec3.inl \
+  /usr/local/macOS/include/glm/detail/type_vec4.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec4.inl \
+  /usr/local/macOS/include/glm/exponential.hpp \
+  /usr/local/macOS/include/glm/fwd.hpp \
+  /usr/local/macOS/include/glm/geometric.hpp \
+  /usr/local/macOS/include/glm/glm.hpp \
+  /usr/local/macOS/include/glm/integer.hpp \
+  /usr/local/macOS/include/glm/mat2x2.hpp \
+  /usr/local/macOS/include/glm/mat2x3.hpp \
+  /usr/local/macOS/include/glm/mat2x4.hpp \
+  /usr/local/macOS/include/glm/mat3x2.hpp \
+  /usr/local/macOS/include/glm/mat3x3.hpp \
+  /usr/local/macOS/include/glm/mat3x4.hpp \
+  /usr/local/macOS/include/glm/mat4x2.hpp \
+  /usr/local/macOS/include/glm/mat4x3.hpp \
+  /usr/local/macOS/include/glm/mat4x4.hpp \
+  /usr/local/macOS/include/glm/matrix.hpp \
+  /usr/local/macOS/include/glm/packing.hpp \
+  /usr/local/macOS/include/glm/trigonometric.hpp \
+  /usr/local/macOS/include/glm/vec2.hpp \
+  /usr/local/macOS/include/glm/vec3.hpp \
+  /usr/local/macOS/include/glm/vec4.hpp \
+  /usr/local/macOS/include/glm/vector_relational.hpp \
   /usr/local/macOS/include/vk_video/vulkan_video_codec_h264std.h \
   /usr/local/macOS/include/vk_video/vulkan_video_codec_h264std_decode.h \
   /usr/local/macOS/include/vk_video/vulkan_video_codec_h264std_encode.h \
@@ -9921,8 +11056,6 @@ CMakeFiles/Vulkan2D.dir/Sources/Input.cpp.o: /Users/samuelbrookman/Desktop/Vulka
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Event.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Handler.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Bus.hpp \
-  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Event.hpp \
-  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/EventSystem.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Input.hpp \
   /usr/local/macOS/include/glm/detail/setup.hpp \
   /usr/local/macOS/include/glm/detail/type_mat2x2.hpp \
@@ -10446,14 +11579,31 @@ CMakeFiles/Vulkan2D.dir/Sources/Physics/Collision.cpp.o: /Users/samuelbrookman/D
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__format/unicode.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__format/width_estimation_table.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/binary_function.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/binary_negate.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/bind.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/bind_back.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/bind_front.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/binder1st.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/binder2nd.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/boyer_moore_searcher.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/compose.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/default_searcher.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/function.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/hash.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/identity.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/invoke.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/is_transparent.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/mem_fn.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/mem_fun_ref.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/not_fn.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/operations.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/perfect_forward.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/pointer_to_binary_function.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/pointer_to_unary_function.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/ranges_operations.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/reference_wrapper.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/unary_function.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/unary_negate.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/weak_result_type.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__fwd/array.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__fwd/fstream.h \
@@ -10526,6 +11676,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Physics/Collision.cpp.o: /Users/samuelbrookman/D
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/allocator_traits.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/assume_aligned.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/auto_ptr.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/builtin_new_allocator.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/compressed_pair.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/concepts.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/construct_at.h \
@@ -10723,6 +11874,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Physics/Collision.cpp.o: /Users/samuelbrookman/D
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/remove_reference.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/remove_volatile.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/result_of.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/strip_signature.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/type_identity.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/type_list.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/underlying_type.h \
@@ -10780,6 +11932,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Physics/Collision.cpp.o: /Users/samuelbrookman/D
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/exception \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/execution \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/float.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/functional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/initializer_list \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/ios \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/iosfwd \
@@ -10788,6 +11941,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Physics/Collision.cpp.o: /Users/samuelbrookman/D
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/iterator \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/limits \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/limits.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/list \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/locale \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/locale.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/math.h \
@@ -10811,6 +11965,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Physics/Collision.cpp.o: /Users/samuelbrookman/D
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/system_error \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/tuple \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/type_traits \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/typeindex \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/typeinfo \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/unordered_map \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/utility \
@@ -10956,6 +12111,10 @@ CMakeFiles/Vulkan2D.dir/Sources/Physics/Collision.cpp.o: /Users/samuelbrookman/D
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/stdint.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/share/asan_ignorelist.txt \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/Entity.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Event.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Handler.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Bus.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Physics/Collision.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Physics/SpatialGrid.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/Entity.hpp \
@@ -11482,13 +12641,31 @@ CMakeFiles/Vulkan2D.dir/Sources/Physics/Physics.cpp.o: /Users/samuelbrookman/Des
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__format/unicode.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__format/width_estimation_table.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/binary_function.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/binary_negate.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/bind.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/bind_back.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/bind_front.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/binder1st.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/binder2nd.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/boyer_moore_searcher.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/compose.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/default_searcher.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/function.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/hash.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/identity.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/invoke.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/is_transparent.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/mem_fn.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/mem_fun_ref.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/not_fn.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/operations.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/perfect_forward.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/pointer_to_binary_function.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/pointer_to_unary_function.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/ranges_operations.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/reference_wrapper.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/unary_function.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/unary_negate.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/weak_result_type.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__fwd/array.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__fwd/fstream.h \
@@ -11505,6 +12682,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Physics/Physics.cpp.o: /Users/samuelbrookman/Des
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__fwd/string_view.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__fwd/subrange.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__fwd/tuple.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__hash_table \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__ios/fpos.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/access.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/advance.h \
@@ -11538,6 +12716,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Physics/Physics.cpp.o: /Users/samuelbrookman/Des
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/permutable.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/prev.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/projected.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/ranges_iterator_traits.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/readable_traits.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/reverse_access.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/reverse_iterator.h \
@@ -11559,6 +12738,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Physics/Physics.cpp.o: /Users/samuelbrookman/Des
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/allocator_traits.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/assume_aligned.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/auto_ptr.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/builtin_new_allocator.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/compressed_pair.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/concepts.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/construct_at.h \
@@ -11582,6 +12762,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Physics/Physics.cpp.o: /Users/samuelbrookman/Des
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__mutex/mutex.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__mutex/tag_types.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__mutex/unique_lock.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__node_handle \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__numeric/pstl_transform_reduce.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__numeric/reduce.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__numeric/transform_reduce.h \
@@ -11755,6 +12936,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Physics/Physics.cpp.o: /Users/samuelbrookman/Des
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/remove_reference.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/remove_volatile.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/result_of.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/strip_signature.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/type_identity.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/type_list.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/underlying_type.h \
@@ -11812,6 +12994,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Physics/Physics.cpp.o: /Users/samuelbrookman/Des
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/exception \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/execution \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/float.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/functional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/initializer_list \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/ios \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/iosfwd \
@@ -11820,12 +13003,14 @@ CMakeFiles/Vulkan2D.dir/Sources/Physics/Physics.cpp.o: /Users/samuelbrookman/Des
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/iterator \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/limits \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/limits.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/list \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/locale \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/locale.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/math.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/memory \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/mutex \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/new \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/optional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/ostream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/ratio \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/sstream \
@@ -11842,7 +13027,9 @@ CMakeFiles/Vulkan2D.dir/Sources/Physics/Physics.cpp.o: /Users/samuelbrookman/Des
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/system_error \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/tuple \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/type_traits \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/typeindex \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/typeinfo \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/unordered_map \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/utility \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/variant \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/vector \
@@ -11986,6 +13173,10 @@ CMakeFiles/Vulkan2D.dir/Sources/Physics/Physics.cpp.o: /Users/samuelbrookman/Des
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/stdint.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/share/asan_ignorelist.txt \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/Entity.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Event.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Handler.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Bus.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Physics/Physics.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/Entity.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/System.hpp \
@@ -14128,11 +15319,12 @@ CMakeFiles/Vulkan2D.dir/Sources/Program.cpp.o: /Users/samuelbrookman/Desktop/Vul
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Camera.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Device.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/Entity.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/EntityManager.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/PlayerController.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/System.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Event.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Handler.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Bus.hpp \
-  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Event.hpp \
-  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/EventSystem.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Buffers/Buffer.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Buffers/BufferLayout.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/Pipeline.hpp \
@@ -14144,9 +15336,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Program.cpp.o: /Users/samuelbrookman/Desktop/Vul
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Input.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Program.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/Entity.hpp \
-  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/EntityManager.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/Scene.hpp \
-  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/System.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Window.hpp \
   /usr/local/macOS/include/glm/detail/setup.hpp \
   /usr/local/macOS/include/glm/detail/type_mat2x2.hpp \
@@ -15238,8 +16428,6 @@ CMakeFiles/Vulkan2D.dir/Sources/Scene/Scene.cpp.o: /Users/samuelbrookman/Desktop
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Event.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Handler.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Bus.hpp \
-  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Event.hpp \
-  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/EventSystem.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Physics/Collision.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Physics/Physics.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Physics/SpatialGrid.hpp \
@@ -15796,13 +16984,31 @@ CMakeFiles/Vulkan2D.dir/Sources/Window.cpp.o: /Users/samuelbrookman/Desktop/Vulk
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__format/unicode.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__format/width_estimation_table.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/binary_function.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/binary_negate.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/bind.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/bind_back.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/bind_front.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/binder1st.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/binder2nd.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/boyer_moore_searcher.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/compose.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/default_searcher.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/function.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/hash.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/identity.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/invoke.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/is_transparent.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/mem_fn.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/mem_fun_ref.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/not_fn.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/operations.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/perfect_forward.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/pointer_to_binary_function.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/pointer_to_unary_function.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/ranges_operations.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/reference_wrapper.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/unary_function.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/unary_negate.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__functional/weak_result_type.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__fwd/array.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__fwd/fstream.h \
@@ -15819,6 +17025,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Window.cpp.o: /Users/samuelbrookman/Desktop/Vulk
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__fwd/string_view.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__fwd/subrange.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__fwd/tuple.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__hash_table \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__ios/fpos.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/access.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/advance.h \
@@ -15852,6 +17059,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Window.cpp.o: /Users/samuelbrookman/Desktop/Vulk
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/permutable.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/prev.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/projected.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/ranges_iterator_traits.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/readable_traits.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/reverse_access.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__iterator/reverse_iterator.h \
@@ -15873,6 +17081,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Window.cpp.o: /Users/samuelbrookman/Desktop/Vulk
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/allocator_traits.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/assume_aligned.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/auto_ptr.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/builtin_new_allocator.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/compressed_pair.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/concepts.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__memory/construct_at.h \
@@ -15896,6 +17105,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Window.cpp.o: /Users/samuelbrookman/Desktop/Vulk
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__mutex/mutex.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__mutex/tag_types.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__mutex/unique_lock.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__node_handle \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__numeric/pstl_transform_reduce.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__numeric/reduce.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__numeric/transform_reduce.h \
@@ -16069,6 +17279,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Window.cpp.o: /Users/samuelbrookman/Desktop/Vulk
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/remove_reference.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/remove_volatile.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/result_of.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/strip_signature.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/type_identity.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/type_list.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/underlying_type.h \
@@ -16106,6 +17317,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Window.cpp.o: /Users/samuelbrookman/Desktop/Vulk
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/cassert \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/cctype \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/cerrno \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/cfloat \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/climits \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/clocale \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/cmath \
@@ -16124,6 +17336,8 @@ CMakeFiles/Vulkan2D.dir/Sources/Window.cpp.o: /Users/samuelbrookman/Desktop/Vulk
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/errno.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/exception \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/execution \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/float.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/functional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/initializer_list \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/ios \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/iosfwd \
@@ -16131,12 +17345,14 @@ CMakeFiles/Vulkan2D.dir/Sources/Window.cpp.o: /Users/samuelbrookman/Desktop/Vulk
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/iterator \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/limits \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/limits.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/list \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/locale \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/locale.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/math.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/memory \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/mutex \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/new \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/optional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/ostream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/ratio \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/sstream \
@@ -16153,7 +17369,9 @@ CMakeFiles/Vulkan2D.dir/Sources/Window.cpp.o: /Users/samuelbrookman/Desktop/Vulk
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/system_error \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/tuple \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/type_traits \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/typeindex \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/typeinfo \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/unordered_map \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/utility \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/variant \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/vector \
@@ -16163,6 +17381,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Window.cpp.o: /Users/samuelbrookman/Desktop/Vulk
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/ctype.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/dlfcn.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/errno.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/float.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/libkern/_OSByteOrder.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/libkern/arm/OSByteOrder.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/limits.h \
@@ -16290,6 +17509,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Window.cpp.o: /Users/samuelbrookman/Desktop/Vulk
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/xlocale/_wchar.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/xlocale/_wctype.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/__stddef_max_align_t.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/float.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/limits.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/stdarg.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/stdbool.h \
@@ -16297,7 +17517,160 @@ CMakeFiles/Vulkan2D.dir/Sources/Window.cpp.o: /Users/samuelbrookman/Desktop/Vulk
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/stdint.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/share/asan_ignorelist.txt \
   /Users/samuelbrookman/Desktop/Vulkan2D/External/glfw/include/GLFW/glfw3.h \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/Entity.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Event.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Handler.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Bus.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Window.hpp \
+  /usr/local/macOS/include/glm/detail/setup.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat2x2.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat2x3.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat2x4.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat3x2.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat3x3.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat3x4.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat4x2.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat4x3.hpp \
+  /usr/local/macOS/include/glm/detail/type_mat4x4.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec2.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec3.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec4.hpp \
+  /usr/local/macOS/include/glm/ext/scalar_int_sized.hpp \
+  /usr/local/macOS/include/glm/ext/scalar_uint_sized.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int4.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double2x2.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double2x2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double2x3.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double2x3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double2x4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double2x4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double3x2.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double3x2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double3x3.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double3x3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double3x4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double3x4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double4x2.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double4x2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double4x3.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double4x3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double4x4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_double4x4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float2x2.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float2x2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float2x3.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float2x3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float2x4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float2x4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float3x2.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float3x2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float3x3.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float3x3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float3x4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float3x4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float4x2.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float4x2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float4x3.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float4x3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float4x4.hpp \
+  /usr/local/macOS/include/glm/ext/matrix_float4x4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_bool2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_bool2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_bool3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_bool3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_bool4.hpp \
+  /usr/local/macOS/include/glm/ext/vector_bool4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_double2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_double2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_double3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_double3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_double4.hpp \
+  /usr/local/macOS/include/glm/ext/vector_double4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_float2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_float2_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_float3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_float3_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_float4.hpp \
+  /usr/local/macOS/include/glm/ext/vector_float4_precision.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int2_sized.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int3_sized.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int4.hpp \
+  /usr/local/macOS/include/glm/ext/vector_int4_sized.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint2.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint2_sized.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint3.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint3_sized.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint4.hpp \
+  /usr/local/macOS/include/glm/ext/vector_uint4_sized.hpp \
+  /usr/local/macOS/include/glm/common.hpp \
+  /usr/local/macOS/include/glm/common.hpp \
+  /usr/local/macOS/include/glm/exponential.hpp \
+  /usr/local/macOS/include/glm/geometric.hpp \
+  /usr/local/macOS/include/glm/matrix.hpp \
+  /usr/local/macOS/include/glm/simd/platform.h \
+  /usr/local/macOS/include/glm/vector_relational.hpp \
+  /usr/local/macOS/include/glm/detail/compute_vector_relational.hpp \
+  /usr/local/macOS/include/glm/detail/_fixes.hpp \
+  /usr/local/macOS/include/glm/detail/_vectorize.hpp \
+  /usr/local/macOS/include/glm/detail/compute_common.hpp \
+  /usr/local/macOS/include/glm/detail/compute_vector_relational.hpp \
+  /usr/local/macOS/include/glm/detail/func_common.inl \
+  /usr/local/macOS/include/glm/detail/func_exponential.inl \
+  /usr/local/macOS/include/glm/detail/func_geometric.inl \
+  /usr/local/macOS/include/glm/detail/func_integer.inl \
+  /usr/local/macOS/include/glm/detail/func_matrix.inl \
+  /usr/local/macOS/include/glm/detail/func_packing.inl \
+  /usr/local/macOS/include/glm/detail/func_trigonometric.inl \
+  /usr/local/macOS/include/glm/detail/func_vector_relational.inl \
+  /usr/local/macOS/include/glm/detail/qualifier.hpp \
+  /usr/local/macOS/include/glm/detail/setup.hpp \
+  /usr/local/macOS/include/glm/detail/type_half.hpp \
+  /usr/local/macOS/include/glm/detail/type_half.inl \
+  /usr/local/macOS/include/glm/detail/type_mat2x2.inl \
+  /usr/local/macOS/include/glm/detail/type_mat2x3.inl \
+  /usr/local/macOS/include/glm/detail/type_mat2x4.inl \
+  /usr/local/macOS/include/glm/detail/type_mat3x2.inl \
+  /usr/local/macOS/include/glm/detail/type_mat3x3.inl \
+  /usr/local/macOS/include/glm/detail/type_mat3x4.inl \
+  /usr/local/macOS/include/glm/detail/type_mat4x2.inl \
+  /usr/local/macOS/include/glm/detail/type_mat4x3.inl \
+  /usr/local/macOS/include/glm/detail/type_mat4x4.inl \
+  /usr/local/macOS/include/glm/detail/type_vec1.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec1.inl \
+  /usr/local/macOS/include/glm/detail/type_vec2.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec2.inl \
+  /usr/local/macOS/include/glm/detail/type_vec3.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec3.inl \
+  /usr/local/macOS/include/glm/detail/type_vec4.hpp \
+  /usr/local/macOS/include/glm/detail/type_vec4.inl \
+  /usr/local/macOS/include/glm/exponential.hpp \
+  /usr/local/macOS/include/glm/fwd.hpp \
+  /usr/local/macOS/include/glm/geometric.hpp \
+  /usr/local/macOS/include/glm/glm.hpp \
+  /usr/local/macOS/include/glm/integer.hpp \
+  /usr/local/macOS/include/glm/mat2x2.hpp \
+  /usr/local/macOS/include/glm/mat2x3.hpp \
+  /usr/local/macOS/include/glm/mat2x4.hpp \
+  /usr/local/macOS/include/glm/mat3x2.hpp \
+  /usr/local/macOS/include/glm/mat3x3.hpp \
+  /usr/local/macOS/include/glm/mat3x4.hpp \
+  /usr/local/macOS/include/glm/mat4x2.hpp \
+  /usr/local/macOS/include/glm/mat4x3.hpp \
+  /usr/local/macOS/include/glm/mat4x4.hpp \
+  /usr/local/macOS/include/glm/matrix.hpp \
+  /usr/local/macOS/include/glm/packing.hpp \
+  /usr/local/macOS/include/glm/trigonometric.hpp \
+  /usr/local/macOS/include/glm/vec2.hpp \
+  /usr/local/macOS/include/glm/vec3.hpp \
+  /usr/local/macOS/include/glm/vec4.hpp \
+  /usr/local/macOS/include/glm/vector_relational.hpp \
   /usr/local/macOS/include/vk_video/vulkan_video_codec_h264std.h \
   /usr/local/macOS/include/vk_video/vulkan_video_codec_h264std_decode.h \
   /usr/local/macOS/include/vk_video/vulkan_video_codec_h265std.h \
@@ -17232,6 +18605,7 @@ CMakeFiles/Vulkan2D.dir/main.cpp.o: /Users/samuelbrookman/Desktop/Vulkan2D/main.
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Device.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/Entity.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/EntityManager.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/PlayerController.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/System.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Event.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Handler.hpp \
@@ -17443,8 +18817,6 @@ CMakeFiles/Vulkan2D.dir/main.cpp.o: /Users/samuelbrookman/Desktop/Vulkan2D/main.
 
 /Users/samuelbrookman/Desktop/Vulkan2D/main.cpp:
 
-/Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/PlayerController.hpp:
-
 /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/Scene.cpp:
 
 /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Program.cpp:
@@ -17465,15 +18837,9 @@ CMakeFiles/Vulkan2D.dir/main.cpp.o: /Users/samuelbrookman/Desktop/Vulkan2D/main.
 
 /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Renderer/SwapChain.cpp:
 
+/Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/PlayerController.hpp:
+
 /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/EntityManager.hpp:
-
-/Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/EventSystem.hpp:
-
-/Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Handler.hpp:
-
-/Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Event.hpp:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/list:
 
 /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Renderer/Sprite2DSystem.cpp:
 
@@ -17530,6 +18896,10 @@ CMakeFiles/Vulkan2D.dir/main.cpp.o: /Users/samuelbrookman/Desktop/Vulkan2D/main.
 /usr/local/macOS/include/vulkan/vk_platform.h:
 
 /usr/local/macOS/include/vk_video/vulkan_video_codec_h265std_decode.h:
+
+/Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Handler.hpp:
+
+/Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Event.hpp:
 
 /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Device.hpp:
 
@@ -17680,6 +19050,8 @@ CMakeFiles/Vulkan2D.dir/main.cpp.o: /Users/samuelbrookman/Desktop/Vulkan2D/main.
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/locale.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/locale:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/list:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/iterator:
 
