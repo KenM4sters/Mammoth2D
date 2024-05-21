@@ -17,44 +17,18 @@ void Collision::Update(std::vector<Entity>& entities)
 {
     // Broad Phase - Assigns entities to cells that we iterate over and 
     // check collisions only between entities within the same cell.
-    //
     mSpatialGrid->Update(entities, &mCollisionPairs);
 
     for(const auto& pairs : mCollisionPairs) 
     {
         for(const auto& pair : pairs) 
         {
-            std::cout << "yo" << std::endl;
-            if(CheckCollision(pair.A, pair.B)) 
+            if(CheckCollision(pair.A, pair.B))
             {
-                std::cout << "Collision!" << std::endl;
+                pair.A->body.velocity = {0.0f, 0.0f};
             }
         }
     }
-
-    // for(auto& cell : mSpatialGrid->GetMap()) 
-    // {
-    //     auto& v = cell.second;
-    //     for(int i = 0; i < v.size(); i++) 
-    //     {
-    //         // Checks collisions against the window boundaries.
-    //         //
-    //         if(CheckCollision(v[i])) 
-    //         {
-    //         }
-
-    //         // Iterates over each entity in the same cell and check for collisions.
-    //         //
-    //         for(int j = 0; j < v.size(); j++) 
-    //         {
-    //             if(i == j) continue;
-    //             if(CheckCollision(v[i], v[j])) 
-    //             { 
-    //             } 
-    //         }
-            
-    //     }
-    // }
 }
 
 

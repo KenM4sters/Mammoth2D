@@ -10,22 +10,8 @@ using EntityID = uint16_t;
 typedef enum entityflags 
 {
     ACTIVE              = 1,
-    IS_PLAYER           = 1 << 1,
-    IS_RIGID            = 1 << 2,
-    HAS_MOTION          = 1 << 3,
-    HAS_HEALTH          = 1 << 4,
-    IS_BULLET           = 1 << 5,
-    IS_ENEMY            = 1 << 6,
-    IS_PLATFORM         = 1 << 7,
+    PLAYER_CONTROLLED   = 1 << 1,
 } EntityFlags;
-
-
-typedef struct transform 
-{
-    alignas(8) glm::vec2 position{0.0f};
-    alignas(8) glm::vec2 scale{1.0f};
-    alignas(16) glm::mat4 modelMatrix{1.0f};
-} Transform;
 
 typedef struct rigidbody 
 {
@@ -34,7 +20,13 @@ typedef struct rigidbody
     float restitution;
     glm::vec2 force;
     glm::vec2 velocity;
-} RigidBody;
+} RigidBody; 
+
+typedef struct transform 
+{
+    glm::vec2 position;
+    glm::vec2 scale;    
+} Transform; 
 
 typedef struct bounds 
 {
@@ -46,10 +38,11 @@ typedef struct entity
 {
     EntityID id;
     int flags; 
-    Transform transform;
+    Transform tx;
     RigidBody body;
     Bounds bounds;
     glm::vec3 color;
+    std::string label;
 } Entity;
 
 }

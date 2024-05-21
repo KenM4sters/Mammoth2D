@@ -85,10 +85,7 @@ void Sprite2DSystem::Run(VkCommandBuffer commandBuffer, std::vector<Entity>& ent
 void Sprite2DSystem::UpdatePushConstants(Entity& ent) 
 {
     mPushConstants.color = ent.color;
-    mPushConstants.transform.position = ent.transform.position;
-    mPushConstants.transform.scale = ent.transform.scale;
-    mPushConstants.transform.modelMatrix = ent.transform.modelMatrix;
-
+    mPushConstants.modelMatrix = ent.transform.modelMatrix;
     mPushConstants.projectionViewMatrix = Scene::GetCamera()->GetProjectionMatrix();
 }
 

@@ -15,10 +15,9 @@ Scene::Scene(EventBus& eventBus, uint32_t width, uint32_t height)
     // Player Entity.
     //
     Entity player = Entity{};
-    player.flags = EntityFlags::ACTIVE | EntityFlags::HAS_HEALTH | EntityFlags::IS_RIGID 
-    | EntityFlags::IS_PLAYER;
+    player.flags = EntityFlags::ACTIVE | EntityFlags::IS_PLAYER;
 
-    player.transform = {glm::vec2(450, 200), glm::vec2(50, 50), glm::mat4{1.0f}};
+    player.transform = {glm::vec2(250, 300), glm::vec2(50, 50), glm::mat4{1.0f}};
     player.body.inverseMass = 1 / 10.0f;
     player.body.force = {0.0f, 0.0f};
     player.body.velocity = {0.0f, 0.0f};
@@ -30,15 +29,15 @@ Scene::Scene(EventBus& eventBus, uint32_t width, uint32_t height)
     };
 
     player.color = glm::vec3(0.3f, 0.3f, 1.0f);
+    player.label = "Player";
     player.id = mEntityManager.CreateEntity(std::move(player));
 
     // Enemy Entity.
     //
     Entity box = Entity{};
-    box.flags = EntityFlags::ACTIVE | EntityFlags::HAS_HEALTH | EntityFlags::IS_RIGID 
-    | EntityFlags::IS_ENEMY;
+    box.flags = EntityFlags::ACTIVE;
     
-    box.transform = {glm::vec2(250, 200), glm::vec2(50, 50), glm::mat4{1.0f}};
+    box.transform = {glm::vec2(250, 400), glm::vec2(50, 50), glm::mat4{1.0f}};
     box.body.inverseMass = 1 / 10.0f;
     box.body.force = {0.0f, 0.0f};
     box.body.velocity = {0.0f, 0.0f};
@@ -50,13 +49,13 @@ Scene::Scene(EventBus& eventBus, uint32_t width, uint32_t height)
     };
 
     box.color = glm::vec3(1.0f, 0.3f, 0.3f);
+    box.label = "Box";
     box.id = mEntityManager.CreateEntity(std::move(box));
 
     // Platform 1 Entity.
     //
     Entity platform = Entity{};
-    platform.flags = EntityFlags::ACTIVE | EntityFlags::HAS_HEALTH | EntityFlags::IS_RIGID 
-    | EntityFlags::IS_PLATFORM;
+    platform.flags = EntityFlags::ACTIVE;
     
     platform.transform = {glm::vec2(100, 500), glm::vec2(600, 20), glm::mat4{1.0f}};
     box.body.inverseMass = 0.0f;
@@ -70,9 +69,8 @@ Scene::Scene(EventBus& eventBus, uint32_t width, uint32_t height)
     };
 
     platform.color = glm::vec3(0.5f, 0.2f, 0.8f);
+    platform.label = "Platform";
     platform.id = mEntityManager.CreateEntity(std::move(platform));
-
-
 
 
 

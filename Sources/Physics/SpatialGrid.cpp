@@ -1,17 +1,8 @@
 #include "SpatialGrid.hpp"
+#include <set>
 
 namespace Super
 {
-
-bool SortPairs(CollisionPair lhs, CollisionPair rhs) 
-{
-    if(lhs.A < rhs.A)
-        return true;
-    if(lhs.A == rhs.A)
-        return lhs.B < rhs.B;
-    return false;
-}
-
 SpatialGrid::SpatialGrid(uint32_t gridWidth, uint32_t gridHeight, uint32_t numCellsX, uint32_t numCellsY)
     : mGridWidth{gridWidth}, mGridHeight{gridHeight}
 {
@@ -71,14 +62,16 @@ std::vector<CollisionPair> SpatialGrid::GetPairsPerCell(std::vector<Entity*>& en
         }
     }
 
-    RemoveDuplicates(&pairs);
+    std::vector<CollisionPair> sortedPairs = RemoveDuplicates(pairs);
 
-    return pairs;
+    return sortedPairs;
 }
 
-void SpatialGrid::RemoveDuplicates(std::vector<CollisionPair>* pairs) const 
+std::vector<CollisionPair> SpatialGrid::RemoveDuplicates(std::vector<CollisionPair>& pairs) const 
 {
-    std::sort(pairs->begin(), pairs->end(), SortPairs);
+    // Function to remove duplicates from vector of structs
+    std::set<CollisionPair> uniqueSet(pairs.begin(), pairs.end());
+    return std::vector<CollisionPair>(uniqueSet.begin(), uniqueSet.end());
 }
 
 

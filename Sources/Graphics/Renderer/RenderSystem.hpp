@@ -9,7 +9,7 @@
 namespace Super 
 {
 typedef struct SimplePushConstants {
-    Transform transform{};
+    alignas(16) glm::mat4 modelMatrix;
     alignas(16) glm::vec3 color{0.4f, 0.1f, 1.0f};
     alignas(16) glm::mat4 projectionViewMatrix{1.0f};
 } SimplePushConstants;

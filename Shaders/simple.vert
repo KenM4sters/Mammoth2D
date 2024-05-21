@@ -1,17 +1,9 @@
 #version 450
 
 layout(location = 0) in vec2 aPosition;
-
-struct Transform 
-{
-    vec2 position;
-    vec2 scale;
-    mat4 modelMatrix;
-};
-
 layout(push_constant) uniform Push 
 {
-    Transform transform;
+    mat4 modelMatrix;
     vec3 color;
     mat4 viewProjectionMatrix;
 } push;
@@ -19,6 +11,6 @@ layout(push_constant) uniform Push
 
 void main() 
 {
-    gl_Position = push.viewProjectionMatrix * push.transform.modelMatrix * vec4(aPosition, 0.0, 1.0);
+    gl_Position = push.viewProjectionMatrix * push.modelMatrix * vec4(aPosition, 0.0, 1.0);
 }
 

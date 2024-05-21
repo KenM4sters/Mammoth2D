@@ -24,6 +24,8 @@ void Physics::UpdateMotion(Entity& entity)
     p.velocity += acceleration;
 
     entity.transform.position += glm::vec2(p.velocity.x, -p.velocity.y);
+    entity.bounds.max += glm::vec2(p.velocity.x, -p.velocity.y);
+    entity.bounds.min += glm::vec2(p.velocity.x, -p.velocity.y);
 
     UpdateTransformMatrix(entity);
 

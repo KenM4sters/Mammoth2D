@@ -11,7 +11,7 @@ public:
     ~Collision();
 
     virtual void Update(std::vector<Entity>& entities) override;
-
+    
 private:
 
     // Testt whether two entities have collided or not and returns either false or true.

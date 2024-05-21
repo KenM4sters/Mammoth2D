@@ -17,6 +17,17 @@ typedef struct collisionpair
 {
     Entity* A;
     Entity* B;
+
+    // Comparison operator that compares the labels of each entity.
+    // Used for removing duplicates from the map of collision pairs, since we don't
+    // want to register collisions more than once for any entitiy in a single frame.
+    bool operator<(const collisionpair& other) const 
+    {
+        return (A->label < other.A->label) ||
+            (A->label == other.A->label && B->label < other.B->label) ||
+            (A->label == other.B->label && B->label < other.A->label);
+    }
+
 } CollisionPair;
 
 class SpatialGrid 
@@ -38,8 +49,8 @@ public:
     void Update(std::vector<Entity>& entities, std::vector<std::vector<CollisionPair>>* pairs);
 
 private:
-    std::vector<CollisionPair>  GetPairsPerCell(std::vector<Entity*>& entities) const;
-    void RemoveDuplicates(std::vector<CollisionPair>* pairs) const;
+    std::vector<CollisionPair> GetPairsPerCell(std::vector<Entity*>& entities) const;
+    std::vector<CollisionPair> RemoveDuplicates(std::vector<CollisionPair>& pairs) const;
     void ResetGrid();
     void AssignEntityToGridCell(Entity& entity);
     
