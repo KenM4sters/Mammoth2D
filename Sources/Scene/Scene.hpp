@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
 #include <iostream>
-#include "Entity.hpp"
+#include "Core.hpp"
 #include "EntityManager.hpp"
 #include "Camera.hpp"
 #include "System.hpp"

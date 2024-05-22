@@ -1,5 +1,5 @@
 #pragma once
-#include "Entity.hpp"
+#include "Core.hpp"
 #include "Events/Bus.hpp"
 
 namespace Super 

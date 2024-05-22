@@ -19,6 +19,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Renderer/Sprite2DSystem.cpp" "CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/Sprite2DSystem.cpp.o" "gcc" "CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/Sprite2DSystem.cpp.o.d"
   "/Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Renderer/SwapChain.cpp" "CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/SwapChain.cpp.o" "gcc" "CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/SwapChain.cpp.o.d"
   "/Users/samuelbrookman/Desktop/Vulkan2D/Sources/Input.cpp" "CMakeFiles/Vulkan2D.dir/Sources/Input.cpp.o" "gcc" "CMakeFiles/Vulkan2D.dir/Sources/Input.cpp.o.d"
+  "/Users/samuelbrookman/Desktop/Vulkan2D/Sources/Logging.cpp" "CMakeFiles/Vulkan2D.dir/Sources/Logging.cpp.o" "gcc" "CMakeFiles/Vulkan2D.dir/Sources/Logging.cpp.o.d"
   "/Users/samuelbrookman/Desktop/Vulkan2D/Sources/Physics/Collision.cpp" "CMakeFiles/Vulkan2D.dir/Sources/Physics/Collision.cpp.o" "gcc" "CMakeFiles/Vulkan2D.dir/Sources/Physics/Collision.cpp.o.d"
   "/Users/samuelbrookman/Desktop/Vulkan2D/Sources/Physics/Physics.cpp" "CMakeFiles/Vulkan2D.dir/Sources/Physics/Physics.cpp.o" "gcc" "CMakeFiles/Vulkan2D.dir/Sources/Physics/Physics.cpp.o.d"
   "/Users/samuelbrookman/Desktop/Vulkan2D/Sources/Physics/SpatialGrid.cpp" "CMakeFiles/Vulkan2D.dir/Sources/Physics/SpatialGrid.cpp.o" "gcc" "CMakeFiles/Vulkan2D.dir/Sources/Physics/SpatialGrid.cpp.o.d"

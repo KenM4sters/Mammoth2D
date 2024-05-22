@@ -65,7 +65,7 @@ void SwapChain::Init()
 
 void SwapChain::CreateSwapChain() 
 {
-    Swap_Chain_Support_Details swapChainSupport = mDevice.GetSwapChainSupport();
+    SwapChainSupportDetails swapChainSupport = mDevice.GetSwapChainSupport();
 
     VkSurfaceFormatKHR surfaceFormat = ChooseSwapSurfaceFormat(swapChainSupport.formats);
     VkPresentModeKHR presentMode = ChooseSwapPresentMode(swapChainSupport.presentModes);
@@ -89,7 +89,7 @@ void SwapChain::CreateSwapChain()
     createInfo.imageArrayLayers = 1;
     createInfo.imageUsage = VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT;
 
-    Queue_Family_Indices indices = mDevice.FindPhysicalQueueFamilies();
+    QueueFamilyIndices indices = mDevice.FindPhysicalQueueFamilies();
     uint32_t queueFamilyIndices[] = {indices.graphicsFamily, indices.presentFamily};
 
     if (indices.graphicsFamily != indices.presentFamily) 

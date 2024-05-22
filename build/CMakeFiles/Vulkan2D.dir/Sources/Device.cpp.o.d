@@ -909,13 +909,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Device.cpp.o: \
   /usr/local/macOS/include/vulkan/vulkan_beta.h \
   /usr/local/macOS/include/vk_video/vulkan_video_codec_h264std_encode.h \
   /usr/local/macOS/include/vk_video/vulkan_video_codec_h265std_encode.h \
-  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Window.hpp \
-  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Bus.hpp \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/list \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/typeindex \
-  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/./Handler.hpp \
-  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/./Event.hpp \
-  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/../Scene/Entity.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Core.hpp \
   /usr/local/macOS/include/glm/glm.hpp \
   /usr/local/macOS/include/glm/detail/_fixes.hpp \
   /usr/local/macOS/include/glm/detail/setup.hpp \
@@ -1068,4 +1062,10 @@ CMakeFiles/Vulkan2D.dir/Sources/Device.cpp.o: \
   /usr/local/macOS/include/glm/matrix.hpp \
   /usr/local/macOS/include/glm/vector_relational.hpp \
   /usr/local/macOS/include/glm/integer.hpp \
-  /usr/local/macOS/include/glm/detail/func_integer.inl
+  /usr/local/macOS/include/glm/detail/func_integer.inl \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/list \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Window.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Bus.hpp \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/typeindex \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/./Handler.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/./Event.hpp

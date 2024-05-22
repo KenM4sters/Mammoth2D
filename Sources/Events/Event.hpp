@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-#include "../Scene/Entity.hpp"
+#include "Core.hpp"
 
 namespace Super
 {
@@ -16,14 +16,18 @@ public:
 class CollisionEvent : public IEvent 
 {
 public:
-    CollisionEvent(Entity* A, Entity* B)
-        : mEntityA{A}, mEntityB{B} 
-    {}
+    CollisionEvent(Manifold* manifold)
+        : mEntityA{manifold->pair.A}, mEntityB{manifold->pair.B}, penetration{manifold->penetration}, normal{manifold->normal} 
+    {
+        delete manifold;
+    }
 
     inline const std::string GetEventType() const override { return "CollisionEvent";}
 
     Entity* mEntityA = nullptr;
     Entity* mEntityB = nullptr;
+    float penetration;
+    glm::vec2 normal;
 };
 
 class KeyPressEvent : public IEvent 

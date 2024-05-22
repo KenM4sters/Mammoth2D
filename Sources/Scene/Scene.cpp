@@ -15,18 +15,12 @@ Scene::Scene(EventBus& eventBus, uint32_t width, uint32_t height)
     // Player Entity.
     //
     Entity player = Entity{};
-    player.flags = EntityFlags::ACTIVE | EntityFlags::IS_PLAYER;
+    player.flags = EntityFlags::ACTIVE | EntityFlags::PLAYER_CONTROLLED;
 
-    player.transform = {glm::vec2(250, 300), glm::vec2(50, 50), glm::mat4{1.0f}};
-    player.body.inverseMass = 1 / 10.0f;
+    player.tx = {glm::vec2(250, 300), glm::vec2(50, 50)};
+    player.body.inverseMass = 0.1f;
     player.body.force = {0.0f, 0.0f};
     player.body.velocity = {0.0f, 0.0f};
-    player.bounds.min = {player.transform.position.x, player.transform.position.y};
-    player.bounds.max = 
-    {
-        player.transform.position.x + player.transform.scale.x, 
-        player.transform.position.y + player.transform.scale.y
-    };
 
     player.color = glm::vec3(0.3f, 0.3f, 1.0f);
     player.label = "Player";
@@ -37,16 +31,10 @@ Scene::Scene(EventBus& eventBus, uint32_t width, uint32_t height)
     Entity box = Entity{};
     box.flags = EntityFlags::ACTIVE;
     
-    box.transform = {glm::vec2(250, 400), glm::vec2(50, 50), glm::mat4{1.0f}};
-    box.body.inverseMass = 1 / 10.0f;
+    box.tx = {glm::vec2(250, 400), glm::vec2(50, 50)};
+    box.body.inverseMass = 0.1f;
     box.body.force = {0.0f, 0.0f};
     box.body.velocity = {0.0f, 0.0f};
-    box.bounds.min = {box.transform.position.x, box.transform.position.y};
-    box.bounds.max = 
-    {
-        box.transform.position.x + box.transform.scale.x, 
-        box.transform.position.y + box.transform.scale.y
-    };
 
     box.color = glm::vec3(1.0f, 0.3f, 0.3f);
     box.label = "Box";
@@ -57,16 +45,10 @@ Scene::Scene(EventBus& eventBus, uint32_t width, uint32_t height)
     Entity platform = Entity{};
     platform.flags = EntityFlags::ACTIVE;
     
-    platform.transform = {glm::vec2(100, 500), glm::vec2(600, 20), glm::mat4{1.0f}};
+    platform.tx = {glm::vec2(100, 500), glm::vec2(600, 20)};
     box.body.inverseMass = 0.0f;
     platform.body.force = {0.0f, 0.0f};
     platform.body.velocity = {0.0f, 0.0f};
-    platform.bounds.min = {platform.transform.position.x, platform.transform.position.y};
-    platform.bounds.max = 
-    {
-        platform.transform.position.x + platform.transform.scale.x, 
-        platform.transform.position.y + platform.transform.scale.y
-    };
 
     platform.color = glm::vec3(0.5f, 0.2f, 0.8f);
     platform.label = "Platform";

@@ -21,8 +21,8 @@ public:
         switch(event->mKey) 
         {
             case GLFW_KEY_W: JumpPlayer(); break;
-            case GLFW_KEY_A: mPlayer.transform.position += glm::vec2(-playerSpeed, 0.0f); break;
-            case GLFW_KEY_D: mPlayer.transform.position += glm::vec2(playerSpeed, 0.0f); break;
+            case GLFW_KEY_A: mPlayer.tx.position += glm::vec2(-playerSpeed, 0.0f); break;
+            case GLFW_KEY_D: mPlayer.tx.position += glm::vec2(playerSpeed, 0.0f); break;
         }
     }
 

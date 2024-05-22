@@ -1,7 +1,5 @@
 #pragma once
-#include "Entity.hpp"
-
-
+#include "Core.hpp"
 
 namespace Super 
 {

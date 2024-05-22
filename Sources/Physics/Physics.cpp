@@ -2,11 +2,15 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <iostream>
 #include "Physics.hpp"
+#include "Logging.hpp"
 
 namespace Super 
 {
 void Physics::Update(std::vector<Entity>& entities) 
 {
+
+    mEventBus.Subscribe(this, &Physics::SolveImpulse);
+
     for(auto& entity : entities) 
     {
         UpdateMotion(entity);
@@ -23,11 +27,7 @@ void Physics::UpdateMotion(Entity& entity)
 
     p.velocity += acceleration;
 
-    entity.transform.position += glm::vec2(p.velocity.x, -p.velocity.y);
-    entity.bounds.max += glm::vec2(p.velocity.x, -p.velocity.y);
-    entity.bounds.min += glm::vec2(p.velocity.x, -p.velocity.y);
-
-    UpdateTransformMatrix(entity);
+    entity.tx.position += glm::vec2(p.velocity.x, -p.velocity.y);
 
     ResetMotion(entity);
 
@@ -38,11 +38,38 @@ void Physics::ResetMotion(Entity& entity)
     entity.body.force = {0.0f, 0.0f};
 }
 
-void Physics::UpdateTransformMatrix(Entity& entity) 
+void Physics::SolveImpulse(CollisionEvent* event)
 {
-    entity.transform.modelMatrix = glm::mat4(1.0f);
-    entity.transform.modelMatrix = glm::translate(entity.transform.modelMatrix, glm::vec3(entity.transform.position, 0.0f));
-    entity.transform.modelMatrix = glm::scale(entity.transform.modelMatrix, glm::vec3(entity.transform.scale, 1.0f));
+    // event->mEntityA->body.velocity = {0.0f, 0.0f};
+    // event->mEntityB->body.velocity = {0.0f, 0.0f};
+
+    const auto& A = event->mEntityA;
+    const auto& B = event->mEntityB;
+    const auto& penetration = event->penetration; 
+    const auto& N = event->normal; 
+
+    const glm::vec2 rv = B->body.velocity - A->body.velocity;
+    float velAlongNormal = glm::dot(rv, event->normal);
+
+    if(velAlongNormal > 0) 
+    {
+        return;
+    }
+
+    const float e = std::min(A->body.restitution, B->body.restitution);
+
+    float j = -(1 + e) * velAlongNormal;
+    j*= A->body.inverseMass + B->body.inverseMass;
+
+    glm::vec2 impulse = j * event->normal;
+
+
+    // LOG_VEC2(event->normal, "norm");
+
+
+    A->body.velocity -= A->body.inverseMass * impulse;
+    B->body.velocity += B->body.inverseMass * impulse;
+    
 }
 
 }

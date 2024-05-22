@@ -909,7 +909,7 @@ CMakeFiles/Vulkan2D.dir/main.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/typeindex \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/./Handler.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/./Event.hpp \
-  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/../Scene/Entity.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Core.hpp \
   /usr/local/macOS/include/glm/glm.hpp \
   /usr/local/macOS/include/glm/detail/_fixes.hpp \
   /usr/local/macOS/include/glm/detail/setup.hpp \
@@ -1094,10 +1094,9 @@ CMakeFiles/Vulkan2D.dir/main.cpp.o: \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Renderer/SwapChain.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Renderer/Renderer.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Renderer/RenderSystem.hpp \
-  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/Entity.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Buffers/Buffer.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/Scene.hpp \
-  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/../Scene/EntityManager.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/EntityManager.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Camera.hpp \
   /usr/local/macOS/include/glm/gtc/matrix_transform.hpp \
   /usr/local/macOS/include/glm/gtc/../mat4x4.hpp \
@@ -1122,6 +1121,6 @@ CMakeFiles/Vulkan2D.dir/main.cpp.o: \
   /usr/local/macOS/include/glm/gtc/../geometric.hpp \
   /usr/local/macOS/include/glm/gtc/../trigonometric.hpp \
   /usr/local/macOS/include/glm/gtc/../matrix.hpp \
-  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/../Scene/System.hpp \
-  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/../Scene/PlayerController.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/System.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/PlayerController.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Input.hpp

@@ -2,33 +2,12 @@
 #include <glm/glm.hpp>
 #include <iostream>
 #include <unordered_map>
-#include "Scene/Entity.hpp"
+#include "Core.hpp"
+
 
 
 namespace Super
 {
-typedef struct cell 
-{
-    glm::vec2 position; // bottom left point for the cell.
-    glm::vec2 size;
-} Cell;
-
-typedef struct collisionpair 
-{
-    Entity* A;
-    Entity* B;
-
-    // Comparison operator that compares the labels of each entity.
-    // Used for removing duplicates from the map of collision pairs, since we don't
-    // want to register collisions more than once for any entitiy in a single frame.
-    bool operator<(const collisionpair& other) const 
-    {
-        return (A->label < other.A->label) ||
-            (A->label == other.A->label && B->label < other.B->label) ||
-            (A->label == other.B->label && B->label < other.A->label);
-    }
-
-} CollisionPair;
 
 class SpatialGrid 
 {

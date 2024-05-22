@@ -907,7 +907,8 @@ CMakeFiles/Vulkan2D.dir/Sources/Window.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/typeindex \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/./Handler.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/./Event.hpp \
-  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/../Scene/Entity.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Core.hpp \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/iostream \
   /usr/local/macOS/include/glm/glm.hpp \
   /usr/local/macOS/include/glm/detail/_fixes.hpp \
   /usr/local/macOS/include/glm/detail/setup.hpp \

@@ -21,6 +21,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/SwapChain.cpp.o.d"
   "CMakeFiles/Vulkan2D.dir/Sources/Input.cpp.o"
   "CMakeFiles/Vulkan2D.dir/Sources/Input.cpp.o.d"
+  "CMakeFiles/Vulkan2D.dir/Sources/Logging.cpp.o"
+  "CMakeFiles/Vulkan2D.dir/Sources/Logging.cpp.o.d"
   "CMakeFiles/Vulkan2D.dir/Sources/Physics/Collision.cpp.o"
   "CMakeFiles/Vulkan2D.dir/Sources/Physics/Collision.cpp.o.d"
   "CMakeFiles/Vulkan2D.dir/Sources/Physics/Physics.cpp.o"

@@ -9,19 +9,9 @@
 namespace Super 
 {
 
-typedef struct vertex_buffer_desc 
-{
-    VkVertexInputBindingDescription bindingDesc;
-    std::vector<VkVertexInputAttributeDescription> attribsDesc;
-} Vertex_Buffer_Desc;
-
-
 void SetVertexBufferFromVertices(Device& device, VkBuffer& buffer, VkDeviceMemory& deviceMemory, const std::vector<float>& vertices);
 
 uint32_t FindSutiableMemoryType(uint32_t typeFilter, VkPhysicalDeviceMemoryProperties* memProperties, VkMemoryPropertyFlags properties);
-
-
-
 
 extern std::vector<float> SQUARE_VERTICES;
 

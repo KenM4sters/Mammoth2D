@@ -432,6 +432,30 @@ Sources/Input.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Input.cpp.s
 .PHONY : Sources/Input.cpp.s
 
+Sources/Logging.o: Sources/Logging.cpp.o
+.PHONY : Sources/Logging.o
+
+# target to build an object file
+Sources/Logging.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Logging.cpp.o
+.PHONY : Sources/Logging.cpp.o
+
+Sources/Logging.i: Sources/Logging.cpp.i
+.PHONY : Sources/Logging.i
+
+# target to preprocess a source file
+Sources/Logging.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Logging.cpp.i
+.PHONY : Sources/Logging.cpp.i
+
+Sources/Logging.s: Sources/Logging.cpp.s
+.PHONY : Sources/Logging.s
+
+# target to generate assembly for a file
+Sources/Logging.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Logging.cpp.s
+.PHONY : Sources/Logging.cpp.s
+
 Sources/Physics/Collision.o: Sources/Physics/Collision.cpp.o
 .PHONY : Sources/Physics/Collision.o
 
@@ -645,6 +669,9 @@ help:
 	@echo "... Sources/Input.o"
 	@echo "... Sources/Input.i"
 	@echo "... Sources/Input.s"
+	@echo "... Sources/Logging.o"
+	@echo "... Sources/Logging.i"
+	@echo "... Sources/Logging.s"
 	@echo "... Sources/Physics/Collision.o"
 	@echo "... Sources/Physics/Collision.i"
 	@echo "... Sources/Physics/Collision.s"

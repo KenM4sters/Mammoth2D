@@ -2,26 +2,11 @@
 #include <GLFW/glfw3.h>
 #include <vulkan/vulkan.hpp>
 #include <vulkan/vulkan_beta.h>
+#include "Core.hpp"
 #include "Window.hpp"
 
 namespace Super 
 {
-
-struct Swap_Chain_Support_Details 
-{
-  VkSurfaceCapabilitiesKHR capabilities;
-  std::vector<VkSurfaceFormatKHR> formats;
-  std::vector<VkPresentModeKHR> presentModes;
-};
-
-struct Queue_Family_Indices 
-{
-  uint32_t graphicsFamily;
-  uint32_t presentFamily;
-  bool graphicsFamilyHasValue = false;
-  bool presentFamilyHasValue = false;
-  bool isComplete() { return graphicsFamilyHasValue && presentFamilyHasValue; }
-};
 
 class Device 
 {
@@ -50,8 +35,8 @@ public:
     // not to store them within the class since they're not really required by all but a handful of
     // other classes, so we'll make getters for these private functions as well.
     //
-    Swap_Chain_Support_Details GetSwapChainSupport() { return CheckSwapChainSupport(mPhysicalDevice); }
-    Queue_Family_Indices FindPhysicalQueueFamilies() { return FindQueueFamilies(mPhysicalDevice); }
+    SwapChainSupportDetails GetSwapChainSupport() { return CheckSwapChainSupport(mPhysicalDevice); }
+    QueueFamilyIndices FindPhysicalQueueFamilies() { return FindQueueFamilies(mPhysicalDevice); }
 
     // Helper functions for interacting with buffers from outside of this class
     // (typically from the pipeline class).
@@ -108,11 +93,11 @@ private:
     bool CheckValidationLayerSupport() const;
     void HasGLFWRequiredExtensions() const;
     bool CheckDeviceExtensionSupport(VkPhysicalDevice device) const;
-    Swap_Chain_Support_Details CheckSwapChainSupport(VkPhysicalDevice device) const;
+    SwapChainSupportDetails CheckSwapChainSupport(VkPhysicalDevice device) const;
 
     void ConfigureDebugMessengerCallback(VkDebugUtilsMessengerCreateInfoEXT& createInfo) const;
     
-    Queue_Family_Indices FindQueueFamilies(VkPhysicalDevice device) const;
+    QueueFamilyIndices FindQueueFamilies(VkPhysicalDevice device) const;
 
     const std::vector<const char*> GetAllRequiredExtensions() const;
     

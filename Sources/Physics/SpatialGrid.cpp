@@ -70,7 +70,13 @@ std::vector<CollisionPair> SpatialGrid::GetPairsPerCell(std::vector<Entity*>& en
 std::vector<CollisionPair> SpatialGrid::RemoveDuplicates(std::vector<CollisionPair>& pairs) const 
 {
     // Function to remove duplicates from vector of structs
-    std::set<CollisionPair> uniqueSet(pairs.begin(), pairs.end());
+    std::set<CollisionPair> uniqueSet{};
+    for (const auto& p : pairs) 
+    {
+        CollisionPair cp(p.A, p.B);
+        uniqueSet.insert(cp);
+    }
+
     return std::vector<CollisionPair>(uniqueSet.begin(), uniqueSet.end());
 }
 
@@ -80,29 +86,29 @@ void SpatialGrid::ResetGrid()
     mMap->clear();
 }
 
-void SpatialGrid::AssignEntityToGridCell(Entity& entity) 
+void SpatialGrid::AssignEntityToGridCell(Entity& ent) 
 {
     // Checks which cell the most left vertex is in.
     //
-    const int xCellLeft = round((float)entity.bounds.min.x / mGridWidth);
-    const int yCellLeft = round((float)entity.bounds.min.y / mGridHeight);
+    const int xCellLeft = round((float)ent.tx.position.x / mGridWidth);
+    const int yCellLeft = round((float)ent.tx.position.y / mGridHeight);
     const std::string leftCell = std::to_string(xCellLeft) + std::to_string(yCellLeft);
 
     // Pushes the entity into the appropriate cell.
     //
     if(mMap->count(leftCell)) 
     {
-        mMap->operator[](leftCell).push_back(&entity);
+        mMap->operator[](leftCell).push_back(&ent);
     }
     else 
     {
-        mMap->operator[](leftCell) = std::vector<Entity*>{&entity};
+        mMap->operator[](leftCell) = std::vector<Entity*>{&ent};
     }
 
     // Checks which cell the most right vetex is in.
     //
-    const int xCellRight = round((float)(entity.bounds.max.x) / mGridWidth);
-    const int yCellRight = round((float)(entity.bounds.max.y) / mGridHeight);
+    const int xCellRight = round((float)(ent.tx.position.x + ent.tx.scale.x) / mGridWidth);
+    const int yCellRight = round((float)(ent.tx.position.y + ent.tx.scale.y) / mGridHeight);
     const std::string rightCell = std::to_string(xCellRight) + std::to_string(yCellRight);
 
     // Only pushes the entity into the appropriate cell if its different
@@ -112,11 +118,11 @@ void SpatialGrid::AssignEntityToGridCell(Entity& entity)
     {
         if(mMap->count(rightCell)) 
         {
-            mMap->operator[](rightCell).push_back(&entity);
+            mMap->operator[](rightCell).push_back(&ent);
         }
         else 
         {
-            mMap->operator[](rightCell) = std::vector<Entity*>{&entity};
+            mMap->operator[](rightCell) = std::vector<Entity*>{&ent};
         }
     }
 }

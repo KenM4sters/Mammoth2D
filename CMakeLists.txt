@@ -22,6 +22,7 @@ add_executable(${PROJECT_NAME}
   Sources/Device.cpp
   Sources/Camera.cpp
   Sources/Input.cpp
+  Sources/Logging.cpp
   Sources/Graphics/Renderer/SwapChain.cpp
   Sources/Graphics/Renderer/Renderer.cpp
   Sources/Graphics/Renderer/Sprite2DSystem.cpp

@@ -8,6 +8,7 @@
 
 namespace Super
 {
+    
 typedef std::list<IHandler*> HandlerList;
 
 class EventBus 

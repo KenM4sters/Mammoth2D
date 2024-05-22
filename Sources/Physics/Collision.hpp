@@ -4,6 +4,7 @@
 
 namespace Super 
 {
+
 class Collision : public System
 {
 public:
@@ -14,8 +15,12 @@ public:
     
 private:
 
+    // Updates the collision pairs each frame to reflect spatial map.
+    void UpdateCollisionPairs();
+
+
     // Testt whether two entities have collided or not and returns either false or true.
-    bool CheckCollision(Entity* ent1, Entity* ent2);
+    void* CheckCollision(CollisionPair pair);
 
     // Tests whether an entity has collided with the window boundaries and returns either true or false.
     bool CheckCollision(Entity* ent1);

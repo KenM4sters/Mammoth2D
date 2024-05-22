@@ -154,7 +154,7 @@ void Device::ChoosePhysicalDevice()
 
 void Device::CreateLogicalDevice() 
 {
-    Queue_Family_Indices indices = FindQueueFamilies(mPhysicalDevice);
+    QueueFamilyIndices indices = FindQueueFamilies(mPhysicalDevice);
 
     std::vector<VkDeviceQueueCreateInfo> queueCreateInfos;
     std::set<uint32_t> uniqueQueueFamilies = {indices.graphicsFamily, indices.presentFamily};
@@ -205,7 +205,7 @@ void Device::CreateLogicalDevice()
 
 void Device::CreateCommandPool() 
 {
-    Queue_Family_Indices queueFamilyIndices = FindQueueFamilies(mPhysicalDevice);
+    QueueFamilyIndices queueFamilyIndices = FindQueueFamilies(mPhysicalDevice);
 
     VkCommandPoolCreateInfo poolInfo = {};
     poolInfo.sType = VK_STRUCTURE_TYPE_COMMAND_POOL_CREATE_INFO;
@@ -221,14 +221,14 @@ void Device::CreateCommandPool()
 
 bool Device::IsDeviceSuitable(VkPhysicalDevice device) const 
 {
-    Queue_Family_Indices indices = FindQueueFamilies(device);
+    QueueFamilyIndices indices = FindQueueFamilies(device);
 
     bool extensionsSupported = CheckDeviceExtensionSupport(device);
 
     bool swapChainAdequate = false;
     if (extensionsSupported) 
     {
-        Swap_Chain_Support_Details swapChainSupport = CheckSwapChainSupport(device);
+        SwapChainSupportDetails swapChainSupport = CheckSwapChainSupport(device);
         swapChainAdequate = !swapChainSupport.formats.empty() && !swapChainSupport.presentModes.empty();
     }
 
@@ -262,9 +262,9 @@ bool Device::CheckDeviceExtensionSupport(VkPhysicalDevice device) const
     return requiredExtensions.empty();
 }
 
-Swap_Chain_Support_Details Device::CheckSwapChainSupport(VkPhysicalDevice device) const 
+SwapChainSupportDetails Device::CheckSwapChainSupport(VkPhysicalDevice device) const 
 {
-    Swap_Chain_Support_Details details;
+    SwapChainSupportDetails details;
     vkGetPhysicalDeviceSurfaceCapabilitiesKHR(device, mSurface, &details.capabilities);
 
     uint32_t formatCount;
@@ -324,9 +324,9 @@ bool Device::CheckValidationLayerSupport() const
     return true;
 }
 
-Queue_Family_Indices Device::FindQueueFamilies(VkPhysicalDevice device) const 
+QueueFamilyIndices Device::FindQueueFamilies(VkPhysicalDevice device) const 
 {
-    Queue_Family_Indices indices;
+    QueueFamilyIndices indices;
 
     uint32_t queueFamilyCount = 0;
     vkGetPhysicalDeviceQueueFamilyProperties(device, &queueFamilyCount, nullptr);
