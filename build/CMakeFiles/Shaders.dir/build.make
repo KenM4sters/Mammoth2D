@@ -66,19 +66,19 @@ include CMakeFiles/Shaders.dir/compiler_depend.make
 # Include the progress variables for this target.
 include CMakeFiles/Shaders.dir/progress.make
 
-CMakeFiles/Shaders: /Users/samuelbrookman/Desktop/Vulkan2D/Shaders/simple.frag.spv
-CMakeFiles/Shaders: /Users/samuelbrookman/Desktop/Vulkan2D/Shaders/simple.vert.spv
+CMakeFiles/Shaders: /Users/samuelbrookman/Desktop/Vulkan2D/Resources/Shaders/simple.frag.spv
+CMakeFiles/Shaders: /Users/samuelbrookman/Desktop/Vulkan2D/Resources/Shaders/simple.vert.spv
 
-/Users/samuelbrookman/Desktop/Vulkan2D/Shaders/simple.frag.spv: /Users/samuelbrookman/Desktop/Vulkan2D/Shaders/simple.frag
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/samuelbrookman/Desktop/Vulkan2D/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating /Users/samuelbrookman/Desktop/Vulkan2D/Shaders/simple.frag.spv"
-	/usr/local/bin/glslangValidator -V /Users/samuelbrookman/Desktop/Vulkan2D/Shaders/simple.frag -o /Users/samuelbrookman/Desktop/Vulkan2D/Shaders/simple.frag.spv
+/Users/samuelbrookman/Desktop/Vulkan2D/Resources/Shaders/simple.frag.spv: /Users/samuelbrookman/Desktop/Vulkan2D/Resources/Shaders/simple.frag
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/samuelbrookman/Desktop/Vulkan2D/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating /Users/samuelbrookman/Desktop/Vulkan2D/Resources/Shaders/simple.frag.spv"
+	/usr/local/bin/glslangValidator -V /Users/samuelbrookman/Desktop/Vulkan2D/Resources/Shaders/simple.frag -o /Users/samuelbrookman/Desktop/Vulkan2D/Resources/Shaders/simple.frag.spv
 
-/Users/samuelbrookman/Desktop/Vulkan2D/Shaders/simple.vert.spv: /Users/samuelbrookman/Desktop/Vulkan2D/Shaders/simple.vert
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/samuelbrookman/Desktop/Vulkan2D/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating /Users/samuelbrookman/Desktop/Vulkan2D/Shaders/simple.vert.spv"
-	/usr/local/bin/glslangValidator -V /Users/samuelbrookman/Desktop/Vulkan2D/Shaders/simple.vert -o /Users/samuelbrookman/Desktop/Vulkan2D/Shaders/simple.vert.spv
+/Users/samuelbrookman/Desktop/Vulkan2D/Resources/Shaders/simple.vert.spv: /Users/samuelbrookman/Desktop/Vulkan2D/Resources/Shaders/simple.vert
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/samuelbrookman/Desktop/Vulkan2D/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating /Users/samuelbrookman/Desktop/Vulkan2D/Resources/Shaders/simple.vert.spv"
+	/usr/local/bin/glslangValidator -V /Users/samuelbrookman/Desktop/Vulkan2D/Resources/Shaders/simple.vert -o /Users/samuelbrookman/Desktop/Vulkan2D/Resources/Shaders/simple.vert.spv
 
-Shaders: /Users/samuelbrookman/Desktop/Vulkan2D/Shaders/simple.frag.spv
-Shaders: /Users/samuelbrookman/Desktop/Vulkan2D/Shaders/simple.vert.spv
+Shaders: /Users/samuelbrookman/Desktop/Vulkan2D/Resources/Shaders/simple.frag.spv
+Shaders: /Users/samuelbrookman/Desktop/Vulkan2D/Resources/Shaders/simple.vert.spv
 Shaders: CMakeFiles/Shaders
 Shaders: CMakeFiles/Shaders.dir/build.make
 .PHONY : Shaders

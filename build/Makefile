@@ -336,6 +336,30 @@ Sources/Graphics/Descriptors/DescriptorSet.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Descriptors/DescriptorSet.cpp.s
 .PHONY : Sources/Graphics/Descriptors/DescriptorSet.cpp.s
 
+Sources/Graphics/Images/Image.o: Sources/Graphics/Images/Image.cpp.o
+.PHONY : Sources/Graphics/Images/Image.o
+
+# target to build an object file
+Sources/Graphics/Images/Image.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Images/Image.cpp.o
+.PHONY : Sources/Graphics/Images/Image.cpp.o
+
+Sources/Graphics/Images/Image.i: Sources/Graphics/Images/Image.cpp.i
+.PHONY : Sources/Graphics/Images/Image.i
+
+# target to preprocess a source file
+Sources/Graphics/Images/Image.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Images/Image.cpp.i
+.PHONY : Sources/Graphics/Images/Image.cpp.i
+
+Sources/Graphics/Images/Image.s: Sources/Graphics/Images/Image.cpp.s
+.PHONY : Sources/Graphics/Images/Image.s
+
+# target to generate assembly for a file
+Sources/Graphics/Images/Image.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Images/Image.cpp.s
+.PHONY : Sources/Graphics/Images/Image.cpp.s
+
 Sources/Graphics/Pipelines/Pipeline.o: Sources/Graphics/Pipelines/Pipeline.cpp.o
 .PHONY : Sources/Graphics/Pipelines/Pipeline.o
 
@@ -705,6 +729,9 @@ help:
 	@echo "... Sources/Graphics/Descriptors/DescriptorSet.o"
 	@echo "... Sources/Graphics/Descriptors/DescriptorSet.i"
 	@echo "... Sources/Graphics/Descriptors/DescriptorSet.s"
+	@echo "... Sources/Graphics/Images/Image.o"
+	@echo "... Sources/Graphics/Images/Image.i"
+	@echo "... Sources/Graphics/Images/Image.s"
 	@echo "... Sources/Graphics/Pipelines/Pipeline.o"
 	@echo "... Sources/Graphics/Pipelines/Pipeline.i"
 	@echo "... Sources/Graphics/Pipelines/Pipeline.s"

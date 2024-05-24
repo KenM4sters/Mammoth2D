@@ -33,6 +33,7 @@ add_executable(${PROJECT_NAME}
   Sources/Graphics/Buffers/Buffer.cpp
   Sources/Graphics/Buffers/UniformBuffer.cpp
   Sources/Graphics/Buffers/BufferLayout.cpp
+  Sources/Graphics/Images/Image.cpp
   Sources/Scene/Scene.cpp
   Sources/Physics/Physics.cpp
   Sources/Physics/Collision.cpp
@@ -76,14 +77,14 @@ find_program(GLSL_VALIDATOR glslangValidator HINTS
 
 # Get all .vert and .frag files in shaders directory.s
 file(GLOB_RECURSE GLSL_SOURCE_FILES
-  "${PROJECT_SOURCE_DIR}/Shaders/*.frag"
-  "${PROJECT_SOURCE_DIR}/Shaders/*.vert"
+  "${PROJECT_SOURCE_DIR}/Resources/Shaders/*.frag"
+  "${PROJECT_SOURCE_DIR}/Resources/Shaders/*.vert"
 )
 
 foreach(GLSL ${GLSL_SOURCE_FILES})
   get_filename_component(FILE_NAME ${GLSL} NAME)
   message(STATUS "Found shader file at ${FILE_NAME}")
-  set(SPIRV "${PROJECT_SOURCE_DIR}/Shaders/${FILE_NAME}.spv")
+  set(SPIRV "${PROJECT_SOURCE_DIR}/Resources/Shaders/${FILE_NAME}.spv")
   add_custom_command( 
     OUTPUT ${SPIRV}
     COMMAND ${GLSL_VALIDATOR} -V ${GLSL} -o ${SPIRV}

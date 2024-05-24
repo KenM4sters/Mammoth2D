@@ -2,6 +2,7 @@
 #include "Graphics/Pipelines/VertexInput.hpp"
 #include "Scene/Scene.hpp"
 #include "Graphics/Pipelines/Shader.hpp"
+#include "Logging.hpp"
 
 namespace Super 
 {
@@ -10,9 +11,12 @@ Sprite2DSystem::Sprite2DSystem(Device& device, VkRenderPass renderPass, uint32_t
 {
     mPipelines = std::make_unique<std::unordered_map<std::string, Pipeline*>>();
 
+    mImage = std::make_unique<Image>(mDevice, "Resources/Textures/box.png");
+
     std::vector<BufferAttribute> attribs = 
     {
         BufferAttribute(0, VK_FORMAT_R32G32_SFLOAT),
+        BufferAttribute(1, VK_FORMAT_R32G32_SFLOAT),
     };
 
     BufferLayout bufferLayout = BufferLayout(attribs);
@@ -21,8 +25,8 @@ Sprite2DSystem::Sprite2DSystem(Device& device, VkRenderPass renderPass, uint32_t
 
     std::unique_ptr<Shader> shader = std::make_unique<Shader>(
         mDevice,    
-        "Shaders/simple.vert.spv",
-        "Shaders/simple.frag.spv",
+        "Resources/Shaders/simple.vert.spv",
+        "Resources/Shaders/simple.frag.spv",
         vertexInput,
         uniform
     );
@@ -30,7 +34,6 @@ Sprite2DSystem::Sprite2DSystem(Device& device, VkRenderPass renderPass, uint32_t
 
     // Pipeline
     //
-
     // Memory is deleted in the destructor of the base RenderSystem class.
     Pipeline* playerPipeline = new Pipeline(
         device, 
@@ -46,10 +49,9 @@ Sprite2DSystem::Sprite2DSystem(Device& device, VkRenderPass renderPass, uint32_t
     //
     mPipelines->operator[]("playerPipeline") = playerPipeline;
 
-    auto descriptorSetA = DescriptorSet(mDevice, playerPipeline);   
-    auto descriptorSetB = DescriptorSet(mDevice, playerPipeline);   
+    auto descriptorSetA = DescriptorSet(mDevice, playerPipeline);     
 
-    DescriptorSet sets[2] = {descriptorSetA, descriptorSetB};
+    DescriptorSet sets[1] = {descriptorSetA};
 
     mDescriptorHandler = std::make_unique<DescriptorHandler>(sets);
 
@@ -68,22 +70,13 @@ Sprite2DSystem::Sprite2DSystem(Device& device, VkRenderPass renderPass, uint32_t
     vkBindBufferMemory(mDevice.GetDevice(), mVertexBuffer->GetBuffer(), mVertexBuffer->GetBufferMemory(), 0);
 
 
-    // Uniform buffers
+    // Uniform image buffer
     //
-    for(int i = 0; i < SwapChain::FRAMES_IN_FLIGHT; i++) 
-    {
-        auto buffer = std::make_unique<UniformBuffer>(mDevice, sizeof(SimpleUniformBuffer), 0);
-        vkBindBufferMemory(mDevice.GetDevice(), buffer->GetBuffer(), buffer->GetBufferMemory(), 0);
-        buffer->SetDescriptorBufferInfo(0, sizeof(SimpleUniformBuffer));
-
-        auto& bufferInfo = buffer->GetDescriptorInfo();
-        auto& descriptorSet = mDescriptorHandler->GetDescriptorSet(i);
-        mDescriptorWriter->WriteToBuffer(0, bufferInfo, descriptorSet);
-        mDescriptorWriter->UpdateDescriptorSet(mDevice);
-
-        mUniformBuffers.push_back(std::move(buffer));
-    }
-
+    auto& imageInfo = mImage->GetUniformBuffer()->GetDescriptorImageInfo();
+    auto& descriptorSet = mDescriptorHandler->GetDescriptorSet(0);
+    mDescriptorWriter->WriteToBuffer(0, imageInfo, descriptorSet);
+    mDescriptorWriter->UpdateDescriptorSet(mDevice);
+    
 }
 
 Sprite2DSystem::~Sprite2DSystem() 
@@ -93,6 +86,13 @@ Sprite2DSystem::~Sprite2DSystem()
 
 void Sprite2DSystem::Run(VkCommandBuffer commandBuffer, int frameIndex, std::vector<Entity>& entities) 
 {
+    SimpleUniformBuffer data[3] = 
+    {
+        glm::vec3{1.0f, 0.0f, 1.0f},
+        glm::vec3{0.0f, 0.0f, 1.0f},
+        glm::vec3{1.0f, 0.0f, 0.0f}
+    };
+
     for(auto& ent : entities) 
     {
         // Pipeline.
@@ -102,16 +102,7 @@ void Sprite2DSystem::Run(VkCommandBuffer commandBuffer, int frameIndex, std::vec
 
         // Uniforms and Descriptor sets.
         //
-        SimpleUniformBuffer data{glm::vec3{1.0f, 0.0f, 1.0f}};
-
-        for(int i = 0; i < SwapChain::FRAMES_IN_FLIGHT; i++) 
-        {
-            mUniformBuffers[i]->Update((void*)&data);
-        }
-        
-        mDescriptorHandler->GetDescriptorSet(frameIndex).Bind(commandBuffer);
-
-
+        mDescriptorHandler->GetDescriptorSet(0).Bind(commandBuffer);
         
         // Vertex Buffers.
         //

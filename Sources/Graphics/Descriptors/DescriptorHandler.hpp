@@ -7,7 +7,7 @@ namespace Super
 class DescriptorHandler 
 {
 public:
-    DescriptorHandler(DescriptorSet sets[2]);
+    DescriptorHandler(DescriptorSet sets[1]);
     ~DescriptorHandler();
 
     // void AllocateDescriptorSet(DescriptorSet& descriptorSet);

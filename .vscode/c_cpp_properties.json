@@ -5,6 +5,7 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "/Users/samuelbrookman/Desktop/Vulkan2D/External/glfw/include/**",
+                "/Users/samuelbrookman/Desktop/Vulkan2D/External/Stbi_image/**",
                 "/usr/local/macOS/include/**",
             ],
             "defines": [],

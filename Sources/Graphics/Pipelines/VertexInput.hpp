@@ -1,6 +1,7 @@
 #pragma once 
 #include <vulkan/vulkan.hpp>
 #include "Graphics/Buffers/BufferLayout.hpp"
+#include "Logging.hpp"
 
 namespace Super 
 {
@@ -21,7 +22,7 @@ public:
         for(int i = 0; i < attribs.size(); i++) 
         {
             VkVertexInputAttributeDescription attribDesc;
-            attribDesc.binding = i;
+            attribDesc.binding = 0;
             attribDesc.format = attribs[i].GetFormat();
             attribDesc.offset = attribs[i].mOffset;
             attribDesc.location = attribs[i].GetShaderLocation();

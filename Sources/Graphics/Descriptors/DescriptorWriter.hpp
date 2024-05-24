@@ -31,6 +31,19 @@ public:
         mWriteDescriptor.pTexelBufferView = nullptr;
     }
 
+    void WriteToBuffer(uint32_t binding, VkDescriptorImageInfo& imageInfo, DescriptorSet& descriptorSet) 
+    {
+        mWriteDescriptor.sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
+        mWriteDescriptor.dstSet = descriptorSet.GetDescriptorSet();
+        mWriteDescriptor.dstBinding = 0;
+        mWriteDescriptor.dstArrayElement = 0;
+        mWriteDescriptor.descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
+        mWriteDescriptor.descriptorCount = 1;
+        mWriteDescriptor.pBufferInfo = nullptr;
+        mWriteDescriptor.pImageInfo = &imageInfo;
+        mWriteDescriptor.pTexelBufferView = nullptr;
+    }
+
     void UpdateDescriptorSet(Device& device) 
     {
         vkUpdateDescriptorSets(device.GetDevice(), 1, &mWriteDescriptor, 0, nullptr);

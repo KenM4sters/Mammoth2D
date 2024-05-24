@@ -1,12 +1,13 @@
 #pragma once
 #include <vulkan/vulkan.hpp>
 #include "Device.hpp"
+
 namespace Super 
 {
 class Uniform 
 {
 public:
-    Uniform(uint32_t binding = 0, uint32_t size = 0, uint32_t offset = 0, VkShaderStageFlags flags = VK_SHADER_STAGE_VERTEX_BIT)
+    Uniform(uint32_t binding = 0, uint32_t size = 0, uint32_t offset = 0, VkShaderStageFlags flags = VK_SHADER_STAGE_FRAGMENT_BIT)
         : mBinding{binding}, mSize{size}, mOffset{offset}, mFlags{flags} 
     {
 
@@ -23,6 +24,7 @@ private:
     uint32_t mSize; 
     uint32_t mOffset;
     VkShaderStageFlags mFlags;
+
 
 };
 }

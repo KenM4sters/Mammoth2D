@@ -2,10 +2,9 @@
 
 namespace Super 
 {
-DescriptorHandler::DescriptorHandler(DescriptorSet sets[2]) 
+DescriptorHandler::DescriptorHandler(DescriptorSet sets[1]) 
 {
     mDescriptorSets.push_back(sets[0]);
-    mDescriptorSets.push_back(sets[1]);
 }
 
 DescriptorHandler::~DescriptorHandler() 

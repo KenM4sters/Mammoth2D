@@ -26,7 +26,7 @@ Pipeline::~Pipeline()
 
 void Pipeline::CreateDescriptorPool() 
 {
-    mPoolSize.type = VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
+    mPoolSize.type = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
     mPoolSize.descriptorCount = mMaxSets;
 
     VkDescriptorPoolCreateInfo poolInfo{};
@@ -46,7 +46,7 @@ void Pipeline::CreateDescriptorLayout()
 {
     VkDescriptorSetLayoutBinding uboLayoutBinding{};
     uboLayoutBinding.binding = 0;
-    uboLayoutBinding.descriptorType = VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
+    uboLayoutBinding.descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
     uboLayoutBinding.descriptorCount = 1;
     uboLayoutBinding.stageFlags = mShader->GetUniform().GetFlags();
     uboLayoutBinding.pImmutableSamplers = nullptr;

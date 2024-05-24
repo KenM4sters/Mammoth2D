@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/Users/samuelbrookman/Desktop/Vulkan2D/Shaders/simple.frag.spv"
-  "/Users/samuelbrookman/Desktop/Vulkan2D/Shaders/simple.vert.spv"
+  "/Users/samuelbrookman/Desktop/Vulkan2D/Resources/Shaders/simple.frag.spv"
+  "/Users/samuelbrookman/Desktop/Vulkan2D/Resources/Shaders/simple.vert.spv"
   "CMakeFiles/Shaders"
 )
 

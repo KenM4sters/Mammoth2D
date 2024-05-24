@@ -13,6 +13,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Vulkan2D.dir/Sources/Graphics/Descriptors/DescriptorHandler.cpp.o.d"
   "CMakeFiles/Vulkan2D.dir/Sources/Graphics/Descriptors/DescriptorSet.cpp.o"
   "CMakeFiles/Vulkan2D.dir/Sources/Graphics/Descriptors/DescriptorSet.cpp.o.d"
+  "CMakeFiles/Vulkan2D.dir/Sources/Graphics/Images/Image.cpp.o"
+  "CMakeFiles/Vulkan2D.dir/Sources/Graphics/Images/Image.cpp.o.d"
   "CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Pipeline.cpp.o"
   "CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Pipeline.cpp.o.d"
   "CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Shader.cpp.o"

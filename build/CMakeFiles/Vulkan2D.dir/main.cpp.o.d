@@ -1090,6 +1090,7 @@ CMakeFiles/Vulkan2D.dir/main.cpp.o: \
   /usr/local/macOS/include/vk_video/vulkan_video_codec_h265std_encode.h \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/VertexInput.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Buffers/BufferLayout.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Logging.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/Shader.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/Uniform.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Renderer/SwapChain.hpp \

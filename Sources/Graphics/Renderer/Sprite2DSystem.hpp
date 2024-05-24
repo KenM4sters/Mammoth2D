@@ -1,6 +1,7 @@
 #pragma once
 #include "Core.hpp"
 #include "RenderSystem.hpp"
+#include "Graphics/Images/Image.hpp"
 
 namespace Super 
 {
@@ -15,6 +16,6 @@ public:
     void UpdatePushConstants(Entity& ent);
 
 private:
-    std::vector<std::unique_ptr<UniformBuffer>> mUniformBuffers{};
+    std::unique_ptr<Image> mImage = nullptr;
 };
 }

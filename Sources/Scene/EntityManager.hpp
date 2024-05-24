@@ -13,10 +13,10 @@ public:
     EntityManager(const EntityManager& other) = delete;
     EntityManager& operator=(const EntityManager& other) = delete;
 
-    EntityID CreateEntity(Entity ent) 
+    void CreateEntity(Entity ent) 
     {
-        mEntities.push_back(ent);
-        return idCounter++; 
+        ent.id = idCounter++;
+        mEntities.push_back(ent); 
     }
 
     // Getter for the vector of entities.

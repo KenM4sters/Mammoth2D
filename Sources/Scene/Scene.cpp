@@ -1,6 +1,7 @@
 #include "Scene.hpp"
 #include "Physics/Physics.hpp"
 #include "Physics/Collision.hpp"
+#include "Logging.hpp"
 
 namespace Super 
 {
@@ -24,7 +25,7 @@ Scene::Scene(EventBus& eventBus, uint32_t width, uint32_t height)
 
     player.color = glm::vec3(0.3f, 0.3f, 1.0f);
     player.label = "Player";
-    player.id = mEntityManager.CreateEntity(std::move(player));
+    mEntityManager.CreateEntity(std::move(player));
 
     // Enemy Entity.
     //
@@ -38,7 +39,7 @@ Scene::Scene(EventBus& eventBus, uint32_t width, uint32_t height)
 
     box.color = glm::vec3(1.0f, 0.3f, 0.3f);
     box.label = "Box";
-    box.id = mEntityManager.CreateEntity(std::move(box));
+    mEntityManager.CreateEntity(std::move(box));
 
     // Platform 1 Entity.
     //
@@ -52,10 +53,7 @@ Scene::Scene(EventBus& eventBus, uint32_t width, uint32_t height)
 
     platform.color = glm::vec3(0.5f, 0.2f, 0.8f);
     platform.label = "Platform";
-    platform.id = mEntityManager.CreateEntity(std::move(platform));
-
-
-
+    mEntityManager.CreateEntity(std::move(platform));
 
     // Event-Specific callback classes.
     // These classes don't have any functions that are called each frame, but rather
