@@ -1091,10 +1091,12 @@ CMakeFiles/Vulkan2D.dir/main.cpp.o: \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/VertexInput.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Buffers/BufferLayout.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/Shader.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/Uniform.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Renderer/SwapChain.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Renderer/Renderer.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Renderer/RenderSystem.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Buffers/Buffer.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Buffers/UniformBuffer.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/Scene.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/EntityManager.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Camera.hpp \

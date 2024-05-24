@@ -4,7 +4,9 @@
 #include <unordered_map>
 #include "Graphics/Pipelines/Pipeline.hpp"
 #include "Graphics/Buffers/Buffer.hpp"
+#include "Graphics/Buffers/UniformBuffer.hpp"
 #include "Core.hpp"
+#include "SwapChain.hpp"
 
 namespace Super 
 {

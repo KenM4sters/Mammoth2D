@@ -40,35 +40,35 @@ void Physics::ResetMotion(Entity& entity)
 
 void Physics::SolveImpulse(CollisionEvent* event)
 {
-    // event->mEntityA->body.velocity = {0.0f, 0.0f};
-    // event->mEntityB->body.velocity = {0.0f, 0.0f};
+    event->mEntityA->body.velocity = {0.0f, 0.0f};
+    event->mEntityB->body.velocity = {0.0f, 0.0f};
 
-    const auto& A = event->mEntityA;
-    const auto& B = event->mEntityB;
-    const auto& penetration = event->penetration; 
-    const auto& N = event->normal; 
+    // const auto& A = event->mEntityA;
+    // const auto& B = event->mEntityB;
+    // const auto& penetration = event->penetration; 
+    // const auto& N = event->normal; 
 
-    const glm::vec2 rv = B->body.velocity - A->body.velocity;
-    float velAlongNormal = glm::dot(rv, event->normal);
+    // const glm::vec2 rv = B->body.velocity - A->body.velocity;
+    // float velAlongNormal = glm::dot(rv, event->normal);
 
-    if(velAlongNormal > 0) 
-    {
-        return;
-    }
+    // if(velAlongNormal > 0) 
+    // {
+    //     return;
+    // }
 
-    const float e = std::min(A->body.restitution, B->body.restitution);
+    // const float e = std::min(A->body.restitution, B->body.restitution);
 
-    float j = -(1 + e) * velAlongNormal;
-    j*= A->body.inverseMass + B->body.inverseMass;
+    // float j = -(1 + e) * velAlongNormal;
+    // j*= A->body.inverseMass + B->body.inverseMass;
 
-    glm::vec2 impulse = j * event->normal;
-
-
-    // LOG_VEC2(event->normal, "norm");
+    // glm::vec2 impulse = j * event->normal;
 
 
-    A->body.velocity -= A->body.inverseMass * impulse;
-    B->body.velocity += B->body.inverseMass * impulse;
+    // // LOG_VEC2(event->normal, "norm");
+
+
+    // A->body.velocity -= A->body.inverseMass * impulse;
+    // B->body.velocity += B->body.inverseMass * impulse;
     
 }
 

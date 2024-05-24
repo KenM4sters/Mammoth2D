@@ -5,23 +5,61 @@
 
 namespace Super 
 {
-Pipeline::Pipeline(Device& device, VkRenderPass renderPass, VertexInput vertexInput, const char* vertSrc, const char* fragSrc, uint32_t width, uint32_t height)
+
+Pipeline::Pipeline(Device& device, VkRenderPass renderPass, uint32_t width, uint32_t height, std::unique_ptr<Shader> shader, VkPipelineBindPoint bindPoint)
     : mDevice{device}
 {
-    mShader = std::make_unique<Shader>(
-        device,
-        vertSrc,
-        fragSrc
-    );
+    mShader = std::move(shader);
     
+    CreateDescriptorPool();
+    CreateDescriptorLayout();
     CreatePipelineLayout();
-    CreateGraphicsPipeline(std::move(vertexInput), std::move(renderPass), width, height);
+    CreateGraphicsPipeline(renderPass, width, height);
 }
 
 Pipeline::~Pipeline() 
 {
+    vkDestroyDescriptorPool(mDevice.GetDevice(), mDescriptorPool, nullptr);
     vkDestroyPipelineLayout(mDevice.GetDevice(), mPipelineLayout, nullptr);
     vkDestroyPipeline(mDevice.GetDevice(), mPipeline, nullptr);
+}
+
+void Pipeline::CreateDescriptorPool() 
+{
+    mPoolSize.type = VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
+    mPoolSize.descriptorCount = mMaxSets;
+
+    VkDescriptorPoolCreateInfo poolInfo{};
+    poolInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_POOL_CREATE_INFO;
+    poolInfo.poolSizeCount = 1;
+    poolInfo.pPoolSizes = &mPoolSize;
+    poolInfo.maxSets = mMaxSets;
+
+    if(vkCreateDescriptorPool(mDevice.GetDevice(), &poolInfo, nullptr, &mDescriptorPool) != VK_SUCCESS) 
+    {
+        throw std::runtime_error("Failed to create descriptor pool");
+    }
+}
+
+
+void Pipeline::CreateDescriptorLayout() 
+{
+    VkDescriptorSetLayoutBinding uboLayoutBinding{};
+    uboLayoutBinding.binding = 0;
+    uboLayoutBinding.descriptorType = VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
+    uboLayoutBinding.descriptorCount = 1;
+    uboLayoutBinding.stageFlags = mShader->GetUniform().GetFlags();
+    uboLayoutBinding.pImmutableSamplers = nullptr;
+
+    VkDescriptorSetLayoutCreateInfo layoutInfo{};
+    layoutInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_CREATE_INFO;
+    layoutInfo.bindingCount = 1;
+    layoutInfo.pBindings = &uboLayoutBinding;
+
+    if(vkCreateDescriptorSetLayout(mDevice.GetDevice(), &layoutInfo, nullptr, &mDescriptorSetLayout) != VK_SUCCESS) 
+    {
+        throw std::runtime_error("Failed to create descriptor set layout!");
+    }
 }
 
 void Pipeline::CreatePipelineLayout() 
@@ -33,8 +71,8 @@ void Pipeline::CreatePipelineLayout()
  
     VkPipelineLayoutCreateInfo pipelineLayoutInfo{};
     pipelineLayoutInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO;
-    pipelineLayoutInfo.setLayoutCount = 0;
-    pipelineLayoutInfo.pSetLayouts = nullptr;
+    pipelineLayoutInfo.setLayoutCount = 1;
+    pipelineLayoutInfo.pSetLayouts = &mDescriptorSetLayout;
     pipelineLayoutInfo.pushConstantRangeCount = 1;
     pipelineLayoutInfo.pPushConstantRanges = &pushConstantRange;
     
@@ -44,13 +82,14 @@ void Pipeline::CreatePipelineLayout()
     }
 }
 
-void Pipeline::CreateGraphicsPipeline(VertexInput vertexInput, VkRenderPass renderPass, uint32_t width, uint32_t height) 
+void Pipeline::CreateGraphicsPipeline(VkRenderPass renderPass, uint32_t width, uint32_t height) 
 {
 
     PipelineDesc desc = SetDefaultPipelineDesc(width, height);
 
     // Vertex Info.
     //
+    const auto& vertexInput = mShader->GetVertexInput();
     desc.vertexInfo.vertexAttributeDescriptionCount = vertexInput.GetAttribDescriptions().size();
     desc.vertexInfo.vertexBindingDescriptionCount = 1;
     desc.vertexInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_STATE_CREATE_INFO;

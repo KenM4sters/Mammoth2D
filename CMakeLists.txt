@@ -28,8 +28,10 @@ add_executable(${PROJECT_NAME}
   Sources/Graphics/Renderer/Sprite2DSystem.cpp
   Sources/Graphics/Pipelines/Pipeline.cpp
   Sources/Graphics/Pipelines/Shader.cpp
-  Sources/Graphics/Pipelines/VertexInput.cpp
+  Sources/Graphics/Descriptors/DescriptorSet.cpp
+  Sources/Graphics/Descriptors/DescriptorHandler.cpp
   Sources/Graphics/Buffers/Buffer.cpp
+  Sources/Graphics/Buffers/UniformBuffer.cpp
   Sources/Graphics/Buffers/BufferLayout.cpp
   Sources/Scene/Scene.cpp
   Sources/Physics/Physics.cpp

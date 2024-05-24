@@ -264,6 +264,30 @@ Sources/Graphics/Buffers/BufferLayout.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/BufferLayout.cpp.s
 .PHONY : Sources/Graphics/Buffers/BufferLayout.cpp.s
 
+Sources/Graphics/Buffers/UniformBuffer.o: Sources/Graphics/Buffers/UniformBuffer.cpp.o
+.PHONY : Sources/Graphics/Buffers/UniformBuffer.o
+
+# target to build an object file
+Sources/Graphics/Buffers/UniformBuffer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/UniformBuffer.cpp.o
+.PHONY : Sources/Graphics/Buffers/UniformBuffer.cpp.o
+
+Sources/Graphics/Buffers/UniformBuffer.i: Sources/Graphics/Buffers/UniformBuffer.cpp.i
+.PHONY : Sources/Graphics/Buffers/UniformBuffer.i
+
+# target to preprocess a source file
+Sources/Graphics/Buffers/UniformBuffer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/UniformBuffer.cpp.i
+.PHONY : Sources/Graphics/Buffers/UniformBuffer.cpp.i
+
+Sources/Graphics/Buffers/UniformBuffer.s: Sources/Graphics/Buffers/UniformBuffer.cpp.s
+.PHONY : Sources/Graphics/Buffers/UniformBuffer.s
+
+# target to generate assembly for a file
+Sources/Graphics/Buffers/UniformBuffer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/UniformBuffer.cpp.s
+.PHONY : Sources/Graphics/Buffers/UniformBuffer.cpp.s
+
 Sources/Graphics/Pipelines/Pipeline.o: Sources/Graphics/Pipelines/Pipeline.cpp.o
 .PHONY : Sources/Graphics/Pipelines/Pipeline.o
 
@@ -311,6 +335,30 @@ Sources/Graphics/Pipelines/Shader.s: Sources/Graphics/Pipelines/Shader.cpp.s
 Sources/Graphics/Pipelines/Shader.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Shader.cpp.s
 .PHONY : Sources/Graphics/Pipelines/Shader.cpp.s
+
+Sources/Graphics/Pipelines/Uniform.o: Sources/Graphics/Pipelines/Uniform.cpp.o
+.PHONY : Sources/Graphics/Pipelines/Uniform.o
+
+# target to build an object file
+Sources/Graphics/Pipelines/Uniform.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Uniform.cpp.o
+.PHONY : Sources/Graphics/Pipelines/Uniform.cpp.o
+
+Sources/Graphics/Pipelines/Uniform.i: Sources/Graphics/Pipelines/Uniform.cpp.i
+.PHONY : Sources/Graphics/Pipelines/Uniform.i
+
+# target to preprocess a source file
+Sources/Graphics/Pipelines/Uniform.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Uniform.cpp.i
+.PHONY : Sources/Graphics/Pipelines/Uniform.cpp.i
+
+Sources/Graphics/Pipelines/Uniform.s: Sources/Graphics/Pipelines/Uniform.cpp.s
+.PHONY : Sources/Graphics/Pipelines/Uniform.s
+
+# target to generate assembly for a file
+Sources/Graphics/Pipelines/Uniform.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Uniform.cpp.s
+.PHONY : Sources/Graphics/Pipelines/Uniform.cpp.s
 
 Sources/Graphics/Pipelines/VertexInput.o: Sources/Graphics/Pipelines/VertexInput.cpp.o
 .PHONY : Sources/Graphics/Pipelines/VertexInput.o
@@ -648,12 +696,18 @@ help:
 	@echo "... Sources/Graphics/Buffers/BufferLayout.o"
 	@echo "... Sources/Graphics/Buffers/BufferLayout.i"
 	@echo "... Sources/Graphics/Buffers/BufferLayout.s"
+	@echo "... Sources/Graphics/Buffers/UniformBuffer.o"
+	@echo "... Sources/Graphics/Buffers/UniformBuffer.i"
+	@echo "... Sources/Graphics/Buffers/UniformBuffer.s"
 	@echo "... Sources/Graphics/Pipelines/Pipeline.o"
 	@echo "... Sources/Graphics/Pipelines/Pipeline.i"
 	@echo "... Sources/Graphics/Pipelines/Pipeline.s"
 	@echo "... Sources/Graphics/Pipelines/Shader.o"
 	@echo "... Sources/Graphics/Pipelines/Shader.i"
 	@echo "... Sources/Graphics/Pipelines/Shader.s"
+	@echo "... Sources/Graphics/Pipelines/Uniform.o"
+	@echo "... Sources/Graphics/Pipelines/Uniform.i"
+	@echo "... Sources/Graphics/Pipelines/Uniform.s"
 	@echo "... Sources/Graphics/Pipelines/VertexInput.o"
 	@echo "... Sources/Graphics/Pipelines/VertexInput.i"
 	@echo "... Sources/Graphics/Pipelines/VertexInput.s"

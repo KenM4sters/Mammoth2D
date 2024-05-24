@@ -1,6 +1,7 @@
 #include "Sprite2DSystem.hpp"
 #include "Graphics/Pipelines/VertexInput.hpp"
 #include "Scene/Scene.hpp"
+#include "Graphics/Pipelines/Shader.hpp"
 
 namespace Super 
 {
@@ -14,19 +15,25 @@ Sprite2DSystem::Sprite2DSystem(Device& device, VkRenderPass renderPass, uint32_t
         BufferAttribute(0, VK_FORMAT_R32G32_SFLOAT),
     };
 
-    auto bufferLayout = std::make_unique<BufferLayout>(attribs);
+    BufferLayout bufferLayout = BufferLayout(attribs);
+    VertexInput vertexInput = VertexInput(bufferLayout);
+    Uniform uniform = Uniform(0, sizeof(SimpleUniformBuffer), 0, VK_SHADER_STAGE_FRAGMENT_BIT);
 
-    VertexInput vertexInput = VertexInput(std::move(bufferLayout));
+    std::unique_ptr<Shader> shader = std::make_unique<Shader>(
+        mDevice,    
+        "Shaders/simple.vert.spv",
+        "Shaders/simple.frag.spv",
+        vertexInput,
+        uniform
+    );
 
-    // Memory is deleted in the destructor of the base class.
+    // Memory is deleted in the destructor of the base RenderSystem class.
     Pipeline* playerPipeline = new Pipeline(
         device, 
         renderPass,
-        std::move(vertexInput),
-        "Shaders/simple.vert.spv", 
-        "Shaders/simple.frag.spv",
         width,
-        height
+        height,
+        std::move(shader)
     );
 
     // At the moment, all pipelines are the same, since we're only rendering simple squares,
@@ -58,6 +65,18 @@ void Sprite2DSystem::Run(VkCommandBuffer commandBuffer, std::vector<Entity>& ent
 {
     for(auto& ent : entities) 
     {
+
+        // Uniforms and Descriptor sets.
+        //
+        SimpleUniformBuffer data{glm::vec3{0.0f, 0.0f, 1.0f}};
+        std::vector<std::unique_ptr<UniformBuffer>> uniformBuffers(SwapChain::FRAMES_IN_FLIGHT);
+        for(int i = 0; i < SwapChain::FRAMES_IN_FLIGHT; i++) 
+        {
+            auto buffer = std::make_unique<UniformBuffer>(mDevice, sizeof(SimpleUniformBuffer));
+            buffer->Update((void*)&data);
+            uniformBuffers.emplace_back(std::move(buffer));
+        }
+
         const auto& pipeline = mPipelines->operator[]("playerPipeline");
 
         pipeline->Bind(commandBuffer);

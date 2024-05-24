@@ -251,10 +251,24 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/VertexInput.cpp.s: cmake_forc
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/VertexInput.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/VertexInput.cpp -o CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/VertexInput.cpp.s
 
+CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Uniform.cpp.o: CMakeFiles/Vulkan2D.dir/flags.make
+CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Uniform.cpp.o: /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/Uniform.cpp
+CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Uniform.cpp.o: CMakeFiles/Vulkan2D.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/samuelbrookman/Desktop/Vulkan2D/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Uniform.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Uniform.cpp.o -MF CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Uniform.cpp.o.d -o CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Uniform.cpp.o -c /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/Uniform.cpp
+
+CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Uniform.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Uniform.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/Uniform.cpp > CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Uniform.cpp.i
+
+CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Uniform.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Uniform.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/Uniform.cpp -o CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Uniform.cpp.s
+
 CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/Buffer.cpp.o: CMakeFiles/Vulkan2D.dir/flags.make
 CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/Buffer.cpp.o: /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Buffers/Buffer.cpp
 CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/Buffer.cpp.o: CMakeFiles/Vulkan2D.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/samuelbrookman/Desktop/Vulkan2D/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/Buffer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/samuelbrookman/Desktop/Vulkan2D/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/Buffer.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/Buffer.cpp.o -MF CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/Buffer.cpp.o.d -o CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/Buffer.cpp.o -c /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Buffers/Buffer.cpp
 
 CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/Buffer.cpp.i: cmake_force
@@ -265,10 +279,24 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/Buffer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/Buffer.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Buffers/Buffer.cpp -o CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/Buffer.cpp.s
 
+CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/UniformBuffer.cpp.o: CMakeFiles/Vulkan2D.dir/flags.make
+CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/UniformBuffer.cpp.o: /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Buffers/UniformBuffer.cpp
+CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/UniformBuffer.cpp.o: CMakeFiles/Vulkan2D.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/samuelbrookman/Desktop/Vulkan2D/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/UniformBuffer.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/UniformBuffer.cpp.o -MF CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/UniformBuffer.cpp.o.d -o CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/UniformBuffer.cpp.o -c /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Buffers/UniformBuffer.cpp
+
+CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/UniformBuffer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/UniformBuffer.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Buffers/UniformBuffer.cpp > CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/UniformBuffer.cpp.i
+
+CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/UniformBuffer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/UniformBuffer.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Buffers/UniformBuffer.cpp -o CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/UniformBuffer.cpp.s
+
 CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/BufferLayout.cpp.o: CMakeFiles/Vulkan2D.dir/flags.make
 CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/BufferLayout.cpp.o: /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Buffers/BufferLayout.cpp
 CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/BufferLayout.cpp.o: CMakeFiles/Vulkan2D.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/samuelbrookman/Desktop/Vulkan2D/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/BufferLayout.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/samuelbrookman/Desktop/Vulkan2D/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/BufferLayout.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/BufferLayout.cpp.o -MF CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/BufferLayout.cpp.o.d -o CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/BufferLayout.cpp.o -c /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Buffers/BufferLayout.cpp
 
 CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/BufferLayout.cpp.i: cmake_force
@@ -282,7 +310,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/BufferLayout.cpp.s: cmake_force
 CMakeFiles/Vulkan2D.dir/Sources/Scene/Scene.cpp.o: CMakeFiles/Vulkan2D.dir/flags.make
 CMakeFiles/Vulkan2D.dir/Sources/Scene/Scene.cpp.o: /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/Scene.cpp
 CMakeFiles/Vulkan2D.dir/Sources/Scene/Scene.cpp.o: CMakeFiles/Vulkan2D.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/samuelbrookman/Desktop/Vulkan2D/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Vulkan2D.dir/Sources/Scene/Scene.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/samuelbrookman/Desktop/Vulkan2D/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/Vulkan2D.dir/Sources/Scene/Scene.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Vulkan2D.dir/Sources/Scene/Scene.cpp.o -MF CMakeFiles/Vulkan2D.dir/Sources/Scene/Scene.cpp.o.d -o CMakeFiles/Vulkan2D.dir/Sources/Scene/Scene.cpp.o -c /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/Scene.cpp
 
 CMakeFiles/Vulkan2D.dir/Sources/Scene/Scene.cpp.i: cmake_force
@@ -296,7 +324,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Scene/Scene.cpp.s: cmake_force
 CMakeFiles/Vulkan2D.dir/Sources/Physics/Physics.cpp.o: CMakeFiles/Vulkan2D.dir/flags.make
 CMakeFiles/Vulkan2D.dir/Sources/Physics/Physics.cpp.o: /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Physics/Physics.cpp
 CMakeFiles/Vulkan2D.dir/Sources/Physics/Physics.cpp.o: CMakeFiles/Vulkan2D.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/samuelbrookman/Desktop/Vulkan2D/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/Vulkan2D.dir/Sources/Physics/Physics.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/samuelbrookman/Desktop/Vulkan2D/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/Vulkan2D.dir/Sources/Physics/Physics.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Vulkan2D.dir/Sources/Physics/Physics.cpp.o -MF CMakeFiles/Vulkan2D.dir/Sources/Physics/Physics.cpp.o.d -o CMakeFiles/Vulkan2D.dir/Sources/Physics/Physics.cpp.o -c /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Physics/Physics.cpp
 
 CMakeFiles/Vulkan2D.dir/Sources/Physics/Physics.cpp.i: cmake_force
@@ -310,7 +338,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Physics/Physics.cpp.s: cmake_force
 CMakeFiles/Vulkan2D.dir/Sources/Physics/Collision.cpp.o: CMakeFiles/Vulkan2D.dir/flags.make
 CMakeFiles/Vulkan2D.dir/Sources/Physics/Collision.cpp.o: /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Physics/Collision.cpp
 CMakeFiles/Vulkan2D.dir/Sources/Physics/Collision.cpp.o: CMakeFiles/Vulkan2D.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/samuelbrookman/Desktop/Vulkan2D/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/Vulkan2D.dir/Sources/Physics/Collision.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/samuelbrookman/Desktop/Vulkan2D/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/Vulkan2D.dir/Sources/Physics/Collision.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Vulkan2D.dir/Sources/Physics/Collision.cpp.o -MF CMakeFiles/Vulkan2D.dir/Sources/Physics/Collision.cpp.o.d -o CMakeFiles/Vulkan2D.dir/Sources/Physics/Collision.cpp.o -c /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Physics/Collision.cpp
 
 CMakeFiles/Vulkan2D.dir/Sources/Physics/Collision.cpp.i: cmake_force
@@ -324,7 +352,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Physics/Collision.cpp.s: cmake_force
 CMakeFiles/Vulkan2D.dir/Sources/Physics/SpatialGrid.cpp.o: CMakeFiles/Vulkan2D.dir/flags.make
 CMakeFiles/Vulkan2D.dir/Sources/Physics/SpatialGrid.cpp.o: /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Physics/SpatialGrid.cpp
 CMakeFiles/Vulkan2D.dir/Sources/Physics/SpatialGrid.cpp.o: CMakeFiles/Vulkan2D.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/samuelbrookman/Desktop/Vulkan2D/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/Vulkan2D.dir/Sources/Physics/SpatialGrid.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/samuelbrookman/Desktop/Vulkan2D/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/Vulkan2D.dir/Sources/Physics/SpatialGrid.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Vulkan2D.dir/Sources/Physics/SpatialGrid.cpp.o -MF CMakeFiles/Vulkan2D.dir/Sources/Physics/SpatialGrid.cpp.o.d -o CMakeFiles/Vulkan2D.dir/Sources/Physics/SpatialGrid.cpp.o -c /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Physics/SpatialGrid.cpp
 
 CMakeFiles/Vulkan2D.dir/Sources/Physics/SpatialGrid.cpp.i: cmake_force
@@ -350,7 +378,9 @@ Vulkan2D_OBJECTS = \
 "CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Pipeline.cpp.o" \
 "CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Shader.cpp.o" \
 "CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/VertexInput.cpp.o" \
+"CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Uniform.cpp.o" \
 "CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/Buffer.cpp.o" \
+"CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/UniformBuffer.cpp.o" \
 "CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/BufferLayout.cpp.o" \
 "CMakeFiles/Vulkan2D.dir/Sources/Scene/Scene.cpp.o" \
 "CMakeFiles/Vulkan2D.dir/Sources/Physics/Physics.cpp.o" \
@@ -373,7 +403,9 @@ Vulkan2D: CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/Sprite2DSystem.cpp.o
 Vulkan2D: CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Pipeline.cpp.o
 Vulkan2D: CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Shader.cpp.o
 Vulkan2D: CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/VertexInput.cpp.o
+Vulkan2D: CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Uniform.cpp.o
 Vulkan2D: CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/Buffer.cpp.o
+Vulkan2D: CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/UniformBuffer.cpp.o
 Vulkan2D: CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/BufferLayout.cpp.o
 Vulkan2D: CMakeFiles/Vulkan2D.dir/Sources/Scene/Scene.cpp.o
 Vulkan2D: CMakeFiles/Vulkan2D.dir/Sources/Physics/Physics.cpp.o
@@ -383,7 +415,7 @@ Vulkan2D: CMakeFiles/Vulkan2D.dir/build.make
 Vulkan2D: External/glfw/src/libglfw3.a
 Vulkan2D: /usr/local/lib/libvulkan.dylib
 Vulkan2D: CMakeFiles/Vulkan2D.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/samuelbrookman/Desktop/Vulkan2D/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Linking CXX executable Vulkan2D"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/samuelbrookman/Desktop/Vulkan2D/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Linking CXX executable Vulkan2D"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Vulkan2D.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
