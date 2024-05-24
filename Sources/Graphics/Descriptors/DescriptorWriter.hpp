@@ -8,8 +8,7 @@ namespace Super
 class DescriptorWriter 
 {
 public:
-    DescriptorWriter(DescriptorHandler& handler)
-        : mDescriptorHandler{handler} 
+    DescriptorWriter()
     {
         
     }
@@ -19,10 +18,10 @@ public:
 
     }
 
-    void WriteToBuffer(uint32_t binding, VkDescriptorBufferInfo& bufferInfo, uint32_t index) 
+    void WriteToBuffer(uint32_t binding, VkDescriptorBufferInfo& bufferInfo, DescriptorSet& descriptorSet) 
     {
         mWriteDescriptor.sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
-        mWriteDescriptor.dstSet = mDescriptorHandler.GetDescriptorSet()->GetDescriptorSet();
+        mWriteDescriptor.dstSet = descriptorSet.GetDescriptorSet();
         mWriteDescriptor.dstBinding = 0;
         mWriteDescriptor.dstArrayElement = 0;
         mWriteDescriptor.descriptorType = VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
@@ -38,9 +37,6 @@ public:
     }
 
 private:
-
-    DescriptorHandler& mDescriptorHandler;
-
     VkWriteDescriptorSet mWriteDescriptor{};
 };
 }

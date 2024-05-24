@@ -110,7 +110,7 @@ void Renderer::Render(VkCommandBuffer commandBuffer, std::vector<Entity>& entiti
 {
     for(auto& system : mRenderSystems) 
     {
-        system->Run(commandBuffer, entities);
+        system->Run(commandBuffer, mCurrentFrameIndex, entities);
     }
 }
 

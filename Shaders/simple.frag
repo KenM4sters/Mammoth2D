@@ -9,7 +9,13 @@ layout(push_constant) uniform Push
     mat4 viewProjectionMatrix;
 } push;
 
+layout(binding = 0) uniform UBO 
+{
+    vec3 color;
+} ubo;
+
+
 void main() 
 {
-    FragColor = vec4(push.color, 1.0);
+    FragColor = vec4(ubo.color, 1.0);
 }   

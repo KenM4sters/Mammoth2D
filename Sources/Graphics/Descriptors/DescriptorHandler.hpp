@@ -7,12 +7,14 @@ namespace Super
 class DescriptorHandler 
 {
 public:
-    DescriptorHandler(DescriptorSet descriptorSet);
+    DescriptorHandler(DescriptorSet sets[2]);
     ~DescriptorHandler();
 
-    inline const DescriptorSet* GetDescriptorSet() const {return &mDescriptorSet; }
+    // void AllocateDescriptorSet(DescriptorSet& descriptorSet);
+
+    inline DescriptorSet& GetDescriptorSet(uint32_t index) {return mDescriptorSets[index]; }
 
 private:
-   DescriptorSet mDescriptorSet;
+    std::vector<DescriptorSet> mDescriptorSets;
 };
 }

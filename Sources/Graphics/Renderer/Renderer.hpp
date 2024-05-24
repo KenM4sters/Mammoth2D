@@ -23,6 +23,14 @@ public:
     void End();
     void FreeCommandBuffers();
 
+    // Getters
+    //
+    inline const int& GetFrameIndex() const 
+    {
+        assert(mIsFrameStarted && "Cannot request frame index from renderer when the frame hasn't started!");
+        return mCurrentFrameIndex;
+    }
+
 
 private:
     Device& mDevice;

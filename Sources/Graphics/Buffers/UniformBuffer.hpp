@@ -11,7 +11,7 @@ public:
 
     void SetDescriptorBufferInfo(uint32_t offset, uint32_t size);
 
-    const VkDescriptorBufferInfo& GetDescriptorInfo() const { return mBufferInfo; }
+    VkDescriptorBufferInfo& GetDescriptorInfo() { return mBufferInfo; }
 
     void Update(const void* newData);
 

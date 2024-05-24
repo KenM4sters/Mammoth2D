@@ -7,6 +7,8 @@
 #include "Graphics/Buffers/UniformBuffer.hpp"
 #include "Core.hpp"
 #include "SwapChain.hpp"
+#include "Graphics/Descriptors/DescriptorHandler.hpp"
+#include "Graphics/Descriptors/DescriptorWriter.hpp"
 
 namespace Super 
 {
@@ -27,7 +29,7 @@ public:
         }
     }
 
-    virtual void Run(VkCommandBuffer commandBuffer, std::vector<Entity>& entities) = 0;
+    virtual void Run(VkCommandBuffer commandBuffer, int frameIndex, std::vector<Entity>& entities) = 0;
 
 protected:
     Device& mDevice;
@@ -37,6 +39,10 @@ protected:
     std::unique_ptr<Buffer> mVertexBuffer = nullptr;
 
     std::unique_ptr<std::unordered_map<std::string, Pipeline*>> mPipelines = nullptr;
+
+    std::unique_ptr<DescriptorHandler> mDescriptorHandler = nullptr;
+
+    std::unique_ptr<DescriptorWriter> mDescriptorWriter = nullptr;
 
 };
 }

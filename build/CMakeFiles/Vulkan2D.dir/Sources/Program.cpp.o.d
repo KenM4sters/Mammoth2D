@@ -1097,6 +1097,9 @@ CMakeFiles/Vulkan2D.dir/Sources/Program.cpp.o: \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Renderer/RenderSystem.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Buffers/Buffer.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Buffers/UniformBuffer.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Descriptors/DescriptorHandler.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Descriptors/DescriptorSet.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Descriptors/DescriptorWriter.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/Scene.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/EntityManager.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Camera.hpp \

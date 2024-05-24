@@ -288,6 +288,54 @@ Sources/Graphics/Buffers/UniformBuffer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/UniformBuffer.cpp.s
 .PHONY : Sources/Graphics/Buffers/UniformBuffer.cpp.s
 
+Sources/Graphics/Descriptors/DescriptorHandler.o: Sources/Graphics/Descriptors/DescriptorHandler.cpp.o
+.PHONY : Sources/Graphics/Descriptors/DescriptorHandler.o
+
+# target to build an object file
+Sources/Graphics/Descriptors/DescriptorHandler.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Descriptors/DescriptorHandler.cpp.o
+.PHONY : Sources/Graphics/Descriptors/DescriptorHandler.cpp.o
+
+Sources/Graphics/Descriptors/DescriptorHandler.i: Sources/Graphics/Descriptors/DescriptorHandler.cpp.i
+.PHONY : Sources/Graphics/Descriptors/DescriptorHandler.i
+
+# target to preprocess a source file
+Sources/Graphics/Descriptors/DescriptorHandler.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Descriptors/DescriptorHandler.cpp.i
+.PHONY : Sources/Graphics/Descriptors/DescriptorHandler.cpp.i
+
+Sources/Graphics/Descriptors/DescriptorHandler.s: Sources/Graphics/Descriptors/DescriptorHandler.cpp.s
+.PHONY : Sources/Graphics/Descriptors/DescriptorHandler.s
+
+# target to generate assembly for a file
+Sources/Graphics/Descriptors/DescriptorHandler.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Descriptors/DescriptorHandler.cpp.s
+.PHONY : Sources/Graphics/Descriptors/DescriptorHandler.cpp.s
+
+Sources/Graphics/Descriptors/DescriptorSet.o: Sources/Graphics/Descriptors/DescriptorSet.cpp.o
+.PHONY : Sources/Graphics/Descriptors/DescriptorSet.o
+
+# target to build an object file
+Sources/Graphics/Descriptors/DescriptorSet.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Descriptors/DescriptorSet.cpp.o
+.PHONY : Sources/Graphics/Descriptors/DescriptorSet.cpp.o
+
+Sources/Graphics/Descriptors/DescriptorSet.i: Sources/Graphics/Descriptors/DescriptorSet.cpp.i
+.PHONY : Sources/Graphics/Descriptors/DescriptorSet.i
+
+# target to preprocess a source file
+Sources/Graphics/Descriptors/DescriptorSet.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Descriptors/DescriptorSet.cpp.i
+.PHONY : Sources/Graphics/Descriptors/DescriptorSet.cpp.i
+
+Sources/Graphics/Descriptors/DescriptorSet.s: Sources/Graphics/Descriptors/DescriptorSet.cpp.s
+.PHONY : Sources/Graphics/Descriptors/DescriptorSet.s
+
+# target to generate assembly for a file
+Sources/Graphics/Descriptors/DescriptorSet.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Descriptors/DescriptorSet.cpp.s
+.PHONY : Sources/Graphics/Descriptors/DescriptorSet.cpp.s
+
 Sources/Graphics/Pipelines/Pipeline.o: Sources/Graphics/Pipelines/Pipeline.cpp.o
 .PHONY : Sources/Graphics/Pipelines/Pipeline.o
 
@@ -335,54 +383,6 @@ Sources/Graphics/Pipelines/Shader.s: Sources/Graphics/Pipelines/Shader.cpp.s
 Sources/Graphics/Pipelines/Shader.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Shader.cpp.s
 .PHONY : Sources/Graphics/Pipelines/Shader.cpp.s
-
-Sources/Graphics/Pipelines/Uniform.o: Sources/Graphics/Pipelines/Uniform.cpp.o
-.PHONY : Sources/Graphics/Pipelines/Uniform.o
-
-# target to build an object file
-Sources/Graphics/Pipelines/Uniform.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Uniform.cpp.o
-.PHONY : Sources/Graphics/Pipelines/Uniform.cpp.o
-
-Sources/Graphics/Pipelines/Uniform.i: Sources/Graphics/Pipelines/Uniform.cpp.i
-.PHONY : Sources/Graphics/Pipelines/Uniform.i
-
-# target to preprocess a source file
-Sources/Graphics/Pipelines/Uniform.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Uniform.cpp.i
-.PHONY : Sources/Graphics/Pipelines/Uniform.cpp.i
-
-Sources/Graphics/Pipelines/Uniform.s: Sources/Graphics/Pipelines/Uniform.cpp.s
-.PHONY : Sources/Graphics/Pipelines/Uniform.s
-
-# target to generate assembly for a file
-Sources/Graphics/Pipelines/Uniform.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Uniform.cpp.s
-.PHONY : Sources/Graphics/Pipelines/Uniform.cpp.s
-
-Sources/Graphics/Pipelines/VertexInput.o: Sources/Graphics/Pipelines/VertexInput.cpp.o
-.PHONY : Sources/Graphics/Pipelines/VertexInput.o
-
-# target to build an object file
-Sources/Graphics/Pipelines/VertexInput.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/VertexInput.cpp.o
-.PHONY : Sources/Graphics/Pipelines/VertexInput.cpp.o
-
-Sources/Graphics/Pipelines/VertexInput.i: Sources/Graphics/Pipelines/VertexInput.cpp.i
-.PHONY : Sources/Graphics/Pipelines/VertexInput.i
-
-# target to preprocess a source file
-Sources/Graphics/Pipelines/VertexInput.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/VertexInput.cpp.i
-.PHONY : Sources/Graphics/Pipelines/VertexInput.cpp.i
-
-Sources/Graphics/Pipelines/VertexInput.s: Sources/Graphics/Pipelines/VertexInput.cpp.s
-.PHONY : Sources/Graphics/Pipelines/VertexInput.s
-
-# target to generate assembly for a file
-Sources/Graphics/Pipelines/VertexInput.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/VertexInput.cpp.s
-.PHONY : Sources/Graphics/Pipelines/VertexInput.cpp.s
 
 Sources/Graphics/Renderer/Renderer.o: Sources/Graphics/Renderer/Renderer.cpp.o
 .PHONY : Sources/Graphics/Renderer/Renderer.o
@@ -699,18 +699,18 @@ help:
 	@echo "... Sources/Graphics/Buffers/UniformBuffer.o"
 	@echo "... Sources/Graphics/Buffers/UniformBuffer.i"
 	@echo "... Sources/Graphics/Buffers/UniformBuffer.s"
+	@echo "... Sources/Graphics/Descriptors/DescriptorHandler.o"
+	@echo "... Sources/Graphics/Descriptors/DescriptorHandler.i"
+	@echo "... Sources/Graphics/Descriptors/DescriptorHandler.s"
+	@echo "... Sources/Graphics/Descriptors/DescriptorSet.o"
+	@echo "... Sources/Graphics/Descriptors/DescriptorSet.i"
+	@echo "... Sources/Graphics/Descriptors/DescriptorSet.s"
 	@echo "... Sources/Graphics/Pipelines/Pipeline.o"
 	@echo "... Sources/Graphics/Pipelines/Pipeline.i"
 	@echo "... Sources/Graphics/Pipelines/Pipeline.s"
 	@echo "... Sources/Graphics/Pipelines/Shader.o"
 	@echo "... Sources/Graphics/Pipelines/Shader.i"
 	@echo "... Sources/Graphics/Pipelines/Shader.s"
-	@echo "... Sources/Graphics/Pipelines/Uniform.o"
-	@echo "... Sources/Graphics/Pipelines/Uniform.i"
-	@echo "... Sources/Graphics/Pipelines/Uniform.s"
-	@echo "... Sources/Graphics/Pipelines/VertexInput.o"
-	@echo "... Sources/Graphics/Pipelines/VertexInput.i"
-	@echo "... Sources/Graphics/Pipelines/VertexInput.s"
 	@echo "... Sources/Graphics/Renderer/Renderer.o"
 	@echo "... Sources/Graphics/Renderer/Renderer.i"
 	@echo "... Sources/Graphics/Renderer/Renderer.s"

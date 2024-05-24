@@ -7,7 +7,6 @@ namespace Super
 UniformBuffer::UniformBuffer(Device& device, VkDeviceSize size, uint32_t offset, void* data)
     : Buffer(device, size, VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT, VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT, data)
 {
-
 }
 
 UniformBuffer::~UniformBuffer() 
