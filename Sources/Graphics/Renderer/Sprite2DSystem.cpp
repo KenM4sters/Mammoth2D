@@ -11,7 +11,7 @@ Sprite2DSystem::Sprite2DSystem(Device& device, VkRenderPass renderPass, uint32_t
 {
     mPipelines = std::make_unique<std::unordered_map<std::string, Pipeline*>>();
 
-    mImage = std::make_unique<Image>(mDevice, "Resources/Textures/box.png");
+    mImage = std::make_unique<Image>(mDevice, "Resources/Textures/Atlas.png");
 
     std::vector<BufferAttribute> attribs = 
     {
@@ -61,10 +61,10 @@ Sprite2DSystem::Sprite2DSystem(Device& device, VkRenderPass renderPass, uint32_t
     // (in this case an array of vertices) into a conveniant place in GPU VRAM.
     mVertexBuffer = std::make_unique<Buffer>(
         mDevice, 
-        SQUARE_VERTICES.size()*sizeof(float), 
+        PLAYER_VERTICES.size()*sizeof(float), 
         VK_BUFFER_USAGE_VERTEX_BUFFER_BIT,
         VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT,
-        (void*)SQUARE_VERTICES.data()
+        (void*)PLAYER_VERTICES.data()
     );
 
     vkBindBufferMemory(mDevice.GetDevice(), mVertexBuffer->GetBuffer(), mVertexBuffer->GetBufferMemory(), 0);

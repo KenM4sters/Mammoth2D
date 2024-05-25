@@ -4,7 +4,37 @@
 namespace Super 
 {
       
-std::vector<float> SQUARE_VERTICES = 
+std::vector<float> BACKGROUND_VERTICES = 
+{      
+    0.0f, 1.0f, 0.0f, 0.0f,
+    1.0f, 0.0f, 0.3f, 0.6f,
+    0.0f, 0.0f, 0.0f, 0.6f,
+
+    0.0f, 1.0f, 0.0f, 0.0f,
+    1.0f, 1.0f, 0.3f, 0.0f,
+    1.0f, 0.0f, 0.3f, 0.6f
+};   
+std::vector<float> PLAYER_VERTICES = 
+{      
+    0.0f, 1.0f, 0.0f, 0.0f,
+    1.0f, 0.0f, 1.0f, 1.0f,
+    0.0f, 0.0f, 0.0f, 1.0f,
+
+    0.0f, 1.0f, 0.0f, 0.0f,
+    1.0f, 1.0f, 1.0f, 0.0f,
+    1.0f, 0.0f, 1.0f, 1.0f
+};   
+std::vector<float> PLATFORM_VERTICES = 
+{      
+    0.0f, 1.0f, 0.0f, 0.0f,
+    1.0f, 0.0f, 1.0f, 1.0f,
+    0.0f, 0.0f, 0.0f, 1.0f,
+
+    0.0f, 1.0f, 0.0f, 0.0f,
+    1.0f, 1.0f, 1.0f, 0.0f,
+    1.0f, 0.0f, 1.0f, 1.0f
+};   
+std::vector<float> ENEMY_VERTICES = 
 {      
     0.0f, 1.0f, 0.0f, 0.0f,
     1.0f, 0.0f, 1.0f, 1.0f,

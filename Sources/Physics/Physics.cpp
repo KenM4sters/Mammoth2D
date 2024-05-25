@@ -13,7 +13,13 @@ void Physics::Update(std::vector<Entity>& entities)
 
     for(auto& entity : entities) 
     {
-        UpdateMotion(entity);
+        if(entity.flags & EntityFlags::IS_RIGID) 
+        {
+            UpdateMotion(entity);
+        }
+        else {
+            continue;
+        }
     }
 }
 

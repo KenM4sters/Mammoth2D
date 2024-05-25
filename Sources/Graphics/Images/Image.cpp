@@ -8,6 +8,9 @@ namespace Super
 Image::Image(Device& device, std::string imagePath) 
     : mDevice{device}
 {
+
+    stbi_set_flip_vertically_on_load(true);
+
     int width, height, nChannels;
     stbi_uc* data = stbi_load(imagePath.c_str(), &width, &height, &nChannels, STBI_rgb_alpha);
 

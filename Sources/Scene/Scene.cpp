@@ -16,7 +16,7 @@ Scene::Scene(EventBus& eventBus, uint32_t width, uint32_t height)
     // Player Entity.
     //
     Entity player = Entity{};
-    player.flags = EntityFlags::ACTIVE | EntityFlags::PLAYER_CONTROLLED;
+    player.flags = EntityFlags::ACTIVE | EntityFlags::IS_RIGID | EntityFlags::PLAYER_CONTROLLED;
 
     player.tx = {glm::vec2(250, 300), glm::vec2(50, 50)};
     player.body.inverseMass = 0.1f;
@@ -30,7 +30,7 @@ Scene::Scene(EventBus& eventBus, uint32_t width, uint32_t height)
     // Enemy Entity.
     //
     Entity box = Entity{};
-    box.flags = EntityFlags::ACTIVE;
+    box.flags = EntityFlags::ACTIVE | EntityFlags::IS_RIGID;
     
     box.tx = {glm::vec2(250, 400), glm::vec2(50, 50)};
     box.body.inverseMass = 0.1f;
@@ -44,7 +44,7 @@ Scene::Scene(EventBus& eventBus, uint32_t width, uint32_t height)
     // Platform 1 Entity.
     //
     Entity platform = Entity{};
-    platform.flags = EntityFlags::ACTIVE;
+    platform.flags = EntityFlags::ACTIVE | EntityFlags::IS_RIGID;
     
     platform.tx = {glm::vec2(100, 500), glm::vec2(600, 20)};
     box.body.inverseMass = 0.0f;
@@ -54,6 +54,20 @@ Scene::Scene(EventBus& eventBus, uint32_t width, uint32_t height)
     platform.color = glm::vec3(0.5f, 0.2f, 0.8f);
     platform.label = "Platform";
     mEntityManager.CreateEntity(std::move(platform));
+
+    // Background Entity.
+    //
+    Entity background = Entity{};
+    background.flags = EntityFlags::ACTIVE;
+
+    background.tx = {glm::vec2(0, 0), glm::vec2(800, 600)};
+    background.body.inverseMass = 0.0f;
+    background.body.force = {0.0f, 0.0f};
+    background.body.velocity = {0.0f, 0.0f};
+
+    background.color = glm::vec3(0.3f, 0.3f, 1.0f);
+    background.label = "Background";
+    mEntityManager.CreateEntity(std::move(background));
 
     // Event-Specific callback classes.
     // These classes don't have any functions that are called each frame, but rather

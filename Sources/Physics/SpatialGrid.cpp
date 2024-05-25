@@ -38,7 +38,13 @@ void SpatialGrid::Update(std::vector<Entity>& entities, std::vector<std::vector<
     ResetGrid();
     for(auto& entity : entities) 
     {
-        AssignEntityToGridCell(entity);
+        if(entity.flags & EntityFlags::IS_RIGID) 
+        {
+            AssignEntityToGridCell(entity);
+        }
+        else {
+            continue;
+        }
     }
 
     pairs->clear();

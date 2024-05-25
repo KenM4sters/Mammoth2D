@@ -16,6 +16,7 @@ typedef enum entityflags
 {
     ACTIVE              = 1,
     PLAYER_CONTROLLED   = 1 << 1,
+    IS_RIGID            = 1 << 2,
 } EntityFlags;
 
 typedef struct rigidbody 
