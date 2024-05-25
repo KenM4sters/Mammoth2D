@@ -44,7 +44,29 @@ Sprite2DSystem::Sprite2DSystem(Device& device, VkRenderPass renderPass, uint32_t
         glm::vec2(0.42f, 0.53f)
     };
 
-    glm::vec2 texCoordsPlatform[6] = 
+    glm::vec2 texCoordsPlatform1[6] = 
+    {
+        glm::vec2(0.72f, 0.5f), 
+        glm::vec2(1.0f, 1.0f), 
+        glm::vec2(0.72f, 1.0f),
+
+        glm::vec2(0.72f, 0.5f), 
+        glm::vec2(1.0f, 0.5f), 
+        glm::vec2(1.0f, 1.0f)
+    };
+
+    glm::vec2 texCoordsPlatform2[6] = 
+    {
+        glm::vec2(0.72f, 0.5f), 
+        glm::vec2(1.0f, 1.0f), 
+        glm::vec2(0.72f, 1.0f),
+
+        glm::vec2(0.72f, 0.5f), 
+        glm::vec2(1.0f, 0.5f), 
+        glm::vec2(1.0f, 1.0f)
+    };
+
+    glm::vec2 texCoordsPlatform3[6] = 
     {
         glm::vec2(0.72f, 0.5f), 
         glm::vec2(1.0f, 1.0f), 
@@ -59,8 +81,10 @@ Sprite2DSystem::Sprite2DSystem(Device& device, VkRenderPass renderPass, uint32_t
     {
         mTexCoords[0][i] = texCoordsPlayer[i];
         mTexCoords[1][i] = texCoordsEnemy[i];
-        mTexCoords[2][i] = texCoordsPlatform[i];
-        mTexCoords[3][i] = texCoordsBackground[i];
+        mTexCoords[2][i] = texCoordsPlatform1[i];
+        mTexCoords[3][i] = texCoordsPlatform2[i];
+        mTexCoords[4][i] = texCoordsPlatform3[i];
+        mTexCoords[5][i] = texCoordsBackground[i];
     }
 
 

@@ -18,15 +18,11 @@ private:
     // Updates the collision pairs each frame to reflect spatial map.
     void UpdateCollisionPairs();
 
-
-    // Testt whether two entities have collided or not and returns either false or true.
+    // Test whether two entities have collided or not and returns either false or true.
     void* CheckCollision(CollisionPair pair);
 
     // Tests whether an entity has collided with the window boundaries and returns either true or false.
     bool CheckCollision(Entity* ent1);
-
-    // TODO: Should trigger some kind of collision event.
-    void HandleCollision(Entity* ent1, Entity* ent2);
 
     std::unique_ptr<SpatialGrid> mSpatialGrid = nullptr;
 

@@ -64,12 +64,14 @@ void Physics::SolveImpulse(CollisionEvent* event)
     A->body.velocity -= A->body.inverseMass * impulse;
     B->body.velocity += B->body.inverseMass * impulse;
 
-    // Friction calculation
+    // Friction calculation.
+    //
     glm::vec2 tangent = rv - glm::dot(rv, event->normal) * event->normal;
 
     // Check if the tangent vector is a zero vector.
     //
-    if (glm::length(tangent) < 1e-6) {
+    if (glm::length(tangent) < 1e-6) 
+    {
         tangent = glm::vec2(0.0f, 0.0f);
     } 
     else {
@@ -108,7 +110,7 @@ void Physics::CorrectPenetration(CollisionEvent* event)
     auto& B = event->mEntityB;
 
     const float percent = 0.2; // usually 20% to 80% 
-    const float slop = 0.05; // usually 0.01 to 0.1 
+    const float slop = 0.1; // usually 0.01 to 0.1 
 
     glm::vec2 correction = std::max(event->penetration - slop, 0.0f ) * (A->body.inverseMass + B->body.inverseMass) * percent * event->normal;
 

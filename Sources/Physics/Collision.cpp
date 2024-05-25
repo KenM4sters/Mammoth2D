@@ -129,9 +129,4 @@ bool Collision::CheckCollision(Entity* ent)
     return false;
 }
 
-void Collision::HandleCollision(Entity* ent1, Entity* ent2) 
-{
-    
-}
-
 } 
