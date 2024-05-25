@@ -96,11 +96,11 @@ typedef struct manifold
 // Objects to help organize important information for rendering.
 //----------------------------------------------------------------
 
-typedef struct simplepushconstants {
-    alignas(16) glm::mat4 modelMatrix;
-    alignas(16) glm::vec3 color{0.4f, 0.1f, 1.0f};
+typedef struct texturepushconstant {
+    alignas(16) glm::mat4 modelMatrix{1.0f};
     alignas(16) glm::mat4 projectionViewMatrix{1.0f};
-} SimplePushConstants;
+    glm::vec2 texCoords[6];
+} TexturePushConstant;
 
 typedef struct simpleuniformbuffer 
 {

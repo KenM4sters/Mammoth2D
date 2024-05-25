@@ -5607,6 +5607,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Descriptors/DescriptorHandler.cpp.o: /U
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Buffers/BufferLayout.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Descriptors/DescriptorHandler.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Descriptors/DescriptorSet.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/Constant.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/Pipeline.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/Shader.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/Uniform.hpp \
@@ -6703,6 +6704,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Descriptors/DescriptorSet.cpp.o: /Users
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Bus.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Buffers/BufferLayout.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Descriptors/DescriptorSet.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/Constant.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/Pipeline.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/Shader.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/Uniform.hpp \
@@ -8875,6 +8877,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Pipeline.cpp.o: /Users/samuel
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Descriptors/DescriptorHandler.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Descriptors/DescriptorSet.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Descriptors/DescriptorWriter.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/Constant.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/Pipeline.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/Shader.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/Uniform.hpp \
@@ -9971,6 +9974,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Shader.cpp.o: /Users/samuelbr
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Handler.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Bus.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Buffers/BufferLayout.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/Constant.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/Shader.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/Uniform.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/VertexInput.hpp \
@@ -11070,6 +11074,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/Renderer.cpp.o: /Users/samuelb
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Descriptors/DescriptorSet.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Descriptors/DescriptorWriter.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Images/Image.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/Constant.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/Pipeline.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/Shader.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/Uniform.hpp \
@@ -12175,6 +12180,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/Sprite2DSystem.cpp.o: /Users/s
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Descriptors/DescriptorSet.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Descriptors/DescriptorWriter.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Images/Image.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/Constant.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/Pipeline.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/Shader.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/Uniform.hpp \
@@ -19625,6 +19631,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Program.cpp.o: /Users/samuelbrookman/Desktop/Vul
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Descriptors/DescriptorHandler.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Descriptors/DescriptorSet.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Descriptors/DescriptorWriter.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/Constant.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/Pipeline.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/Shader.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/Uniform.hpp \
@@ -22916,6 +22923,7 @@ CMakeFiles/Vulkan2D.dir/main.cpp.o: /Users/samuelbrookman/Desktop/Vulkan2D/main.
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Descriptors/DescriptorHandler.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Descriptors/DescriptorSet.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Descriptors/DescriptorWriter.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/Constant.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/Pipeline.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/Shader.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/Uniform.hpp \
@@ -25312,6 +25320,8 @@ CMakeFiles/Vulkan2D.dir/main.cpp.o: /Users/samuelbrookman/Desktop/Vulkan2D/main.
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__assert:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/_types/_intmax_t.h:
+
+/Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Pipelines/Constant.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__type_traits/add_const.h:
 

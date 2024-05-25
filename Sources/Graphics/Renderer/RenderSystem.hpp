@@ -34,8 +34,6 @@ public:
 protected:
     Device& mDevice;
 
-    SimplePushConstants mPushConstants{};
-
     std::unique_ptr<Buffer> mVertexBuffer = nullptr;
 
     std::unique_ptr<std::unordered_map<std::string, Pipeline*>> mPipelines = nullptr;

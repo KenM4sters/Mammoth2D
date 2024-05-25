@@ -9,6 +9,61 @@ namespace Super
 Sprite2DSystem::Sprite2DSystem(Device& device, VkRenderPass renderPass, uint32_t width, uint32_t height)
     : RenderSystem(device, renderPass, width, height)
 {
+    // Texture Coordinates
+    //
+    glm::vec2 texCoordsPlayer[6] = 
+    {
+        glm::vec2(0.72f, 0.5f), 
+        glm::vec2(1.0f, 1.0f), 
+        glm::vec2(0.72f, 1.0f),
+
+        glm::vec2(0.72f, 0.5f), 
+        glm::vec2(1.0f, 0.5f), 
+        glm::vec2(1.0f, 1.0f)
+    };
+
+    glm::vec2 texCoordsEnemy[6] = 
+    {
+        glm::vec2(0.72f, 0.5f), 
+        glm::vec2(1.0f, 1.0f), 
+        glm::vec2(0.72f, 1.0f),
+
+        glm::vec2(0.72f, 0.5f), 
+        glm::vec2(1.0f, 0.5f), 
+        glm::vec2(1.0f, 1.0f)
+    };
+
+    glm::vec2 texCoordsBackground[6] = 
+    {
+        glm::vec2(0.0f, 0.0f), 
+        glm::vec2(0.42f, 0.53f), 
+        glm::vec2(0.0f, 0.53f),
+
+        glm::vec2(0.0f, 0.0f), 
+        glm::vec2(0.42f, 0.0f), 
+        glm::vec2(0.42f, 0.53f)
+    };
+
+    glm::vec2 texCoordsPlatform[6] = 
+    {
+        glm::vec2(0.72f, 0.5f), 
+        glm::vec2(1.0f, 1.0f), 
+        glm::vec2(0.72f, 1.0f),
+
+        glm::vec2(0.72f, 0.5f), 
+        glm::vec2(1.0f, 0.5f), 
+        glm::vec2(1.0f, 1.0f)
+    };
+
+    for(int i = 0; i < 6; i++) 
+    {
+        mTexCoords[0][i] = texCoordsPlayer[i];
+        mTexCoords[1][i] = texCoordsEnemy[i];
+        mTexCoords[2][i] = texCoordsPlatform[i];
+        mTexCoords[3][i] = texCoordsBackground[i];
+    }
+
+
     mPipelines = std::make_unique<std::unordered_map<std::string, Pipeline*>>();
 
     mImage = std::make_unique<Image>(mDevice, "Resources/Textures/Atlas.png");
@@ -19,8 +74,13 @@ Sprite2DSystem::Sprite2DSystem(Device& device, VkRenderPass renderPass, uint32_t
         BufferAttribute(1, VK_FORMAT_R32G32_SFLOAT),
     };
 
+    TexturePushConstant pushConstantData;
+
+    memcpy(pushConstantData.texCoords, texCoordsBackground, 6*sizeof(glm::vec2));
+
     BufferLayout bufferLayout = BufferLayout(attribs);
     VertexInput vertexInput = VertexInput(bufferLayout);
+    Constant pushConstant = Constant(pushConstantData, sizeof(TexturePushConstant), 0, VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT);
     Uniform uniform = Uniform(0, sizeof(SimpleUniformBuffer), 0, VK_SHADER_STAGE_FRAGMENT_BIT);
 
     std::unique_ptr<Shader> shader = std::make_unique<Shader>(
@@ -28,6 +88,7 @@ Sprite2DSystem::Sprite2DSystem(Device& device, VkRenderPass renderPass, uint32_t
         "Resources/Shaders/simple.vert.spv",
         "Resources/Shaders/simple.frag.spv",
         vertexInput,
+        pushConstant,
         uniform
     );
 
@@ -118,8 +179,8 @@ void Sprite2DSystem::Run(VkCommandBuffer commandBuffer, int frameIndex, std::vec
             pipeline->GetPipelineLayout(), 
             VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT, 
             0, 
-            sizeof(SimplePushConstants), 
-            &mPushConstants
+            sizeof(TexturePushConstant), 
+            pipeline->GetShader()->GetPushConstant().GetData()
         );
 
         // Finally Draw.
@@ -130,14 +191,16 @@ void Sprite2DSystem::Run(VkCommandBuffer commandBuffer, int frameIndex, std::vec
 
 void Sprite2DSystem::UpdatePushConstants(Entity& ent) 
 {
-    
+    const auto& pipeline = mPipelines->operator[]("playerPipeline");
+    const auto& pushData = pipeline->GetShader()->GetPushConstant().GetData();
+
     glm::mat4 model{1.0f};
     model = glm::translate(model, glm::vec3(ent.tx.position, 0.0f));
     model = glm::scale(model, glm::vec3(ent.tx.scale, 1.0f));
 
-    mPushConstants.modelMatrix = model;
-    mPushConstants.color = ent.color;
-    mPushConstants.projectionViewMatrix = Scene::GetCamera()->GetProjectionMatrix();
+    pushData->modelMatrix = model;
+    pushData->projectionViewMatrix = Scene::GetCamera()->GetProjectionMatrix();
+    memcpy(pushData->texCoords, mTexCoords[ent.id], 6*sizeof(glm::vec2));
 }
 
 }

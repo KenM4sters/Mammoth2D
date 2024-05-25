@@ -4,8 +4,8 @@
 
 namespace Super 
 {
-Shader::Shader(Device& device, const char* vertSrc, const char* fragSrc, VertexInput vertexInput, Uniform uniform)
-    : mDevice{device}, mVertexInput{vertexInput}, mUniform{uniform}
+Shader::Shader(Device& device, const char* vertSrc, const char* fragSrc, VertexInput vertexInput, Constant pushConstant, Uniform uniform)
+    : mDevice{device}, mVertexInput{vertexInput}, mPushConstant{pushConstant}, mUniform{uniform}
 {
     CreateShaderStages(vertSrc, fragSrc);
 }

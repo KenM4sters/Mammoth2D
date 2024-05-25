@@ -29,6 +29,7 @@ public:
     inline const VkPipelineBindPoint GetPipelineBindPoint() const { return mPipelineBindPoint; }
     inline const VkDescriptorPool GetDecsriptorPool() const { return mDescriptorPool; }
     inline const uint32_t& GetMaxDescriptorSets() const { return mMaxSets; }
+    inline const std::unique_ptr<Shader>& GetShader() const { return mShader; }
 
 
 private:

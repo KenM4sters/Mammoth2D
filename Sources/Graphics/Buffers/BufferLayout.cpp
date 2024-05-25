@@ -6,13 +6,13 @@ namespace Super
       
 std::vector<float> BACKGROUND_VERTICES = 
 {      
-    0.0f, 1.0f, 0.0f, 0.0f,
-    1.0f, 0.0f, 0.3f, 0.6f,
-    0.0f, 0.0f, 0.0f, 0.6f,
+    0.0f, 1.0f, 0.0f, 0.0f, // bottom-left
+    1.0f, 0.0f, 0.3f, 0.6f, // top-right
+    0.0f, 0.0f, 0.0f, 0.6f, // top-left
 
-    0.0f, 1.0f, 0.0f, 0.0f,
-    1.0f, 1.0f, 0.3f, 0.0f,
-    1.0f, 0.0f, 0.3f, 0.6f
+    0.0f, 1.0f, 0.0f, 0.0f, // bottom-left
+    1.0f, 1.0f, 0.3f, 0.0f, // bottom-right
+    1.0f, 0.0f, 0.3f, 0.6f  // top-right
 };   
 std::vector<float> PLAYER_VERTICES = 
 {      

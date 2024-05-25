@@ -3,13 +3,14 @@
 #include "Device.hpp"
 #include "VertexInput.hpp"
 #include "Uniform.hpp"
+#include "Constant.hpp"
 
 namespace Super 
 {
 class Shader 
 {
 public:
-    Shader(Device& device, const char* vertSrc, const char* fragSrc, VertexInput vertexInput, Uniform uniform);
+    Shader(Device& device, const char* vertSrc, const char* fragSrc, VertexInput vertexInput, Constant pushConstant, Uniform uniform);
     ~Shader();
 
 
@@ -18,6 +19,7 @@ public:
     // Getters
     inline const std::vector<VkPipelineShaderStageCreateInfo>& GetShaderStages() const {return mStages; } 
     inline const VertexInput& GetVertexInput() const {return mVertexInput; } 
+    inline Constant& GetPushConstant() {return mPushConstant; } 
     inline const Uniform& GetUniform() const {return mUniform; } 
 
 private:
@@ -31,6 +33,7 @@ private:
     std::vector<VkPipelineShaderStageCreateInfo> mStages{};
 
     VertexInput mVertexInput;
+    Constant mPushConstant;
     Uniform mUniform;
 };
 }
