@@ -34,7 +34,7 @@ private:
     std::unique_ptr<Renderer> mRenderer = nullptr;
     std::unique_ptr<Scene> mScene = nullptr;
 
-    Input mInput{mEventBus};
+    Input mInput{&mEventBus, &mWindow};
 
 };
 }

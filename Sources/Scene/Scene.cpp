@@ -18,10 +18,13 @@ Scene::Scene(EventBus& eventBus, uint32_t width, uint32_t height)
     Entity player = Entity{};
     player.flags = EntityFlags::ACTIVE | EntityFlags::IS_RIGID | EntityFlags::PLAYER_CONTROLLED;
 
-    player.tx = {glm::vec2(250, 300), glm::vec2(50, 50)};
+    player.tx = {glm::vec2(350, 100), glm::vec2(50, 50)};
     player.body.inverseMass = 0.1f;
     player.body.force = {0.0f, 0.0f};
     player.body.velocity = {0.0f, 0.0f};
+    player.body.staticFrictionCoefficient = 0.1f;
+    player.body.dynamicFrictionCoefficient = 0.3f;
+    player.body.restitution = 0.0f;
 
     player.color = glm::vec3(0.3f, 0.3f, 1.0f);
     player.label = "Player";
@@ -32,10 +35,13 @@ Scene::Scene(EventBus& eventBus, uint32_t width, uint32_t height)
     Entity box = Entity{};
     box.flags = EntityFlags::ACTIVE | EntityFlags::IS_RIGID;
     
-    box.tx = {glm::vec2(250, 400), glm::vec2(50, 50)};
+    box.tx = {glm::vec2(250, 100), glm::vec2(50, 50)};
     box.body.inverseMass = 0.1f;
     box.body.force = {0.0f, 0.0f};
     box.body.velocity = {0.0f, 0.0f};
+    box.body.staticFrictionCoefficient = 0.1f;
+    box.body.dynamicFrictionCoefficient = 0.3f;
+    box.body.restitution = 0.0f;
 
     box.color = glm::vec3(1.0f, 0.3f, 0.3f);
     box.label = "Box";
@@ -50,6 +56,10 @@ Scene::Scene(EventBus& eventBus, uint32_t width, uint32_t height)
     box.body.inverseMass = 0.0f;
     platform.body.force = {0.0f, 0.0f};
     platform.body.velocity = {0.0f, 0.0f};
+    platform.body.staticFrictionCoefficient = 0.1f;
+    platform.body.dynamicFrictionCoefficient = 0.3f;
+    platform.body.restitution = 0.0f;
+
 
     platform.color = glm::vec3(0.5f, 0.2f, 0.8f);
     platform.label = "Platform";
@@ -64,6 +74,10 @@ Scene::Scene(EventBus& eventBus, uint32_t width, uint32_t height)
     background.body.inverseMass = 0.0f;
     background.body.force = {0.0f, 0.0f};
     background.body.velocity = {0.0f, 0.0f};
+    background.body.staticFrictionCoefficient = 0.1f;
+    background.body.dynamicFrictionCoefficient = 0.3f;
+    background.body.restitution = 0.0f;
+
 
     background.color = glm::vec3(0.3f, 0.3f, 1.0f);
     background.label = "Background";

@@ -21,15 +21,26 @@ public:
         switch(event->mKey) 
         {
             case GLFW_KEY_W: JumpPlayer(); break;
-            case GLFW_KEY_A: mPlayer.tx.position += glm::vec2(-playerSpeed, 0.0f); break;
-            case GLFW_KEY_D: mPlayer.tx.position += glm::vec2(playerSpeed, 0.0f); break;
+            case GLFW_KEY_A: MovePlayerLeft(); break;
+            case GLFW_KEY_D: MovePlayerRight(); break;
         }
     }
 
     void JumpPlayer() 
     {
-        mPlayer.body.force += glm::vec2(0.0f, 1.0f);
+        mPlayer.body.force += glm::vec2(0.0f, 20.0f);
     }
+
+    void MovePlayerLeft() 
+    {
+        mPlayer.body.force -= glm::vec2(10.0f, 0.0f);
+    }
+    
+    void MovePlayerRight()
+    {
+        mPlayer.body.force += glm::vec2(10.0f, 0.0f);
+    }
+
 
     Entity& mPlayer;
 };

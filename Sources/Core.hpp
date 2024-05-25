@@ -17,6 +17,7 @@ typedef enum entityflags
     ACTIVE              = 1,
     PLAYER_CONTROLLED   = 1 << 1,
     IS_RIGID            = 1 << 2,
+    IS_AIRBORNE         = 1 << 3,   
 } EntityFlags;
 
 typedef struct rigidbody 
@@ -24,6 +25,8 @@ typedef struct rigidbody
     float inverseMass;
     float denisty;
     float restitution;
+    float staticFrictionCoefficient;
+    float dynamicFrictionCoefficient;
     glm::vec2 force;
     glm::vec2 velocity;
 } RigidBody; 

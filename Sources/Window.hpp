@@ -19,7 +19,7 @@ public:
 
     void Init();
 
-    inline const static bool IsRunning() { return mIsRunning; }
+    inline static bool& IsRunning() { return mIsRunning; }
 
     inline VkExtent2D GetExtent() const { return {mWidth, mHeight}; }
 

@@ -1,7 +1,7 @@
 #pragma once
 #include "Scene/System.hpp"
 
-#define G -0.09
+#define G -0.9
 
 namespace Super
 {
@@ -19,6 +19,8 @@ private:
     void ResetMotion(Entity& entity);
 
     void SolveImpulse(CollisionEvent* event);
+
+    void CorrectPenetration(CollisionEvent* event);
 
 };
 }

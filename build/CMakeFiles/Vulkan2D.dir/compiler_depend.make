@@ -14353,6 +14353,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Input.cpp.o: /Users/samuelbrookman/Desktop/Vulka
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Handler.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Bus.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Input.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Window.hpp \
   /usr/local/macOS/include/glm/detail/setup.hpp \
   /usr/local/macOS/include/glm/detail/type_mat2x2.hpp \
   /usr/local/macOS/include/glm/detail/type_mat2x3.hpp \
@@ -16396,6 +16397,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Physics/Collision.cpp.o: /Users/samuelbrookman/D
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Handler.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Bus.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Events/Event.hpp \
+  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Logging.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Physics/Collision.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Physics/SpatialGrid.hpp \
   /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Scene/System.hpp \

@@ -1,5 +1,6 @@
 #include "Collision.hpp"
 #include "Events/Event.hpp"
+#include "Logging.hpp"
 #include <set>
 
 namespace Super 
@@ -75,49 +76,32 @@ void* Collision::CheckCollision(CollisionPair pair)
 
     const glm::vec2 p = B->tx.position - A->tx.position;
 
-    const float aExtent = ((A->tx.position.x + A->tx.scale.x) - A->tx.position.x) / 2;
-    const float bExtent = ((B->tx.position.x + B->tx.scale.x) - B->tx.position.x) / 2;
-
-    const float xOverlap = aExtent + bExtent - std::abs(p.x);
-
+    float penetrationX = std::min(aMaxX - bMinX, bMaxX - aMinX);
+    float penetrationY = std::min(aMaxY - bMinY, bMaxY - aMinY);
     glm::vec2 collisionNormal{0.0f};
-    float penetration{0.0f};
+    float penetrationDepth{0.0f};
 
-
-    if(xOverlap > 0) 
+    if (penetrationX < penetrationY) 
     {
-        const float aExtent = ((A->tx.position.y + A->tx.scale.y) - A->tx.position.y) / 2;
-        const float bExtent = ((B->tx.position.y + B->tx.scale.y) - B->tx.position.y) / 2;
-
-        float yOverlap = aExtent + bExtent - std::abs(p.y);
-
-        if(yOverlap > 0) 
-        {
-            if(xOverlap > yOverlap) 
-            {
-                if(p.x < 0) 
-                {
-                    collisionNormal = glm::vec2(-1, 0);
-                } else 
-                {
-                    collisionNormal = glm::vec2(0, 0);
-                }
-                penetration = xOverlap;
-            } else 
-            {
-                if(p.y < 0) 
-                {
-                    collisionNormal = glm::vec2(0, 1);
-                } else 
-                {
-                    collisionNormal = glm::vec2(0, -1);
-                }
-                penetration = yOverlap;
-            }
+        if (aMaxX > bMaxX) {
+            collisionNormal.x = -1.0f;
+        } else {
+            collisionNormal.x = 1.0f;
         }
+        collisionNormal.y = 0.0f;
+        penetrationDepth = penetrationX;
+    } 
+    else {
+        if (aMaxY > bMaxY) {
+            collisionNormal.y = -1.0f;
+        } else {
+            collisionNormal.y = 1.0f;
+        }
+        collisionNormal.x = 0.0f;
+        penetrationDepth = penetrationY;
     }
 
-    return new Manifold{pair, penetration, collisionNormal};
+    return new Manifold{pair, penetrationDepth, collisionNormal};
 }
 
 bool Collision::CheckCollision(Entity* ent) 
