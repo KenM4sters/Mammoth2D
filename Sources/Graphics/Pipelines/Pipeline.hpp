@@ -21,11 +21,10 @@ public:
 
     void Bind(VkCommandBuffer commandBuffer);
     
-
     // Getters.
     //
     inline const VkPipelineLayout GetPipelineLayout() const { return mPipelineLayout; }
-    inline const VkDescriptorSetLayout GetDescriptorSetLayout() const { return mDescriptorSetLayout; }
+    inline const std::vector<VkDescriptorSetLayout>& GetDescriptorSetLayout() const { return mDescriptorSetLayout; }
     inline const VkPipelineBindPoint GetPipelineBindPoint() const { return mPipelineBindPoint; }
     inline const VkDescriptorPool GetDecsriptorPool() const { return mDescriptorPool; }
     inline const uint32_t& GetMaxDescriptorSets() const { return mMaxSets; }
@@ -49,8 +48,7 @@ private:
     VkPipelineBindPoint mPipelineBindPoint = VK_PIPELINE_BIND_POINT_GRAPHICS;
 
     uint32_t mMaxSets = SwapChain::FRAMES_IN_FLIGHT;
-    VkDescriptorPoolSize mPoolSize{};
     VkDescriptorPool mDescriptorPool = VK_NULL_HANDLE;
-    VkDescriptorSetLayout mDescriptorSetLayout = VK_NULL_HANDLE;
+    std::vector<VkDescriptorSetLayout> mDescriptorSetLayout{6};
 };
 }

@@ -8,7 +8,7 @@ namespace Super
 class DescriptorSet 
 {
 public:
-    DescriptorSet(Device& device, Pipeline* pipeline);
+    DescriptorSet(Device& device, Pipeline* pipeline, uint32_t descriptorLayoutIndex);
     ~DescriptorSet();
 
     inline const VkDescriptorSet GetDescriptorSet() const { return mDescriptorSet; }

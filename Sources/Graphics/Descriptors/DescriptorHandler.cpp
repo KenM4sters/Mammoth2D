@@ -2,19 +2,14 @@
 
 namespace Super 
 {
-DescriptorHandler::DescriptorHandler(DescriptorSet sets[1]) 
+DescriptorHandler::DescriptorHandler(std::vector<DescriptorSet>& sets)
+    : mDescriptorSets(sets)
 {
-    mDescriptorSets.push_back(sets[0]);
 }
 
 DescriptorHandler::~DescriptorHandler() 
 {
 
 }
-
-// void DescriptorHandler::AllocateDescriptorSet(DescriptorSet& descriptorSet) 
-// {
-//     mDescriptorSets.push_back(descriptorSet);
-// }
 
 }

@@ -13,57 +13,57 @@ Sprite2DSystem::Sprite2DSystem(Device& device, VkRenderPass renderPass, uint32_t
     //
     glm::vec2 texCoordsPlayer[6] = 
     {
-        glm::vec2(0.72f, 0.5f), 
-        glm::vec2(1.0f, 1.0f), 
-        glm::vec2(0.72f, 1.0f),
+        glm::vec2(0.32f, 0.65f), 
+        glm::vec2(0.34f, 0.71f), 
+        glm::vec2(0.32f, 0.71f),
 
-        glm::vec2(0.72f, 0.5f), 
-        glm::vec2(1.0f, 0.5f), 
-        glm::vec2(1.0f, 1.0f)
+        glm::vec2(0.32f, 0.65f), 
+        glm::vec2(0.34f, 0.65f), 
+        glm::vec2(0.34f, 0.71f)
     };
 
     glm::vec2 texCoordsEnemy[6] = 
     {
-        glm::vec2(0.72f, 0.5f), 
-        glm::vec2(1.0f, 1.0f), 
-        glm::vec2(0.72f, 1.0f),
+        glm::vec2(0.32f, 0.65f), 
+        glm::vec2(0.34f, 0.71f), 
+        glm::vec2(0.32f, 0.71f),
 
-        glm::vec2(0.72f, 0.5f), 
-        glm::vec2(1.0f, 0.5f), 
-        glm::vec2(1.0f, 1.0f)
+        glm::vec2(0.32f, 0.65f), 
+        glm::vec2(0.34f, 0.65f), 
+        glm::vec2(0.34f, 0.71f)
     };
 
     glm::vec2 texCoordsBackground[6] = 
     {
-        glm::vec2(0.03f, 0.03f), 
-        glm::vec2(0.10f, 0.10f), 
-        glm::vec2(0.03f, 0.10f),
+        glm::vec2(0.0f, 0.05f), 
+        glm::vec2(0.76f, 0.56f), 
+        glm::vec2(0.0f, 0.56f),
 
-        glm::vec2(0.03f, 0.03f), 
-        glm::vec2(0.10f, 0.03f), 
-        glm::vec2(0.10f, 0.10f)
+        glm::vec2(0.0f, 0.05f), 
+        glm::vec2(0.76f, 0.05f), 
+        glm::vec2(0.76f, 0.56f)
     };
 
     glm::vec2 texCoordsPlatform1[6] = 
     {
-        glm::vec2(0.72f, 0.5f), 
-        glm::vec2(1.0f, 1.0f), 
-        glm::vec2(0.72f, 1.0f),
+        glm::vec2(0.12f, 0.7f), 
+        glm::vec2(0.14f, 0.76f), 
+        glm::vec2(0.12f, 0.76f),
 
-        glm::vec2(0.72f, 0.5f), 
-        glm::vec2(1.0f, 0.5f), 
-        glm::vec2(1.0f, 1.0f)
+        glm::vec2(0.12f, 0.7f), 
+        glm::vec2(0.14f, 0.7f), 
+        glm::vec2(0.14f, 0.76f)
     };
 
     glm::vec2 texCoordsPlatform2[6] = 
     {
-        glm::vec2(0.72f, 0.5f), 
-        glm::vec2(1.0f, 1.0f), 
-        glm::vec2(0.72f, 1.0f),
+        glm::vec2(0.32f, 0.68f), 
+        glm::vec2(0.34f, 0.73f), 
+        glm::vec2(0.32f, 0.73f),
 
-        glm::vec2(0.72f, 0.5f), 
-        glm::vec2(1.0f, 0.5f), 
-        glm::vec2(1.0f, 1.0f)
+        glm::vec2(0.32f, 0.68f), 
+        glm::vec2(0.34f, 0.68f), 
+        glm::vec2(0.34f, 0.73f)
     };
 
     glm::vec2 texCoordsPlatform3[6] = 
@@ -88,9 +88,17 @@ Sprite2DSystem::Sprite2DSystem(Device& device, VkRenderPass renderPass, uint32_t
     }
 
 
-    mPipelines = std::make_unique<std::unordered_map<std::string, Pipeline*>>();
+    std::array<std::unique_ptr<Image>, 6> images = 
+    {
+        std::make_unique<Image>(mDevice, "Resources/Textures/Player.png"),
+        std::make_unique<Image>(mDevice, "Resources/Textures/Box.png"),
+        std::make_unique<Image>(mDevice, "Resources/Textures/Platform.png"),
+        std::make_unique<Image>(mDevice, "Resources/Textures/Platform.png"),
+        std::make_unique<Image>(mDevice, "Resources/Textures/Platform.png"),
+        std::make_unique<Image>(mDevice, "Resources/Textures/Background.png"),
+    };
 
-    mImage = std::make_unique<Image>(mDevice, "Resources/Textures/Atlas.png");
+    mPipelines = std::make_unique<std::unordered_map<std::string, Pipeline*>>();
 
     std::vector<BufferAttribute> attribs = 
     {
@@ -134,10 +142,12 @@ Sprite2DSystem::Sprite2DSystem(Device& device, VkRenderPass renderPass, uint32_t
     //
     mPipelines->operator[]("playerPipeline") = playerPipeline;
 
-    auto descriptorSetA = DescriptorSet(mDevice, playerPipeline);     
-
-    DescriptorSet sets[1] = {descriptorSetA};
-
+    std::vector<DescriptorSet> sets{};
+    for(int i = 0; i < images.size(); i++) 
+    {
+        sets.push_back(DescriptorSet(mDevice, playerPipeline, i));     
+    }
+    
     mDescriptorHandler = std::make_unique<DescriptorHandler>(sets);
 
     mDescriptorWriter = std::make_unique<DescriptorWriter>();
@@ -157,9 +167,12 @@ Sprite2DSystem::Sprite2DSystem(Device& device, VkRenderPass renderPass, uint32_t
 
     // Uniform image buffer
     //
-    auto& imageInfo = mImage->GetUniformBuffer()->GetDescriptorImageInfo();
-    auto& descriptorSet = mDescriptorHandler->GetDescriptorSet(0);
-    mDescriptorWriter->WriteToBuffer(0, imageInfo, descriptorSet);
+    for(int i = 0; i < images.size(); i++) 
+    {
+        auto& imageInfo = images[i]->GetUniformBuffer()->GetDescriptorImageInfo();
+        auto& descriptorSet = mDescriptorHandler->GetDescriptorSet(i);
+        mDescriptorWriter->WriteToBuffer(i, i, imageInfo, descriptorSet);
+    }
     mDescriptorWriter->UpdateDescriptorSet(mDevice);
     
 }
@@ -187,7 +200,7 @@ void Sprite2DSystem::Run(VkCommandBuffer commandBuffer, int frameIndex, std::vec
 
         // Uniforms and Descriptor sets.
         //
-        mDescriptorHandler->GetDescriptorSet(0).Bind(commandBuffer);
+        mDescriptorHandler->GetDescriptorSet(ent.id).Bind(commandBuffer);
         
         // Vertex Buffers.
         //

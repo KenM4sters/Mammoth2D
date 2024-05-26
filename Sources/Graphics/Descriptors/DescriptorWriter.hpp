@@ -18,38 +18,38 @@ public:
 
     }
 
-    void WriteToBuffer(uint32_t binding, VkDescriptorBufferInfo& bufferInfo, DescriptorSet& descriptorSet) 
+    void WriteToBuffer(uint32_t index, uint32_t binding, VkDescriptorBufferInfo& bufferInfo, DescriptorSet& descriptorSet) 
     {
-        mWriteDescriptor.sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
-        mWriteDescriptor.dstSet = descriptorSet.GetDescriptorSet();
-        mWriteDescriptor.dstBinding = 0;
-        mWriteDescriptor.dstArrayElement = 0;
-        mWriteDescriptor.descriptorType = VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
-        mWriteDescriptor.descriptorCount = 1;
-        mWriteDescriptor.pBufferInfo = &bufferInfo;
-        mWriteDescriptor.pImageInfo = nullptr;
-        mWriteDescriptor.pTexelBufferView = nullptr;
+        mWriteDescriptor[index].sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
+        mWriteDescriptor[index].dstSet = descriptorSet.GetDescriptorSet();
+        mWriteDescriptor[index].dstBinding = binding;
+        mWriteDescriptor[index].dstArrayElement = 0;
+        mWriteDescriptor[index].descriptorType = VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
+        mWriteDescriptor[index].descriptorCount = 1;
+        mWriteDescriptor[index].pBufferInfo = &bufferInfo;
+        mWriteDescriptor[index].pImageInfo = nullptr;
+        mWriteDescriptor[index].pTexelBufferView = nullptr;
     }
 
-    void WriteToBuffer(uint32_t binding, VkDescriptorImageInfo& imageInfo, DescriptorSet& descriptorSet) 
+    void WriteToBuffer(uint32_t index, uint32_t binding, VkDescriptorImageInfo& imageInfo, DescriptorSet& descriptorSet) 
     {
-        mWriteDescriptor.sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
-        mWriteDescriptor.dstSet = descriptorSet.GetDescriptorSet();
-        mWriteDescriptor.dstBinding = 0;
-        mWriteDescriptor.dstArrayElement = 0;
-        mWriteDescriptor.descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
-        mWriteDescriptor.descriptorCount = 1;
-        mWriteDescriptor.pBufferInfo = nullptr;
-        mWriteDescriptor.pImageInfo = &imageInfo;
-        mWriteDescriptor.pTexelBufferView = nullptr;
+        mWriteDescriptor[index].sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
+        mWriteDescriptor[index].dstSet = descriptorSet.GetDescriptorSet();
+        mWriteDescriptor[index].dstBinding = binding;
+        mWriteDescriptor[index].dstArrayElement = 0;
+        mWriteDescriptor[index].descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
+        mWriteDescriptor[index].descriptorCount = 1;
+        mWriteDescriptor[index].pBufferInfo = nullptr;
+        mWriteDescriptor[index].pImageInfo = &imageInfo;
+        mWriteDescriptor[index].pTexelBufferView = nullptr;
     }
 
     void UpdateDescriptorSet(Device& device) 
     {
-        vkUpdateDescriptorSets(device.GetDevice(), 1, &mWriteDescriptor, 0, nullptr);
+        vkUpdateDescriptorSets(device.GetDevice(), mWriteDescriptor.size(), mWriteDescriptor.data(), 0, nullptr);
     }
 
 private:
-    VkWriteDescriptorSet mWriteDescriptor{};
+    std::vector<VkWriteDescriptorSet> mWriteDescriptor{6};
 };
 }

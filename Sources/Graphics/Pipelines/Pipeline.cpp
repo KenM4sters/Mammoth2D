@@ -26,14 +26,25 @@ Pipeline::~Pipeline()
 
 void Pipeline::CreateDescriptorPool() 
 {
-    mPoolSize.type = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
-    mPoolSize.descriptorCount = mMaxSets;
+    std::array<VkDescriptorPoolSize, 6> poolSizes{};
+    poolSizes[0].type = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
+    poolSizes[0].descriptorCount = 1;
+    poolSizes[1].type = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
+    poolSizes[1].descriptorCount = 1;
+    poolSizes[2].type = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
+    poolSizes[2].descriptorCount = 1;
+    poolSizes[3].type = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
+    poolSizes[3].descriptorCount = 1;
+    poolSizes[4].type = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
+    poolSizes[4].descriptorCount = 1;
+    poolSizes[5].type = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
+    poolSizes[5].descriptorCount = 1;
 
     VkDescriptorPoolCreateInfo poolInfo{};
     poolInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_POOL_CREATE_INFO;
-    poolInfo.poolSizeCount = 1;
-    poolInfo.pPoolSizes = &mPoolSize;
-    poolInfo.maxSets = mMaxSets;
+    poolInfo.poolSizeCount = poolSizes.size();
+    poolInfo.pPoolSizes = poolSizes.data();
+    poolInfo.maxSets = 6;
 
     if(vkCreateDescriptorPool(mDevice.GetDevice(), &poolInfo, nullptr, &mDescriptorPool) != VK_SUCCESS) 
     {
@@ -44,21 +55,24 @@ void Pipeline::CreateDescriptorPool()
 
 void Pipeline::CreateDescriptorLayout() 
 {
-    VkDescriptorSetLayoutBinding uboLayoutBinding{};
-    uboLayoutBinding.binding = 0;
-    uboLayoutBinding.descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
-    uboLayoutBinding.descriptorCount = 1;
-    uboLayoutBinding.stageFlags = mShader->GetUniform().GetFlags();
-    uboLayoutBinding.pImmutableSamplers = nullptr;
-
-    VkDescriptorSetLayoutCreateInfo layoutInfo{};
-    layoutInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_CREATE_INFO;
-    layoutInfo.bindingCount = 1;
-    layoutInfo.pBindings = &uboLayoutBinding;
-
-    if(vkCreateDescriptorSetLayout(mDevice.GetDevice(), &layoutInfo, nullptr, &mDescriptorSetLayout) != VK_SUCCESS) 
+    for(int i = 0; i < 6; i++) 
     {
-        throw std::runtime_error("Failed to create descriptor set layout!");
+        VkDescriptorSetLayoutBinding uboLayoutBinding{};
+        uboLayoutBinding.binding = i;
+        uboLayoutBinding.descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
+        uboLayoutBinding.descriptorCount = 1;
+        uboLayoutBinding.stageFlags = mShader->GetUniform().GetFlags();
+        uboLayoutBinding.pImmutableSamplers = nullptr;
+
+        VkDescriptorSetLayoutCreateInfo layoutInfo{};
+        layoutInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_CREATE_INFO;
+        layoutInfo.bindingCount = 1;
+        layoutInfo.pBindings = &uboLayoutBinding;
+
+        if(vkCreateDescriptorSetLayout(mDevice.GetDevice(), &layoutInfo, nullptr, &mDescriptorSetLayout[i]) != VK_SUCCESS) 
+        {
+            throw std::runtime_error("Failed to create descriptor set layout!");
+        }
     }
 }
 
@@ -66,8 +80,8 @@ void Pipeline::CreatePipelineLayout()
 { 
     VkPipelineLayoutCreateInfo pipelineLayoutInfo{};
     pipelineLayoutInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO;
-    pipelineLayoutInfo.setLayoutCount = 1;
-    pipelineLayoutInfo.pSetLayouts = &mDescriptorSetLayout;
+    pipelineLayoutInfo.setLayoutCount = 6;
+    pipelineLayoutInfo.pSetLayouts = mDescriptorSetLayout.data();
     pipelineLayoutInfo.pushConstantRangeCount = 1;
     pipelineLayoutInfo.pPushConstantRanges = &mShader->GetPushConstant().GetPushConstantRange();
     

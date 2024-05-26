@@ -47,7 +47,7 @@ Scene::Scene(EventBus& eventBus, uint32_t width, uint32_t height)
     //
     Entity platform1 = Entity{};
     platform1.flags = EntityFlags::ACTIVE | EntityFlags::IS_RIGID;
-    platform1.tx = {glm::vec2(100, 500), glm::vec2(600, 20)};
+    platform1.tx = {glm::vec2(0, 400), glm::vec2(800, 300)};
     box.body.inverseMass = 0.0f;
     platform1.body.force = {0.0f, 0.0f};
     platform1.body.velocity = {0.0f, 0.0f};
@@ -62,7 +62,7 @@ Scene::Scene(EventBus& eventBus, uint32_t width, uint32_t height)
     //
     Entity platform2 = Entity{};
     platform2.flags = EntityFlags::ACTIVE | EntityFlags::IS_RIGID;
-    platform2.tx = {glm::vec2(100, 300), glm::vec2(200, 20)};
+    platform2.tx = {glm::vec2(100, 300), glm::vec2(200, 50)};
     box.body.inverseMass = 0.0f;
     platform2.body.force = {0.0f, 0.0f};
     platform2.body.velocity = {0.0f, 0.0f};
@@ -77,7 +77,7 @@ Scene::Scene(EventBus& eventBus, uint32_t width, uint32_t height)
     //
     Entity platform3 = Entity{};
     platform3.flags = EntityFlags::ACTIVE | EntityFlags::IS_RIGID;
-    platform3.tx = {glm::vec2(500, 300), glm::vec2(200, 20)};
+    platform3.tx = {glm::vec2(500, 300), glm::vec2(200, 50)};
     box.body.inverseMass = 0.0f;
     platform3.body.force = {0.0f, 0.0f};
     platform3.body.velocity = {0.0f, 0.0f};
