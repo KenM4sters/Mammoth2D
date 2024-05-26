@@ -14,7 +14,7 @@ layout(binding = 0) uniform sampler2D texSampler;
 
 void main() 
 {
-    if(texture(texSampler, vTexCoords).r + texture(texSampler, vTexCoords).g + texture(texSampler, vTexCoords).b == 3.0)
+    if(texture(texSampler, vTexCoords).r + texture(texSampler, vTexCoords).g + texture(texSampler, vTexCoords).b >= 3.0)
         discard;
     FragColor = vec4(texture(texSampler, vTexCoords).rgb, 1.0);
 }   

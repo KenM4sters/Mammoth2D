@@ -35,13 +35,13 @@ Sprite2DSystem::Sprite2DSystem(Device& device, VkRenderPass renderPass, uint32_t
 
     glm::vec2 texCoordsBackground[6] = 
     {
-        glm::vec2(0.0f, 0.0f), 
-        glm::vec2(0.42f, 0.53f), 
-        glm::vec2(0.0f, 0.53f),
+        glm::vec2(0.03f, 0.03f), 
+        glm::vec2(0.10f, 0.10f), 
+        glm::vec2(0.03f, 0.10f),
 
-        glm::vec2(0.0f, 0.0f), 
-        glm::vec2(0.42f, 0.0f), 
-        glm::vec2(0.42f, 0.53f)
+        glm::vec2(0.03f, 0.03f), 
+        glm::vec2(0.10f, 0.03f), 
+        glm::vec2(0.10f, 0.10f)
     };
 
     glm::vec2 texCoordsPlatform1[6] = 
