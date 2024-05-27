@@ -55,24 +55,25 @@ void Pipeline::CreateDescriptorPool()
 
 void Pipeline::CreateDescriptorLayout() 
 {
+    const auto& uniforms = mShader->GetUniform();
+    VkDescriptorSetLayoutBinding uboLayoutBinding[6];
     for(int i = 0; i < 6; i++) 
     {
-        VkDescriptorSetLayoutBinding uboLayoutBinding{};
-        uboLayoutBinding.binding = i;
-        uboLayoutBinding.descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
-        uboLayoutBinding.descriptorCount = 1;
-        uboLayoutBinding.stageFlags = mShader->GetUniform().GetFlags();
-        uboLayoutBinding.pImmutableSamplers = nullptr;
+        uboLayoutBinding[i].binding = i;
+        uboLayoutBinding[i].descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
+        uboLayoutBinding[i].descriptorCount = 1;
+        uboLayoutBinding[i].stageFlags = uniforms[0].GetFlags();
+        uboLayoutBinding[i].pImmutableSamplers = nullptr;
+    }
 
-        VkDescriptorSetLayoutCreateInfo layoutInfo{};
-        layoutInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_CREATE_INFO;
-        layoutInfo.bindingCount = 1;
-        layoutInfo.pBindings = &uboLayoutBinding;
+    VkDescriptorSetLayoutCreateInfo layoutInfo{};
+    layoutInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_CREATE_INFO;
+    layoutInfo.bindingCount = 6;
+    layoutInfo.pBindings = uboLayoutBinding;
 
-        if(vkCreateDescriptorSetLayout(mDevice.GetDevice(), &layoutInfo, nullptr, &mDescriptorSetLayout[i]) != VK_SUCCESS) 
-        {
-            throw std::runtime_error("Failed to create descriptor set layout!");
-        }
+    if(vkCreateDescriptorSetLayout(mDevice.GetDevice(), &layoutInfo, nullptr, &mDescriptorSetLayout) != VK_SUCCESS) 
+    {
+        throw std::runtime_error("Failed to create descriptor set layout!");
     }
 }
 
@@ -80,8 +81,8 @@ void Pipeline::CreatePipelineLayout()
 { 
     VkPipelineLayoutCreateInfo pipelineLayoutInfo{};
     pipelineLayoutInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO;
-    pipelineLayoutInfo.setLayoutCount = 6;
-    pipelineLayoutInfo.pSetLayouts = mDescriptorSetLayout.data();
+    pipelineLayoutInfo.setLayoutCount = 1;
+    pipelineLayoutInfo.pSetLayouts = &mDescriptorSetLayout;
     pipelineLayoutInfo.pushConstantRangeCount = 1;
     pipelineLayoutInfo.pPushConstantRanges = &mShader->GetPushConstant().GetPushConstantRange();
     

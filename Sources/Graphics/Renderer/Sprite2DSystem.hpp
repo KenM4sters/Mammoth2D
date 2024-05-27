@@ -17,5 +17,7 @@ public:
 
 private:
     glm::vec2 mTexCoords[6][6];
+
+    std::vector<std::unique_ptr<Image>> mImages{};
 };
 }

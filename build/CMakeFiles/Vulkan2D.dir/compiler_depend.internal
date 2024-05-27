@@ -7791,6 +7791,7 @@ CMakeFiles/Vulkan2D.dir/Sources/Graphics/Images/Image.cpp.o
  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Buffers/Buffer.hpp
  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Buffers/UniformBuffer.hpp
  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Graphics/Images/Image.hpp
+ /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Logging.hpp
  /Users/samuelbrookman/Desktop/Vulkan2D/Sources/Window.hpp
  /usr/local/macOS/include/glm/detail/setup.hpp
  /usr/local/macOS/include/glm/detail/type_mat2x2.hpp

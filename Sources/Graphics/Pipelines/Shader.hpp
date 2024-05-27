@@ -10,7 +10,7 @@ namespace Super
 class Shader 
 {
 public:
-    Shader(Device& device, const char* vertSrc, const char* fragSrc, VertexInput vertexInput, Constant pushConstant, Uniform uniform);
+    Shader(Device& device, const char* vertSrc, const char* fragSrc, VertexInput vertexInput, Constant pushConstant, std::vector<Uniform> uniform);
     ~Shader();
 
 
@@ -20,7 +20,7 @@ public:
     inline const std::vector<VkPipelineShaderStageCreateInfo>& GetShaderStages() const {return mStages; } 
     inline const VertexInput& GetVertexInput() const {return mVertexInput; } 
     inline Constant& GetPushConstant() {return mPushConstant; } 
-    inline const Uniform& GetUniform() const {return mUniform; } 
+    inline const std::vector<Uniform>& GetUniform() const {return mUniform; } 
 
 private:
     void CreateShaderModule(const std::vector<char> code, VkShaderModule* module);
@@ -34,6 +34,6 @@ private:
 
     VertexInput mVertexInput;
     Constant mPushConstant;
-    Uniform mUniform;
+    std::vector<Uniform> mUniform{};
 };
 }

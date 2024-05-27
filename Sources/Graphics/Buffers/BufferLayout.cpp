@@ -4,46 +4,17 @@
 namespace Super 
 {
       
-std::vector<float> BACKGROUND_VERTICES = 
+std::vector<float> SQUARE_VERTICES = 
 {      
     0.0f, 1.0f, 0.0f, 0.0f, // bottom-left
-    1.0f, 0.0f, 0.3f, 0.6f, // top-right
-    0.0f, 0.0f, 0.0f, 0.6f, // top-left
+    1.0f, 0.0f, 1.0f, 1.0f, // top-right
+    0.0f, 0.0f, 0.0f, 1.0f, // top-left
 
     0.0f, 1.0f, 0.0f, 0.0f, // bottom-left
-    1.0f, 1.0f, 0.3f, 0.0f, // bottom-right
-    1.0f, 0.0f, 0.3f, 0.6f  // top-right
+    1.0f, 1.0f, 1.0f, 0.0f, // bottom-right
+    1.0f, 0.0f, 1.0f, 1.0f  // top-right
 };   
-std::vector<float> PLAYER_VERTICES = 
-{      
-    0.0f, 1.0f, 0.0f, 0.0f,
-    1.0f, 0.0f, 1.0f, 1.0f,
-    0.0f, 0.0f, 0.0f, 1.0f,
-
-    0.0f, 1.0f, 0.0f, 0.0f,
-    1.0f, 1.0f, 1.0f, 0.0f,
-    1.0f, 0.0f, 1.0f, 1.0f
-};   
-std::vector<float> PLATFORM_VERTICES = 
-{      
-    0.0f, 1.0f, 0.0f, 0.0f,
-    1.0f, 0.0f, 1.0f, 1.0f,
-    0.0f, 0.0f, 0.0f, 1.0f,
-
-    0.0f, 1.0f, 0.0f, 0.0f,
-    1.0f, 1.0f, 1.0f, 0.0f,
-    1.0f, 0.0f, 1.0f, 1.0f
-};   
-std::vector<float> ENEMY_VERTICES = 
-{      
-    0.0f, 1.0f, 0.0f, 0.0f,
-    1.0f, 0.0f, 1.0f, 1.0f,
-    0.0f, 0.0f, 0.0f, 1.0f,
-
-    0.0f, 1.0f, 0.0f, 0.0f,
-    1.0f, 1.0f, 1.0f, 0.0f,
-    1.0f, 0.0f, 1.0f, 1.0f
-};   
+  
 
 void SetVertexBufferFromVertices(Device& device, VkBuffer& buffer, VkDeviceMemory& deviceMemory, const std::vector<float>& vertices) 
 {

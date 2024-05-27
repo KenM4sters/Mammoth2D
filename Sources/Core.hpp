@@ -100,9 +100,9 @@ typedef struct manifold
 //----------------------------------------------------------------
 
 typedef struct texturepushconstant {
-    alignas(16) glm::mat4 modelMatrix{1.0f};
+    glm::mat4 modelMatrix{1.0f};
     alignas(16) glm::mat4 projectionViewMatrix{1.0f};
-    glm::vec2 texCoords[6];
+    alignas(4) int entId;
 } TexturePushConstant;
 
 typedef struct simpleuniformbuffer 

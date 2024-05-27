@@ -5,17 +5,14 @@
 namespace Super 
 {
 
-DescriptorSet::DescriptorSet(Device& device, Pipeline* pipeline, uint32_t descriptorLayoutIndex)
+DescriptorSet::DescriptorSet(Device& device, Pipeline* pipeline)
     : mDevice{device}, mPipelineLayout{pipeline->GetPipelineLayout()}, mDescriptorPool{pipeline->GetDecsriptorPool()}, mPipelineBindPoint{pipeline->GetPipelineBindPoint()}
 {
-    const std::vector<VkDescriptorSetLayout>& layouts = {pipeline->GetDescriptorSetLayout()};
-
     VkDescriptorSetAllocateInfo allocInfo{};
     allocInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_ALLOCATE_INFO;
     allocInfo.descriptorPool = mDescriptorPool;
     allocInfo.descriptorSetCount = 1;
-    allocInfo.pSetLayouts = &layouts[descriptorLayoutIndex];
-
+    allocInfo.pSetLayouts = &pipeline->GetDescriptorSetLayout();
 
     if(vkAllocateDescriptorSets(mDevice.GetDevice(), &allocInfo, &mDescriptorSet) != VK_SUCCESS) 
     {

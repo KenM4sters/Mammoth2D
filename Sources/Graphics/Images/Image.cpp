@@ -1,4 +1,5 @@
 #include "Image.hpp"
+#include "Logging.hpp"
 #include <stdexcept>
 #define STB_IMAGE_IMPLEMENTATION
 #include <Stbi_image/stb_image.h>

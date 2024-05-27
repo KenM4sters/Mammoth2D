@@ -13,10 +13,7 @@ void SetVertexBufferFromVertices(Device& device, VkBuffer& buffer, VkDeviceMemor
 
 uint32_t FindSutiableMemoryType(uint32_t typeFilter, VkPhysicalDeviceMemoryProperties* memProperties, VkMemoryPropertyFlags properties);
 
-extern std::vector<float> BACKGROUND_VERTICES;
-extern std::vector<float> PLAYER_VERTICES;
-extern std::vector<float> PLATFORM_VERTICES;
-extern std::vector<float> ENEMY_VERTICES;
+extern std::vector<float> SQUARE_VERTICES;
 
 class BufferAttribute  
 {

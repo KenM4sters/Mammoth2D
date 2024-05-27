@@ -7,12 +7,12 @@ namespace Super
 class DescriptorHandler 
 {
 public:
-    DescriptorHandler(std::vector<DescriptorSet>& sets);
+    DescriptorHandler(DescriptorSet set);
     ~DescriptorHandler();
 
-    inline DescriptorSet& GetDescriptorSet(uint32_t index) {return mDescriptorSets[index]; }
+    inline DescriptorSet& GetDescriptorSet() {return mDescriptorSet; }
 
 private:
-    std::vector<DescriptorSet>& mDescriptorSets;
+    DescriptorSet mDescriptorSet;
 };
 }

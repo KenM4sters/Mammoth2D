@@ -2,8 +2,8 @@
 
 namespace Super 
 {
-DescriptorHandler::DescriptorHandler(std::vector<DescriptorSet>& sets)
-    : mDescriptorSets(sets)
+DescriptorHandler::DescriptorHandler(DescriptorSet set)
+    : mDescriptorSet(set)
 {
 }
 

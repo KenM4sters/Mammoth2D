@@ -17,7 +17,7 @@ Scene::Scene(EventBus& eventBus, uint32_t width, uint32_t height)
     //
     Entity player = Entity{};
     player.flags = EntityFlags::ACTIVE | EntityFlags::IS_RIGID | EntityFlags::PLAYER_CONTROLLED;
-    player.tx = {glm::vec2(350, 100), glm::vec2(50, 50)};
+    player.tx = {glm::vec2(150, 100), glm::vec2(50, 50)};
     player.body.inverseMass = 0.1f;
     player.body.force = {0.0f, 0.0f};
     player.body.velocity = {0.0f, 0.0f};
@@ -28,27 +28,72 @@ Scene::Scene(EventBus& eventBus, uint32_t width, uint32_t height)
     player.label = "Player";
     mEntityManager.CreateEntity(std::move(player));
 
-    // Enemy Entity.
+    // Box1 Entity.
     //
-    Entity box = Entity{};
-    box.flags = EntityFlags::ACTIVE | EntityFlags::IS_RIGID;
-    box.tx = {glm::vec2(250, 100), glm::vec2(50, 50)};
-    box.body.inverseMass = 0.1f;
-    box.body.force = {0.0f, 0.0f};
-    box.body.velocity = {0.0f, 0.0f};
-    box.body.staticFrictionCoefficient = 0.1f;
-    box.body.dynamicFrictionCoefficient = 0.3f;
-    box.body.restitution = 0.0f;
-    box.color = glm::vec3(1.0f, 0.3f, 0.3f);
-    box.label = "Box";
-    mEntityManager.CreateEntity(std::move(box));
+    Entity box1 = Entity{};
+    box1.flags = EntityFlags::ACTIVE | EntityFlags::IS_RIGID;
+    box1.tx = {glm::vec2(350, 100), glm::vec2(30, 30)};
+    box1.body.inverseMass = 0.1f;
+    box1.body.force = {0.0f, 0.0f};
+    box1.body.velocity = {0.0f, 0.0f};
+    box1.body.staticFrictionCoefficient = 0.1f;
+    box1.body.dynamicFrictionCoefficient = 0.3f;
+    box1.body.restitution = 0.0f;
+    box1.color = glm::vec3(1.0f, 0.3f, 0.3f);
+    box1.label = "Box1";
+    mEntityManager.CreateEntity(std::move(box1));
+
+    // Box2 Entity.
+    //
+    Entity box2 = Entity{};
+    box2.flags = EntityFlags::ACTIVE | EntityFlags::IS_RIGID;
+    box2.tx = {glm::vec2(350, 160), glm::vec2(30, 30)};
+    box2.body.inverseMass = 0.1f;
+    box2.body.force = {0.0f, 0.0f};
+    box2.body.velocity = {0.0f, 0.0f};
+    box2.body.staticFrictionCoefficient = 0.1f;
+    box2.body.dynamicFrictionCoefficient = 0.3f;
+    box2.body.restitution = 0.0f;
+    box2.color = glm::vec3(1.0f, 0.3f, 0.3f);
+    box2.label = "Box2";
+    mEntityManager.CreateEntity(std::move(box2));
+
+    // Box3 Entity.
+    //
+    Entity box3 = Entity{};
+    box3.flags = EntityFlags::ACTIVE | EntityFlags::IS_RIGID;
+    box3.tx = {glm::vec2(350, 220), glm::vec2(30, 30)};
+    box3.body.inverseMass = 0.1f;
+    box3.body.force = {0.0f, 0.0f};
+    box3.body.velocity = {0.0f, 0.0f};
+    box3.body.staticFrictionCoefficient = 0.1f;
+    box3.body.dynamicFrictionCoefficient = 0.3f;
+    box3.body.restitution = 0.0f;
+    box3.color = glm::vec3(1.0f, 0.3f, 0.3f);
+    box3.label = "Box3";
+    mEntityManager.CreateEntity(std::move(box3));
+
+    // Box4 Entity.
+    //
+    Entity box4 = Entity{};
+    box4.flags = EntityFlags::ACTIVE | EntityFlags::IS_RIGID;
+    box4.tx = {glm::vec2(350, 280), glm::vec2(30, 30)};
+    box4.body.inverseMass = 0.1f;
+    box4.body.force = {0.0f, 0.0f};
+    box4.body.velocity = {0.0f, 0.0f};
+    box4.body.staticFrictionCoefficient = 0.1f;
+    box4.body.dynamicFrictionCoefficient = 0.3f;
+    box4.body.restitution = 0.0f;
+    box4.color = glm::vec3(1.0f, 0.3f, 0.3f);
+    box4.label = "Box4";
+    mEntityManager.CreateEntity(std::move(box4));
 
     // Platform 1 Entity.
     //
     Entity platform1 = Entity{};
     platform1.flags = EntityFlags::ACTIVE | EntityFlags::IS_RIGID;
-    platform1.tx = {glm::vec2(0, 400), glm::vec2(800, 300)};
-    box.body.inverseMass = 0.0f;
+    platform1.tx = {glm::vec2(300, 400), glm::vec2(200, 20)};
+    platform1.body.inverseMass = 0.0f;
     platform1.body.force = {0.0f, 0.0f};
     platform1.body.velocity = {0.0f, 0.0f};
     platform1.body.staticFrictionCoefficient = 0.1f;
@@ -62,8 +107,8 @@ Scene::Scene(EventBus& eventBus, uint32_t width, uint32_t height)
     //
     Entity platform2 = Entity{};
     platform2.flags = EntityFlags::ACTIVE | EntityFlags::IS_RIGID;
-    platform2.tx = {glm::vec2(100, 300), glm::vec2(200, 50)};
-    box.body.inverseMass = 0.0f;
+    platform2.tx = {glm::vec2(100, 300), glm::vec2(200, 20)};
+    platform2.body.inverseMass = 0.0f;
     platform2.body.force = {0.0f, 0.0f};
     platform2.body.velocity = {0.0f, 0.0f};
     platform2.body.staticFrictionCoefficient = 0.1f;
@@ -77,8 +122,8 @@ Scene::Scene(EventBus& eventBus, uint32_t width, uint32_t height)
     //
     Entity platform3 = Entity{};
     platform3.flags = EntityFlags::ACTIVE | EntityFlags::IS_RIGID;
-    platform3.tx = {glm::vec2(500, 300), glm::vec2(200, 50)};
-    box.body.inverseMass = 0.0f;
+    platform3.tx = {glm::vec2(500, 300), glm::vec2(200, 20)};
+    platform3.body.inverseMass = 0.0f;
     platform3.body.force = {0.0f, 0.0f};
     platform3.body.velocity = {0.0f, 0.0f};
     platform3.body.staticFrictionCoefficient = 0.1f;

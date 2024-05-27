@@ -24,7 +24,7 @@ public:
     // Getters.
     //
     inline const VkPipelineLayout GetPipelineLayout() const { return mPipelineLayout; }
-    inline const std::vector<VkDescriptorSetLayout>& GetDescriptorSetLayout() const { return mDescriptorSetLayout; }
+    inline const VkDescriptorSetLayout& GetDescriptorSetLayout() const { return mDescriptorSetLayout; }
     inline const VkPipelineBindPoint GetPipelineBindPoint() const { return mPipelineBindPoint; }
     inline const VkDescriptorPool GetDecsriptorPool() const { return mDescriptorPool; }
     inline const uint32_t& GetMaxDescriptorSets() const { return mMaxSets; }
@@ -49,6 +49,6 @@ private:
 
     uint32_t mMaxSets = SwapChain::FRAMES_IN_FLIGHT;
     VkDescriptorPool mDescriptorPool = VK_NULL_HANDLE;
-    std::vector<VkDescriptorSetLayout> mDescriptorSetLayout{6};
+    VkDescriptorSetLayout mDescriptorSetLayout = VK_NULL_HANDLE;
 };
 }

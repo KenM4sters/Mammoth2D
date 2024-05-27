@@ -31,17 +31,20 @@ public:
         mWriteDescriptor[index].pTexelBufferView = nullptr;
     }
 
-    void WriteToBuffer(uint32_t index, uint32_t binding, VkDescriptorImageInfo& imageInfo, DescriptorSet& descriptorSet) 
+    void WriteToImage(std::vector<VkDescriptorImageInfo>& imageInfo, DescriptorSet& descriptorSet) 
     {
-        mWriteDescriptor[index].sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
-        mWriteDescriptor[index].dstSet = descriptorSet.GetDescriptorSet();
-        mWriteDescriptor[index].dstBinding = binding;
-        mWriteDescriptor[index].dstArrayElement = 0;
-        mWriteDescriptor[index].descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
-        mWriteDescriptor[index].descriptorCount = 1;
-        mWriteDescriptor[index].pBufferInfo = nullptr;
-        mWriteDescriptor[index].pImageInfo = &imageInfo;
-        mWriteDescriptor[index].pTexelBufferView = nullptr;
+        for(int i = 0; i < imageInfo.size(); i++)  
+        {
+            mWriteDescriptor[i].sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
+            mWriteDescriptor[i].dstSet = descriptorSet.GetDescriptorSet();
+            mWriteDescriptor[i].dstBinding = i;
+            mWriteDescriptor[i].dstArrayElement = 0;
+            mWriteDescriptor[i].descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
+            mWriteDescriptor[i].descriptorCount = 1;
+            mWriteDescriptor[i].pBufferInfo = nullptr;
+            mWriteDescriptor[i].pImageInfo = &imageInfo[i];
+            mWriteDescriptor[i].pTexelBufferView = nullptr;
+        }
     }
 
     void UpdateDescriptorSet(Device& device) 
