@@ -4,7 +4,6 @@
 ## Description
 ---
 A 2D Game Engine written in C++ using Vulkan on the backend for rendering and ImGUI for user interface creation.
----
 
 ## Build
 ---
@@ -13,7 +12,6 @@ Currently supporting only MacOS, with windows support currently being implemente
 A Unix build script is included and will run CMake file that attempts to find the Vulkan SDK. All other libraries/headers came shipped with the engine. 
 
 Simple run `./unixBuild` from the root directory followed by `build/Vulkan2D` to run the executable. 
----
 
 ## Motivation
 ---
