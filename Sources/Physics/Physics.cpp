@@ -109,7 +109,7 @@ void Physics::CorrectPenetration(CollisionEvent* event)
     auto& A = event->mEntityA;
     auto& B = event->mEntityB;
 
-    const float percent = 0.2; // usually 20% to 80% 
+    const float percent = 0.05; // usually 20% to 80% 
     const float slop = 0.1; // usually 0.01 to 0.1 
 
     glm::vec2 correction = std::max(event->penetration - slop, 0.0f ) * (A->body.inverseMass + B->body.inverseMass) * percent * event->normal;
