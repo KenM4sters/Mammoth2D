@@ -1,5 +1,0 @@
-if(EXISTS "/Users/samuelbrookman/Desktop/unitTesting/build/Tests/ExampleTest[1]_tests.cmake")
-  include("/Users/samuelbrookman/Desktop/unitTesting/build/Tests/ExampleTest[1]_tests.cmake")
-else()
-  add_test(ExampleTest_NOT_BUILT ExampleTest_NOT_BUILT)
-endif()
