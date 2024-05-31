@@ -1,0 +1,432 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						5,
+						7,
+						10
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "Sources",
+					"jsonFile" : "directory-Sources-Debug-c5b46125271f0a53a922.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "Sources",
+					"targetIndexes" : 
+					[
+						1,
+						3
+					]
+				},
+				{
+					"build" : "External/GLFW",
+					"childIndexes" : 
+					[
+						3,
+						4
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-External.GLFW-Debug-286d006442e346e8c19d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.4"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 2,
+					"source" : "External/GLFW",
+					"targetIndexes" : 
+					[
+						10
+					]
+				},
+				{
+					"build" : "External/GLFW/src",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-External.GLFW.src-Debug-2d7b886129d829112a64.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.4"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 2,
+					"source" : "External/GLFW/src",
+					"targetIndexes" : 
+					[
+						4,
+						11
+					]
+				},
+				{
+					"build" : "External/GLFW/docs",
+					"jsonFile" : "directory-External.GLFW.docs-Debug-2fc1bf11b2f2a29a167f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.4"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 2,
+					"source" : "External/GLFW/docs"
+				},
+				{
+					"build" : "External/GLM",
+					"childIndexes" : 
+					[
+						6
+					],
+					"jsonFile" : "directory-External.GLM-Debug-c2b9aed21e1208f0bedd.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.6"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 3,
+					"source" : "External/GLM"
+				},
+				{
+					"build" : "External/GLM/glm",
+					"jsonFile" : "directory-External.GLM.glm-Debug-d1064b452ad46480e6e1.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.6"
+					},
+					"parentIndex" : 5,
+					"projectIndex" : 3,
+					"source" : "External/GLM/glm",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "External/GoogleTest",
+					"childIndexes" : 
+					[
+						8
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-External.GoogleTest-Debug-378fc3d9c0108fefa03d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 4,
+					"source" : "External/GoogleTest"
+				},
+				{
+					"build" : "External/GoogleTest/googlemock",
+					"childIndexes" : 
+					[
+						9
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-External.GoogleTest.googlemock-Debug-9f523c647f566027ebb9.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 7,
+					"projectIndex" : 5,
+					"source" : "External/GoogleTest/googlemock",
+					"targetIndexes" : 
+					[
+						6,
+						7
+					]
+				},
+				{
+					"build" : "External/GoogleTest/googletest",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-External.GoogleTest.googletest-Debug-8616e619dbcc91392e96.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 8,
+					"projectIndex" : 6,
+					"source" : "External/GoogleTest/googletest",
+					"targetIndexes" : 
+					[
+						8,
+						9
+					]
+				},
+				{
+					"build" : "Tests",
+					"childIndexes" : 
+					[
+						11,
+						12
+					],
+					"jsonFile" : "directory-Tests-Debug-0bb2ec8d84e8c19149a9.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "Tests"
+				},
+				{
+					"build" : "Tests/UnitTests",
+					"jsonFile" : "directory-Tests.UnitTests-Debug-d16ad5b4fb50ff905e8f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 10,
+					"projectIndex" : 0,
+					"source" : "Tests/UnitTests",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "Tests/Tutorial1",
+					"jsonFile" : "directory-Tests.Tutorial1-Debug-651d1ca7d157733fc206.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 10,
+					"projectIndex" : 0,
+					"source" : "Tests/Tutorial1",
+					"targetIndexes" : 
+					[
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4
+					],
+					"directoryIndexes" : 
+					[
+						0,
+						10,
+						11,
+						12
+					],
+					"name" : "TestProject",
+					"targetIndexes" : 
+					[
+						0,
+						2
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "Vulkan2D",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1,
+						3
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2,
+						3,
+						4
+					],
+					"name" : "GLFW",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						4,
+						10,
+						11
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						5,
+						6
+					],
+					"name" : "glm",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						5
+					],
+					"directoryIndexes" : 
+					[
+						7
+					],
+					"name" : "googletest-distribution",
+					"parentIndex" : 0
+				},
+				{
+					"childIndexes" : 
+					[
+						6
+					],
+					"directoryIndexes" : 
+					[
+						8
+					],
+					"name" : "gmock",
+					"parentIndex" : 4,
+					"targetIndexes" : 
+					[
+						6,
+						7
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						9
+					],
+					"name" : "gtest",
+					"parentIndex" : 5,
+					"targetIndexes" : 
+					[
+						8,
+						9
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 11,
+					"id" : "ExampleTest::@fd9f74b224cb15db93c6",
+					"jsonFile" : "target-ExampleTest-Debug-ca8265251c096fd918c4.json",
+					"name" : "ExampleTest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "Shaders::@05cac7de858c7d73eb4f",
+					"jsonFile" : "target-Shaders-Debug-38cfde129935a7b99ca6.json",
+					"name" : "Shaders",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 12,
+					"id" : "Tutorial1::@f6a4c11f391e2eca770a",
+					"jsonFile" : "target-Tutorial1-Debug-87fcdc31de2a6471d6ab.json",
+					"name" : "Tutorial1",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "Vulkan2D::@05cac7de858c7d73eb4f",
+					"jsonFile" : "target-Vulkan2D-Debug-cd2121b8f4c99e164299.json",
+					"name" : "Vulkan2D",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "glfw::@5fa3452b5404d8dfff0c",
+					"jsonFile" : "target-glfw-Debug-1f63db07301576a77ed2.json",
+					"name" : "glfw",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "glm::@9e053593a08e20a8744f",
+					"jsonFile" : "target-glm-Debug-c0c84b497a8acbd738f4.json",
+					"name" : "glm",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "gmock::@33da2e81e623659ed8e0",
+					"jsonFile" : "target-gmock-Debug-494724c31244adb672a2.json",
+					"name" : "gmock",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "gmock_main::@33da2e81e623659ed8e0",
+					"jsonFile" : "target-gmock_main-Debug-9e320682f9c057c1dc50.json",
+					"name" : "gmock_main",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "gtest::@3a986b2cc8d45f4db887",
+					"jsonFile" : "target-gtest-Debug-a3fbb49913699f3017ba.json",
+					"name" : "gtest",
+					"projectIndex" : 6
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "gtest_main::@3a986b2cc8d45f4db887",
+					"jsonFile" : "target-gtest_main-Debug-cff5fc2aae40a75aa18d.json",
+					"name" : "gtest_main",
+					"projectIndex" : 6
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "uninstall::@1cedd6aa5987ef63b272",
+					"jsonFile" : "target-uninstall-Debug-ba1ad81668e68867fc77.json",
+					"name" : "uninstall",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "update_mappings::@5fa3452b5404d8dfff0c",
+					"jsonFile" : "target-update_mappings-Debug-ba2b981a2e58ec67fbbb.json",
+					"name" : "update_mappings",
+					"projectIndex" : 2
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/samuelbrookman/Desktop/unitTesting/build",
+		"source" : "/Users/samuelbrookman/Desktop/unitTesting"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

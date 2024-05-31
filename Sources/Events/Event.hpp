@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-#include "Core.hpp"
+#include "../Core.hpp"
 
 namespace Super
 {

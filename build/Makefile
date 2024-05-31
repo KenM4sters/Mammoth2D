@@ -57,13 +57,23 @@ RM = /opt/homebrew/Cellar/cmake/3.28.1/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/samuelbrookman/Desktop/Vulkan2D
+CMAKE_SOURCE_DIR = /Users/samuelbrookman/Desktop/unitTesting
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/samuelbrookman/Desktop/Vulkan2D/build
+CMAKE_BINARY_DIR = /Users/samuelbrookman/Desktop/unitTesting/build
 
 #=============================================================================
 # Targets provided globally by CMake.
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
+	/opt/homebrew/Cellar/cmake/3.28.1/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -85,11 +95,56 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"Unspecified\" \"gmock\" \"gtest\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	/opt/homebrew/Cellar/cmake/3.28.1/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	/opt/homebrew/Cellar/cmake/3.28.1/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	/opt/homebrew/Cellar/cmake/3.28.1/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	/opt/homebrew/Cellar/cmake/3.28.1/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	/opt/homebrew/Cellar/cmake/3.28.1/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	/opt/homebrew/Cellar/cmake/3.28.1/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/samuelbrookman/Desktop/Vulkan2D/build/CMakeFiles /Users/samuelbrookman/Desktop/Vulkan2D/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/samuelbrookman/Desktop/unitTesting/build/CMakeFiles /Users/samuelbrookman/Desktop/unitTesting/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/samuelbrookman/Desktop/Vulkan2D/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/samuelbrookman/Desktop/unitTesting/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -126,7 +181,7 @@ Vulkan2D: cmake_check_build_system
 
 # fast build rule for target.
 Vulkan2D/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/build
+	$(MAKE) $(MAKESILENT) -f Sources/CMakeFiles/Vulkan2D.dir/build.make Sources/CMakeFiles/Vulkan2D.dir/build
 .PHONY : Vulkan2D/fast
 
 #=============================================================================
@@ -139,21 +194,21 @@ Shaders: cmake_check_build_system
 
 # fast build rule for target.
 Shaders/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Shaders.dir/build.make CMakeFiles/Shaders.dir/build
+	$(MAKE) $(MAKESILENT) -f Sources/CMakeFiles/Shaders.dir/build.make Sources/CMakeFiles/Shaders.dir/build
 .PHONY : Shaders/fast
 
 #=============================================================================
-# Target rules for targets named update_mappings
+# Target rules for targets named uninstall
 
 # Build rule for target.
-update_mappings: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 update_mappings
-.PHONY : update_mappings
+uninstall: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 uninstall
+.PHONY : uninstall
 
 # fast build rule for target.
-update_mappings/fast:
-	$(MAKE) $(MAKESILENT) -f External/glfw/src/CMakeFiles/update_mappings.dir/build.make External/glfw/src/CMakeFiles/update_mappings.dir/build
-.PHONY : update_mappings/fast
+uninstall/fast:
+	$(MAKE) $(MAKESILENT) -f External/GLFW/CMakeFiles/uninstall.dir/build.make External/GLFW/CMakeFiles/uninstall.dir/build
+.PHONY : uninstall/fast
 
 #=============================================================================
 # Target rules for targets named glfw
@@ -165,536 +220,112 @@ glfw: cmake_check_build_system
 
 # fast build rule for target.
 glfw/fast:
-	$(MAKE) $(MAKESILENT) -f External/glfw/src/CMakeFiles/glfw.dir/build.make External/glfw/src/CMakeFiles/glfw.dir/build
+	$(MAKE) $(MAKESILENT) -f External/GLFW/src/CMakeFiles/glfw.dir/build.make External/GLFW/src/CMakeFiles/glfw.dir/build
 .PHONY : glfw/fast
 
-Sources/Camera.o: Sources/Camera.cpp.o
-.PHONY : Sources/Camera.o
-
-# target to build an object file
-Sources/Camera.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Camera.cpp.o
-.PHONY : Sources/Camera.cpp.o
-
-Sources/Camera.i: Sources/Camera.cpp.i
-.PHONY : Sources/Camera.i
-
-# target to preprocess a source file
-Sources/Camera.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Camera.cpp.i
-.PHONY : Sources/Camera.cpp.i
-
-Sources/Camera.s: Sources/Camera.cpp.s
-.PHONY : Sources/Camera.s
-
-# target to generate assembly for a file
-Sources/Camera.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Camera.cpp.s
-.PHONY : Sources/Camera.cpp.s
-
-Sources/Device.o: Sources/Device.cpp.o
-.PHONY : Sources/Device.o
-
-# target to build an object file
-Sources/Device.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Device.cpp.o
-.PHONY : Sources/Device.cpp.o
-
-Sources/Device.i: Sources/Device.cpp.i
-.PHONY : Sources/Device.i
-
-# target to preprocess a source file
-Sources/Device.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Device.cpp.i
-.PHONY : Sources/Device.cpp.i
-
-Sources/Device.s: Sources/Device.cpp.s
-.PHONY : Sources/Device.s
-
-# target to generate assembly for a file
-Sources/Device.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Device.cpp.s
-.PHONY : Sources/Device.cpp.s
-
-Sources/Graphics/Buffers/Buffer.o: Sources/Graphics/Buffers/Buffer.cpp.o
-.PHONY : Sources/Graphics/Buffers/Buffer.o
-
-# target to build an object file
-Sources/Graphics/Buffers/Buffer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/Buffer.cpp.o
-.PHONY : Sources/Graphics/Buffers/Buffer.cpp.o
-
-Sources/Graphics/Buffers/Buffer.i: Sources/Graphics/Buffers/Buffer.cpp.i
-.PHONY : Sources/Graphics/Buffers/Buffer.i
-
-# target to preprocess a source file
-Sources/Graphics/Buffers/Buffer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/Buffer.cpp.i
-.PHONY : Sources/Graphics/Buffers/Buffer.cpp.i
-
-Sources/Graphics/Buffers/Buffer.s: Sources/Graphics/Buffers/Buffer.cpp.s
-.PHONY : Sources/Graphics/Buffers/Buffer.s
-
-# target to generate assembly for a file
-Sources/Graphics/Buffers/Buffer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/Buffer.cpp.s
-.PHONY : Sources/Graphics/Buffers/Buffer.cpp.s
-
-Sources/Graphics/Buffers/BufferLayout.o: Sources/Graphics/Buffers/BufferLayout.cpp.o
-.PHONY : Sources/Graphics/Buffers/BufferLayout.o
-
-# target to build an object file
-Sources/Graphics/Buffers/BufferLayout.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/BufferLayout.cpp.o
-.PHONY : Sources/Graphics/Buffers/BufferLayout.cpp.o
-
-Sources/Graphics/Buffers/BufferLayout.i: Sources/Graphics/Buffers/BufferLayout.cpp.i
-.PHONY : Sources/Graphics/Buffers/BufferLayout.i
-
-# target to preprocess a source file
-Sources/Graphics/Buffers/BufferLayout.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/BufferLayout.cpp.i
-.PHONY : Sources/Graphics/Buffers/BufferLayout.cpp.i
-
-Sources/Graphics/Buffers/BufferLayout.s: Sources/Graphics/Buffers/BufferLayout.cpp.s
-.PHONY : Sources/Graphics/Buffers/BufferLayout.s
-
-# target to generate assembly for a file
-Sources/Graphics/Buffers/BufferLayout.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/BufferLayout.cpp.s
-.PHONY : Sources/Graphics/Buffers/BufferLayout.cpp.s
-
-Sources/Graphics/Buffers/UniformBuffer.o: Sources/Graphics/Buffers/UniformBuffer.cpp.o
-.PHONY : Sources/Graphics/Buffers/UniformBuffer.o
-
-# target to build an object file
-Sources/Graphics/Buffers/UniformBuffer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/UniformBuffer.cpp.o
-.PHONY : Sources/Graphics/Buffers/UniformBuffer.cpp.o
-
-Sources/Graphics/Buffers/UniformBuffer.i: Sources/Graphics/Buffers/UniformBuffer.cpp.i
-.PHONY : Sources/Graphics/Buffers/UniformBuffer.i
-
-# target to preprocess a source file
-Sources/Graphics/Buffers/UniformBuffer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/UniformBuffer.cpp.i
-.PHONY : Sources/Graphics/Buffers/UniformBuffer.cpp.i
-
-Sources/Graphics/Buffers/UniformBuffer.s: Sources/Graphics/Buffers/UniformBuffer.cpp.s
-.PHONY : Sources/Graphics/Buffers/UniformBuffer.s
-
-# target to generate assembly for a file
-Sources/Graphics/Buffers/UniformBuffer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Buffers/UniformBuffer.cpp.s
-.PHONY : Sources/Graphics/Buffers/UniformBuffer.cpp.s
-
-Sources/Graphics/Descriptors/DescriptorHandler.o: Sources/Graphics/Descriptors/DescriptorHandler.cpp.o
-.PHONY : Sources/Graphics/Descriptors/DescriptorHandler.o
-
-# target to build an object file
-Sources/Graphics/Descriptors/DescriptorHandler.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Descriptors/DescriptorHandler.cpp.o
-.PHONY : Sources/Graphics/Descriptors/DescriptorHandler.cpp.o
-
-Sources/Graphics/Descriptors/DescriptorHandler.i: Sources/Graphics/Descriptors/DescriptorHandler.cpp.i
-.PHONY : Sources/Graphics/Descriptors/DescriptorHandler.i
-
-# target to preprocess a source file
-Sources/Graphics/Descriptors/DescriptorHandler.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Descriptors/DescriptorHandler.cpp.i
-.PHONY : Sources/Graphics/Descriptors/DescriptorHandler.cpp.i
-
-Sources/Graphics/Descriptors/DescriptorHandler.s: Sources/Graphics/Descriptors/DescriptorHandler.cpp.s
-.PHONY : Sources/Graphics/Descriptors/DescriptorHandler.s
-
-# target to generate assembly for a file
-Sources/Graphics/Descriptors/DescriptorHandler.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Descriptors/DescriptorHandler.cpp.s
-.PHONY : Sources/Graphics/Descriptors/DescriptorHandler.cpp.s
-
-Sources/Graphics/Descriptors/DescriptorSet.o: Sources/Graphics/Descriptors/DescriptorSet.cpp.o
-.PHONY : Sources/Graphics/Descriptors/DescriptorSet.o
-
-# target to build an object file
-Sources/Graphics/Descriptors/DescriptorSet.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Descriptors/DescriptorSet.cpp.o
-.PHONY : Sources/Graphics/Descriptors/DescriptorSet.cpp.o
-
-Sources/Graphics/Descriptors/DescriptorSet.i: Sources/Graphics/Descriptors/DescriptorSet.cpp.i
-.PHONY : Sources/Graphics/Descriptors/DescriptorSet.i
-
-# target to preprocess a source file
-Sources/Graphics/Descriptors/DescriptorSet.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Descriptors/DescriptorSet.cpp.i
-.PHONY : Sources/Graphics/Descriptors/DescriptorSet.cpp.i
-
-Sources/Graphics/Descriptors/DescriptorSet.s: Sources/Graphics/Descriptors/DescriptorSet.cpp.s
-.PHONY : Sources/Graphics/Descriptors/DescriptorSet.s
-
-# target to generate assembly for a file
-Sources/Graphics/Descriptors/DescriptorSet.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Descriptors/DescriptorSet.cpp.s
-.PHONY : Sources/Graphics/Descriptors/DescriptorSet.cpp.s
-
-Sources/Graphics/Images/Image.o: Sources/Graphics/Images/Image.cpp.o
-.PHONY : Sources/Graphics/Images/Image.o
-
-# target to build an object file
-Sources/Graphics/Images/Image.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Images/Image.cpp.o
-.PHONY : Sources/Graphics/Images/Image.cpp.o
-
-Sources/Graphics/Images/Image.i: Sources/Graphics/Images/Image.cpp.i
-.PHONY : Sources/Graphics/Images/Image.i
-
-# target to preprocess a source file
-Sources/Graphics/Images/Image.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Images/Image.cpp.i
-.PHONY : Sources/Graphics/Images/Image.cpp.i
-
-Sources/Graphics/Images/Image.s: Sources/Graphics/Images/Image.cpp.s
-.PHONY : Sources/Graphics/Images/Image.s
-
-# target to generate assembly for a file
-Sources/Graphics/Images/Image.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Images/Image.cpp.s
-.PHONY : Sources/Graphics/Images/Image.cpp.s
-
-Sources/Graphics/Pipelines/Pipeline.o: Sources/Graphics/Pipelines/Pipeline.cpp.o
-.PHONY : Sources/Graphics/Pipelines/Pipeline.o
-
-# target to build an object file
-Sources/Graphics/Pipelines/Pipeline.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Pipeline.cpp.o
-.PHONY : Sources/Graphics/Pipelines/Pipeline.cpp.o
-
-Sources/Graphics/Pipelines/Pipeline.i: Sources/Graphics/Pipelines/Pipeline.cpp.i
-.PHONY : Sources/Graphics/Pipelines/Pipeline.i
-
-# target to preprocess a source file
-Sources/Graphics/Pipelines/Pipeline.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Pipeline.cpp.i
-.PHONY : Sources/Graphics/Pipelines/Pipeline.cpp.i
-
-Sources/Graphics/Pipelines/Pipeline.s: Sources/Graphics/Pipelines/Pipeline.cpp.s
-.PHONY : Sources/Graphics/Pipelines/Pipeline.s
-
-# target to generate assembly for a file
-Sources/Graphics/Pipelines/Pipeline.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Pipeline.cpp.s
-.PHONY : Sources/Graphics/Pipelines/Pipeline.cpp.s
-
-Sources/Graphics/Pipelines/Shader.o: Sources/Graphics/Pipelines/Shader.cpp.o
-.PHONY : Sources/Graphics/Pipelines/Shader.o
-
-# target to build an object file
-Sources/Graphics/Pipelines/Shader.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Shader.cpp.o
-.PHONY : Sources/Graphics/Pipelines/Shader.cpp.o
-
-Sources/Graphics/Pipelines/Shader.i: Sources/Graphics/Pipelines/Shader.cpp.i
-.PHONY : Sources/Graphics/Pipelines/Shader.i
-
-# target to preprocess a source file
-Sources/Graphics/Pipelines/Shader.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Shader.cpp.i
-.PHONY : Sources/Graphics/Pipelines/Shader.cpp.i
-
-Sources/Graphics/Pipelines/Shader.s: Sources/Graphics/Pipelines/Shader.cpp.s
-.PHONY : Sources/Graphics/Pipelines/Shader.s
-
-# target to generate assembly for a file
-Sources/Graphics/Pipelines/Shader.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Pipelines/Shader.cpp.s
-.PHONY : Sources/Graphics/Pipelines/Shader.cpp.s
-
-Sources/Graphics/Renderer/Renderer.o: Sources/Graphics/Renderer/Renderer.cpp.o
-.PHONY : Sources/Graphics/Renderer/Renderer.o
-
-# target to build an object file
-Sources/Graphics/Renderer/Renderer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/Renderer.cpp.o
-.PHONY : Sources/Graphics/Renderer/Renderer.cpp.o
-
-Sources/Graphics/Renderer/Renderer.i: Sources/Graphics/Renderer/Renderer.cpp.i
-.PHONY : Sources/Graphics/Renderer/Renderer.i
-
-# target to preprocess a source file
-Sources/Graphics/Renderer/Renderer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/Renderer.cpp.i
-.PHONY : Sources/Graphics/Renderer/Renderer.cpp.i
-
-Sources/Graphics/Renderer/Renderer.s: Sources/Graphics/Renderer/Renderer.cpp.s
-.PHONY : Sources/Graphics/Renderer/Renderer.s
-
-# target to generate assembly for a file
-Sources/Graphics/Renderer/Renderer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/Renderer.cpp.s
-.PHONY : Sources/Graphics/Renderer/Renderer.cpp.s
-
-Sources/Graphics/Renderer/Sprite2DSystem.o: Sources/Graphics/Renderer/Sprite2DSystem.cpp.o
-.PHONY : Sources/Graphics/Renderer/Sprite2DSystem.o
-
-# target to build an object file
-Sources/Graphics/Renderer/Sprite2DSystem.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/Sprite2DSystem.cpp.o
-.PHONY : Sources/Graphics/Renderer/Sprite2DSystem.cpp.o
-
-Sources/Graphics/Renderer/Sprite2DSystem.i: Sources/Graphics/Renderer/Sprite2DSystem.cpp.i
-.PHONY : Sources/Graphics/Renderer/Sprite2DSystem.i
-
-# target to preprocess a source file
-Sources/Graphics/Renderer/Sprite2DSystem.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/Sprite2DSystem.cpp.i
-.PHONY : Sources/Graphics/Renderer/Sprite2DSystem.cpp.i
-
-Sources/Graphics/Renderer/Sprite2DSystem.s: Sources/Graphics/Renderer/Sprite2DSystem.cpp.s
-.PHONY : Sources/Graphics/Renderer/Sprite2DSystem.s
-
-# target to generate assembly for a file
-Sources/Graphics/Renderer/Sprite2DSystem.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/Sprite2DSystem.cpp.s
-.PHONY : Sources/Graphics/Renderer/Sprite2DSystem.cpp.s
-
-Sources/Graphics/Renderer/SwapChain.o: Sources/Graphics/Renderer/SwapChain.cpp.o
-.PHONY : Sources/Graphics/Renderer/SwapChain.o
-
-# target to build an object file
-Sources/Graphics/Renderer/SwapChain.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/SwapChain.cpp.o
-.PHONY : Sources/Graphics/Renderer/SwapChain.cpp.o
-
-Sources/Graphics/Renderer/SwapChain.i: Sources/Graphics/Renderer/SwapChain.cpp.i
-.PHONY : Sources/Graphics/Renderer/SwapChain.i
-
-# target to preprocess a source file
-Sources/Graphics/Renderer/SwapChain.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/SwapChain.cpp.i
-.PHONY : Sources/Graphics/Renderer/SwapChain.cpp.i
-
-Sources/Graphics/Renderer/SwapChain.s: Sources/Graphics/Renderer/SwapChain.cpp.s
-.PHONY : Sources/Graphics/Renderer/SwapChain.s
-
-# target to generate assembly for a file
-Sources/Graphics/Renderer/SwapChain.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Graphics/Renderer/SwapChain.cpp.s
-.PHONY : Sources/Graphics/Renderer/SwapChain.cpp.s
-
-Sources/Input.o: Sources/Input.cpp.o
-.PHONY : Sources/Input.o
-
-# target to build an object file
-Sources/Input.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Input.cpp.o
-.PHONY : Sources/Input.cpp.o
-
-Sources/Input.i: Sources/Input.cpp.i
-.PHONY : Sources/Input.i
-
-# target to preprocess a source file
-Sources/Input.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Input.cpp.i
-.PHONY : Sources/Input.cpp.i
-
-Sources/Input.s: Sources/Input.cpp.s
-.PHONY : Sources/Input.s
-
-# target to generate assembly for a file
-Sources/Input.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Input.cpp.s
-.PHONY : Sources/Input.cpp.s
-
-Sources/Logging.o: Sources/Logging.cpp.o
-.PHONY : Sources/Logging.o
-
-# target to build an object file
-Sources/Logging.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Logging.cpp.o
-.PHONY : Sources/Logging.cpp.o
-
-Sources/Logging.i: Sources/Logging.cpp.i
-.PHONY : Sources/Logging.i
-
-# target to preprocess a source file
-Sources/Logging.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Logging.cpp.i
-.PHONY : Sources/Logging.cpp.i
-
-Sources/Logging.s: Sources/Logging.cpp.s
-.PHONY : Sources/Logging.s
-
-# target to generate assembly for a file
-Sources/Logging.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Logging.cpp.s
-.PHONY : Sources/Logging.cpp.s
-
-Sources/Physics/Collision.o: Sources/Physics/Collision.cpp.o
-.PHONY : Sources/Physics/Collision.o
-
-# target to build an object file
-Sources/Physics/Collision.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Physics/Collision.cpp.o
-.PHONY : Sources/Physics/Collision.cpp.o
-
-Sources/Physics/Collision.i: Sources/Physics/Collision.cpp.i
-.PHONY : Sources/Physics/Collision.i
-
-# target to preprocess a source file
-Sources/Physics/Collision.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Physics/Collision.cpp.i
-.PHONY : Sources/Physics/Collision.cpp.i
-
-Sources/Physics/Collision.s: Sources/Physics/Collision.cpp.s
-.PHONY : Sources/Physics/Collision.s
-
-# target to generate assembly for a file
-Sources/Physics/Collision.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Physics/Collision.cpp.s
-.PHONY : Sources/Physics/Collision.cpp.s
-
-Sources/Physics/Physics.o: Sources/Physics/Physics.cpp.o
-.PHONY : Sources/Physics/Physics.o
-
-# target to build an object file
-Sources/Physics/Physics.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Physics/Physics.cpp.o
-.PHONY : Sources/Physics/Physics.cpp.o
-
-Sources/Physics/Physics.i: Sources/Physics/Physics.cpp.i
-.PHONY : Sources/Physics/Physics.i
-
-# target to preprocess a source file
-Sources/Physics/Physics.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Physics/Physics.cpp.i
-.PHONY : Sources/Physics/Physics.cpp.i
-
-Sources/Physics/Physics.s: Sources/Physics/Physics.cpp.s
-.PHONY : Sources/Physics/Physics.s
-
-# target to generate assembly for a file
-Sources/Physics/Physics.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Physics/Physics.cpp.s
-.PHONY : Sources/Physics/Physics.cpp.s
-
-Sources/Physics/SpatialGrid.o: Sources/Physics/SpatialGrid.cpp.o
-.PHONY : Sources/Physics/SpatialGrid.o
-
-# target to build an object file
-Sources/Physics/SpatialGrid.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Physics/SpatialGrid.cpp.o
-.PHONY : Sources/Physics/SpatialGrid.cpp.o
-
-Sources/Physics/SpatialGrid.i: Sources/Physics/SpatialGrid.cpp.i
-.PHONY : Sources/Physics/SpatialGrid.i
-
-# target to preprocess a source file
-Sources/Physics/SpatialGrid.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Physics/SpatialGrid.cpp.i
-.PHONY : Sources/Physics/SpatialGrid.cpp.i
-
-Sources/Physics/SpatialGrid.s: Sources/Physics/SpatialGrid.cpp.s
-.PHONY : Sources/Physics/SpatialGrid.s
-
-# target to generate assembly for a file
-Sources/Physics/SpatialGrid.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Physics/SpatialGrid.cpp.s
-.PHONY : Sources/Physics/SpatialGrid.cpp.s
-
-Sources/Program.o: Sources/Program.cpp.o
-.PHONY : Sources/Program.o
-
-# target to build an object file
-Sources/Program.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Program.cpp.o
-.PHONY : Sources/Program.cpp.o
-
-Sources/Program.i: Sources/Program.cpp.i
-.PHONY : Sources/Program.i
-
-# target to preprocess a source file
-Sources/Program.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Program.cpp.i
-.PHONY : Sources/Program.cpp.i
-
-Sources/Program.s: Sources/Program.cpp.s
-.PHONY : Sources/Program.s
-
-# target to generate assembly for a file
-Sources/Program.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Program.cpp.s
-.PHONY : Sources/Program.cpp.s
-
-Sources/Scene/Scene.o: Sources/Scene/Scene.cpp.o
-.PHONY : Sources/Scene/Scene.o
-
-# target to build an object file
-Sources/Scene/Scene.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Scene/Scene.cpp.o
-.PHONY : Sources/Scene/Scene.cpp.o
-
-Sources/Scene/Scene.i: Sources/Scene/Scene.cpp.i
-.PHONY : Sources/Scene/Scene.i
-
-# target to preprocess a source file
-Sources/Scene/Scene.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Scene/Scene.cpp.i
-.PHONY : Sources/Scene/Scene.cpp.i
-
-Sources/Scene/Scene.s: Sources/Scene/Scene.cpp.s
-.PHONY : Sources/Scene/Scene.s
-
-# target to generate assembly for a file
-Sources/Scene/Scene.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Scene/Scene.cpp.s
-.PHONY : Sources/Scene/Scene.cpp.s
-
-Sources/Window.o: Sources/Window.cpp.o
-.PHONY : Sources/Window.o
-
-# target to build an object file
-Sources/Window.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Window.cpp.o
-.PHONY : Sources/Window.cpp.o
-
-Sources/Window.i: Sources/Window.cpp.i
-.PHONY : Sources/Window.i
-
-# target to preprocess a source file
-Sources/Window.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Window.cpp.i
-.PHONY : Sources/Window.cpp.i
-
-Sources/Window.s: Sources/Window.cpp.s
-.PHONY : Sources/Window.s
-
-# target to generate assembly for a file
-Sources/Window.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/Sources/Window.cpp.s
-.PHONY : Sources/Window.cpp.s
-
-main.o: main.cpp.o
-.PHONY : main.o
-
-# target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/main.cpp.o
-.PHONY : main.cpp.o
-
-main.i: main.cpp.i
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vulkan2D.dir/build.make CMakeFiles/Vulkan2D.dir/main.cpp.s
-.PHONY : main.cpp.s
+#=============================================================================
+# Target rules for targets named update_mappings
+
+# Build rule for target.
+update_mappings: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 update_mappings
+.PHONY : update_mappings
+
+# fast build rule for target.
+update_mappings/fast:
+	$(MAKE) $(MAKESILENT) -f External/GLFW/src/CMakeFiles/update_mappings.dir/build.make External/GLFW/src/CMakeFiles/update_mappings.dir/build
+.PHONY : update_mappings/fast
+
+#=============================================================================
+# Target rules for targets named glm
+
+# Build rule for target.
+glm: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glm
+.PHONY : glm
+
+# fast build rule for target.
+glm/fast:
+	$(MAKE) $(MAKESILENT) -f External/GLM/glm/CMakeFiles/glm.dir/build.make External/GLM/glm/CMakeFiles/glm.dir/build
+.PHONY : glm/fast
+
+#=============================================================================
+# Target rules for targets named gmock
+
+# Build rule for target.
+gmock: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gmock
+.PHONY : gmock
+
+# fast build rule for target.
+gmock/fast:
+	$(MAKE) $(MAKESILENT) -f External/GoogleTest/googlemock/CMakeFiles/gmock.dir/build.make External/GoogleTest/googlemock/CMakeFiles/gmock.dir/build
+.PHONY : gmock/fast
+
+#=============================================================================
+# Target rules for targets named gmock_main
+
+# Build rule for target.
+gmock_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gmock_main
+.PHONY : gmock_main
+
+# fast build rule for target.
+gmock_main/fast:
+	$(MAKE) $(MAKESILENT) -f External/GoogleTest/googlemock/CMakeFiles/gmock_main.dir/build.make External/GoogleTest/googlemock/CMakeFiles/gmock_main.dir/build
+.PHONY : gmock_main/fast
+
+#=============================================================================
+# Target rules for targets named gtest
+
+# Build rule for target.
+gtest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest
+.PHONY : gtest
+
+# fast build rule for target.
+gtest/fast:
+	$(MAKE) $(MAKESILENT) -f External/GoogleTest/googletest/CMakeFiles/gtest.dir/build.make External/GoogleTest/googletest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
+
+#=============================================================================
+# Target rules for targets named gtest_main
+
+# Build rule for target.
+gtest_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest_main
+.PHONY : gtest_main
+
+# fast build rule for target.
+gtest_main/fast:
+	$(MAKE) $(MAKESILENT) -f External/GoogleTest/googletest/CMakeFiles/gtest_main.dir/build.make External/GoogleTest/googletest/CMakeFiles/gtest_main.dir/build
+.PHONY : gtest_main/fast
+
+#=============================================================================
+# Target rules for targets named ExampleTest
+
+# Build rule for target.
+ExampleTest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ExampleTest
+.PHONY : ExampleTest
+
+# fast build rule for target.
+ExampleTest/fast:
+	$(MAKE) $(MAKESILENT) -f Tests/UnitTests/CMakeFiles/ExampleTest.dir/build.make Tests/UnitTests/CMakeFiles/ExampleTest.dir/build
+.PHONY : ExampleTest/fast
+
+#=============================================================================
+# Target rules for targets named Tutorial1
+
+# Build rule for target.
+Tutorial1: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Tutorial1
+.PHONY : Tutorial1
+
+# fast build rule for target.
+Tutorial1/fast:
+	$(MAKE) $(MAKESILENT) -f Tests/Tutorial1/CMakeFiles/Tutorial1.dir/build.make Tests/Tutorial1/CMakeFiles/Tutorial1.dir/build
+.PHONY : Tutorial1/fast
 
 # Help Target
 help:
@@ -703,77 +334,24 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... test"
 	@echo "... Shaders"
+	@echo "... uninstall"
 	@echo "... update_mappings"
+	@echo "... ExampleTest"
+	@echo "... Tutorial1"
 	@echo "... Vulkan2D"
 	@echo "... glfw"
-	@echo "... Sources/Camera.o"
-	@echo "... Sources/Camera.i"
-	@echo "... Sources/Camera.s"
-	@echo "... Sources/Device.o"
-	@echo "... Sources/Device.i"
-	@echo "... Sources/Device.s"
-	@echo "... Sources/Graphics/Buffers/Buffer.o"
-	@echo "... Sources/Graphics/Buffers/Buffer.i"
-	@echo "... Sources/Graphics/Buffers/Buffer.s"
-	@echo "... Sources/Graphics/Buffers/BufferLayout.o"
-	@echo "... Sources/Graphics/Buffers/BufferLayout.i"
-	@echo "... Sources/Graphics/Buffers/BufferLayout.s"
-	@echo "... Sources/Graphics/Buffers/UniformBuffer.o"
-	@echo "... Sources/Graphics/Buffers/UniformBuffer.i"
-	@echo "... Sources/Graphics/Buffers/UniformBuffer.s"
-	@echo "... Sources/Graphics/Descriptors/DescriptorHandler.o"
-	@echo "... Sources/Graphics/Descriptors/DescriptorHandler.i"
-	@echo "... Sources/Graphics/Descriptors/DescriptorHandler.s"
-	@echo "... Sources/Graphics/Descriptors/DescriptorSet.o"
-	@echo "... Sources/Graphics/Descriptors/DescriptorSet.i"
-	@echo "... Sources/Graphics/Descriptors/DescriptorSet.s"
-	@echo "... Sources/Graphics/Images/Image.o"
-	@echo "... Sources/Graphics/Images/Image.i"
-	@echo "... Sources/Graphics/Images/Image.s"
-	@echo "... Sources/Graphics/Pipelines/Pipeline.o"
-	@echo "... Sources/Graphics/Pipelines/Pipeline.i"
-	@echo "... Sources/Graphics/Pipelines/Pipeline.s"
-	@echo "... Sources/Graphics/Pipelines/Shader.o"
-	@echo "... Sources/Graphics/Pipelines/Shader.i"
-	@echo "... Sources/Graphics/Pipelines/Shader.s"
-	@echo "... Sources/Graphics/Renderer/Renderer.o"
-	@echo "... Sources/Graphics/Renderer/Renderer.i"
-	@echo "... Sources/Graphics/Renderer/Renderer.s"
-	@echo "... Sources/Graphics/Renderer/Sprite2DSystem.o"
-	@echo "... Sources/Graphics/Renderer/Sprite2DSystem.i"
-	@echo "... Sources/Graphics/Renderer/Sprite2DSystem.s"
-	@echo "... Sources/Graphics/Renderer/SwapChain.o"
-	@echo "... Sources/Graphics/Renderer/SwapChain.i"
-	@echo "... Sources/Graphics/Renderer/SwapChain.s"
-	@echo "... Sources/Input.o"
-	@echo "... Sources/Input.i"
-	@echo "... Sources/Input.s"
-	@echo "... Sources/Logging.o"
-	@echo "... Sources/Logging.i"
-	@echo "... Sources/Logging.s"
-	@echo "... Sources/Physics/Collision.o"
-	@echo "... Sources/Physics/Collision.i"
-	@echo "... Sources/Physics/Collision.s"
-	@echo "... Sources/Physics/Physics.o"
-	@echo "... Sources/Physics/Physics.i"
-	@echo "... Sources/Physics/Physics.s"
-	@echo "... Sources/Physics/SpatialGrid.o"
-	@echo "... Sources/Physics/SpatialGrid.i"
-	@echo "... Sources/Physics/SpatialGrid.s"
-	@echo "... Sources/Program.o"
-	@echo "... Sources/Program.i"
-	@echo "... Sources/Program.s"
-	@echo "... Sources/Scene/Scene.o"
-	@echo "... Sources/Scene/Scene.i"
-	@echo "... Sources/Scene/Scene.s"
-	@echo "... Sources/Window.o"
-	@echo "... Sources/Window.i"
-	@echo "... Sources/Window.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... glm"
+	@echo "... gmock"
+	@echo "... gmock_main"
+	@echo "... gtest"
+	@echo "... gtest_main"
 .PHONY : help
 
 

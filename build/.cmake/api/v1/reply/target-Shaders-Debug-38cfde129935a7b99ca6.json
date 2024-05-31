@@ -1,0 +1,35 @@
+{
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_custom_target"
+		],
+		"files" : 
+		[
+			"Sources/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 97,
+				"parent" : 0
+			}
+		]
+	},
+	"id" : "Shaders::@05cac7de858c7d73eb4f",
+	"name" : "Shaders",
+	"paths" : 
+	{
+		"build" : "Sources",
+		"source" : "Sources"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

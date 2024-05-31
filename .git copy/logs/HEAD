@@ -1,0 +1,7 @@
+0000000000000000000000000000000000000000 f545bdb866e7e5b2e16f3c34f82b3261e5e1859c KenM4sters <EHCKenway@outlook.com> 1716997017 +0100	commit (initial): CmakeTesting
+f545bdb866e7e5b2e16f3c34f82b3261e5e1859c 4db154f49a3b556d872575d46ee53035e2387cb0 KenM4sters <EHCKenway@outlook.com> 1716997718 +0100	commit: Git submodule testing - GLFW
+4db154f49a3b556d872575d46ee53035e2387cb0 510f9552605ec952a4ce11092fa091a9e797ffc8 KenM4sters <EHCKenway@outlook.com> 1716998244 +0100	commit: glm
+510f9552605ec952a4ce11092fa091a9e797ffc8 e94ae1f48023055668c387d09fd1e9ba491e0efb KenM4sters <EHCKenway@outlook.com> 1717010515 +0100	commit: git submodules are awesome
+e94ae1f48023055668c387d09fd1e9ba491e0efb bbfb1c3b43935658911514b27fda139b48a0b8d4 KenM4sters <EHCKenway@outlook.com> 1717015852 +0100	commit: gtest
+bbfb1c3b43935658911514b27fda139b48a0b8d4 f2e4f7a1931d9c605f5cdf60a96ff003b25457a6 KenM4sters <EHCKenway@outlook.com> 1717056694 +0100	commit: Some tutorial tests - perparing a structure for the vulkan 2d engine
+f2e4f7a1931d9c605f5cdf60a96ff003b25457a6 fc3b20db934715395985691173f022b07e28dff7 KenM4sters <EHCKenway@outlook.com> 1717104247 +0100	commit: Configuring Vulkan2D structure

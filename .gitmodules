@@ -1,0 +1,9 @@
+[submodule "External/GLFW"]
+	path = External/GLFW
+	url = https://github.com/glfw/glfw.git
+[submodule "External/GLM"]
+	path = External/GLM
+	url = https://github.com/g-truc/glm.git
+[submodule "External/GoogleTest"]
+	path = External/GoogleTest
+	url = https://github.com/google/googletest.git

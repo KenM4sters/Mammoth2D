@@ -1,5 +1,3 @@
 # Hashes of file build rules.
-a74f75cd2f25b9bd5057998de3372247 /Users/samuelbrookman/Desktop/Vulkan2D/Resources/Shaders/simple.frag.spv
-67004aaebb5681fbeacc74c1e067ff0a /Users/samuelbrookman/Desktop/Vulkan2D/Resources/Shaders/simple.vert.spv
-40ee68ceee2b418d21fa1934d827d641 CMakeFiles/Shaders
-5638169223d26dd637b20e45aaafeb7c External/glfw/src/CMakeFiles/update_mappings
+450e57124b708799056e17cfcf6cc083 External/GLFW/CMakeFiles/uninstall
+97a19f7b25ebafcfa39d0975ff57dc36 External/GLFW/src/CMakeFiles/update_mappings
