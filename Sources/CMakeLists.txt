@@ -9,7 +9,7 @@ project(
 
 add_library(
     Vulkan2D 
-    Program.cpp
+    Engine.cpp
     Window.cpp
     Device.cpp
     Camera.cpp

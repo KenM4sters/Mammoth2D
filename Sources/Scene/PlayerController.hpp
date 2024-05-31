@@ -14,6 +14,7 @@ public:
     {
         eventBus.Subscribe(this, &PlayerController::MovePlayer);
     }
+    
     ~PlayerController() {}
 
     void MovePlayer(KeyPressEvent* event) 

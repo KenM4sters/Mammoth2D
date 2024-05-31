@@ -1,12 +1,26 @@
 #include <iostream>
-#include <Program.hpp>
-
-static GLFWwindow* window = nullptr;
+#include <Engine.hpp>
 
 int main(int argc, char** argv) 
 {
-    auto program = std::make_unique<Super::Program>(800, 600, "Vulkan2D");
 
-    program->Init();
-    program->Run();
+    Super::EngineConfig config;
+    config.windowName = "DemoGame";
+    config.windowWidth = 800;
+    config.windowHeight = 600;
+
+    Super::Engine engine = Super::Engine(&config);
+
+
+    while(engine.GetWindow().IsRunning()) 
+    {
+        engine.Update();
+        engine.BeginDrawing();
+
+        
+
+        engine.EndDrawing();
+    }
+    engine.WaitDevice();
+
 }

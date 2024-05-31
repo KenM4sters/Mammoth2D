@@ -8,6 +8,16 @@ namespace Super
 {
 
 //----------------------------------------------------------------
+// Some structs to help initialize the Vulkan2D engine
+//----------------------------------------------------------------
+typedef struct engineconfig 
+{
+    uint32_t windowWidth;
+    uint32_t windowHeight;
+    const char* windowName;
+} EngineConfig;
+
+//----------------------------------------------------------------
 // Entity information.
 //----------------------------------------------------------------
 using EntityID = uint16_t;

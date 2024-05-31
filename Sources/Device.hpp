@@ -31,7 +31,7 @@ public:
     inline const VkQueue GetPresentQueue() const { return mPresentQueue; }
     inline const VkPhysicalDevice GetPhysicalDevice() const { return mPhysicalDevice; }
     
-    // Even though we already run call these functions from within the implementation, we're choosing
+    // Even though we already call these functions from within the implementation, we're choosing
     // not to store them within the class since they're not really required by all but a handful of
     // other classes, so we'll make getters for these private functions as well.
     //

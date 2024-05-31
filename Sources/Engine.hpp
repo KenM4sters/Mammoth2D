@@ -11,28 +11,33 @@
 
 namespace Super
 {
-class Program 
+class Engine 
 {
 public:
-    Program(uint32_t width, uint32_t height, const char* name);
-    ~Program();
+    Engine(EngineConfig* config);
+    ~Engine();
 
-    Program(const Program& other) = delete;
-    Program& operator=(const Program& other) = delete;
+    Engine(const Engine& other) = delete;
+    Engine& operator=(const Engine& other) = delete;
+
+    const Window& GetWindow() const { return mWindow; }
 
     void Init();
 
-    void Run();
+    void BeginDrawing();
+
+    void EndDrawing();
+
+    void Update();
+
+    void WaitDevice();
 
 private:
-
     EventBus mEventBus{};
-
     Window mWindow;
     Device mDevice{mWindow};
 
     std::unique_ptr<Renderer> mRenderer = nullptr;
-    std::unique_ptr<Scene> mScene = nullptr;
 
     Input mInput{&mEventBus, &mWindow};
 
