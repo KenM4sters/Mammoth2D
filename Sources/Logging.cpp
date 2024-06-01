@@ -2,6 +2,7 @@
 
 namespace Super 
 {
+    
 void LOG_INT(int i, std::string name) 
 {
     std::cout << name << " | " << i << std::endl;
