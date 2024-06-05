@@ -2,7 +2,7 @@
 #include "Sprite2DSystem.hpp"
 #include <cassert>
 
-namespace Super 
+namespace mt 
 {
 Renderer::Renderer(Device& device, Window& window) 
     : mDevice{device}, mWindow{window}
@@ -106,11 +106,11 @@ VkCommandBuffer Renderer::Begin()
     return commandBuffer;
 }
 
-void Renderer::Render(VkCommandBuffer commandBuffer, std::vector<Entity>& entities) 
+void Renderer::Render(VkCommandBuffer commandBuffer) 
 {
     for(auto& system : mRenderSystems) 
     {
-        system->Run(commandBuffer, mCurrentFrameIndex, entities);
+        system->Run(commandBuffer, mCurrentFrameIndex);
     }
 }
 

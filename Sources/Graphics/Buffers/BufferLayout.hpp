@@ -1,14 +1,16 @@
-#pragma once
+#ifndef MAMMOTH_2D_BUFFER_LAYOUT_HPP
+#define MAMMOTH_2D_BUFFER_LAYOUT_HPP
+
 #include <vulkan/vulkan.hpp>
+#include "Device.hpp"
+
 #include <vector>
 #include <cassert>
 #include <stdexcept>
 #include <iostream>
-#include "Device.hpp"
 
-namespace Super 
+namespace mt 
 {
-
 void SetVertexBufferFromVertices(Device& device, VkBuffer& buffer, VkDeviceMemory& deviceMemory, const std::vector<float>& vertices);
 
 uint32_t FindSutiableMemoryType(uint32_t typeFilter, VkPhysicalDeviceMemoryProperties* memProperties, VkMemoryPropertyFlags properties);
@@ -92,3 +94,5 @@ class BufferLayout
         uint32_t mStride = 0;
 };
 }
+
+#endif

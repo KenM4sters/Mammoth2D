@@ -1,7 +1,9 @@
-#pragma once
+#ifndef MAMMOTH_2D_UNIFORM_BUFFER_HPP
+#define MAMMOTH_2D_UNIFORM_BUFFER_HPP
+
 #include "Buffer.hpp"
 
-namespace Super 
+namespace mt 
 {
 class UniformBuffer : public Buffer 
 {
@@ -24,3 +26,5 @@ private:
     VkDescriptorImageInfo mImageInfo{};
 };
 }
+
+#endif

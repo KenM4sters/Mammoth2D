@@ -1,10 +1,9 @@
 #include "Sprite2DSystem.hpp"
 #include "Graphics/Pipelines/VertexInput.hpp"
-#include "Scene/Scene.hpp"
 #include "Graphics/Pipelines/Shader.hpp"
 #include "Logging.hpp"
 
-namespace Super 
+namespace mt 
 {
 Sprite2DSystem::Sprite2DSystem(Device& device, VkRenderPass renderPass, uint32_t width, uint32_t height)
     : RenderSystem(device, renderPass, width, height)
@@ -101,7 +100,7 @@ Sprite2DSystem::~Sprite2DSystem()
 
 }
 
-void Sprite2DSystem::Run(VkCommandBuffer commandBuffer, int frameIndex, std::vector<Entity>& entities) 
+void Sprite2DSystem::Run(VkCommandBuffer commandBuffer, int frameIndex) 
 {
     SimpleUniformBuffer data[3] = 
     {
@@ -110,53 +109,32 @@ void Sprite2DSystem::Run(VkCommandBuffer commandBuffer, int frameIndex, std::vec
         glm::vec3{1.0f, 0.0f, 0.0f}
     };
 
-    for(auto& ent : entities) 
-    {
-        // Pipeline.
-        //
-        const auto& pipeline = mPipelines->operator[]("playerPipeline");
-        pipeline->Bind(commandBuffer);
-
-        // Uniforms and Descriptor sets.
-        //
-        mDescriptorHandler->GetDescriptorSet().Bind(commandBuffer);
-        
-        // Vertex Buffers.
-        //
-        VkBuffer buffers[] = {mVertexBuffer->GetBuffer()};
-        VkDeviceSize offsets[] = {0};
-        vkCmdBindVertexBuffers(commandBuffer, 0, 1, buffers, offsets);
-
-        // Push constants.
-        //
-        UpdatePushConstants(ent);
-        vkCmdPushConstants(
-            commandBuffer, 
-            pipeline->GetPipelineLayout(), 
-            VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT, 
-            0, 
-            sizeof(TexturePushConstant), 
-            pipeline->GetShader()->GetPushConstant().GetData()
-        );
-
-        // Finally Draw.
-        //
-        vkCmdDraw(commandBuffer, 6, 1, 0, 0);
-    }
-}
-
-void Sprite2DSystem::UpdatePushConstants(Entity& ent) 
-{
+    // Pipeline.
+    //
     const auto& pipeline = mPipelines->operator[]("playerPipeline");
-    const auto& pushData = pipeline->GetShader()->GetPushConstant().GetData();
+    pipeline->Bind(commandBuffer);
 
-    glm::mat4 model{1.0f};
-    model = glm::translate(model, glm::vec3(ent.tx.position, 0.0f));
-    model = glm::scale(model, glm::vec3(ent.tx.scale, 1.0f));
+    // Uniforms and Descriptor sets.
+    //
+    mDescriptorHandler->GetDescriptorSet().Bind(commandBuffer);
+    
+    // Vertex Buffers.
+    //
+    VkBuffer buffers[] = {mVertexBuffer->GetBuffer()};
+    VkDeviceSize offsets[] = {0};
+    vkCmdBindVertexBuffers(commandBuffer, 0, 1, buffers, offsets);
 
-    pushData->modelMatrix = model;
-    pushData->projectionViewMatrix = Scene::GetCamera()->GetProjectionMatrix();
-    pushData->entId = ent.id;
+    vkCmdPushConstants(
+        commandBuffer, 
+        pipeline->GetPipelineLayout(), 
+        VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT, 
+        0, 
+        sizeof(TexturePushConstant), 
+        pipeline->GetShader()->GetPushConstant().GetData()
+    );
+
+    // Finally Draw.
+    //
+    vkCmdDraw(commandBuffer, 6, 1, 0, 0);
 }
-
 }

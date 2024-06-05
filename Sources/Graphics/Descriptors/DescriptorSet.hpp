@@ -1,9 +1,12 @@
-#pragma once
-#include <vector>
+#ifndef MAMMOTH_2D_DESCRIPTOR_SET_HPP
+#define MAMMOTH_2D_DESCRIPTOR_SET_HPP
+
 #include "Device.hpp"
 #include "Graphics/Pipelines/Pipeline.hpp"
 
-namespace Super 
+#include <vector>
+
+namespace mt 
 {
 class DescriptorSet 
 {
@@ -24,3 +27,5 @@ private:
     VkDescriptorSet mDescriptorSet = VK_NULL_HANDLE;
 };
 }
+
+#endif

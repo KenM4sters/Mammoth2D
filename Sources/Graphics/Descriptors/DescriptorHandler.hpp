@@ -1,8 +1,11 @@
-#pragma once
+#ifndef MAMMOTH_2D_DESCRIPTOR_HANDLER_HPP
+#define MAMMOTH_2D_DESCRIPTOR_HANDLER_HPP
+
 #include <vulkan/vulkan.hpp>
 #include "DescriptorSet.hpp"
 
-namespace Super 
+
+namespace mt 
 {
 class DescriptorHandler 
 {
@@ -16,3 +19,5 @@ private:
     DescriptorSet mDescriptorSet;
 };
 }
+
+#endif

@@ -1,7 +1,7 @@
 #include <stdexcept>
 #include "Window.hpp"
 
-namespace Super 
+namespace mt 
 {
 bool Window::mIsRunning = true;
 

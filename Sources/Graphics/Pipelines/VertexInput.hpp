@@ -3,8 +3,15 @@
 #include "Graphics/Buffers/BufferLayout.hpp"
 #include "Logging.hpp"
 
-namespace Super 
+namespace mt 
 {
+
+struct VertexBufferDesc 
+{
+    VkVertexInputBindingDescription bindingDesc;
+    std::vector<VkVertexInputAttributeDescription> attribsDesc;
+};
+
 class VertexInput 
 {
 public:

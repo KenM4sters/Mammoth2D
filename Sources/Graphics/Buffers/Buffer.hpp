@@ -1,8 +1,10 @@
-#pragma once
+#ifndef MAMMOTH_2D_BUFFER_HPP
+#define MAMMOTH_2D_BUFFER_HPP
+
 #include <vulkan/vulkan.hpp>
 #include "Device.hpp"
 
-namespace Super 
+namespace mt 
 {
 class Buffer 
 {
@@ -37,3 +39,5 @@ protected:
     VkDeviceSize mSize{0};
 };
 }
+
+#endif

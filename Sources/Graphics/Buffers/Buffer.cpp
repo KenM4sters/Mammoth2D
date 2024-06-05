@@ -1,6 +1,6 @@
 #include "Buffer.hpp"
 
-namespace Super 
+namespace mt 
 {
 Buffer::Buffer(Device& device, VkDeviceSize deviceSize, VkBufferUsageFlags usage, VkMemoryPropertyFlags properties, const void* data)
     : mDevice{device}, mSize{deviceSize}

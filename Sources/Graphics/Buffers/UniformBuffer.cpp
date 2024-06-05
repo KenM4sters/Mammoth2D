@@ -1,7 +1,7 @@
 #include "UniformBuffer.hpp"
 #include <cassert>
 
-namespace Super 
+namespace mt 
 {
 
 UniformBuffer::UniformBuffer(Device& device, VkDeviceSize size, uint32_t offset)

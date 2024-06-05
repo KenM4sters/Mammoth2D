@@ -2,7 +2,7 @@
 #include <vulkan/vulkan.hpp>
 #include "Device.hpp"
 
-namespace Super 
+namespace mt 
 {
 class Uniform 
 {

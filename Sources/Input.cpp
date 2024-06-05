@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Input.hpp"
 
-namespace Super 
+namespace mt 
 {
 
 static EventBus* sEventBus = nullptr;

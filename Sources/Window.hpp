@@ -1,12 +1,15 @@
-#pragma once
+#ifndef MAMMOTH_2D_WINDOW_HPP
+#define MAMMOTH_2D_WINDOW_HPP
 
 #define GLFW_INCLUDE_VULKAN
+
 #include <GLFW/glfw3.h>
 #include <vulkan/vulkan.hpp>
-#include <string>
 #include "Events/Bus.hpp"
 
-namespace Super
+#include <string>
+
+namespace mt
 {
 class Window 
 {
@@ -20,6 +23,8 @@ public:
     void Init();
 
     inline static bool& IsRunning() { return mIsRunning; }
+
+    void ListenToEvents() { glfwPollEvents(); }
 
     inline VkExtent2D GetExtent() const { return {mWidth, mHeight}; }
 
@@ -42,3 +47,5 @@ private:
 };
 
 }
+
+#endif

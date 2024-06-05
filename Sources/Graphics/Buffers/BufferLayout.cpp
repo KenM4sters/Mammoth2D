@@ -1,7 +1,7 @@
 #include <stdexcept>
 #include "BufferLayout.hpp"
 
-namespace Super 
+namespace mt 
 {
       
 std::vector<float> SQUARE_VERTICES = 

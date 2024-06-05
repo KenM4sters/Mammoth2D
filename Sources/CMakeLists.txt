@@ -7,30 +7,21 @@ project(
     LANGUAGES C CXX
 )
 
-add_library(
-    Vulkan2D 
-    Engine.cpp
-    Window.cpp
-    Device.cpp
-    Camera.cpp
-    Input.cpp
-    Logging.cpp
-    Graphics/Renderer/SwapChain.cpp
-    Graphics/Renderer/Renderer.cpp
-    Graphics/Renderer/Sprite2DSystem.cpp
-    Graphics/Pipelines/Pipeline.cpp
-    Graphics/Pipelines/Shader.cpp
-    Graphics/Descriptors/DescriptorSet.cpp
-    Graphics/Descriptors/DescriptorHandler.cpp
-    Graphics/Buffers/Buffer.cpp
-    Graphics/Buffers/UniformBuffer.cpp
-    Graphics/Buffers/BufferLayout.cpp
-    Graphics/Images/Image.cpp
-    Scene/Scene.cpp
-    Physics/Physics.cpp
-    Physics/Collision.cpp
-    Physics/SpatialGrid.cpp
-)
+set(SOURCE_DIR ${CMAKE_SOURCE_DIR}/Sources)
+
+file(GLOB_RECURSE SOURCES ${SOURCE_DIR}/*.cpp)
+
+add_library(Vulkan2D ${SOURCES})
+
+# Find the Delta library (Custom ECS static library)
+find_library(DeltaLib NAMES Delta PATHS ${CMAKE_SOURCE_DIR}/External/Delta/)
+# Check if the library was found
+if(DeltaLib)
+    message(STATUS "Found Delta library: ${DeltaLib}")
+else()
+    message(FATAL_ERROR "Delta library not found")
+endif()
+
 
 if (DEFINED VULKAN_SDK_PATH)
   set(Vulkan_INCLUDE_DIRS "${VULKAN_SDK_PATH}/include") # 1.1 Make sure this include path is correct.
@@ -49,7 +40,6 @@ endif()
 
 set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 17)
 
-
 message(STATUS "CREATING BUILD FOR UNIX")
 
 target_include_directories(
@@ -60,7 +50,8 @@ target_include_directories(
 )
 
 target_link_libraries(
-  ${PROJECT_NAME} 
+  ${PROJECT_NAME}
+  DeltaLib 
   glfw 
   glm 
   ${Vulkan_LIBRARIES}

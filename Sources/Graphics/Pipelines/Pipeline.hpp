@@ -6,9 +6,27 @@
 #include "Shader.hpp"
 #include "Graphics/Renderer/SwapChain.hpp"
 
-namespace Super 
+namespace mt 
 {
 
+struct PipelineDesc 
+{
+    // A static member funciton of Pipeline configures these to their default values.
+    VkViewport viewport;
+    VkRect2D scissor;
+    VkPipelineInputAssemblyStateCreateInfo inputAssemblyInfo;
+    VkPipelineRasterizationStateCreateInfo rasterizationInfo;
+    VkPipelineMultisampleStateCreateInfo multisampleInfo;
+    VkPipelineColorBlendAttachmentState colorBlendAttachment;
+    VkPipelineColorBlendStateCreateInfo colorBlendInfo;
+    VkPipelineDepthStencilStateCreateInfo depthStencilInfo;
+    // No default for these, since there's no such common configuration unlike the others.
+    VkPipelineLayout pipelineLayout = nullptr;
+    VkRenderPass renderPass = nullptr;
+    uint32_t subpass = 0;
+    // Vertices - not set by default.
+    VkPipelineVertexInputStateCreateInfo vertexInfo;
+};
 
 class Pipeline 
 {

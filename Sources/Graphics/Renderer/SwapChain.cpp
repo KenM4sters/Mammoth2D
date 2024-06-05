@@ -1,7 +1,7 @@
 #include "SwapChain.hpp"
 #include <iostream>
 
-namespace Super 
+namespace mt 
 {
 SwapChain::SwapChain(Device& device, VkExtent2D extent)
     : mDevice{device}, mWindowExtent{extent}

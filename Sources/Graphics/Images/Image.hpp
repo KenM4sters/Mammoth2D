@@ -1,12 +1,14 @@
-#pragma once
+#ifndef MAMMOTH_2D_IMAGE_HPP
+#define MAMMOTH_2D_IMAGE_HPP
+
 #include <vulkan/vulkan.hpp>
-#include <string>
 #include "Graphics/Buffers/UniformBuffer.hpp"
 #include "Device.hpp"
 
-namespace Super 
-{
+#include <string>
 
+namespace mt 
+{
 class Image 
 {
 public:
@@ -40,3 +42,5 @@ private:
     VkDeviceMemory mImageMemory = VK_NULL_HANDLE;
 };
 }
+
+#endif

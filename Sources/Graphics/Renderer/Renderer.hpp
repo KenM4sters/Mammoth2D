@@ -4,7 +4,7 @@
 #include "Device.hpp"
 #include "SwapChain.hpp"
 
-namespace Super 
+namespace mt 
 {
 class Renderer 
 {
@@ -18,7 +18,7 @@ public:
 
     VkCommandBuffer Begin();
     void BeginRenderPass(VkCommandBuffer commandBuffer);
-    void Render(VkCommandBuffer commandBuffer, std::vector<Entity>& entities);
+    void Render(VkCommandBuffer commandBuffer);
     void EndRenderPass(VkCommandBuffer commandBuffer);
     void End();
     void FreeCommandBuffers();

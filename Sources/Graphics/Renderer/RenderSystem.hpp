@@ -5,13 +5,23 @@
 #include "Graphics/Pipelines/Pipeline.hpp"
 #include "Graphics/Buffers/Buffer.hpp"
 #include "Graphics/Buffers/UniformBuffer.hpp"
-#include "Core.hpp"
 #include "SwapChain.hpp"
 #include "Graphics/Descriptors/DescriptorHandler.hpp"
 #include "Graphics/Descriptors/DescriptorWriter.hpp"
 
-namespace Super 
+namespace mt 
 {
+
+struct TexturePushConstant {
+    glm::mat4 modelMatrix{1.0f};
+    alignas(16) glm::mat4 projectionViewMatrix{1.0f};
+    alignas(4) int entId;
+} ;
+
+struct SimpleUniformBuffer 
+{
+    glm::vec3 color{1.0f, 0.5f, 0.1f};
+};
 
 class RenderSystem 
 {
@@ -29,7 +39,7 @@ public:
         }
     }
 
-    virtual void Run(VkCommandBuffer commandBuffer, int frameIndex, std::vector<Entity>& entities) = 0;
+    virtual void Run(VkCommandBuffer commandBuffer, int frameIndex) = 0;
 
 protected:
     Device& mDevice;

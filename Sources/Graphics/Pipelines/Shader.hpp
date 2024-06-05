@@ -5,7 +5,7 @@
 #include "Uniform.hpp"
 #include "Constant.hpp"
 
-namespace Super 
+namespace mt 
 {
 class Shader 
 {

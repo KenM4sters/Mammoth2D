@@ -3,7 +3,7 @@
 #include "Pipeline.hpp"
 #include "Graphics/Renderer/RenderSystem.hpp"
 
-namespace Super 
+namespace mt 
 {
 
 Pipeline::Pipeline(Device& device, VkRenderPass renderPass, uint32_t width, uint32_t height, std::unique_ptr<Shader> shader, VkPipelineBindPoint bindPoint)

@@ -1,10 +1,13 @@
-#pragma once
+#ifndef MAMMOTH_2D_CAMERA_HPP
+#define MAMMOTH_2D_CAMERA_HPP
+
 #define GLM_FORCE_DEPTH_ZERO_TO_ONE
+
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
 
-namespace Super 
+namespace mt 
 {
 class OrthographicCamera 
 {
@@ -29,3 +32,5 @@ private:
 
 };
 }
+
+#endif

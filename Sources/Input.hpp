@@ -1,9 +1,11 @@
-#pragma once
+#ifndef MAMMOTH_2D_INPUT_HPP
+#define MAMMOTH_2D_INPUT_HPP
+
 #include <GLFW/glfw3.h>
 #include "Events/Bus.hpp"
 #include "Window.hpp"
 
-namespace Super 
+namespace mt 
 {
 class Input 
 {
@@ -17,3 +19,5 @@ public:
 
 };
 }
+
+#endif

@@ -1,6 +1,6 @@
 #pragma once
 #include <vulkan/vulkan.hpp>
-namespace Super 
+namespace mt 
 {
 class Constant 
 {

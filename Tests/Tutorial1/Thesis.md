@@ -32,21 +32,9 @@ public:
         Vulkan2D.ResourceManager.LoadResource<Image>("enemy1Texture", "XXX.png");
         Vulkan2D.ResourceManager.LoadResource<Shader>("basicShader", "XXX.vert", "XXX.frag");
 
-        Vulkan2D::GameObject player{};
-        player.geometry = Vulkan2D::Geometry(Vulkan2D::GeometryTypes.Square);
-        player.geometry.position = {300, 300};
-        player.material = Vulkan2D::BasicMaterial(Vulkan2D::Colors.Red);
-        player.material.AddTexture(Vulkan2D.ResourceManager.GetImage("playerTexture));
-        Vulkan2D.Physics.AddCollisionBody(&player, Physics::CollisionShapes.AABB);
-        SubmitGameObject(player);
-        
-        Vulkan2D::GameObject enemy1{};
-        enemy1.geometry = Vulkan2D::Geometry(Vulkan2D::GeometryTypes.Square);
-        enemy1.geometry.position = {100, 100};
-        enemy1.material = Vulkan2D::BasicMaterial(Vulkan2D::Colors.Blue);
-        enemy1.material.AddTexture(Vulkan2D.ResourceManager.GetImage("enemy1Texture));
-        Vulkan2D.Physics.AddCollisionBody(&enemy1, Physics::CollisionShapes.AABB);
-        SubmitGameObject(enemy1);
+        std::unique_ptr<Entity>& player = Vulkan2D::CreateEntity();
+        player.AddComponent<Transform>({300, 300}, {1.0, 1.0});
+        player.AddComponent<RigidBody>();
     }
 
     void Run() override

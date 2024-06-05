@@ -1,9 +1,12 @@
-#pragma once
+#ifndef MAMMOTH_2D_DESCRIPTOR_WRITER_HPP
+#define MAMMOTH_2D_DESCRIPTOR_WRITER_HPP
+
 #include <vulkan/vulkan.hpp>
-#include <vector>
 #include "DescriptorHandler.hpp"
 
-namespace Super 
+#include <vector>
+
+namespace mt 
 {
 class DescriptorWriter 
 {
@@ -56,3 +59,5 @@ private:
     std::vector<VkWriteDescriptorSet> mWriteDescriptor{6};
 };
 }
+
+#endif

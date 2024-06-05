@@ -2,7 +2,7 @@
 #include "Logging.hpp"
 #include <stdexcept>
 
-namespace Super 
+namespace mt 
 {
 
 DescriptorSet::DescriptorSet(Device& device, Pipeline* pipeline)

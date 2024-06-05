@@ -2,7 +2,7 @@
 #include <fstream>
 #include <cassert>
 
-namespace Super 
+namespace mt 
 {
 Shader::Shader(Device& device, const char* vertSrc, const char* fragSrc, VertexInput vertexInput, Constant pushConstant, std::vector<Uniform> uniform)
     : mDevice{device}, mVertexInput{vertexInput}, mPushConstant{pushConstant}, mUniform{uniform}

@@ -1,6 +1,6 @@
 #include "Logging.hpp"
 
-namespace Super 
+namespace mt 
 {
     
 void LOG_INT(int i, std::string name) 

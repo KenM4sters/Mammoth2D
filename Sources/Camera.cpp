@@ -1,7 +1,7 @@
 #include "Camera.hpp"
 
 
-namespace Super 
+namespace mt 
 {
 OrthographicCamera::OrthographicCamera(uint32_t width, uint32_t height, glm::vec3 position)
     : mPosition{position}

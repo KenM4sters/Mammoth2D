@@ -1,6 +1,6 @@
 #include "DescriptorHandler.hpp"
 
-namespace Super 
+namespace mt 
 {
 DescriptorHandler::DescriptorHandler(DescriptorSet set)
     : mDescriptorSet(set)

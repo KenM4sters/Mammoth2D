@@ -1,13 +1,13 @@
-#pragma once
+#ifndef MAMMOTH_2D_DEVICE_HPP
+#define MAMMOTH_2D_DEVICE_HPP
+
 #include <GLFW/glfw3.h>
 #include <vulkan/vulkan.hpp>
 #include <vulkan/vulkan_beta.h>
-#include "Core.hpp"
 #include "Window.hpp"
 
-namespace Super 
+namespace mt 
 {
-
 class Device 
 {
 public:
@@ -119,3 +119,5 @@ private:
 
 };
 }
+
+#endif

@@ -4,7 +4,7 @@
 #define STB_IMAGE_IMPLEMENTATION
 #include <StbiImage/stb_image.h>
 
-namespace Super 
+namespace mt 
 {
 Image::Image(Device& device, std::string imagePath) 
     : mDevice{device}

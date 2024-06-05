@@ -2,7 +2,7 @@
 #include "./Event.hpp"
 
 
-namespace Super
+namespace mt
 {   
 // Base class.
 //
