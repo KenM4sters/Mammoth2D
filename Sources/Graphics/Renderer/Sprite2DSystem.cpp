@@ -9,12 +9,12 @@ Sprite2DSystem::Sprite2DSystem(Device& device, VkRenderPass renderPass, uint32_t
     : RenderSystem(device, renderPass, width, height)
 {
 
-    mImages.push_back(std::make_unique<Image>(mDevice, "Resources/Textures/Player.png"));
-    mImages.push_back(std::make_unique<Image>(mDevice, "Resources/Textures/Box.png"));
-    mImages.push_back(std::make_unique<Image>(mDevice, "Resources/Textures/Platform.png"));
-    mImages.push_back(std::make_unique<Image>(mDevice, "Resources/Textures/Platform.png"));
-    mImages.push_back(std::make_unique<Image>(mDevice, "Resources/Textures/Platform.png"));
-    mImages.push_back(std::make_unique<Image>(mDevice, "Resources/Textures/Background.png"));
+    // mImages.push_back(std::make_unique<Image>(mDevice, "Resources/Textures/Player.png"));
+    // mImages.push_back(std::make_unique<Image>(mDevice, "Resources/Textures/Box.png"));
+    // mImages.push_back(std::make_unique<Image>(mDevice, "Resources/Textures/Platform.png"));
+    // mImages.push_back(std::make_unique<Image>(mDevice, "Resources/Textures/Platform.png"));
+    // mImages.push_back(std::make_unique<Image>(mDevice, "Resources/Textures/Platform.png"));
+    // mImages.push_back(std::make_unique<Image>(mDevice, "Resources/Textures/Background.png"));
 
     mPipelines = std::make_unique<std::unordered_map<std::string, Pipeline*>>();
 

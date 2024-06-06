@@ -1,7 +1,7 @@
 #ifndef ECS_COMPONENT_HPP
 #define ECS_COMPONENT_HPP
 #include <iostream>
-#include <TypeId.hpp>
+#include "TypeId.hpp"
 
 namespace dt 
 {

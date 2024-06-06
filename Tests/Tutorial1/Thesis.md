@@ -35,6 +35,12 @@ public:
         std::unique_ptr<Entity>& player = Vulkan2D::CreateEntity();
         player.AddComponent<Transform>({300, 300}, {1.0, 1.0});
         player.AddComponent<RigidBody>();
+        player.AddComponent<Sprite>("playerTexture", Engine::Shapes::Quad);
+
+        
+        
+
+
     }
 
     void Run() override

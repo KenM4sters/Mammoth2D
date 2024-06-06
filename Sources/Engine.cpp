@@ -10,7 +10,7 @@ namespace mt
 Engine::Engine(EngineDesc* config)
     : mWindow{config->windowName, config->windowWidth, config->windowHeight}
 {
-    mRenderer = std::make_unique<Renderer>(mDevice, mWindow);
+    mGraphics = std::make_unique<Graphics>(mWindow);
 }
 
 Engine::~Engine()
@@ -18,32 +18,16 @@ Engine::~Engine()
     
 }
 
-void Engine::SetGame(std::unique_ptr<IGame>& game) 
+void Engine::SetGame(std::unique_ptr<IGame> game) 
 {
     mGame = std::move(game);
-}
-
-
-void Engine::BeginDrawing()
-{
-    if(auto commandBuffer = mRenderer->Begin()) 
-    {
-        mRenderer->BeginRenderPass(commandBuffer);
-    }
-}
-
-void Engine::EndDrawing() 
-{
-    if(auto commandBuffer = mRenderer->GetCurrentCommandBuffer()) 
-    {
-        mRenderer->EndRenderPass(commandBuffer);
-        mRenderer->End();
-    }
+    mGraphics->PrepareGraphics(game);
 }
 
 void Engine::Update() 
 {
     mWindow.ListenToEvents();
+
     mInput.ListenToKeyboard(mWindow.GetNativeWindow());
 
     auto previousFrame = std::chrono::high_resolution_clock::now();
@@ -54,17 +38,28 @@ void Engine::Update()
 
         std::chrono::duration<double> ts = currentFrame - previousFrame;
 
-        BeginDrawing();
-
+        // Purely game logic being updated here - no rendering of sorts.
         mGame->Run(ts);
 
-        EndDrawing();
+        // Renders all Entities. 
+        mGraphics->Update();
     }
+
     WaitDevice();
 }
 
 void Engine::WaitDevice() 
 {
-    vkDeviceWaitIdle(mDevice.GetDevice());
-} 
+    vkDeviceWaitIdle(mGraphics->GetDevice()->GetDevice());
+}
+
+void Engine::DrawQuad(glm::vec2 size, glm::vec2 position, glm::vec3 color) 
+{
+    
+}
+
+void Engine::DrawTempObj(TempRenderObj& obj) 
+{
+    mGraphics->GetRenderer()->DrawTempObj(obj);
+}
 }

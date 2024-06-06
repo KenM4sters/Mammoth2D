@@ -1,8 +1,12 @@
-#pragma once
-#include <iostream>
-#include "RenderSystem.hpp"
+#ifndef MAMMOTH_2D_RENDERER_HPP
+#define MAMMOTH_2D_RENDERER_HPP
+
 #include "Device.hpp"
 #include "SwapChain.hpp"
+#include "Game.hpp"
+#include <glm/glm.hpp>
+
+#include <iostream>
 
 namespace mt 
 {
@@ -12,40 +16,26 @@ public:
     Renderer(Device& device, Window& window);
     ~Renderer();
 
-    VkCommandBuffer GetCurrentCommandBuffer() const;
-    void RecreateSwapChain();
-    void CreateCommandBufffers();
-
-    VkCommandBuffer Begin();
-    void BeginRenderPass(VkCommandBuffer commandBuffer);
+    void BeginRenderPass(VkCommandBuffer commandBuffer, std::unique_ptr<SwapChain>& swapChain, bool started, uint32_t currentImageIndex);
     void Render(VkCommandBuffer commandBuffer);
     void EndRenderPass(VkCommandBuffer commandBuffer);
-    void End();
-    void FreeCommandBuffers();
 
-    // Getters
-    //
-    inline const int& GetFrameIndex() const 
-    {
-        assert(mIsFrameStarted && "Cannot request frame index from renderer when the frame hasn't started!");
-        return mCurrentFrameIndex;
-    }
+    void DrawTempObj(TempRenderObj& obj);
+
+    /**
+     * @brief function to tell the renderer to draw a simple quadrilateral.
+     * @param size a 2d vector containing the width and height values of the desired quad.
+     * @param position a 2d vector containing the x and y coordinates of the top-left corner of the desired quad.
+     * @param color a 3d vector containing the RGB color values of the desired quad.
+    */
+    void DrawQuad(glm::vec2 size, glm::vec2 position, glm::vec3 color);
 
 
 private:
     Device& mDevice;
-
     Window& mWindow;
-
-    std::unique_ptr<SwapChain> mSwapChain = nullptr;
-    
-    std::vector<VkCommandBuffer> mCommandBuffers{};
-
-    std::vector<RenderSystem*> mRenderSystems{};
-
-    uint32_t mCurrentImageIndex = 0;
-    int mCurrentFrameIndex = 0;
-    bool mIsFrameStarted = false;
-
 };
 }
+
+
+#endif
