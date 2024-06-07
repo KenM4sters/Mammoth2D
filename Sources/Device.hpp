@@ -5,6 +5,7 @@
 #include <vulkan/vulkan.hpp>
 #include <vulkan/vulkan_beta.h>
 #include "Window.hpp"
+#include "Graphics/Renderer/SwapChain.hpp"
 
 namespace mt 
 {

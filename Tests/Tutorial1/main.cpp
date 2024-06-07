@@ -35,12 +35,19 @@ public:
 
         mCamera = std::make_unique<mt::OrthographicCamera>(width, height, glm::vec3(0.0f, 0.0f, 5.0f));
 
-        mObj.color = glm::vec3(1.0f, 0.0f, 0.0f);
-        mObj.posiiton = glm::vec2(200, 200);
-        mObj.size = glm::vec2(50, 50);
-        mObj.projection = mCamera->GetProjectionMatrix();
-        mObj.view = mCamera->GetViewMatrix();
-        mObj.textureName = "PlayerImage";
+        mt::TempRenderObj player{};
+        player.color = glm::vec3(1.0f, 0.0f, 0.0f);
+        player.posiiton = glm::vec2(200, 200);
+        player.size = glm::vec2(50, 50);
+        player.camera.projection = mCamera->GetProjectionMatrix();
+        player.camera.view = mCamera->GetViewMatrix();
+        player.textureName = "PlayerImage";
+
+        glm::mat4 model{1.0f};
+        model = glm::scale(model, glm::vec3(player.size, 1.0));
+        model = glm::translate(model, glm::vec3(player.posiiton, 1.0));
+        player.transform.transformMatrix = model;
+
 
     }
 

@@ -1,7 +1,6 @@
 #ifndef MAMMOTH_2D_BUFFER_LAYOUT_HPP
 #define MAMMOTH_2D_BUFFER_LAYOUT_HPP
 
-#include <vulkan/vulkan.hpp>
 #include "Device.hpp"
 
 #include <vector>

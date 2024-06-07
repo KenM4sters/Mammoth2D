@@ -30,7 +30,7 @@ void Window::Init()
 }
 
 
-void Window::CreateWindowSurface(VkInstance instance, VkSurfaceKHR* surface) const 
+void Window::CreateWindowSurface(const VkInstance instance, VkSurfaceKHR* surface) const 
 {
     if(glfwCreateWindowSurface(instance, mWindow, nullptr, surface) != VK_SUCCESS) 
     {

@@ -30,7 +30,7 @@ public:
 
     inline GLFWwindow* GetNativeWindow() const { return mWindow; } 
 
-    void CreateWindowSurface(VkInstance instance, VkSurfaceKHR* surface) const;
+    void CreateWindowSurface(const VkInstance instance, VkSurfaceKHR* surface) const;
 
     static void OnWindowCloseCallback(GLFWwindow* window);
     

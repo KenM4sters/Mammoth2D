@@ -5,35 +5,33 @@
 #include "Uniform.hpp"
 #include "Constant.hpp"
 
+#include <Cross/spirv_glsl.hpp>
+
 namespace mt 
 {
 class Shader 
 {
 public:
-    Shader(Device& device, const char* vertSrc, const char* fragSrc, VertexInput vertexInput, Constant pushConstant, std::vector<Uniform> uniform);
+    Shader(Device& device, const char* vertSrc, const char* fragSrc);
+
     ~Shader();
 
-
-    const std::vector<char> ReadFromFile(const char* filePath) const;
-
-    // Getters
     inline const std::vector<VkPipelineShaderStageCreateInfo>& GetShaderStages() const {return mStages; } 
-    inline const VertexInput& GetVertexInput() const {return mVertexInput; } 
-    inline Constant& GetPushConstant() {return mPushConstant; } 
-    inline const std::vector<Uniform>& GetUniform() const {return mUniform; } 
+
+    static void ParseGLSL(const char* filePath);
 
 private:
+    const std::vector<char> ReadFromFile(const char* filePath) const;
+
     void CreateShaderModule(const std::vector<char> code, VkShaderModule* module);
+
     void CreateShaderStages(const char* vertSrc, const char* fragSrc);
 
+private:
     Device& mDevice;
 
     VkShaderModule mVertexModule = VK_NULL_HANDLE;
     VkShaderModule mFragmentModule = VK_NULL_HANDLE;
     std::vector<VkPipelineShaderStageCreateInfo> mStages{};
-
-    VertexInput mVertexInput;
-    Constant mPushConstant;
-    std::vector<Uniform> mUniform{};
 };
 }

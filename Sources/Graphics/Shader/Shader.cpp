@@ -4,8 +4,8 @@
 
 namespace mt 
 {
-Shader::Shader(Device& device, const char* vertSrc, const char* fragSrc, VertexInput vertexInput, Constant pushConstant, std::vector<Uniform> uniform)
-    : mDevice{device}, mVertexInput{vertexInput}, mPushConstant{pushConstant}, mUniform{uniform}
+Shader::Shader(Device& device, const char* vertSrc, const char* fragSrc)
+    : mDevice{device}
 {
     CreateShaderStages(vertSrc, fragSrc);
 }
@@ -14,6 +14,11 @@ Shader::~Shader()
 {
     vkDestroyShaderModule(mDevice.GetDevice(), mVertexModule, nullptr);
     vkDestroyShaderModule(mDevice.GetDevice(), mFragmentModule, nullptr);
+}
+
+void Shader::ParseGLSL(const char* filePath) 
+{
+
 }
 
 const std::vector<char> Shader::ReadFromFile(const char* filePath) const 

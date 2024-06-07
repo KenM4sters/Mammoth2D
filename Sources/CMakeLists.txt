@@ -53,7 +53,8 @@ target_link_libraries(
   ${PROJECT_NAME}
   DeltaLib 
   glfw 
-  glm 
+  glm
+  spirv-cross-c-shared 
   ${Vulkan_LIBRARIES}
 )
 

@@ -1,7 +1,9 @@
-#pragma once 
-#include <vulkan/vulkan.hpp>
+#ifndef MAMMOTH_2D_VERTEX_INPUT_HPP
+#define MAMMOTH_2D_VERTEX_INPUT_HPP
+
 #include "Graphics/Buffers/BufferLayout.hpp"
 #include "Logging.hpp"
+#include <vulkan/vulkan.hpp>
 
 namespace mt 
 {
@@ -47,3 +49,5 @@ private:
     std::vector<VkVertexInputAttributeDescription> mAttribDescriptions{};
 };
 }
+
+#endif

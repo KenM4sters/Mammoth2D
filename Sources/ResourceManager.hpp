@@ -1,9 +1,6 @@
 #ifndef MAMMOTH_2D_RESOURCE_MANAGER_HPP
 #define MAMMOTH_2D_RESOURCE_MANAGER_HPP
 
-#include "Graphics/Pipelines/Shader.hpp"
-#include "Graphics/Images/Image.hpp"
-
 #include <unordered_map>
 
 namespace mt 
@@ -44,8 +41,8 @@ public:
     void UnloadImage(std::string key);
 
 private:
-    std::unordered_map<std::string, std::unique_ptr<Shader>> mShaders{};
-    std::unordered_map<std::string, std::unique_ptr<Image>> mShaders{};
+    std::unordered_map<std::string, std::unique_ptr<std::string>> mShaders{};
+    std::unordered_map<std::string, std::unique_ptr<std::string>> mShaders{};
 };
 }
 

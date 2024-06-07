@@ -2,11 +2,10 @@
 #define MAMMOTH_2D_GAME_HPP
 
 #include "Camera.hpp"
+#include "Engine.hpp"
 
 namespace mt 
 {
-
-class Engine;
 
 enum Shapes 
 {
@@ -15,13 +14,24 @@ enum Shapes
     Circle = 2
 };
 
+struct TransformComp 
+{
+    glm::mat4 transformMatrix;
+};
+
+struct CameraComp 
+{
+    glm::mat4 view{1.0f};
+    glm::mat4 projection{1.0f};
+};
+
 struct TempRenderObj 
 {
+    CameraComp camera;
+    TransformComp transform;
     glm::vec2 posiiton{200, 200};
     glm::vec2 size{200, 200};
     glm::vec3 color{1.0, 0.5, 0.0};
-    glm::mat4 projection{1.0f};
-    glm::mat4 view{1.0f};
     std::string textureName = "";
 };
 
@@ -43,12 +53,12 @@ public:
     virtual void PostRender() {};
 
     inline const std::unique_ptr<mt::OrthographicCamera>& GetCamera() const { return mCamera; }
-    inline const mt::TempRenderObj& GetObj() const { return mObj; }
+    inline const std::vector<mt::TempRenderObj>& GetObj() const { return mObj; }
 
 protected:
     Engine& m2d;
     ResourceManager& mRes;
-    mt::TempRenderObj mObj;
+    std::vector<mt::TempRenderObj> mObj{};
     std::unique_ptr<mt::OrthographicCamera> mCamera = nullptr;
 };
 }

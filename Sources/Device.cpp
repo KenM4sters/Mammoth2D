@@ -537,7 +537,7 @@ void Device::CopyBufferToImage(VkBuffer buffer, VkImage image, uint32_t width,
     EndSingleTimeCommands(commandBuffer);
 }
 
-void Device::CreateImageFromInfo(const VkImageCreateInfo &imageInfo,VkMemoryPropertyFlags properties,
+void Device::CreateImageFromInfo(const VkImageCreateInfo &imageInfo, VkMemoryPropertyFlags properties,
     VkImage &image, VkDeviceMemory &imageMemory) 
 {
   if (vkCreateImage(mDevice, &imageInfo, nullptr, &image) != VK_SUCCESS) 

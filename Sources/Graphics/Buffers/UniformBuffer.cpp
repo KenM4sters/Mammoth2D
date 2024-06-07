@@ -4,7 +4,7 @@
 namespace mt 
 {
 
-UniformBuffer::UniformBuffer(Device& device, VkDeviceSize size, uint32_t offset)
+UniformBuffer::UniformBuffer(Device& device, VkDeviceSize size)
     : Buffer(device, size, VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT, VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT, nullptr)
 {
 }
@@ -17,20 +17,6 @@ UniformBuffer::UniformBuffer(Device& device, VkDeviceSize size, VkBufferUsageFla
 UniformBuffer::~UniformBuffer() 
 {
     
-}
-
-void UniformBuffer::SetDescriptorBufferInfo(uint32_t offset, uint32_t size) 
-{
-    mBufferInfo.buffer = mBuffer;
-    mBufferInfo.offset = offset;
-    mBufferInfo.range = size;
-}
-
-void UniformBuffer::SetDescriptorImageInfo(VkSampler sampler, VkImageView imageView) 
-{
-    mImageInfo.imageLayout = VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL;
-    mImageInfo.sampler = sampler;
-    mImageInfo.imageView = imageView;
 }
 
 

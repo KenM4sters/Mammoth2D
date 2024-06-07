@@ -1,6 +1,4 @@
-#include "Sprite2DSystem.hpp"
 #include "Graphics/Pipelines/VertexInput.hpp"
-#include "Graphics/Pipelines/Shader.hpp"
 #include "Logging.hpp"
 
 namespace mt 
@@ -102,12 +100,6 @@ Sprite2DSystem::~Sprite2DSystem()
 
 void Sprite2DSystem::Run(VkCommandBuffer commandBuffer, int frameIndex) 
 {
-    SimpleUniformBuffer data[3] = 
-    {
-        glm::vec3{1.0f, 0.0f, 1.0f},
-        glm::vec3{0.0f, 0.0f, 1.0f},
-        glm::vec3{1.0f, 0.0f, 0.0f}
-    };
 
     // Pipeline.
     //

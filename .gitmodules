@@ -7,3 +7,6 @@
 [submodule "External/GoogleTest"]
 	path = External/GoogleTest
 	url = https://github.com/google/googletest.git
+[submodule "External/Cross"]
+	path = External/Cross
+	url = https://github.com/KhronosGroup/SPIRV-Cross.git

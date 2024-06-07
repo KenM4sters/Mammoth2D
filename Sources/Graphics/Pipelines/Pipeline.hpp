@@ -1,10 +1,13 @@
-#pragma once
-#include <fstream>
-#include <vector>
+#ifndef MAMMOTH_2D_PIPELINE_HPP
+#define MAMMOTH_2D_PIPELINE_HPP
+
 #include "Device.hpp"
 #include "VertexInput.hpp"
 #include "Shader.hpp"
 #include "Graphics/Renderer/SwapChain.hpp"
+
+#include <fstream>
+#include <vector>
 
 namespace mt 
 {
@@ -70,3 +73,5 @@ private:
     VkDescriptorSetLayout mDescriptorSetLayout = VK_NULL_HANDLE;
 };
 }
+
+#endif
