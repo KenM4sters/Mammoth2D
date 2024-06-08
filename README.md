@@ -30,8 +30,13 @@ Clone and build with CMake.
 ```bash
 git clone [link-to-repo]
 
-./Unixbuild.sh
+mkdir -p build
+cd build
+cmake -S ../ -B .
+make
+cd ..
 
-./RunTutorials.sh
+// To run the test tutorials...
+build/Tests/Tutorial1/Tutorial1
 ```
     

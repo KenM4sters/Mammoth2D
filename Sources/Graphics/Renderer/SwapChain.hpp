@@ -33,23 +33,6 @@ public:
 
     static constexpr int FRAMES_IN_FLIGHT = 2;
 
-
-    // Getters
-    //
-    inline VkFramebuffer GetFrameBuffer(int index) const { return mSwapChainFramebuffers[index]; }
-    inline VkRenderPass GetRenderPass() const { return mRenderPass; }
-    inline VkImageView GetImageView(int index) const { return mSwapChainImageViews[index]; }
-    inline size_t GetImageCount() const { return mSwapChainImages.size(); }
-    inline VkFormat GetSwapChainImageFormat() const { return mSwapChainImageFormat; }
-    inline VkExtent2D GetSwapChainExtent() const { return mSwapChainExtent; }
-    inline uint32_t GetWidth() const { return mSwapChainExtent.width; }
-    inline uint32_t GetHeight() const { return mSwapChainExtent.height; }
-
-    float GetExtentAspectRatio() 
-    {
-        return static_cast<float>(mSwapChainExtent.width) / (mSwapChainExtent.height);
-    }
-
     VkFormat FindDepthFormat();
     VkResult AcquireNextImage(uint32_t *imageIndex);
     VkResult SubmitCommandBuffers(const VkCommandBuffer *buffers, uint32_t *imageIndex);
@@ -60,6 +43,20 @@ public:
             swapChain.mSwapChainImageFormat == mSwapChainImageFormat;
     }
 
+    float GetExtentAspectRatio() 
+    {
+        return static_cast<float>(mSwapChainExtent.width) / (mSwapChainExtent.height);
+    }
+
+    inline VkFramebuffer GetFrameBuffer(int index) const { return mSwapChainFramebuffers[index]; }
+    inline VkRenderPass GetRenderPass() const { return mRenderPass; }
+    inline VkImageView GetImageView(int index) const { return mSwapChainImageViews[index]; }
+    inline size_t GetImageCount() const { return mSwapChainImages.size(); }
+    inline VkFormat GetSwapChainImageFormat() const { return mSwapChainImageFormat; }
+    inline VkExtent2D GetSwapChainExtent() const { return mSwapChainExtent; }
+    inline uint32_t GetWidth() const { return mSwapChainExtent.width; }
+    inline uint32_t GetHeight() const { return mSwapChainExtent.height; }
+
 private:
     void Init();
     void CreateSwapChain();
@@ -69,11 +66,11 @@ private:
     void CreateFramebuffers();
     void CreateSyncObjects();
 
-    // Helper functions
     VkSurfaceFormatKHR ChooseSwapSurfaceFormat(const std::vector<VkSurfaceFormatKHR> &availableFormats);
     VkPresentModeKHR ChooseSwapPresentMode(const std::vector<VkPresentModeKHR> &availablePresentModes);
     VkExtent2D ChooseSwapExtent(const VkSurfaceCapabilitiesKHR &capabilities);
 
+private:
     const PhysicalDevice& mPhysicalDevice;
     const LogicalDevice& mLogicalDevice;
 

@@ -101,11 +101,13 @@ void Graphics::PrepareGraphics(IGame& game)
             mRenderer->CreateDescriptorSet(&renderable.camera->descriptorSet, 
                 VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VK_SHADER_STAGE_VERTEX_BIT);
         }
+        
         if(renderable.transform) 
         {
             mRenderer->CreateDescriptorSet(&renderable.transform->descriptorSet, 
                 VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VK_SHADER_STAGE_VERTEX_BIT);
         }
+
         if(renderable.material) 
         {
             mRenderer->CreateDescriptorSet(&renderable.material->descriptorSet, 
