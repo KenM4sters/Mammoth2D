@@ -4,34 +4,20 @@ namespace mt
 {
 
 Graphics::Graphics(Window& window)
-    : mWindow{window}
+    : mWindow{window},
+    mInstance{std::make_unique<Instance>(mWindow)},
+    mPhysicalDevice{std::make_unique<PhysicalDevice>(*mInstance)},
+    mLogicalDevice{std::make_unique<LogicalDevice>(*mPhysicalDevice)},
+    mSwapChain{std::make_unique<SwapChain>(*mPhysicalDevice, *mLogicalDevice, mWindow.GetExtent())},
+    mCommandPool{std::make_unique<CommandPool>(*mPhysicalDevice, *mLogicalDevice)},
+    mCommandBuffers{{std::make_unique<CommandBuffer>(*mLogicalDevice, *mCommandPool)}}
 {
-    mSwapChain = std::make_unique<SwapChain>(mDevice, mWindow.GetExtent());
- 
     RecreateSwapChain();
-    CreateCommandBufffers();
-}
-
-Graphics::~Graphics() 
-{
-    FreeCommandBuffers();
-}
-
-VkCommandBuffer Graphics::GetCurrentCommandBuffer() const 
-{
-    assert(mIsFrameStarted && "Cannot get command buffer when frame is not in progress!");
-    return mCommandBuffers[mCurrentFrameIndex];
-}
-
-inline const int& Graphics::GetFrameIndex() const 
-{
-    assert(mIsFrameStarted && "Cannot request frame index from renderer when the frame hasn't started!");
-    return mCurrentFrameIndex;
 }
 
 VkCommandBuffer Graphics::Begin() 
 {
-    assert(!mIsFrameStarted && "Can't call begin frame while already in progress");
+    assert(!mHasFrameStarted && "Can't call begin frame while already in progress");
 
     auto result = mSwapChain->AcquireNextImage(&mCurrentImageIndex);
 
@@ -46,35 +32,21 @@ VkCommandBuffer Graphics::Begin()
         throw std::runtime_error("Fail to acquire next swapchain image");
     }
 
-    mIsFrameStarted = true;
-    auto commandBuffer = GetCurrentCommandBuffer();
+    mHasFrameStarted = true;
 
-    VkCommandBufferBeginInfo beginInfo{};
-    beginInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;
-
-    if(vkBeginCommandBuffer(commandBuffer, &beginInfo) != VK_SUCCESS) 
-    {
-        throw std::runtime_error("Failed to begin recording command buffer!");
-    }
-
-    return commandBuffer;
+    mCommandBuffers[mCurrentFrameIndex]->Begin();
 }
 
 
 void Graphics::End() 
 {
-    assert(mIsFrameStarted && "Can't call end frame while frame is not in progress!");
-    auto commandBuffer = GetCurrentCommandBuffer();
-    if(vkEndCommandBuffer(commandBuffer) != VK_SUCCESS) {
-        throw std::runtime_error("Failed to record command buffers!");
-    }
+    auto commandBuffer = mCommandBuffers[mCurrentFrameIndex]->End();
 
     auto result = mSwapChain->SubmitCommandBuffers(&commandBuffer, &mCurrentImageIndex);
 
     // Window Resize handling - TODO
     //
-
-    mIsFrameStarted = false;
+    mHasFrameStarted = false;
     mCurrentFrameIndex = (mCurrentFrameIndex + 1) % SwapChain::FRAMES_IN_FLIGHT;
 }
 
@@ -88,15 +60,15 @@ void Graphics::RecreateSwapChain()
         glfwWaitEvents();
     }
 
-    vkDeviceWaitIdle(mDevice->GetDevice());
+    vkDeviceWaitIdle(mLogicalDevice->GetDevice());
 
     if(mSwapChain == nullptr) 
     {
-        mSwapChain = std::make_unique<SwapChain>(mDevice, extent);   
+        mSwapChain = std::make_unique<SwapChain>(mPhysicalDevice, mLogicalDevice, extent);   
     } 
     else {
         std::shared_ptr<SwapChain> oldSwapChain = std::move(mSwapChain);
-        mSwapChain = std::make_unique<SwapChain>(mDevice, extent, oldSwapChain);
+        mSwapChain = std::make_unique<SwapChain>(mPhysicalDevice, mLogicalDevice, extent, oldSwapChain);
 
         if(!oldSwapChain->compareSwapFormats(*mSwapChain.get())) 
         {
@@ -105,45 +77,60 @@ void Graphics::RecreateSwapChain()
     }
 }
 
-void Graphics::CreateCommandBufffers() 
+void Graphics::PrepareGraphics(IGame& game) 
 {
-    mCommandBuffers.resize(SwapChain::FRAMES_IN_FLIGHT);
 
-    VkCommandBufferAllocateInfo allocInfo{};
-    allocInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO;
-    allocInfo.level = VK_COMMAND_BUFFER_LEVEL_PRIMARY;
-    allocInfo.commandPool = mDevice->GetCommandPool();
-    allocInfo.commandBufferCount = static_cast<uint32_t>(mCommandBuffers.size());
+    uint32_t nCameraComps;
+    uint32_t nTextureComps;
+    uint32_t nTransformComps;
 
-    if(vkAllocateCommandBuffers(mDevice->GetDevice(), &allocInfo, mCommandBuffers.data()) != VK_SUCCESS) 
+    for(const auto& renderable : game.GetObj()) 
     {
-        throw std::runtime_error("Failed to create command buffers!");
+        // Create a shader Prefab here.
+        if(renderable.camera) nCameraComps += 1;
+        if(renderable.transform) nTransformComps += 1;
+        if(renderable.material) nTextureComps += 1;
     }
-}
 
-void Graphics::PrepareGraphics(std::unique_ptr<IGame>& game) 
-{
+    mRenderer->CreateDescriptorPool(nCameraComps + nTransformComps, nTextureComps);
     
+    for(const auto& renderable : game.GetObj()) 
+    {
+        if(renderable.camera) 
+        {
+            mRenderer->CreateDescriptorSet(&renderable.camera->descriptorSet, 
+                VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VK_SHADER_STAGE_VERTEX_BIT);
+        }
+        if(renderable.transform) 
+        {
+            mRenderer->CreateDescriptorSet(&renderable.transform->descriptorSet, 
+                VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VK_SHADER_STAGE_VERTEX_BIT);
+        }
+        if(renderable.material) 
+        {
+            mRenderer->CreateDescriptorSet(&renderable.material->descriptorSet, 
+                VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VK_SHADER_STAGE_FRAGMENT_BIT);
+        }
+    } 
+
+
+    // 1 descriptor set for camera
+    // numOfTextures descripor sets for each texture
+    // numOfRenderables descriptor sets for each renderable.
+    // 1 pipeline layout per shader file.
+
 }
 
 void Graphics::Update() 
 {
     if(auto commandBuffer = Begin()) 
     {
-        mRenderer->BeginRenderPass(commandBuffer, mSwapChain, mIsFrameStarted, mCurrentImageIndex);
+        mRenderer->BeginRenderPass(commandBuffer, mSwapChain, mHasFrameStarted, mCurrentImageIndex);
 
         
 
         mRenderer->EndRenderPass(commandBuffer);
         End();
     }
-}
-
-void Graphics::FreeCommandBuffers() 
-{
-    vkFreeCommandBuffers(mDevice->GetDevice(), mDevice->GetCommandPool(), 
-        static_cast<uint32_t>(mCommandBuffers.size()), mCommandBuffers.data());
-
-    mCommandBuffers.clear();
 }
 }

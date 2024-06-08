@@ -37,12 +37,12 @@ VkResult CreateDebugUtilsMessengerEXT(
 
 Instance::Instance() 
 {
-
+    CreateInstance();
 }
 
 Instance::~Instance() 
 {
-
+    vkDestroyInstance(mInstance, nullptr);
 }
 
 void Instance::CreateInstance() 

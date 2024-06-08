@@ -26,6 +26,8 @@ void Window::Init()
 
     mWindow = glfwCreateWindow(mWidth, mHeight, mName, nullptr, nullptr);
 
+    glfwMakeContextCurrent(mWindow);
+
     glfwSetWindowCloseCallback(mWindow, Window::OnWindowCloseCallback);
 }
 

@@ -1,8 +1,12 @@
 #ifndef MAMMOTH_2D_GRAPHICS_HPP
 #define MAMMOTH_2D_GRAPHICS_HPP
 
-#include "Renderer/Renderer.hpp"
-#include "Device.hpp"
+#include "Graphics/Renderer/Renderer.hpp"
+#include "Graphics/Devices/LogicalDevice.hpp"
+#include "Graphics/Devices/Instance.hpp"
+#include "Graphics/Devices/PhysicalDevice.hpp"
+#include "Graphics/Commands/CommandBuffer.hpp"
+#include "Graphics/Commands/CommandPool.hpp"
 
 #include <iostream>
 
@@ -12,24 +16,23 @@ class Graphics
 {
 public:
     Graphics(Window& window);
-    ~Graphics();
+    ~Graphics() {}
 
-    VkCommandBuffer GetCurrentCommandBuffer() const;
+    const std::unique_ptr<Renderer>& GetRenderer() const { return mRenderer; }
+    
     void RecreateSwapChain();
-    void CreateCommandBufffers();
-    void FreeCommandBuffers();
     
     VkCommandBuffer Begin();
+
     void End();
 
-    void PrepareGraphics(std::unique_ptr<IGame>& game);
+    void PrepareGraphics(IGame& game);
 
     void Update();
 
-    const std::unique_ptr<Renderer>& GetRenderer() const { return mRenderer; }
-    const std::unique_ptr<Device>& GetDevice() const { return mDevice; }
-
-    inline const int& GetFrameIndex() const;
+    inline const PhysicalDevice& GetPhysicalDevice() const { return *mPhysicalDevice; }
+    inline const LogicalDevice& GetLogicalDevice() const { return *mLogicalDevice; }
+    inline const Instance& GetInstance() const { return *mInstance; }
 
 private:
     Window& mWindow;
@@ -38,15 +41,16 @@ private:
     
     std::unique_ptr<SwapChain> mSwapChain = nullptr;
 
-    std::unique_ptr<Device> mDevice = nullptr;
+    std::unique_ptr<LogicalDevice> mLogicalDevice = nullptr;
+    std::unique_ptr<PhysicalDevice> mPhysicalDevice = nullptr;
+    std::unique_ptr<Instance> mInstance = nullptr;
+    std::unique_ptr<CommandPool> mCommandPool = nullptr;
 
-    std::vector<VkCommandBuffer> mCommandBuffers{};
+    std::vector<std::unique_ptr<CommandBuffer>> mCommandBuffers{};
 
     uint32_t mCurrentImageIndex = 0;
-    int mCurrentFrameIndex = 0;
-    bool mIsFrameStarted = false;
-
-
+    int mCurrentFrameIndex = 0;  
+    bool mHasFrameStarted = false;  
 };
 
 }

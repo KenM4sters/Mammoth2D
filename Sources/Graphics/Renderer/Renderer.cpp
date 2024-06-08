@@ -3,8 +3,8 @@
 
 namespace mt 
 {
-Renderer::Renderer(Device& device, Window& window) 
-    : mDevice{device}, mWindow{window}
+Renderer::Renderer(LogicalDevice& logicalDevice, Window& window) 
+    : mLogicalDevice{logicalDevice}, mWindow{window}
 {
 
 }
@@ -13,6 +13,62 @@ Renderer::~Renderer()
 {
 
 }
+
+void Renderer::CreateDescriptorPool(uint32_t uniformCount, uint32_t imageCount) 
+{
+    std::array<VkDescriptorPoolSize, 2> poolSizes{};
+    poolSizes[0].type = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
+    poolSizes[0].descriptorCount = imageCount;
+    poolSizes[1].type = VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
+    poolSizes[1].descriptorCount = uniformCount;
+
+    VkDescriptorPoolCreateInfo poolInfo{};
+    poolInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_POOL_CREATE_INFO;
+    poolInfo.poolSizeCount = poolSizes.size();
+    poolInfo.pPoolSizes = poolSizes.data();
+    poolInfo.maxSets = (uniformCount + imageCount) * 2;
+
+    if(vkCreateDescriptorPool(mLogicalDevice.GetDevice(), &poolInfo, nullptr, &mDescriptorPool) != VK_SUCCESS) 
+    {
+        throw std::runtime_error("Failed to create descriptor pool");
+    }
+}
+
+void Renderer::CreateDescriptorSet(VkDescriptorSet* descriptorSet, VkDescriptorType type, VkShaderStageFlags flags) 
+{
+    VkDescriptorSetLayout layout = nullptr;
+
+    VkDescriptorSetLayoutBinding uboLayoutBinding{};
+    uboLayoutBinding.binding = 0;
+    uboLayoutBinding.descriptorType = type;
+    uboLayoutBinding.descriptorCount = 1;
+    uboLayoutBinding.stageFlags = flags;
+    uboLayoutBinding.pImmutableSamplers = nullptr;
+
+    VkDescriptorSetLayoutCreateInfo layoutInfo{};
+    layoutInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_CREATE_INFO;
+    layoutInfo.bindingCount = 1;
+    layoutInfo.pBindings = &uboLayoutBinding;
+
+    if(vkCreateDescriptorSetLayout(mLogicalDevice.GetDevice(), &layoutInfo, nullptr, &layout) != VK_SUCCESS) 
+    {
+        throw std::runtime_error("Failed to create descriptor set layout!");
+    }
+
+    mDescriptorSetLayouts.push_back(layout);
+
+    VkDescriptorSetAllocateInfo allocInfo{};
+    allocInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_ALLOCATE_INFO;
+    allocInfo.descriptorPool = mDescriptorPool;
+    allocInfo.descriptorSetCount = 1;
+    allocInfo.pSetLayouts = &layout;
+
+    if(vkAllocateDescriptorSets(mLogicalDevice.GetDevice(), &allocInfo, descriptorSet) != VK_SUCCESS) 
+    {
+        throw std::runtime_error("Failed to allocate descriptor sets");
+    }
+}
+
 
 void Renderer::Render(VkCommandBuffer commandBuffer) 
 {
@@ -55,18 +111,6 @@ void Renderer::BeginRenderPass(VkCommandBuffer commandBuffer, std::unique_ptr<Sw
 void Renderer::EndRenderPass(VkCommandBuffer commandBuffer) 
 {
     vkCmdEndRenderPass(commandBuffer);
-}
-
-
-
-void Renderer::DrawQuad(glm::vec2 size, glm::vec2 position, glm::vec3 color) 
-{
-    
-}
-
-void Renderer::DrawTempObj(TempRenderObj& obj) 
-{
-    
 }
 
 

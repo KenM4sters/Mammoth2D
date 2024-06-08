@@ -18,10 +18,10 @@ Engine::~Engine()
     
 }
 
-void Engine::SetGame(std::unique_ptr<IGame> game) 
+void Engine::SetGame(std::unique_ptr<IGame>&& game) 
 {
     mGame = std::move(game);
-    mGraphics->PrepareGraphics(game);
+    mGraphics->PrepareGraphics(*mGame);
 }
 
 void Engine::Update() 
@@ -50,16 +50,7 @@ void Engine::Update()
 
 void Engine::WaitDevice() 
 {
-    vkDeviceWaitIdle(mGraphics->GetDevice()->GetDevice());
+    vkDeviceWaitIdle(mGraphics->GetLogicalDevice().GetDevice());
 }
 
-void Engine::DrawQuad(glm::vec2 size, glm::vec2 position, glm::vec3 color) 
-{
-    
-}
-
-void Engine::DrawTempObj(TempRenderObj& obj) 
-{
-    mGraphics->GetRenderer()->DrawTempObj(obj);
-}
 }

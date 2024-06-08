@@ -1,9 +1,9 @@
 #ifndef MAMMOTH_2D_RENDERER_HPP
 #define MAMMOTH_2D_RENDERER_HPP
 
-#include "Device.hpp"
 #include "SwapChain.hpp"
 #include "Game.hpp"
+
 #include <glm/glm.hpp>
 
 #include <iostream>
@@ -13,27 +13,27 @@ namespace mt
 class Renderer 
 {
 public:
-    Renderer(Device& device, Window& window);
+    Renderer(LogicalDevice& logicalDevice, Window& window);
     ~Renderer();
 
     void BeginRenderPass(VkCommandBuffer commandBuffer, std::unique_ptr<SwapChain>& swapChain, bool started, uint32_t currentImageIndex);
+    
     void Render(VkCommandBuffer commandBuffer);
+    
     void EndRenderPass(VkCommandBuffer commandBuffer);
 
-    void DrawTempObj(TempRenderObj& obj);
+    void CreateDescriptorPool(uint32_t uniformCount, uint32_t imageCount);
 
-    /**
-     * @brief function to tell the renderer to draw a simple quadrilateral.
-     * @param size a 2d vector containing the width and height values of the desired quad.
-     * @param position a 2d vector containing the x and y coordinates of the top-left corner of the desired quad.
-     * @param color a 3d vector containing the RGB color values of the desired quad.
-    */
-    void DrawQuad(glm::vec2 size, glm::vec2 position, glm::vec3 color);
-
+    void CreateDescriptorSet(VkDescriptorSet* descriptorSet, VkDescriptorType type, VkShaderStageFlags flags);
 
 private:
-    Device& mDevice;
+    LogicalDevice& mLogicalDevice;
     Window& mWindow;
+
+    VkDescriptorPool mDescriptorPool = VK_NULL_HANDLE;
+    uint32_t mMaxSets = SwapChain::FRAMES_IN_FLIGHT;
+
+    std::vector<VkDescriptorSetLayout> mDescriptorSetLayouts{};
 };
 }
 

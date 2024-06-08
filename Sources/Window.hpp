@@ -11,37 +11,67 @@
 
 namespace mt
 {
+
+/**
+ * @brief Responsible for creating the GLFW window as well as the surface that's used
+ * by the renderer to display to.
+*/
 class Window 
 {
 public:
+    /**
+     * @brief Constructs the Window instance with the typical user-defined variables.
+     * @param name The name of the window (doesn't matter what it is).
+     * @param width The width of the window in pixels.
+     * @param height The height of the window in pixels. 
+    */
     Window(const char* name, uint32_t width, uint32_t height);
     ~Window();
 
     Window(const Window& other) = delete;
     Window &operator=(const Window& other) = delete;
 
+    /**
+     * @brief Creates the GLFW window, sets it as the current context and declares any 
+     * custom callbacks (only using onClose at the moment).
+    */
     void Init();
 
-    inline static bool& IsRunning() { return mIsRunning; }
-
+    /**
+     * @brief Simple call to glfwPollEvents() which is required for any glfw callbacks to work.
+    */
     void ListenToEvents() { glfwPollEvents(); }
 
-    inline VkExtent2D GetExtent() const { return {mWidth, mHeight}; }
-
-    inline GLFWwindow* GetNativeWindow() const { return mWindow; } 
-
+    /**
+     * @brief The vulkan api has no idea where the rendering frustum is on the screen,
+     * so we need to make a VkSurface that stores all of that information. 
+     * This function is only called once from the Instance class. Perhaps it makes more sense
+     * for this function belong there, but I wanted to keep all GLFW commands to this Window
+     * class.
+    */
     void CreateWindowSurface(const VkInstance instance, VkSurfaceKHR* surface) const;
 
+    /**
+     * @brief Sets mIsRunning to false and is only called by GLFW as a callback provided
+     * to the glfwSetWindowCloseCallback() function.
+     * @param window The GLFW window. It's not actually used since we store our own pointer
+     * to the GLFW window, but the GLFW callback requires it. It doesn't matter which one
+     * you use since the mWindow member variable is the only GLFWWindow that's set via
+     * glfwMakeContextCurrent().
+    */
     static void OnWindowCloseCallback(GLFWwindow* window);
     
+    inline static bool& IsRunning() { return mIsRunning; }
+    inline VkExtent2D GetExtent() const { return {mWidth, mHeight}; }
+    inline GLFWwindow* GetNativeWindow() const { return mWindow; } 
 
 private:
     GLFWwindow* mWindow = nullptr;
 
-    uint32_t mWidth{0};
-    uint32_t mHeight{0};
+    uint32_t& mWidth;
+    uint32_t& mHeight;
 
-    const char* mName{""};
+    const char* mName = "";
 
     static bool mIsRunning;
 };

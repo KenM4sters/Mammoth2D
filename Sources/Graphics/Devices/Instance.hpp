@@ -5,9 +5,14 @@
 
 namespace mt 
 {
+
+/**
+ * @brief Responsible for creating a vulkan runtime instance (required for any communcation
+ * with vulkan) and handling validation layers and extension requirements.
+ * By default, the vulkan api provides very little debugging information.
+*/
 class Instance 
 {
-
 public:
     #ifdef NDEBUG
     const bool mEnableValidationLayers = false;
@@ -21,14 +26,29 @@ public:
 
     inline const VkInstance& GetInstance() const { return mInstance; }
     inline const std::vector<const char*>& GeValidationLayers() const { return mValidationLayers; }
+    const std::vector<const char*> Instance::GetAllRequiredExtensions() const;
 
 private:
-    constexpr void CreateInstance();
-    constexpr bool CheckValidationLayerSupport() const;
-    constexpr void ConfigureDebugMessengerCallback(VkDebugUtilsMessengerCreateInfoEXT &createInfo) const;
-    constexpr void HasGLFWRequiredExtensions() const;
-    constexpr const std::vector<const char*> Instance::GetAllRequiredExtensions() const;
+    /**
+     * @brief Creates a VkInstance from some application settings and sets extensions.
+    */
+    void CreateInstance();
 
+    /**
+     * @brief Checks what validation layers (debug features) are supported by the instance.
+    */
+    bool CheckValidationLayerSupport() const;
+
+    /**
+     * @brief Sets a callback which defines the format of each validation message.
+    */
+    void ConfigureDebugMessengerCallback(VkDebugUtilsMessengerCreateInfoEXT &createInfo) const;
+
+    /**
+     * @brief GLFW requires some extensions to be available, so this checks whether that's true
+     * or not for our instance.
+    */
+    void HasGLFWRequiredExtensions() const;
 
 private:
     VkInstance mInstance;

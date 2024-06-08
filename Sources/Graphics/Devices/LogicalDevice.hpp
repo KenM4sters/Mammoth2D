@@ -9,30 +9,72 @@ namespace mt
 {
 
 /**
- * @brief TBC
+ * @brief Wrapper for the VkDevice (The layer of abstraction that makes calls to the 
+ * actual physical device, VkPhysicalDevice). 
 */
 class LogicalDevice 
 {
 public:
+    /**
+     * @brief Constructs an instance of a LogicalDevice.
+     * @param physicalDevice the appropriate physical device that we wish to make all 
+     * command calls to. A PhysicalDevice should be properly established before constructing
+     * this class.
+    */
     LogicalDevice(PhysicalDevice& physicalDevice);
     ~LogicalDevice();
 
-    inline const VkDevice& GetLogicalDevice() const { return mLogicalDevice; }
+    inline const VkDevice& GetDevice() const { return mLogicalDevice; }
     inline const VkQueue& GetPresentQueue() const { return mPresentQueue; }
     inline const VkQueue& GetGraphicsQueue() const { return mGraphicsQueue; }
-    inline const VkCommandPool& GetCommandPool() const { return mCommandPool; }
+
+    uint32_t FindMemoryType(uint32_t typeFilter, VkMemoryPropertyFlags properties) const;
+
+    VkFormat FindSupportedFormat(
+        const std::vector<VkFormat> &candidates, 
+        VkImageTiling tiling, 
+        VkFormatFeatureFlags features
+    ) const;
+
+    void CreateBuffer(
+        VkDeviceSize size,
+        VkBufferUsageFlags usage,
+        VkMemoryPropertyFlags properties,
+        VkBuffer &buffer,
+        VkDeviceMemory &bufferMemory
+    );
+
+    void CopyBufferToImage(
+        VkBuffer buffer, 
+        VkImage image, 
+        uint32_t width, 
+        uint32_t height, 
+        uint32_t layerCount
+    );
+
+    void CreateImageFromInfo(
+        const VkImageCreateInfo &imageInfo,
+        VkMemoryPropertyFlags properties,
+        VkImage &image,
+        VkDeviceMemory &imageMemory
+    ) const;
+
+    void CopyBuffer(VkBuffer srcBuffer, VkBuffer dstBuffer, VkDeviceSize size);
+
+    VkCommandBuffer BeginSingleTimeCommands();
+
+    void EndSingleTimeCommands(VkCommandBuffer commandBuffer);
 
 private:
+    /**
+     * @brief Creates a VkDevice instance as well as a graphics and present queue.
+    */
     void CreateLogicalDevice();
-    void CreateCommandPool();
-
 
 private:
     PhysicalDevice& mPhysicalDevice;
 
     VkDevice mLogicalDevice = VK_NULL_HANDLE;
-
-    VkCommandPool mCommandPool = VK_NULL_HANDLE;
 
     VkQueue mGraphicsQueue = VK_NULL_HANDLE;
     VkQueue mPresentQueue = VK_NULL_HANDLE;

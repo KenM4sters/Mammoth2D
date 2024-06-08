@@ -56,7 +56,9 @@ void Pipeline::CreateDescriptorPool()
 void Pipeline::CreateDescriptorLayout() 
 {
     const auto& uniforms = mShader->GetUniform();
+    
     VkDescriptorSetLayoutBinding uboLayoutBinding[6];
+    
     for(int i = 0; i < 6; i++) 
     {
         uboLayoutBinding[i].binding = i;

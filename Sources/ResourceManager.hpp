@@ -2,9 +2,19 @@
 #define MAMMOTH_2D_RESOURCE_MANAGER_HPP
 
 #include <unordered_map>
+#include <string>
 
 namespace mt 
 {
+
+/**
+ * @brief Holds all the resources that are given by the user (in the derived IGame class 
+ * instance) and queried by the engine at some point (mostly by the renderer 
+ * during graphics preparation). This class is currently undergoin lots of changes as I decide
+ * that different variables should be considered as resources. 
+ * At the moment, only shader file paths and image files paths are supported, but I may end
+ * up changing this.
+*/
 class ResourceManager
 {
 public:
@@ -42,7 +52,7 @@ public:
 
 private:
     std::unordered_map<std::string, std::unique_ptr<std::string>> mShaders{};
-    std::unordered_map<std::string, std::unique_ptr<std::string>> mShaders{};
+    std::unordered_map<std::string, std::unique_ptr<std::string>> mImages{};
 };
 }
 

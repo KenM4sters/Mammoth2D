@@ -1,6 +1,6 @@
 #pragma once
 #include <vulkan/vulkan.hpp>
-#include "Device.hpp"
+#include "Graphics/Devices/LogicalDevice.hpp"
 
 namespace mt 
 {
@@ -24,8 +24,8 @@ struct QueueFamilyIndices
 class SwapChain 
 {
 public:
-    SwapChain(Device& device, VkExtent2D extent);
-    SwapChain(Device& device, VkExtent2D extent, std::shared_ptr<SwapChain>& previous);
+    SwapChain(const PhysicalDevice& physicalDevice, const LogicalDevice& logicalDevice, VkExtent2D extent);
+    SwapChain(const PhysicalDevice& physicalDevice, const LogicalDevice& logicalDevice, VkExtent2D extent, std::shared_ptr<SwapChain>& previous);
     ~SwapChain();
 
     SwapChain(const SwapChain& other) = delete;
@@ -74,7 +74,9 @@ private:
     VkPresentModeKHR ChooseSwapPresentMode(const std::vector<VkPresentModeKHR> &availablePresentModes);
     VkExtent2D ChooseSwapExtent(const VkSurfaceCapabilitiesKHR &capabilities);
 
-    Device& mDevice;
+    const PhysicalDevice& mPhysicalDevice;
+    const LogicalDevice& mLogicalDevice;
+
     std::shared_ptr<SwapChain> mPreviousSwapChain = nullptr;
     VkExtent2D mWindowExtent;
     VkSwapchainKHR mSwapChain;

@@ -27,9 +27,10 @@ struct PipelineDesc
     VkPipelineLayout pipelineLayout = nullptr;
     VkRenderPass renderPass = nullptr;
     uint32_t subpass = 0;
-    // Vertices - not set by default.
     VkPipelineVertexInputStateCreateInfo vertexInfo;
 };
+
+
 
 class Pipeline 
 {
@@ -67,9 +68,7 @@ private:
     VkPipeline mPipeline = VK_NULL_HANDLE;
     VkPipelineLayout mPipelineLayout = VK_NULL_HANDLE;
     VkPipelineBindPoint mPipelineBindPoint = VK_PIPELINE_BIND_POINT_GRAPHICS;
-
-    uint32_t mMaxSets = SwapChain::FRAMES_IN_FLIGHT;
-    VkDescriptorPool mDescriptorPool = VK_NULL_HANDLE;
+    
     VkDescriptorSetLayout mDescriptorSetLayout = VK_NULL_HANDLE;
 };
 }

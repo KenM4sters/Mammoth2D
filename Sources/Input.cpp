@@ -15,11 +15,6 @@ Input::Input(EventBus* eventBus, Window* window)
     glfwSetKeyCallback(window->GetNativeWindow(), KeyPressCallback);
 }
 
-Input::~Input() 
-{
-
-}
-
 void Input::ListenToKeyboard(GLFWwindow* window) const 
 {
     // if(glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS) 
