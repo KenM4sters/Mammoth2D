@@ -2,7 +2,6 @@
 #define MAMMOTH_2D_ENGINE_HPP
 
 #include "Window.hpp"
-#include "Graphics/Graphics.hpp"
 #include "Input.hpp"
 #include "Events/Bus.hpp"
 #include "ResourceManager.hpp"
