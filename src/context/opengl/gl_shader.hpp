@@ -19,6 +19,8 @@ class GLShader final : public IShader
 public:
     explicit GLShader(const char* vertPath, const char* fragPath, const char* geoPath = nullptr);
 
+    [[nodiscard]] constexpr const GLuint& GetProgram() noexcept { return mProgram; }
+
 private:
     void CheckCompilationErrors(GLuint object, std::string type) const;
 

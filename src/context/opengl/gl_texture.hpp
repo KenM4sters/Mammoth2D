@@ -23,6 +23,7 @@ struct GLSamplerBlueprint
  */
 struct GLTextureBlueprint 
 {
+    GLuint dimension;
     GLuint format;
     uint32_t width;
     uint32_t height;
@@ -35,9 +36,30 @@ struct GLTextureBlueprint
 
 
 /**
+ * @brief Interface for GLTexture2D and GLTextureCube.
+ */
+class GLTexture 
+{
+public:
+    explicit GLTexture(GLTextureBlueprint blueprint) : mBlueprint{blueprint} {}
+
+    virtual ~GLTexture() {}
+
+    virtual void Resize(const uint32_t width, const uint32_t height) = 0;
+
+    virtual void Destroy() = 0;
+
+    [[nodiscard]] constexpr const GLTextureBlueprint& GetBlueprint() noexcept { return mBlueprint; }
+
+protected:
+    GLTextureBlueprint& mBlueprint;
+};
+
+
+/**
  * @brief Generates a texture program, sets the sampler and image from the blueprint. 
  */
-class GLTexture2D final : public ITexture2D 
+class GLTexture2D final : public GLTexture, public ITexture2D
 {
 public:
     explicit GLTexture2D(GLTextureBlueprint blueprint);
@@ -46,10 +68,10 @@ public:
 
     void Destroy() noexcept;
 
-private:
-    GLuint mProgram;
+    [[nodiscard]] constexpr const GLuint& GetId() noexcept { return mId; }
 
-    GLTextureBlueprint& mBlueprint;
+private:
+    GLuint mId;
 };
 
 
@@ -58,7 +80,7 @@ private:
 /**
  * @brief Generates a texture program, sets the sampler and image from the blueprint. 
  */
-class GLTextureCube final : public ITextureCube
+class GLTextureCube final : public GLTexture, public ITexture2D
 {
 public:
     explicit GLTextureCube(GLTextureBlueprint blueprint);
@@ -67,10 +89,10 @@ public:
 
     void Destroy() noexcept;
 
+    [[nodiscard]] constexpr const GLuint& GetId() noexcept { return mId; }
+
 private:
-    GLuint mProgram;
-    
-    GLTextureBlueprint& mBlueprint;
+    GLuint mId;
 };
 
 

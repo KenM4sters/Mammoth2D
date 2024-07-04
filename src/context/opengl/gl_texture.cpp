@@ -5,10 +5,10 @@
 //================================================================
 
 GLTexture2D::GLTexture2D(GLTextureBlueprint blueprint) 
-    : mBlueprint{blueprint}
+    : GLTexture(blueprint)
 {
-    glGenTextures(1, &mProgram);
-    glBindTexture(GL_TEXTURE_2D, mProgram);
+    glGenTextures(1, &mId);
+    glBindTexture(GL_TEXTURE_2D, mId);
     
     glSamplerParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, mBlueprint.samplerBlueprint.minFilter);
     glSamplerParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, mBlueprint.samplerBlueprint.magFilter);
@@ -31,7 +31,7 @@ void GLTexture2D::Resize(const uint32_t width, const uint32_t height)
     mBlueprint.width = width;
     mBlueprint.height = height;
 
-    glBindTexture(GL_TEXTURE_2D, mProgram);
+    glBindTexture(GL_TEXTURE_2D, mId);
     glTexImage2D(GL_TEXTURE_2D, 0, mBlueprint.format, mBlueprint.width, mBlueprint.height, 0, mBlueprint.nChannels, mBlueprint.type, mBlueprint.data);
 
     if(mBlueprint.generateMipMaps) 
@@ -42,7 +42,7 @@ void GLTexture2D::Resize(const uint32_t width, const uint32_t height)
 
 void GLTexture2D::Destroy() 
 {
-    glDeleteTextures(1, &mProgram);
+    glDeleteTextures(1, &mId);
 }
 
 
@@ -52,10 +52,10 @@ void GLTexture2D::Destroy()
 //================================================================
 
 GLTextureCube::GLTextureCube(GLTextureBlueprint blueprint) 
-    : mBlueprint{blueprint}
+    : GLTexture(blueprint)
 {
-    glGenTextures(1, &mProgram);
-    glBindTexture(GL_TEXTURE_CUBE_MAP, mProgram);
+    glGenTextures(1, &mId);
+    glBindTexture(GL_TEXTURE_CUBE_MAP, mId);
     
     glSamplerParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, mBlueprint.samplerBlueprint.minFilter);
     glSamplerParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, mBlueprint.samplerBlueprint.magFilter);
@@ -81,7 +81,7 @@ void GLTextureCube::Resize(const uint32_t width, const uint32_t height)
     mBlueprint.width = width;
     mBlueprint.height = height;
 
-    glBindTexture(GL_TEXTURE_CUBE_MAP, mProgram);
+    glBindTexture(GL_TEXTURE_CUBE_MAP, mId);
     glTexImage2D(GL_TEXTURE_CUBE_MAP, 0, mBlueprint.format, mBlueprint.width, mBlueprint.height, 0, mBlueprint.nChannels, mBlueprint.type, mBlueprint.data);
 
     if(mBlueprint.generateMipMaps) 
@@ -92,5 +92,5 @@ void GLTextureCube::Resize(const uint32_t width, const uint32_t height)
 
 void GLTextureCube::Destroy() 
 {
-    glDeleteTextures(1, &mProgram);
+    glDeleteTextures(1, &mId);
 }

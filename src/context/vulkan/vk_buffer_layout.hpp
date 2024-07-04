@@ -48,7 +48,6 @@ class BufferAttribute
 class BufferLayout 
 {
     public:
-
         BufferLayout(std::vector<BufferAttribute>& attribs)
             : mAttribs{attribs} 
         {
@@ -88,7 +87,6 @@ class BufferLayout
         }
     
     private:
-
         std::vector<BufferAttribute>& mAttribs;
         uint32_t mStride = 0;
 };
