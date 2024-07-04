@@ -3,20 +3,22 @@
 
 #define GLFW_INCLUDE_VULKAN
 
+#include "Window.hpp"
+#include "Events/Bus.hpp"
+
 #include <GLFW/glfw3.h>
 #include <vulkan/vulkan.hpp>
-#include "Events/Bus.hpp"
 
 #include <string>
 
+
 namespace mt
 {
-
 /**
  * @brief Responsible for creating the GLFW window as well as the surface that's used
  * by the renderer to display to.
 */
-class Window 
+class GLFWWindow : public IWindow
 {
 public:
     /**
@@ -25,17 +27,8 @@ public:
      * @param width The width of the window in pixels.
      * @param height The height of the window in pixels. 
     */
-    Window(const char* name, uint32_t width, uint32_t height);
-    ~Window();
-
-    Window(const Window& other) = delete;
-    Window &operator=(const Window& other) = delete;
-
-    /**
-     * @brief Creates the GLFW window, sets it as the current context and declares any 
-     * custom callbacks (only using onClose at the moment).
-    */
-    void Init();
+    GLFWWindow(const char* name, uint32_t width, uint32_t height);
+    ~GLFWWindow();
 
     /**
      * @brief Simple call to glfwPollEvents() which is required for any glfw callbacks to work.

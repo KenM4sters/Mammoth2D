@@ -13,6 +13,7 @@ enable_testing()
 
 add_subdirectory(Sources)
 add_subdirectory(External/GLFW)
+add_subdirectory(External/Glad)
 add_subdirectory(External/GLM)
 add_subdirectory(External/GoogleTest)
 add_subdirectory(Tests)

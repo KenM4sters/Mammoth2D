@@ -45,7 +45,8 @@ message(STATUS "CREATING BUILD FOR UNIX")
 target_include_directories(
   ${PROJECT_NAME} 
   PUBLIC ${PROJECT_SOURCE_DIR}
-  PUBLIC ${CMAKE_SOURCE_DIR}/External/
+  PUBLIC ${CMAKE_SOURCE_DIR}/external/
+  PUBLIC ${CMAKE_SOURCE_DIR}/external/Glad/include/
   PUBLIC ${Vulkan_INCLUDE_DIRS}
 )
 
@@ -53,6 +54,7 @@ target_link_libraries(
   ${PROJECT_NAME}
   DeltaLib 
   glfw 
+  glad
   glm
   spirv-cross-c-shared 
   ${Vulkan_LIBRARIES}

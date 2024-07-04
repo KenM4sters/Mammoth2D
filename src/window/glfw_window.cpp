@@ -1,23 +1,12 @@
 #include <stdexcept>
-#include "Window.hpp"
+#include "GLFWWindow.hpp"
 
 namespace mt 
 {
-bool Window::mIsRunning = true;
+bool GLFWWindow::mIsRunning = true;
 
-Window::Window(const char* name, uint32_t width, uint32_t height)
+GLFWWindow::GLFWWindow(const char* name, uint32_t width, uint32_t height)
     : mWidth{width}, mHeight{height}, mName{name}
-{
-    Init();
-}
-
-Window::~Window()
-{
-    glfwDestroyWindow(mWindow);
-}
-
-
-void Window::Init()
 {
     glfwInit();
 
@@ -28,11 +17,15 @@ void Window::Init()
 
     glfwMakeContextCurrent(mWindow);
 
-    glfwSetWindowCloseCallback(mWindow, Window::OnWindowCloseCallback);
+    glfwSetWindowCloseCallback(mWindow, GLFWWindow::OnWindowCloseCallback);
 }
 
+GLFWWindow::~GLFWWindow()
+{
+    glfwDestroyWindow(mWindow);
+}
 
-void Window::CreateWindowSurface(const VkInstance instance, VkSurfaceKHR* surface) const 
+void GLFWWindow::CreateWindowSurface(const VkInstance instance, VkSurfaceKHR* surface) const 
 {
     if(glfwCreateWindowSurface(instance, mWindow, nullptr, surface) != VK_SUCCESS) 
     {
@@ -40,7 +33,7 @@ void Window::CreateWindowSurface(const VkInstance instance, VkSurfaceKHR* surfac
     }
 }
 
-void Window::OnWindowCloseCallback(GLFWwindow* window) 
+void GLFWWindow::OnWindowCloseCallback(GLFWwindow* window) 
 {
     mIsRunning = false;
 }
