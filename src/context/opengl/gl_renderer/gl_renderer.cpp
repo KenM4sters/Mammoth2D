@@ -11,12 +11,7 @@ GLRenderer::~GLRenderer()
     
 }
 
-void GLRenderer::Update()  
-{
-    
-}
-
-void GLRenderer::Resize(const uint32_t width, const uint32_t height)  
+void GLRenderer::Resize(const uint32_t width, const uint32_t height) noexcept 
 {
     
 }

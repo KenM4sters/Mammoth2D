@@ -1,56 +1,54 @@
-#ifndef MAMMOTH_2D_CAMERA_HPP
-#define MAMMOTH_2D_CAMERA_HPP
-
-#define GLM_FORCE_DEPTH_ZERO_TO_ONE
-
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
-
-namespace mt 
-{
-
-/**
- * @brief This is currently the only type of camera support by Mammoth2D at the moment, since
- * it is only a 2D engine and doesn't need a perspective projection per se, but I'll probably implement
- * a perspective one anyway at some point as it could be useful in specific use cases.
-*/
 class OrthographicCamera 
 {
 public:
     /**
-     * @brief Constructs an OrthographicCamera which holds the necessary projection matrix among other
-     * relevant but not required variables.
-     * @param width The width of the window which is used as the width of the camera view.
-     * @param height The height of the window which is used as the height of the camera view.
-     * @param position Not necessary, but if you chose to provide it then make sure the z position is positive.
-    */
-    OrthographicCamera(uint32_t width, uint32_t height, glm::vec3 position = glm::vec3(0.0f, 0.0f, 2.0f));
-    ~OrthographicCamera();
-
-    inline const glm::mat4& GetViewMatrix() const { return mViewMatrix; }
-    inline const glm::mat4& GetProjectionMatrix() const { return mProjectionMatrix; }
-    inline const glm::mat4 GetProjectionViewMatrix() const { return mProjectionMatrix * mViewMatrix;}
-    inline const glm::vec3& GetPosition() const { return mPosition; }
-
-private:
+     * @brief Construction requires a position vector since it's all too easy to forget to 
+     * set the position and wonder why nothing is within the view frustum.
+     * @param position x, y and z coordiantes of the OrthographicCamera's position in world space.
+     */
+    explicit OrthographicCamera(glm::vec3 position, glm::vec3 target = {0.0f, 0.0f, 0.0f}) 
+        : mPosition{position}, mTarget{target}, mUp{0.0f, 1.0f, 0.0f}, mNear{0.1f}, mFar{1000.0f}
+    {}
+    
     /**
-     * @brief Used to initially set the projection and view matrices and is required when 
-     * the camera changes position or its aspect ratio changes. Neither of these are something
-     * that's available at the moment.
-     * @param width The width of the window which is used as the width of the camera view.
-     * @param height The height of the window which is used as the height of the camera view.
-    */
-    void RecalculateTransforms(uint32_t width, uint32_t height);
+     * @brief Computes and returns a view matrix. 
+     * The view matrix is computed by using the traditional LookAt transformation
+     * which considers the the position, target and up vectors of the camera.
+     * Bare in mind that the target is the vector that the camera should looking at, and the 
+     * up vector is relative to the camera's orientation (simply [0, 1, 0] for non-rotating cameras).
+     * @returns 4x4 view matrix. 
+     */
+    [[nodiscard]] constexpr const glm::mat4& GetViewMatrix() const noexcept 
+    { 
+        return glm::lookAt(mPosition, mTarget, mUp);
+    }
 
-    glm::mat4 mViewMatrix{1.0f};
-    glm::mat4 mProjectionMatrix{1.0f};
+    /**
+     * @brief Computes and returns a perspective projection matrix.
+     * A projection matrix considers the distance along the z axis to the camera and scales
+     * vertices further away down, given a desirable effect of perspective.
+     * @param width the width of the frustum (probably just the width of the canvas).
+     * @param height the height of the frustum (probably just the width of the canvas).
+     * @returns 4x4 projection matrix.
+     */
+    [[nodiscard]] constexpr const glm::mat4& GetProjectionMatrix(const uint32_t left, 
+        const uint32_t right, const uint32_t down, const uint32_t up) const noexcept 
+    {
+        return glm::orthoLH_ZO<float>(left, right, down, up, mNear, mFar);
+    }
+
+    
+public:
     glm::vec3 mPosition;
 
-    glm::vec3 mUp{0.0f, -1.0f, 0.0f};
-    glm::vec3 mRight{1.0f, 0.0f, 0.0f};
+    glm::vec3 mTarget;
+    
+    glm::vec3 mUp;
 
+    float mNear;
+
+    float mFar;
 };
-}
-
-#endif

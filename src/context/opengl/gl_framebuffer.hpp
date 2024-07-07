@@ -1,10 +1,10 @@
 #ifndef MAMMOTH_2D_GL_SHADER_HPP
 #define MAMMOTH_2D_GL_SHADER_HPP
 
-#include "graphics/framebuffer.hpp"
 #include "gl_texture.hpp"
 
 #include <glad/gl.h>
+
 #include <iostream>
 
 
@@ -18,11 +18,10 @@ struct GLRenderbufferBlueprint
 
 struct GLFramebufferBlueprint 
 {
-    GLTexture2D texture;
+    GLTexture* texture;
     uint32_t attachment;
     GLRenderbufferBlueprint* renderbufferBlueprint;
 };
-
 
 
 /**
@@ -38,11 +37,13 @@ public:
 
     void Destroy() noexcept;
 
+    [[nodiscard]] constexpr const GLFramebufferBlueprint& GetBlueprint() const { return mBlueprint; } 
+
 private:
     GLuint mFramebuffer;
     GLuint mRenderbuffer;
 
-    GLFramebufferBlueprint& mBlueprint;
+    GLFramebufferBlueprint mBlueprint;
 };
 
 #endif

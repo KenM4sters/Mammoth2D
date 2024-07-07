@@ -1,8 +1,6 @@
 #ifndef MAMMOTH_2D_GL_TEXTURE_2D_HPP
 #define MAMMOTH_2D_GL_TEXTURE_2D_HPP
 
-#include "graphics/texture.hpp"
-
 #include <glad/gl.h>
 
 /**
@@ -52,14 +50,14 @@ public:
     [[nodiscard]] constexpr const GLTextureBlueprint& GetBlueprint() noexcept { return mBlueprint; }
 
 protected:
-    GLTextureBlueprint& mBlueprint;
+    GLTextureBlueprint mBlueprint;
 };
 
 
 /**
  * @brief Generates a texture program, sets the sampler and image from the blueprint. 
  */
-class GLTexture2D final : public GLTexture, public ITexture2D
+class GLTexture2D final : public GLTexture
 {
 public:
     explicit GLTexture2D(GLTextureBlueprint blueprint);
@@ -80,7 +78,7 @@ private:
 /**
  * @brief Generates a texture program, sets the sampler and image from the blueprint. 
  */
-class GLTextureCube final : public GLTexture, public ITexture2D
+class GLTextureCube final : public GLTexture
 {
 public:
     explicit GLTextureCube(GLTextureBlueprint blueprint);

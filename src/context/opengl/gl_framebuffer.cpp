@@ -4,11 +4,11 @@ GLFramebuffer::GLFramebuffer(GLFramebufferBlueprint blueprint)
     : mBlueprint{blueprint}
 {
 
-    const GLTextureBlueprint& textureBlueprint = mBlueprint.texture.GetBlueprint();
+    const GLTextureBlueprint& textureBlueprint = mBlueprint.texture->GetBlueprint();
 
     glGenFramebuffers(1, &mFramebuffer);
- 
     glBindFramebuffer(GL_FRAMEBUFFER, mFramebuffer);
+
 
 }
 
@@ -25,4 +25,6 @@ void GLFramebuffer::Destroy() noexcept
     {
         glDeleteRenderbuffers(1, &mRenderbuffer);
     }
+
+    delete mBlueprint.renderbufferBlueprint;
 }

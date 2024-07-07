@@ -11,7 +11,6 @@ public:
     bool mHandled = false;
 };
 
-
 // class CollisionEvent : public IEvent 
 // {
 // public:

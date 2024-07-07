@@ -2,7 +2,6 @@
 #define MAMMOTH_2D_GL_SHADER_HPP
 
 #include "Core.hpp"
-#include "graphics/shader.hpp"
 
 #include <glad/gl.h>
 
@@ -14,7 +13,7 @@
  * and fragment shader file paths, and optionally a geometry shader file path.
  * Holds the glProgram and nothing else. All functionality is managed externally. 
  */
-class GLShader final : public IShader
+class GLShader final
 {
 public:
     explicit GLShader(const char* vertPath, const char* fragPath, const char* geoPath = nullptr);

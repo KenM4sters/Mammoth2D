@@ -1,16 +1,18 @@
-#include "graphics/renderer.hpp"
+#ifndef MAMMOTH_2D_GL_RENDERER_HPP
+#define MAMMOTH_2D_GL_RENDERER_HPP
 
-class GLRenderer final : public IRenderer
+#include <iostream>
+
+class GLRenderer final 
 {
 public:
     GLRenderer();
-
-    virtual ~GLRenderer() override;
-
-    virtual void Update() override;
-
-    virtual void Resize(const uint32_t width, const uint32_t height) override;
+    ~GLRenderer();
     
+    void Resize(const uint32_t width, const uint32_t height) noexcept;
+
 private:
     
 };
+
+#endif
