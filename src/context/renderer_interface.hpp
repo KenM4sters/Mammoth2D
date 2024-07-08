@@ -1,6 +1,7 @@
 #ifndef MAMMOTH_2D_RENDERER_INTERFACE_HPP
 #define MAMMOTH_2D_RENDERER_INTERFACE_HPP
 
+#include <glad/gl.h>
 
 namespace mt 
 {
@@ -11,12 +12,6 @@ enum class GraphicsBackend
     Vulkan
 };
 
-enum class SamplerWrapType 
-{
-    WrapS,
-    WrapT,
-    WrapR
-};
 
 enum class SamplerWrapMode
 {
@@ -29,7 +24,9 @@ enum class SamplerWrapMode
 enum class SamplerFilterMode 
 {
     Nearest,
-    Linear
+    Linear,
+    MipNearest,
+    MipLinear
 };
 
 enum class Dimension 
@@ -39,21 +36,19 @@ enum class Dimension
     TextureCube
 };
 
-enum class TextureInternalFormat 
+enum class InternalFormat 
 {
-    R16F,
-    RG,
-    RG16F,
-    RGB,
-    RGB16F,
-    RBG32F,
-    RGBA,
-    RGBA16F,
-    RGBA32F,
-    DepthStencil16F 
+    R32,
+    R32F,
+    RG32,
+    RG32F,
+    RGB32,
+    RGB32F,
+    RGBA32,
+    RGBA32F
 };
 
-enum class TextureFormat 
+enum class Format 
 {
     R,
     RG,
@@ -61,6 +56,32 @@ enum class TextureFormat
     RGBA,
 };
 
+enum class Attribute 
+{
+    Position,
+    Normal,
+    Tangent,
+    BiTangent,
+    Weight,
+    Indices,
+    Color,
+    TexCoords
+};
+
+enum class UniformType 
+{
+    Sampler,
+    Float,
+    Int,
+    Vec2f,
+    Vec2i,
+    Vec3f,
+    Vec3i,
+    Vec4f,
+    Vec4i,
+    Mat4x4f,
+    Mat3x3f
+};
 
 enum class DrawMode 
 {
@@ -68,13 +89,53 @@ enum class DrawMode
     Indexed
 };
 
-enum class DrawShape
+enum class Topology
 {
     Triangles,
     TrianglesList,
-    TrianglesFan,
+    Lines,
+    LinesList,
     Points
 };
+
+
+
+/**
+ * @brief Info required to construct a Texture instance.
+ */
+struct TextureBlueprint 
+{
+    Dimension dimension;
+    InternalFormat internalFormat;
+    uint32_t width;
+    uint32_t height;
+    Format format;
+    UniformType type;
+    const char* data;
+    SamplerWrapMode sWrap;
+    SamplerWrapMode tWrap;
+    SamplerWrapMode rWrap;
+    SamplerFilterMode min;
+    SamplerFilterMode mag;
+};
+
+struct RenderbufferBlueprint 
+{
+    GLuint internalFormat;
+    GLuint format;
+    uint32_t width;
+    uint32_t height;
+};
+
+struct FramebufferBlueprint 
+{
+    GLTexture* texture;
+    uint32_t attachment;
+    GLuint level;
+    GLRenderbufferBlueprint* renderbufferBlueprint;
+};
+
+
 
 
 template<typename T>
@@ -138,36 +199,29 @@ template<typename T>
 }
 
 template<typename T>
-[[nodiscard]] constexpr const T ConvertTextureInternalFormat(const GraphicsBackend backend, TextureInternalFormat internalFormat) noexcept 
+[[nodiscard]] constexpr const T ConvertInternalFormat(const GraphicsBackend backend, InternalFormat internalFormat) noexcept 
 {
     switch(backend) 
     {
         case GraphicsBackend::OpenGL:
         switch(internalFormat) 
         {
-            case TextureInternalFormat::R16F: return GL_R16F; break;
-            case TextureInternalFormat::RG: return GL_RG; break;
-            case TextureInternalFormat::RG16F: return GL_RG16F; break;
-            case TextureInternalFormat::RGB: return GL_RGB; break;
-            case TextureInternalFormat::RGB16F: return GL_RGB16F; break;
-            case TextureInternalFormat::RGBA: return GL_RGBA; break;
-            case TextureInternalFormat::RGBA16F: return GL_RGBA16F; break;
-            case TextureInternalFormat::RGBA32F: return GL_RGBA32F; break;
+            
         }
     }
 }
 
 template<typename T>
-[[nodiscard]] constexpr const T ConvertTextureFormat(const GraphicsBackend backend, TextureFormat format) noexcept 
+[[nodiscard]] constexpr const T ConvertFormat(const GraphicsBackend backend, Format format) noexcept 
 {
     switch(backend) 
     {
         case GraphicsBackend::OpenGL:
         switch(wrapType) 
         {
-            case SamplerWrapType::WrapS: return GL_TEXTURE_WRAP_S; break;
-            case SamplerWrapType::WrapT: return GL_TEXTURE_WRAP_T; break;
-            case SamplerWrapType::WrapR: return GL_TEXTURE_WRAP_R; break;
+            case Format::R: return GL_RG ; break;
+            case Format::WrapT: return GL_TEXTURE_WRAP_T; break;
+            case Format::WrapR: return GL_TEXTURE_WRAP_R; break;
         }
     }
 }

@@ -3,35 +3,6 @@
 
 #include <glad/gl.h>
 
-/**
- * @brief Info for the min, mag filters and wrapping modes for a sampler. Required
- * by a GLTextureBlueprint.
- */
-struct GLSamplerBlueprint 
-{
-    GLuint minFilter;
-    GLuint magFilter;
-    GLuint sWrap;
-    GLuint tWrap;
-    GLuint rWrap;
-};
-
-/**
- * @brief Info required to construct a GLTexture instance.
- */
-struct GLTextureBlueprint 
-{
-    GLuint dimension;
-    GLuint format;
-    uint32_t width;
-    uint32_t height;
-    GLuint nChannels;
-    GLuint type;
-    GLboolean generateMipMaps;
-    const char* data;
-    GLSamplerBlueprint samplerBlueprint;
-};
-
 
 /**
  * @brief Interface for GLTexture2D and GLTextureCube.
@@ -66,7 +37,7 @@ public:
 
     void Destroy() noexcept;
 
-    [[nodiscard]] constexpr const GLuint& GetId() noexcept { return mId; }
+    [[nodiscard]] constexpr const GLuint& GetId() const noexcept { return mId; }
 
 private:
     GLuint mId;

@@ -8,22 +8,6 @@
 #include <iostream>
 
 
-struct GLRenderbufferBlueprint 
-{
-    GLuint format;
-    GLuint attachmentType;
-    uint32_t width;
-    uint32_t height;
-};
-
-struct GLFramebufferBlueprint 
-{
-    GLTexture* texture;
-    uint32_t attachment;
-    GLRenderbufferBlueprint* renderbufferBlueprint;
-};
-
-
 /**
  * @brief Configures a glFramebuffer and provides utility to bind and draw to the target texture
  * with color, depth or stencil attachments.

@@ -13,12 +13,20 @@
  * and fragment shader file paths, and optionally a geometry shader file path.
  * Holds the glProgram and nothing else. All functionality is managed externally. 
  */
-class GLShader final
+class GLShaderProgram final
 {
 public:
-    explicit GLShader(const char* vertPath, const char* fragPath, const char* geoPath = nullptr);
+    explicit GLShaderProgram(const char* vertPath, const char* fragPath, const char* geoPath = nullptr);
 
     [[nodiscard]] constexpr const GLuint& GetProgram() noexcept { return mProgram; }
+
+    /**
+     * @brief Reads source file and returns its contents as a vector of characters.
+     * Throws an exception if the file failed to open (check file path).
+     * @param filePath path to the file to read from.
+     * @return vector of characters read from the file.
+     */
+    [[nodiscard]] std::vector<char> ParseShaderFile(const char* filePath) const;
 
 private:
     void CheckCompilationErrors(GLuint object, std::string type) const;
