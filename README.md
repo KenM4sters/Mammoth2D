@@ -6,9 +6,7 @@
 
 Mammoth2D is a 2d game engine written in C++ that uses the Vulkan API for graphics rendering. It also makes use of custom Maths, Phycsics and ECS libraries, also written by myself.
 
-This is currently my main project that I'm working on, so expect bugs and frequent changes.
-
-
+This is currently the project that I'm devoting most of my time to, so expect bugs, frequent changes and inconsistencies, as I continue to learn from other open source projects.
 
 ## Features
 

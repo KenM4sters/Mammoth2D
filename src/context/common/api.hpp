@@ -1,17 +1,18 @@
-#ifndef MAMMOTH_2D_RENDERER_INTERFACE_HPP
-#define MAMMOTH_2D_RENDERER_INTERFACE_HPP
+#ifndef MAMMOTH_2D_API_HPP
+#define MAMMOTH_2D_API_HPP
 
 #include <glad/gl.h>
 
 namespace mt 
 {
 
+class Texture;
+
 enum class GraphicsBackend 
 {
     OpenGL,
     Vulkan
 };
-
 
 enum class SamplerWrapMode
 {
@@ -68,7 +69,25 @@ enum class Attribute
     TexCoords
 };
 
-enum class UniformType 
+enum class AttributeFormat 
+{
+    Float,
+    Int,
+    Vec2f,
+    Vec2i,
+    Vec3f,
+    Vec3i,
+    Vec4f,
+    Vec4i, 
+};
+
+enum class AttributeType 
+{
+    Int,
+    Float
+};
+
+enum class ShaderResourceType 
 {
     Sampler,
     Float,
@@ -98,8 +117,6 @@ enum class Topology
     Points
 };
 
-
-
 /**
  * @brief Info required to construct a Texture instance.
  */
@@ -112,6 +129,10 @@ struct TextureBlueprint
     Format format;
     UniformType type;
     const char* data;
+};
+
+struct SamplerBlueprint 
+{
     SamplerWrapMode sWrap;
     SamplerWrapMode tWrap;
     SamplerWrapMode rWrap;
@@ -129,12 +150,21 @@ struct RenderbufferBlueprint
 
 struct FramebufferBlueprint 
 {
-    GLTexture* texture;
+    Texture* texture;
     uint32_t attachment;
     GLuint level;
-    GLRenderbufferBlueprint* renderbufferBlueprint;
+    RenderbufferBlueprint* renderbufferBlueprint;
 };
 
+struct MeshBlueprint 
+{
+
+};
+
+struct ShaderBlueprint 
+{
+
+};
 
 
 

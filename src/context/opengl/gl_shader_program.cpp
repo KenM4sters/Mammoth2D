@@ -9,14 +9,14 @@
 
 GLShaderProgram::GLShaderProgram(const char* vertPath, const char* fragPath, const char* geoPath = nullptr) 
 {
-    const std::vector<char> vertCode = ParseShaderFile(vertPath);
-    const std::vector<char> fragCode = ParseShaderFile(fragPath);
+    const std::vector<char> vertCode = parseShaderFile(vertPath);
+    const std::vector<char> fragCode = parseShaderFile(fragPath);
 
     std::vector<char> geoCode = {};
 
     if(geoPath != nullptr) 
     {
-        geoCode = ParseShaderFile(fragPath);
+        geoCode = parseShaderFile(fragPath);
     }
 
     GLuint vShader, fShader, gShader;
@@ -28,19 +28,19 @@ GLShaderProgram::GLShaderProgram(const char* vertPath, const char* fragPath, con
     vShader = glCreateShader(GL_VERTEX_SHADER);
     glShaderSource(vShader, 1, &vertSrc, NULL);
     glCompileShader(vShader);
-    CheckCompilationErrors(vShader, "VERTEX");
+    checkShaderErrors(vShader, "VERTEX");
 
     fShader = glCreateShader(GL_FRAGMENT_SHADER);
     glShaderSource(fShader, 1, &fragSrc, NULL);
     glCompileShader(fShader);
-    CheckCompilationErrors(fShader, "FRAGMENT");
+    checkShaderErrors(fShader, "FRAGMENT");
 
     if (!geoCode.empty())
     {
         gShader = glCreateShader(GL_GEOMETRY_SHADER);
         glShaderSource(gShader, 1, &geoSrc, NULL);
         glCompileShader(gShader);
-        CheckCompilationErrors(gShader, "GEOMETRY");
+        checkShaderErrors(gShader, "GEOMETRY");
     }
 
     mProgram = glCreateProgram();
@@ -55,7 +55,7 @@ GLShaderProgram::GLShaderProgram(const char* vertPath, const char* fragPath, con
 
     glLinkProgram(mProgram);
 
-    CheckCompilationErrors(mProgram, "PROGRAM");
+    checkShaderErrors(mProgram, "PROGRAM");
 
     // Programs can be cleaned-up now after linking into mProgram.
     //
@@ -74,7 +74,7 @@ GLShaderProgram::GLShaderProgram(const char* vertPath, const char* fragPath, con
  * @param filePath path to the file to read from.
  * @return vector of characters read from the file.
  */
-std::vector<char> GLShaderProgram::ParseShaderFile(const char* filePath) const
+std::vector<char> GLShaderProgram::parseShaderFile(const char* filePath) const
 {
     std::ifstream file{filePath, std::ios::ate | std::ios::binary};
 
@@ -92,7 +92,7 @@ std::vector<char> GLShaderProgram::ParseShaderFile(const char* filePath) const
     return buffer;
 }
 
-void GLShaderProgram::CheckCompilationErrors(GLuint object, std::string type) const
+void GLShaderProgram::checkShaderErrors(GLuint object, std::string type) const
 {
     int success;
 

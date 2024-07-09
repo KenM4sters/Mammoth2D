@@ -3,10 +3,6 @@
 
 #include <iostream>
 
-#define GL_CHECK(stmt) do { \
-    stmt; \
-    CheckGLError(#stmt, __FILE__, __LINE__); \
-} while (0)
 
 class GLRenderer final 
 {

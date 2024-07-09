@@ -1,6 +1,18 @@
 
+#include "api.hpp"
 
+#include <iostream>
+#include <vector>
 
+namespace mt 
+{
+
+struct MeshBlueprint 
+{
+    ShaderBlueprint shaderBlueprint;
+    std::vector<float> vertices;
+
+};
 
 class Mesh final 
 {
@@ -20,8 +32,8 @@ public:
 
     }
 
-    template<typename T, typename...Args>
-    void WriteShaderResource(const Args&... args) noexcept 
+
+    void WriteShaderResource(const char* name, void* data, size_t byteSize) noexcept 
     {
         
     }
@@ -29,3 +41,5 @@ public:
 private:
     
 };
+
+}

@@ -1,96 +1,51 @@
 #include "gl_texture.hpp"
 
-//================================================================
-// 2D impl
-//================================================================
 
-GLTexture2D::GLTexture2D(GLTextureBlueprint blueprint) 
-    : GLTexture(blueprint)
+namespace mt 
 {
-    glGenTextures(1, &mId);
-    glBindTexture(GL_TEXTURE_2D, mId);
+
+void GLTexture::create() 
+{
+    GL_CHECK(glGenTextures(1, &m_id));
+    GL_CHECK(glBindTexture(m_target, m_id));
+    GL_CHECK(glTexImage2D(m_target, m_level, m_internalFormat, m_width, m_height, 0, m_format, m_type, NULL));
+    glBindTexture(m_target, 0);
+}
+
+void GLTexture::bind(GLenum unit = GL_TEXTURE0) 
+{
+    glActiveTexture(unit);
+    GL_CHECK(glBindTexture(m_target, m_id));
+    m_isBound = true;
+
+}
+
+void GLTexture::release(GLenum unit = GL_TEXTURE0) 
+{
+    glActiveTexture(unit);
+    glBindTexture(m_target, 0);
+    m_isBound = false;
+}
+
+void GLTexture::resize(const uint32_t& width, const uint32_t& height) 
+{
+
+}
     
-    glSamplerParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, mBlueprint.samplerBlueprint.minFilter);
-    glSamplerParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, mBlueprint.samplerBlueprint.magFilter);
-    glSamplerParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, mBlueprint.samplerBlueprint.sWrap);
-    glSamplerParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, mBlueprint.samplerBlueprint.tWrap);
-    glSamplerParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_R, mBlueprint.samplerBlueprint.rWrap);
-
-    glTexImage2D(GL_TEXTURE_2D, 0, mBlueprint.format, mBlueprint.width, mBlueprint.height, 0, mBlueprint.nChannels, mBlueprint.type, mBlueprint.data);
-
-    if(mBlueprint.generateMipMaps) 
-    {
-        glGenerateMipmap(GL_TEXTURE_2D);
-    }
-
-    glBindTexture(GL_TEXTURE_2D, GL_NONE);
+void GLTexture::setSampler(const GLSampler const* sampler) 
+{
+    GL_CHECK(glBindTexture(m_target, m_id));
+    GL_CHECK(glSamplerParameteri(m_target, GL_TEXTURE_MIN_FILTER, sampler->m_minFilter));
+    GL_CHECK(glSamplerParameteri(m_target, GL_TEXTURE_MAG_FILTER, sampler->m_magFilter));
+    GL_CHECK(glSamplerParameteri(m_target, GL_TEXTURE_WRAP_S, sampler->m_sWrap));
+    GL_CHECK(glSamplerParameteri(m_target, GL_TEXTURE_WRAP_T, sampler->m_rWrap));
+    GL_CHECK(glSamplerParameteri(m_target, GL_TEXTURE_WRAP_R, sampler->m_tWrap));
 }
 
-void GLTexture2D::Resize(const uint32_t width, const uint32_t height) 
+void GLTexture::destroy() 
 {
-    mBlueprint.width = width;
-    mBlueprint.height = height;
-
-    glBindTexture(GL_TEXTURE_2D, mId);
-    glTexImage2D(GL_TEXTURE_2D, 0, mBlueprint.format, mBlueprint.width, mBlueprint.height, 0, mBlueprint.nChannels, mBlueprint.type, mBlueprint.data);
-
-    if(mBlueprint.generateMipMaps) 
-    {
-        glGenerateMipmap(GL_TEXTURE_2D);
-    }
+    release();
+    GL_CHECK(glDeleteTextures(1, &m_id));
 }
 
-void GLTexture2D::Destroy() 
-{
-    glDeleteTextures(1, &mId);
-}
-
-
-
-//================================================================
-// Cube impl
-//================================================================
-
-GLTextureCube::GLTextureCube(GLTextureBlueprint blueprint) 
-    : GLTexture(blueprint)
-{
-    glGenTextures(1, &mId);
-    glBindTexture(GL_TEXTURE_CUBE_MAP, mId);
-    
-    glSamplerParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, mBlueprint.samplerBlueprint.minFilter);
-    glSamplerParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, mBlueprint.samplerBlueprint.magFilter);
-    glSamplerParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, mBlueprint.samplerBlueprint.sWrap);
-    glSamplerParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, mBlueprint.samplerBlueprint.tWrap);
-    glSamplerParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, mBlueprint.samplerBlueprint.rWrap);
-
-    for(int i = 0; i < 6; i++) 
-    {
-        glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, 0, mBlueprint.format, mBlueprint.width, mBlueprint.height, 0, mBlueprint.nChannels, mBlueprint.type, mBlueprint.data);
-    }
-
-    if(mBlueprint.generateMipMaps) 
-    {
-        glGenerateMipmap(GL_TEXTURE_CUBE_MAP);
-    }
-
-    glBindTexture(GL_TEXTURE_CUBE_MAP, GL_NONE);
-}
-
-void GLTextureCube::Resize(const uint32_t width, const uint32_t height) 
-{
-    mBlueprint.width = width;
-    mBlueprint.height = height;
-
-    glBindTexture(GL_TEXTURE_CUBE_MAP, mId);
-    glTexImage2D(GL_TEXTURE_CUBE_MAP, 0, mBlueprint.format, mBlueprint.width, mBlueprint.height, 0, mBlueprint.nChannels, mBlueprint.type, mBlueprint.data);
-
-    if(mBlueprint.generateMipMaps) 
-    {
-        glGenerateMipmap(GL_TEXTURE_CUBE_MAP);
-    }
-}
-
-void GLTextureCube::Destroy() 
-{
-    glDeleteTextures(1, &mId);
 }
