@@ -4,10 +4,26 @@
 namespace mt 
 {
 
-GLVertexBuffer::GLVertexBuffer(const void const* data, const size_t byteSize) 
+void GLVertexBuffer::create(const void const* data, const size_t byteSize) noexcept 
 {
-    glGenBuffers(1, &vbo);
-    glBindBuffer(GL_ARRAY_BUFFER, vbo);
+
+    GL_CHECK(glGenBuffers(1, &vbo));
+    GL_CHECK(glBindBuffer(GL_ARRAY_BUFFER, vbo));
+    GL_CHECK(glBufferData(GL_ARRAY_BUFFER, byteSize, data, GL_STATIC_DRAW));
+    GL_CHECK(glBindBuffer(GL_ARRAY_BUFFER, 0));
+}
+
+void GLVertexBuffer::update(const size_t offset, const void const* data, const size_t byteSize) 
+{
+    GL_CHECK(glBindBuffer(GL_ARRAY_BUFFER, vbo));
+    GL_CHECK(glBufferSubData(GL_ARRAY_BUFFER, offset, byteSize, data));
+    GL_CHECK(glBindBuffer(GL_ARRAY_BUFFER, 0));
+}
+
+void GLVertexBuffer::destroy() 
+{
+    GL_CHECK(glBindBuffer(GL_ARRAY_BUFFER, 0));
+    GL_CHECK(glDeleteBuffers(1, &vbo));
 }
 
 GLVertexBuffer::~GLVertexBuffer() 
@@ -15,41 +31,48 @@ GLVertexBuffer::~GLVertexBuffer()
     glDeleteBuffers(1, &vbo);
 }
 
-void GLVertexBuffer::setBufferData(const void const* data, const size_t byteSize) 
+void GLIndexBuffer::create(const void const* data, const size_t byteSize) noexcept 
 {
-    glBufferData(GL_ARRAY_BUFFER, byteSize, data, GL_STATIC_DRAW);
+
+    GL_CHECK(glGenBuffers(1, &ebo));
+    GL_CHECK(glBindBuffer(GL_ARRAY_BUFFER, ebo));
+    GL_CHECK(glBufferData(GL_ARRAY_BUFFER, byteSize, data, GL_STATIC_DRAW));
+    GL_CHECK(glBindBuffer(GL_ARRAY_BUFFER, 0));
 }
 
-GLIndexBuffer::GLIndexBuffer(const void const* data, const size_t byteSize) 
+void GLIndexBuffer::update(const size_t offset, const void const* data, const size_t byteSize) 
 {
-    glGenBuffers(1, &ebo);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
+    GL_CHECK(glBindBuffer(GL_ARRAY_BUFFER, ebo));
+    GL_CHECK(glBufferSubData(GL_ARRAY_BUFFER, offset, byteSize, data));
+    GL_CHECK(glBindBuffer(GL_ARRAY_BUFFER, 0));
 }
 
-GLIndexBuffer::~GLIndexBuffer() 
+void GLIndexBuffer::destroy() 
 {
-    glDeleteBuffers(1, &ebo);
+    GL_CHECK(glBindBuffer(GL_ARRAY_BUFFER, 0));
+    GL_CHECK(glDeleteBuffers(1, &ebo));
 }
 
-void GLIndexBuffer::setBufferData(const void const* data, const size_t byteSize) 
+void GLUniformBuffer::create(const void const* data, const size_t byteSize) noexcept 
 {
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, byteSize, data, GL_STATIC_DRAW);
+
+    GL_CHECK(glGenBuffers(1, &ubo));
+    GL_CHECK(glBindBuffer(GL_ARRAY_BUFFER, ubo));
+    GL_CHECK(glBufferData(GL_ARRAY_BUFFER, byteSize, data, GL_STATIC_DRAW));
+    GL_CHECK(glBindBuffer(GL_ARRAY_BUFFER, 0));
 }
 
-GLUniformBuffer::GLUniformBuffer(const void const* data, const size_t byteSize) 
+void GLUniformBuffer::update(const size_t offset, const void const* data, const size_t byteSize) 
 {
-    glGenBuffers(1, &ubo);
-    glBindBuffer(GL_UNIFORM_BUFFER, ubo);
+    GL_CHECK(glBindBuffer(GL_ARRAY_BUFFER, ubo));
+    GL_CHECK(glBufferSubData(GL_ARRAY_BUFFER, offset, byteSize, data));
+    GL_CHECK(glBindBuffer(GL_ARRAY_BUFFER, 0));
 }
 
-GLUniformBuffer::~GLUniformBuffer() 
+void GLUniformBuffer::destroy() 
 {
-    glDeleteBuffers(1, &ubo);
-}
-
-void GLUniformBuffer::setBufferData(const void const* data, const size_t byteSize) 
-{
-    glBufferData(GL_ARRAY_BUFFER, byteSize, data, GL_STATIC_DRAW);
+    GL_CHECK(glBindBuffer(GL_ARRAY_BUFFER, 0));
+    GL_CHECK(glDeleteBuffers(1, &ubo));
 }
 
 }

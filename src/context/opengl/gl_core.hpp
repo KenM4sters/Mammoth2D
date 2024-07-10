@@ -1,42 +1,51 @@
 #ifndef MAMMOTH_2D_GL_CORE_HPP
 #define MAMMOTH_2D_GL_CORE_HPP
 
+#include "api.hpp"
+
 #include <glad/gl.h>
 #include <string>
 #include <iostream>
 
 #define GL_CHECK(stmt) do { \
     stmt; \
-    CheckGLError(#stmt, __FILE__, __LINE__); \
+    checkGLError(#stmt, __FILE__, __LINE__); \
 } while (0)
 
-
-
-std::string GetGLErrorString(GLenum error) 
+namespace mt 
 {
-    switch (error) 
-    {
-        case GL_NO_ERROR:          return "GL_NO_ERROR";
-        case GL_INVALID_ENUM:      return "GL_INVALID_ENUM";
-        case GL_INVALID_VALUE:     return "GL_INVALID_VALUE";
-        case GL_INVALID_OPERATION: return "GL_INVALID_OPERATION";
-        case GL_OUT_OF_MEMORY:     return "GL_OUT_OF_MEMORY";
-        case GL_INVALID_FRAMEBUFFER_OPERATION: return "GL_INVALID_FRAMEBUFFER_OPERATION";
-        default:                   return "Unknown Error";
-    }
+    
+std::string getGLErrorString(GLenum error);
+
+void checkGLError(const char* stmt, const char* file, int line);
+
+[[nodiscard]] constexpr GLenum convertToGLTopology(Topology topolgy) noexcept;
+
+[[nodiscard]] constexpr GLenum convertToGLAddressMode(AddressMode addressMode) noexcept;
+
+[[nodiscard]] constexpr GLenum convertToGLFilterMode(FilterMode filterMode) noexcept;
+
+[[nodiscard]] constexpr GLenum convertToGLMipMapMode(MipMapMode mipMapMode) noexcept;
+
+[[nodiscard]] constexpr GLenum convertToGLAttachmentTarget(AttachmentTarget attachmentTarget) noexcept;
+
+[[nodiscard]] constexpr GLenum convertToGLInternalFormat(InternalFormat internalFormat) noexcept;
+
+[[nodiscard]] constexpr GLenum convertToGLFormat(Format format) noexcept;
+
+[[nodiscard]] constexpr GLenum convertToGLAttribute(Attribute attribute) noexcept;
+
+[[nodiscard]] constexpr GLenum convertToGLAttributeFormat(AttributeFormat attributeFormat) noexcept;
+
+[[nodiscard]] constexpr GLenum convertToGLAttributeType(AttributeType attributeType) noexcept;
+
+[[nodiscard]] constexpr GLenum convertToGLShaderResourceType(ShaderResourceType shaderResourceType) noexcept;
+
+[[nodiscard]] constexpr GLenum convertToGLDrawMode(DrawMode drawMode) noexcept;
+
 }
 
 
-void CheckGLError(const char* stmt, const char* file, int line) 
-{
-    GLenum error = glGetError();
-
-    if (error != GL_NO_ERROR) 
-    {
-        std::cerr << "OpenGL error in file " << file << " at line " << line << ": " 
-                  << GetGLErrorString(error) << " (" << error << ") in statement: " << stmt << std::endl;
-    }
-}
 
 
 #endif

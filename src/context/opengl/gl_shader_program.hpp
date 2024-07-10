@@ -21,7 +21,7 @@ public:
 
     void create();
     
-    [[nodiscard]] constexpr const GLuint& getProgram() const noexcept { return m_program; }
+    [[nodiscard]] constexpr const GLuint& getProgram() const noexcept { return m_handle; }
 
 private:
     /**
@@ -35,7 +35,7 @@ private:
     void checkShaderErrors(GLuint object, std::string type) const;
 
 private:
-    GLuint m_program;
+    GLuint m_handle;
 
 };
 

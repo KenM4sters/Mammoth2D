@@ -3,6 +3,10 @@
 
 #include <glad/gl.h>
 
+#include <vector>
+
+
+
 namespace mt 
 {
 
@@ -14,7 +18,7 @@ enum class GraphicsBackend
     Vulkan
 };
 
-enum class SamplerWrapMode
+enum class AddressMode
 {
     Repeat,
     MirroredRepeat,
@@ -22,15 +26,19 @@ enum class SamplerWrapMode
     ClampToBorder
 };
 
-enum class SamplerFilterMode 
+enum class FilterMode 
 {
     Nearest,
     Linear,
-    MipNearest,
-    MipLinear
 };
 
-enum class Dimension 
+enum class MipMapMode 
+{
+    MipMapNearest,
+    MipMapLinear
+};
+
+enum class AttachmentTarget 
 {
     Texture2D,
     Texture3D,
@@ -117,174 +125,100 @@ enum class Topology
     Points
 };
 
-/**
- * @brief Info required to construct a Texture instance.
- */
+struct BufferView 
+{
+    size_t byteLength;
+    size_t byteOffset;
+};
+
+struct BufferAccessor 
+{
+    BufferAccessor(BufferView* view, size_t byteLength)
+        : byteLength{byteLength} 
+    {
+
+    }
+
+    size_t byteOffset;
+    size_t byteLength;
+};
+
+struct BufferLayout 
+{
+    BufferLayout(BufferAccessor* accessors, size_t byteSize)
+        : accessors{accessors}, byteSize{byteSize} 
+    {
+
+        if(byteSize % sizeof(BufferAccessor) != 0) 
+        {
+            // TEMPORARY - trying not to throw errors.
+            throw std::runtime_error("Failed to create BufferLayout: byteSize must be a multiple of the size of a BufferAccessor!");
+        }
+
+        size_t length = byteSize / sizeof(BufferAccessor);
+
+        size_t stride = 0;
+        for(size_t i = 0; i < length; i++) 
+        {
+            accessors[i].byteOffset = stride;
+            stride += accessors[i].byteLength;
+        }   
+    }
+
+    BufferAccessor* accessors;
+    size_t byteSize;
+};
+
+
 struct TextureBlueprint 
 {
-    Dimension dimension;
+    AttachmentTarget dimension;
     InternalFormat internalFormat;
     uint32_t width;
     uint32_t height;
     Format format;
-    UniformType type;
+    ShaderResourceType type;
     const char* data;
 };
 
 struct SamplerBlueprint 
 {
-    SamplerWrapMode sWrap;
-    SamplerWrapMode tWrap;
-    SamplerWrapMode rWrap;
-    SamplerFilterMode min;
-    SamplerFilterMode mag;
+    AddressMode sWrap;
+    AddressMode tWrap;
+    AddressMode rWrap;
+    FilterMode min;
+    FilterMode mag;
 };
 
-struct RenderbufferBlueprint 
-{
-    GLuint internalFormat;
-    GLuint format;
-    uint32_t width;
-    uint32_t height;
+struct RenderTargetBlueprint
+{   
+    Texture* colorAttachement;
+    Texture* depthStencilAttachment;
 };
 
-struct FramebufferBlueprint 
+struct ShaderResource 
 {
-    Texture* texture;
-    uint32_t attachment;
-    GLuint level;
-    RenderbufferBlueprint* renderbufferBlueprint;
-};
-
-struct MeshBlueprint 
-{
-
+    const char* name;
+    ShaderResourceType type;
+    void* data;
 };
 
 struct ShaderBlueprint 
 {
+    std::vector<char> vertCode;
+    std::vector<char> fragCode; 
+    std::vector<Attribute> attributes;
+    std::vector<ShaderResource> resources;
+};
+
+struct MeshBlueprint 
+{
+    ShaderBlueprint shaderBlueprint;
+    std::vector<float> vertices;
 
 };
 
 
-
-template<typename T>
-[[nodiscard]] constexpr const T ConvertSamplerWrapType(const GraphicsBackend backend, SamplerWrapType wrapType ) noexcept 
-{
-    switch(backend) 
-    {
-        case GraphicsBackend::OpenGL:
-        switch(wrapType) 
-        {
-            case SamplerWrapType::WrapS: return GL_TEXTURE_WRAP_S; break;
-            case SamplerWrapType::WrapT: return GL_TEXTURE_WRAP_T; break;
-            case SamplerWrapType::WrapR: return GL_TEXTURE_WRAP_R; break;
-        }
-    }
-}
-
-template<typename T>
-[[nodiscard]] constexpr const T ConverSamplerWrapMode(const GraphicsBackend backend, SamplerWrapMode wrapMode) noexcept 
-{
-    switch(backend) 
-    {
-        case GraphicsBackend::OpenGL:
-        switch(wrapMode) 
-        {
-            case SamplerWrapMode::Repeat : return GL_REPEAT; break;
-            case SamplerWrapMode::MirroredRepeat : return GL_MIRRORED_REPEAT; break;
-            case SamplerWrapMode::ClampToEdge : return GL_CLAMP_TO_EDGE; break;
-            case SamplerWrapMode::ClampToBorder : return GL_CLAMP_TO_BORDER; break;
-        }
-    }
-}
-
-template<typename T>
-[[nodiscard]] constexpr const T ConvertSamplerFilterMode(const GraphicsBackend backend, SamplerFilterMode filterMode) noexcept 
-{
-    switch(backend) 
-    {
-        case GraphicsBackend::OpenGL:
-        switch(filterMode) 
-        {
-            case SamplerFilterMode::Nearest: return GL_NEAREST; break;
-            case SamplerFilterMode::Linear: return GL_LINEAR; break;
-        }
-    }
-}
-
-template<typename T>
-[[nodiscard]] constexpr const T ConvertDimension(const GraphicsBackend backend, Dimension dimension) noexcept 
-{
-    switch(backend) 
-    {
-        case GraphicsBackend::OpenGL:
-        switch(dimension) 
-        {
-            case Dimension::Texture2D: return GL_TEXTURE_2D; break;
-            case Dimension::Texture3D: return GL_TEXTURE_3D; break;
-            case Dimension::TextureCube: return GL_TEXTURE_CUBE_MAP; break;
-        }
-    }
-}
-
-template<typename T>
-[[nodiscard]] constexpr const T ConvertInternalFormat(const GraphicsBackend backend, InternalFormat internalFormat) noexcept 
-{
-    switch(backend) 
-    {
-        case GraphicsBackend::OpenGL:
-        switch(internalFormat) 
-        {
-            
-        }
-    }
-}
-
-template<typename T>
-[[nodiscard]] constexpr const T ConvertFormat(const GraphicsBackend backend, Format format) noexcept 
-{
-    switch(backend) 
-    {
-        case GraphicsBackend::OpenGL:
-        switch(wrapType) 
-        {
-            case Format::R: return GL_RG ; break;
-            case Format::WrapT: return GL_TEXTURE_WRAP_T; break;
-            case Format::WrapR: return GL_TEXTURE_WRAP_R; break;
-        }
-    }
-}
-
-template<typename T>
-[[nodiscard]] constexpr const T ConvertDrawMode(const GraphicsBackend backend, DrawMode mode) noexcept 
-{
-    switch(backend) 
-    {
-        case GraphicsBackend::OpenGL:
-        switch(wrapType) 
-        {
-            case SamplerWrapType::WrapS: return GL_TEXTURE_WRAP_S; break;
-            case SamplerWrapType::WrapT: return GL_TEXTURE_WRAP_T; break;
-            case SamplerWrapType::WrapR: return GL_TEXTURE_WRAP_R; break;
-        }
-    }
-}
-
-template<typename T>
-[[nodiscard]] constexpr const T ConvertDrawShape(const GraphicsBackend backend, DrawShape shape) noexcept 
-{
-    switch(backend) 
-    {
-        case GraphicsBackend::OpenGL:
-        switch(wrapType) 
-        {
-            case SamplerWrapType::WrapS: return GL_TEXTURE_WRAP_S; break;
-            case SamplerWrapType::WrapT: return GL_TEXTURE_WRAP_T; break;
-            case SamplerWrapType::WrapR: return GL_TEXTURE_WRAP_R; break;
-        }
-    }
-}
 
 
 }

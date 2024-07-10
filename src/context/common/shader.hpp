@@ -8,24 +8,12 @@
 #include <string>
 #include <algorithm>
 
+#include "api.hpp"
+
 namespace mt 
 {
 
-struct ShaderResource 
-{
-    const char* name;
-    ShaderResourceType type;
-    void* data;
-};
-
-struct ShaderBlueprint 
-{
-    std::vector<char> vertCode;
-    std::vector<char> fragCode; 
-    std::vector<Attribute> attributes;
-    std::vector<ShaderResource> resources;
-};  
-
+  
 class Shader 
 {
 public:

@@ -7,13 +7,6 @@
 namespace mt 
 {
 
-struct MeshBlueprint 
-{
-    ShaderBlueprint shaderBlueprint;
-    std::vector<float> vertices;
-
-};
-
 class Mesh final 
 {
 public:

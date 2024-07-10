@@ -3,7 +3,6 @@
 
 
 #include "gl_core.hpp"
-#include "./renderer_interface.hpp"
 
 
 namespace mt 
@@ -42,9 +41,7 @@ struct GLTextureBlueprint final
     GLuint nMipMaps;
 };
 
-/**
- * @brief Interface for GLTexture2D and GLTextureCube.
- */
+
 class GLTexture final 
 {
 public:

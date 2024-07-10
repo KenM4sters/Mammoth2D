@@ -1,46 +1,45 @@
 #ifndef MAMMOTH_2D_GL_BUFFER_HPP
 #define MAMMOTH_2D_GL_BUFFER_HPP
 
-#include <glad/gl.h>
-
-#include <vector>
+#include "gl_core.hpp"
 
 namespace mt
 {
 
-class GLVertexBuffer final 
-{
-public:
-    explicit GLVertexBuffer(const void const* data, const size_t byteSize);
-    ~GLVertexBuffer();
+struct GLVertexBuffer final 
+{   
+    void create(const void const* data, const size_t byteSize) noexcept;
 
-    void setBufferData(const void const* data, const size_t byteSize) noexcept;
+    void update(const size_t offset, const void const* data, const size_t byteSize);
 
-private:
+    void destroy();
+
     GLuint vbo;
+    size_t size;
 };
 
-class GLIndexBuffer final 
+struct GLIndexBuffer final 
 {
-public:
-    explicit GLIndexBuffer(const void const* data, const size_t byteSize);
-    ~GLIndexBuffer();
+    void create(const void const* data, const size_t byteSize) noexcept;
 
-    void setBufferData(const void const* data, const size_t byteSize) noexcept;
+    void update(const size_t offset, const void const* data, const size_t byteSize);
 
-private:
+    void destroy();
+
     GLuint ebo;
+    size_t size;
 };
 
-class GLUniformBuffer final 
+struct GLUniformBuffer final 
 {
-public:
-    explicit GLUniformBuffer(const void const* data, const size_t byteSize);
+    void create(const void const* data, const size_t byteSize) noexcept;
 
-    void setBufferData(const void const* data, const size_t byteSize) noexcept;
+    void update(const size_t offset, const void const* data, const size_t byteSize);
 
-private:
+    void destroy();
+
     GLuint ubo;
+    size_t size;
 };
 
 }
