@@ -1,7 +1,7 @@
 
 ## Ideas for the end-goal user api (pseudocode)
 
-### 1. Heigh-level
+### 1. High-level
 ```
 int main() 
 {
@@ -32,48 +32,105 @@ int main()
 ```
 
 
-### 4. Mid-level
+### 2. Mid-level (mostly functional but some OOP)
 ```
 int main() 
 {
+    mt::Window window = mt::createWindow("Example", 800, 600);
 
-}
+    mt::Application app;
+    state.pWindow = &window;
+    mt::init(app);
 
-```
 
+    const mt::Program& program = mt::createProgram("vert.sc", "frag.sc");
 
-### 3. Low-level
-```
-int main() 
-{
+    const mt::Uniform& uModel = mt::createUniform("uModel",mt::ShaderResourceType::Mat4x4, nullptr);
 
-    const program = mt::createProgram("vert", "frag");
+    const mt::Shader& shader = mt::createShader();
+    shader.setProgram(program);
+    shader.addUniform(uModel);
+
+    const mt::VertexBuffer& cubeBuffer = mt::createVertexBuffer();
+    cubeBuffer.writeVertices(vertices);
+    cubeBuffer.writeIndices(indices);
+    cubeBuffer.setLayout(layout);
     
+    const sceneFlags = MT_TEXTURE_COLOR_ATTACHMENT | MT_TEXTURE_S_CLAMP_TO_EDGE
+        | MT_TEXTURE_U_CLAMP_TO_EDGE
 
-    shader.setShaderResource("modelMatrix", mt::ShaderResourceType::Mat4x4f, &modelMatrix);
-    shader.setShaderResource("someMatrix", mt::ShaderResourceType::Mat4x4f, nullptr);
-    
-    shader.writeShaderResource("someMatrix", &someRandomMatrix);
-
-    const cubeBuffer = mt::createVertexBuffer();
+    const sceneBuffer = mt::createFramebuffer(
+        800,
+        600,
+        mt::TextureFormat::RGBA32F,
+        sceneFlags
+    );
 
     while(!mt::windowShouldClose()) 
     {
         mt::setState(mt::DEPTH_TEST_LEQUAL, mt::CULL_MODE_OFF, mt::BLEND_ONE_TO_ONE);
         mt::clearColor(mt::COLOR_ORANGE);
 
-        mt::begin();
+        uModel.write(&model);
 
-        mt::setVertexBuffer(cubeVertexBuffer);
-        mt::setIndexBuffer(cubeIndexBuffer);
-
-        mt::submit();
-
+        mt::begin(sceneBuffer);
+        mt::submit(cubeBuffer, shader);
         mt::end();
 
-        mt::progress();
+        mt::begin(MT_SCREEN_BUFFER);
+        mt::submit(cubeBuffer, shader);
+        mt::end();
+
+        mt::progress(); // progresses to the next frame.
     }
 
 }
 ```
+
+
+### 3. low-level (functional).
+```
+int main() 
+{
+    mt::initWindow("Example", 800, 600);
+
+    const mt::ProgramHandle program = mt::createProgram("vert.sc", "frag.sc");
+
+    const mt::UniformHandle uModel = mt::createUniform("uModel",mt::ShaderResourceType::Mat4x4, nullptr);
+
+    const mt::ShaderHandle shader = mt::createShader(program, [uModel, uView]);
+
+    const cubeBuffer = mt::createVertexBuffer(cubeVertices, cubeIndices, layout);
+    
+    const sceneFlags = MT_TEXTURE_COLOR_ATTACHMENT | MT_TEXTURE_S_CLAMP_TO_EDGE
+        | MT_TEXTURE_U_CLAMP_TO_EDGE
+
+    const sceneBuffer = mt::createFramebuffer(
+        800,
+        600,
+        mt::TextureFormat::RGBA32F,
+        sceneFlags
+    );
+
+    while(!mt::windowShouldClose()) 
+    {
+        mt::setState(mt::DEPTH_TEST_LEQUAL, mt::CULL_MODE_OFF, mt::BLEND_ONE_TO_ONE);
+        mt::clearColor(mt::COLOR_ORANGE);
+
+        mt::writeUniform("uModel", &model);
+
+        mt::begin(sceneBuffer);
+        mt::submit(cubeBuffer, shader);
+        mt::end();
+
+        mt::begin(MT_SCREEN_BUFFER);
+        mt::submit(cubeBuffer, shader);
+        mt::end();
+
+        mt::progress(); // progresses to the next frame.
+    }
+}
+
+```
+
 

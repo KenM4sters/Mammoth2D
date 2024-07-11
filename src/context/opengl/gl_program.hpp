@@ -1,27 +1,34 @@
 #ifndef MAMMOTH_2D_GL_SHADER_HPP
 #define MAMMOTH_2D_GL_SHADER_HPP
 
-#include "Core.hpp"
+#include "gl_core.hpp"
 
 #include <glad/gl.h>
 
 #include <string>
 
 
+namespace mt 
+{
 /**
  * @brief Manages the compilation of a shader program from a mandatory vertex 
  * and fragment shader file paths, and optionally a geometry shader file path.
  * Holds the glProgram and nothing else. All functionality is managed externally. 
  */
-class GLShaderProgram final
+class GLProgram final
 {
 public:
-    explicit GLShaderProgram(const char* vertPath, const char* fragPath, 
-        const char* geoPath = nullptr);
+    explicit GLProgram() noexcept
+        : m_program{0} 
+    {}
 
-    void create();
+    void create(const char* vertPath, const char* fragPath);
+
+    void bind() const;
+
+    void release() const;
     
-    [[nodiscard]] constexpr const GLuint& getProgram() const noexcept { return m_handle; }
+    [[nodiscard]] constexpr GLuint getGLHandle() const noexcept { return m_program; }
 
 private:
     /**
@@ -32,11 +39,16 @@ private:
      */
     [[nodiscard]] std::vector<char> parseShaderFile(const char* filePath) const;
 
+    /**
+     * @brief Checks for shader compilation errors (useful for showing syntax errors).
+     * @param object the shader code to run checks against (vShader or fShader).
+     * @param type shader stage to run checks against (VERTEX or FRAGMENT). 
+     */
     void checkShaderErrors(GLuint object, std::string type) const;
 
 private:
-    GLuint m_handle;
-
+    GLuint m_program;
 };
 
+}
 #endif 

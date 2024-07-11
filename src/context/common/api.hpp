@@ -5,10 +5,29 @@
 
 #include <vector>
 
+#define MAMMOTH_INVALID_HANDLE UINT16_MAX
+
+#define MAMMOTH_HANDLE(name)                                        \
+    struct name                                                     \
+    {                                                               \
+        uint16_t m_idx;                                             \
+        [[nodiscard]] constexpr bool isValid() const noexcept       \
+        {                                                           \
+            return m_idx != MAMMOTH_INVALID_HANDLE;                 \
+        }                                                           \
+    };                                                             
 
 
 namespace mt 
 {
+
+MAMMOTH_HANDLE(VertexBufferHandle);
+MAMMOTH_HANDLE(IndexBufferHandle);
+MAMMOTH_HANDLE(UniformBufferHandle);
+MAMMOTH_HANDLE(ProgramHandle);
+MAMMOTH_HANDLE(TextureHandle);
+MAMMOTH_HANDLE(FramebufferHandle);
+
 
 class Texture;
 
@@ -125,6 +144,18 @@ enum class Topology
     Points
 };
 
+enum class TextureFlags
+{
+    Read = 1,
+    Write = 1 << 1,
+    ReadWrite = 1 << 2,
+    Color = 1 << 3,
+    Depth = 1 << 4,
+    Stencil = 1 << 5,
+    DepthStencil = 1 << 6,
+};
+
+
 struct BufferView 
 {
     size_t byteLength;
@@ -169,7 +200,6 @@ struct BufferLayout
     size_t byteSize;
 };
 
-
 struct TextureBlueprint 
 {
     AttachmentTarget dimension;
@@ -189,37 +219,6 @@ struct SamplerBlueprint
     FilterMode min;
     FilterMode mag;
 };
-
-struct RenderTargetBlueprint
-{   
-    Texture* colorAttachement;
-    Texture* depthStencilAttachment;
-};
-
-struct ShaderResource 
-{
-    const char* name;
-    ShaderResourceType type;
-    void* data;
-};
-
-struct ShaderBlueprint 
-{
-    std::vector<char> vertCode;
-    std::vector<char> fragCode; 
-    std::vector<Attribute> attributes;
-    std::vector<ShaderResource> resources;
-};
-
-struct MeshBlueprint 
-{
-    ShaderBlueprint shaderBlueprint;
-    std::vector<float> vertices;
-
-};
-
-
-
 
 }
 

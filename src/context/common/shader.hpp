@@ -20,9 +20,6 @@ public:
     explicit Shader(const ShaderBlueprint& blueprint)
         : m_attributes{blueprint.attributes} 
     {
-
-        
-
         for(const auto& res : blueprint.resources) 
         {
             m_resources[res.name] = res;

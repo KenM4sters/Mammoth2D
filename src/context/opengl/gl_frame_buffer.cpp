@@ -1,4 +1,4 @@
-#include "gl_framebuffer.hpp"
+#include "gl_frame_buffer.hpp"
 
 GLFramebuffer::GLFramebuffer(GLFramebufferBlueprint blueprint)
     : mBlueprint{blueprint}
@@ -28,7 +28,6 @@ GLFramebuffer::GLFramebuffer(GLFramebufferBlueprint blueprint)
 
 void GLFramebuffer::Resize(const uint32_t width, const uint32_t height) 
 {
-
     mBlueprint.texture->Resize(width, height);
 
     if(mBlueprint.renderbufferBlueprint) 

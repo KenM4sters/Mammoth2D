@@ -1,4 +1,4 @@
-#include "renderer_interface.hpp"
+
 
 #include <glad/gl.h>
 
@@ -17,9 +17,9 @@ public:
         : mShaderLoc{shaderLoc}, mByteSize{byteSize}
     {}
 
-    [[nodiscard]] constexpr const size_t GetSize() const noexcept { return mByteSize; }
+    [[nodiscard]] constexpr size_t GetSize() const noexcept { return mByteSize; }
 
-    [[nodiscard]] constexpr const uint32_t GetShaderLocation() const noexcept { return mShaderLoc; }
+    [[nodiscard]] constexpr uint32_t GetShaderLocation() const noexcept { return mShaderLoc; }
 
 public:
     size_t mOffset = 0; // The unique, per attribute offset is set by the buffer layout, since it needs information about all attributes.
@@ -55,4 +55,5 @@ private:
     std::vector<GLBufferAttribute>& mAttribs;
     size_t mStride;
 };
+
 }

@@ -1,4 +1,4 @@
-#include "gl_shader_program.hpp"
+#include "gl_program.hpp"
 
 #include <iostream>
 #include <fstream>
@@ -6,75 +6,43 @@
 #include <vector>
 
 
-
-GLShaderProgram::GLShaderProgram(const char* vertPath, const char* fragPath, const char* geoPath = nullptr) 
+namespace mt 
+{
+void GLProgram::create(const char* vertPath, const char* fragPath) 
 {
     const std::vector<char> vertCode = parseShaderFile(vertPath);
     const std::vector<char> fragCode = parseShaderFile(fragPath);
 
-    std::vector<char> geoCode = {};
-
-    if(geoPath != nullptr) 
-    {
-        geoCode = parseShaderFile(fragPath);
-    }
-
-    GLuint vShader, fShader, gShader;
+    GLuint vShader, fShader;
 
     const char* vertSrc = vertCode.data();
     const char* fragSrc = fragCode.data();
-    const char* geoSrc = geoCode.data();
 
     vShader = glCreateShader(GL_VERTEX_SHADER);
     glShaderSource(vShader, 1, &vertSrc, NULL);
-    glCompileShader(vShader);
     checkShaderErrors(vShader, "VERTEX");
+    glCompileShader(vShader);
 
     fShader = glCreateShader(GL_FRAGMENT_SHADER);
     glShaderSource(fShader, 1, &fragSrc, NULL);
     glCompileShader(fShader);
     checkShaderErrors(fShader, "FRAGMENT");
 
-    if (!geoCode.empty())
-    {
-        gShader = glCreateShader(GL_GEOMETRY_SHADER);
-        glShaderSource(gShader, 1, &geoSrc, NULL);
-        glCompileShader(gShader);
-        checkShaderErrors(gShader, "GEOMETRY");
-    }
+    m_program = glCreateProgram();
 
-    mProgram = glCreateProgram();
+    glAttachShader(m_program, vShader);
+    glAttachShader(m_program, fShader);
+    glLinkProgram(m_program);
 
-    glAttachShader(mProgram, vShader);
-    glAttachShader(mProgram, fShader);
+    checkShaderErrors(m_program, "PROGRAM");
 
-    if (!geoCode.empty()) 
-    {
-        glAttachShader(mProgram, gShader);
-    }
-
-    glLinkProgram(mProgram);
-
-    checkShaderErrors(mProgram, "PROGRAM");
-
-    // Programs can be cleaned-up now after linking into mProgram.
+    // Programs can be cleaned-up now after linking into m_program.
     //
-    glDeleteShader(vShader);
-    glDeleteShader(fShader);
-
-    if (!geoCode.empty()) 
-    {
-        glDeleteShader(gShader);
-    }
+    GL_CHECK(glDeleteShader(vShader));
+    GL_CHECK(glDeleteShader(fShader));
 }
 
-/**
- * @brief Reads source file and returns its contents as a vector of characters.
- * Throws an exception if the file failed to open (check file path).
- * @param filePath path to the file to read from.
- * @return vector of characters read from the file.
- */
-std::vector<char> GLShaderProgram::parseShaderFile(const char* filePath) const
+std::vector<char> GLProgram::parseShaderFile(const char* filePath) const
 {
     std::ifstream file{filePath, std::ios::ate | std::ios::binary};
 
@@ -92,7 +60,17 @@ std::vector<char> GLShaderProgram::parseShaderFile(const char* filePath) const
     return buffer;
 }
 
-void GLShaderProgram::checkShaderErrors(GLuint object, std::string type) const
+void GLProgram::bind() const 
+{
+    GL_CHECK(glUseProgram(m_program));
+}
+
+void GLProgram::release() const 
+{
+    GL_CHECK(glUseProgram(GL_NONE));
+}
+
+void GLProgram::checkShaderErrors(GLuint object, std::string type) const
 {
     int success;
 
@@ -120,4 +98,5 @@ void GLShaderProgram::checkShaderErrors(GLuint object, std::string type) const
                 << std::endl;
         }
     }
+}
 }

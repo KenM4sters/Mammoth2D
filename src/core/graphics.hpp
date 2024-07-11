@@ -6,17 +6,8 @@
 namespace mt 
 {
 
-class Graphics final
-{
-public:
-    explicit Graphics(GraphicsBackend backend);
-    ~Graphics();
 
 
-private:
-    static GraphicsBackend s_backend;
-
-};
 
 }
 
