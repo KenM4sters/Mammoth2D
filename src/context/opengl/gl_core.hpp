@@ -42,7 +42,7 @@ void checkGLError(const char* stmt, const char* file, int line);
 
 [[nodiscard]] constexpr GLenum convertToGLAttributeType(AttributeType attributeType) noexcept;
 
-[[nodiscard]] constexpr GLenum convertToGLShaderResourceType(ShaderResourceType shaderResourceType) noexcept;
+[[nodiscard]] constexpr GLenum convertToGLShaderResourceType(ResourceType ResourceType) noexcept;
 
 [[nodiscard]] constexpr GLenum convertToGLDrawMode(DrawMode drawMode) noexcept;
 

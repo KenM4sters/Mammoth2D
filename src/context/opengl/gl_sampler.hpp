@@ -16,6 +16,7 @@ struct GLSamplerBlueprint
 
 class GLSampler final
 {
+public:
     explicit GLSampler() noexcept
         : m_addressModeS{GL_CLAMP_TO_EDGE},
         m_addressModeT{GL_CLAMP_TO_EDGE},

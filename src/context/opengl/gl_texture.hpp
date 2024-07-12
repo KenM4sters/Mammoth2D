@@ -3,29 +3,13 @@
 
 
 #include "gl_core.hpp"
-
+#include "gl_sampler.hpp"
 
 namespace mt 
 {
 
-struct GLTextureBlueprint 
-{
-    GLboolean isTexture;
-    GLenum target;
-    GLuint level;
-    GLsizei width;
-    GLsizei height;
-    GLenum internalFormat;
-    GLenum format;
-    GLenum type;
-    GLboolean isBound;
-    GLenum attachment;
-    GLuint unit;
-    uint32_t flags;
-};
 
-
-class GLTexture final 
+class GLTexture final : public Texture
 {
 public:
     explicit GLTexture() noexcept
@@ -45,21 +29,17 @@ public:
     GLTexture& operator=(const GLTexture& other) = delete;
 
 	void create(
-        const uint32_t width, 
-        const uint32_t height, 
+        uint32_t width, 
+        uint32_t height, 
         GLenum internalFormat,
-        TextureFlags flags
-        );
+        TextureFlags flags,
+        const GLSampler* sampler
+    );
 
-    void update(const uint32_t width, const uint32_t height);
 
-    void resize(const uint32_t width, const uint32_t height);
+    void resize(uint32_t width, uint32_t height);
 
-    void bind();
-
-    void release();
-
-    void setTextureUnit(const GLuint unit);
+    void setTextureUnit(GLuint unit);
 
     void destroy();
 
@@ -74,6 +54,7 @@ public:
     [[nodiscard]] constexpr GLenum getFormat() const noexcept { return m_format; } 
     [[nodiscard]] constexpr GLenum getType() const noexcept { return m_type; } 
     [[nodiscard]] constexpr GLenum getTextureUnit() const noexcept { return m_unit; } 
+    [[nodiscard]] constexpr uint32_t getFlags() const noexcept { return m_flags; } 
 
 private:
     GLuint m_glHandle;

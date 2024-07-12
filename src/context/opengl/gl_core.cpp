@@ -95,6 +95,7 @@ void checkGLError(const char* stmt, const char* file, int line)
         case InternalFormat::RGB32F: return GL_RGB32F;
         case InternalFormat::RGBA32: return GL_RGBA32I;
         case InternalFormat::RGBA32F: return GL_RGBA32F;
+        case InternalFormat::Depth24Stencil8: return GL_DEPTH24_STENCIL8;
     }    
 }
 
@@ -105,6 +106,7 @@ void checkGLError(const char* stmt, const char* file, int line)
         case Format::RG: return GL_RG;
         case Format::RGB: return GL_RGB;
         case Format::RGBA: return GL_RGBA;
+        case Format::DepthStencil: return GL_DEPTH_STENCIL;
     }    
 }
 
@@ -147,7 +149,7 @@ void checkGLError(const char* stmt, const char* file, int line)
     // }    
 }
 
-[[nodiscard]] constexpr GLenum convertToGLShaderResourceType(ShaderResourceType shaderResourceType) noexcept 
+[[nodiscard]] constexpr GLenum convertToGLShaderResourceType(ResourceType ResourceType) noexcept 
 {
     // switch(shaderResourceType) 
     // {

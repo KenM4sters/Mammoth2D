@@ -73,7 +73,8 @@ enum class InternalFormat
     RGB32,
     RGB32F,
     RGBA32,
-    RGBA32F
+    RGBA32F,
+    Depth24Stencil8
 };
 
 enum class Format 
@@ -82,6 +83,7 @@ enum class Format
     RG,
     RGB,
     RGBA,
+    DepthStencil
 };
 
 enum class Attribute 
@@ -96,25 +98,13 @@ enum class Attribute
     TexCoords
 };
 
-enum class AttributeFormat 
-{
-    Float,
-    Int,
-    Vec2f,
-    Vec2i,
-    Vec3f,
-    Vec3i,
-    Vec4f,
-    Vec4i, 
-};
-
 enum class AttributeType 
 {
     Int,
     Float
 };
 
-enum class ShaderResourceType 
+enum class ResourceType 
 {
     Sampler,
     Float,
@@ -144,62 +134,6 @@ enum class Topology
     Points
 };
 
-struct TextureFlags 
-{
-    enum Enum 
-    {
-        ReadOnly = 1,
-        WriteOnly = 1 >> 1,
-        ReadWrite = 1 >> 2,
-        Color = 1 >> 3,
-        Depth = 1 >> 4,
-        Stencil = 1 >> 5,
-    };
-};
-
-struct BufferView 
-{
-    size_t byteLength;
-    size_t byteOffset;
-};
-
-struct BufferAccessor 
-{
-    BufferAccessor(BufferView* view, size_t byteLength)
-        : byteLength{byteLength} 
-    {
-
-    }
-
-    size_t byteOffset;
-    size_t byteLength;
-};
-
-struct BufferLayout 
-{
-    BufferLayout(BufferAccessor* accessors, size_t byteSize)
-        : accessors{accessors}, byteSize{byteSize} 
-    {
-
-        if(byteSize % sizeof(BufferAccessor) != 0) 
-        {
-            // TEMPORARY - trying not to throw errors.
-            throw std::runtime_error("Failed to create BufferLayout: byteSize must be a multiple of the size of a BufferAccessor!");
-        }
-
-        size_t length = byteSize / sizeof(BufferAccessor);
-
-        size_t stride = 0;
-        for(size_t i = 0; i < length; i++) 
-        {
-            accessors[i].byteOffset = stride;
-            stride += accessors[i].byteLength;
-        }   
-    }
-
-    BufferAccessor* accessors;
-    size_t byteSize;
-};
 
 struct TextureBlueprint 
 {
@@ -208,7 +142,7 @@ struct TextureBlueprint
     uint32_t width;
     uint32_t height;
     Format format;
-    ShaderResourceType type;
+    ResourceType type;
     const char* data;
 };
 
@@ -225,6 +159,19 @@ struct Memory
 {
     void* data;
     size_t byteSize;
+};
+
+struct TextureFlags 
+{
+    enum Enum 
+    {
+        ReadOnly = 1,
+        WriteOnly = 1 >> 1,
+        ReadWrite = 1 >> 2,
+        Color = 1 >> 3,
+        Depth = 1 >> 4,
+        Stencil = 1 >> 5,
+    };
 };
 
 struct VertexBufferFlags 
@@ -254,28 +201,53 @@ struct UniformBufferFlags
     };
 };
 
-struct AttachmentFlags 
-{   
-    enum Enum 
-    {
-        Color = 1,
-        Depth = 1 >> 1,
-        Stencil = 1 >> 2
-    };
-};
-
 struct Attachment 
 {
-    AttachmentFlags flags;
     Texture* pTexture;
 };
 
+struct VertexAttribute 
+{
+    VertexAttribute(Attribute attribute, AttributeType type, size_t count)
+        : type{type},
+        byteOffset{0}
+    {
+        switch(type) 
+        {
+            case AttributeType::Int: byteSize = count * 4; break;
+            case AttributeType::Float: byteSize = count * 4; break;
+        }
+    }   
+    
+    AttributeType type;
+    size_t byteOffset;
+    size_t byteSize;
+};
+
+struct VertexLayout 
+{
+    explicit VertexLayout(VertexAttribute* attributes, size_t count) noexcept
+        : attributes{attributes}, 
+        count{count},
+        stride{0} 
+    {
+        for(size_t i = 0; i < count; i++) 
+        {
+            attributes[i].byteOffset = stride;
+            stride += attributes[i].byteSize;
+        }   
+    }
+
+    VertexAttribute* attributes;
+    size_t count;
+    size_t stride;
+};
+
+
 
 class VertexBuffer 
-{
-
+{   
     friend class GLVertexBuffer;
-
 public:
     VertexBuffer(const VertexBuffer& other) = delete;
     VertexBuffer& operator=(const VertexBuffer& other) = delete;
@@ -350,6 +322,8 @@ private:
 
 class Texture 
 {
+    friend class GLTexture;
+
 public: 
     Texture(const Texture& other) = delete;
     Texture& operator=(const Texture& other) = delete;
@@ -421,6 +395,61 @@ private:
     virtual ~FrameBuffer() = 0;
 };
 
+class Resource 
+{
+    friend class GLResource;
+public:
+    Resource(const Resource& other) = delete;
+    Resource& operator=(const Resource& other) = delete;
+
+    virtual void create(const char* name, ResourceType type, const Memory* memory) = 0;
+
+    virtual void update(const Memory* memory) = 0;
+
+    virtual void destroy() = 0;
+
+private:
+    explicit Resource() noexcept = default;
+
+    virtual ~Resource() = 0;
+};
+
+class Shader   
+{
+    friend class GLShader;
+public: 
+    Shader(const Shader& other) = delete;
+    Shader& operator=(const Shader& other) = delete;
+
+    virtual void create(Program& program, const Resource* resources, size_t count) = 0;
+
+    virtual void update(const char* name, const Memory* memory) = 0;
+
+    virtual void destroy() = 0;
+
+private:
+    explicit Shader() noexcept = default;
+
+    virtual ~Shader() = 0; 
+};
+
+
+class VertexInput 
+{
+public:
+    VertexInput(const VertexInput& other) = delete;
+    VertexInput& operator=(const VertexInput& other) = delete;
+
+    virtual void create(VertexBuffer* buffer, VertexLayout* layout, IndexBuffer* indexBuffer) = 0;
+
+    virtual void destroy() = 0;
+
+private:
+    explicit VertexInput() noexcept = default;
+
+    virtual ~VertexInput() = 0;
+};
+
 
 
 
@@ -441,8 +470,41 @@ UniformBuffer* createUniformBuffer(
 );
 
 
+Program* createProgram(
+    const char*         vertPath,
+    const char*         fragPath
+);
 
+Texture* createTexture(
+    uint32_t            width,
+    uint32_t            height,
+    TextureFlags        flags
+);
 
+Sampler* createSampler(
+    AddressMode         addressModeS,
+    AddressMode         addressModeT,
+    AddressMode         addressModeR,
+    FilterMode          minFilter,
+    FilterMode          magFilter
+);
+
+FrameBuffer* createFrameBuffer(
+    const Attachment*   attachments,
+    size_t              count
+);
+
+Resource* createResource(
+    const char*         name,
+    ResourceType        type,
+    const void*         data
+);
+
+Shader* createShader(
+    const Program&      program,
+    const Resource*     resources,
+    size_t              count
+);
 
 
 

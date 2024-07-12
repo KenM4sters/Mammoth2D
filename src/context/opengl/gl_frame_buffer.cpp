@@ -1,18 +1,25 @@
 #include "gl_frame_buffer.hpp"
 
-GLFramebuffer::GLFramebuffer(GLFramebufferBlueprint blueprint)
-    : mBlueprint{blueprint}
+namespace mt 
 {
 
-    const GLTextureBlueprint& textureBlueprint = mBlueprint.texture->GetBlueprint();
-    const GLTexture2D* texture = dynamic_cast<GLTexture2D*>(mBlueprint.texture);
+void GLFrameBuffer::create(const Attachment* attachments, size_t count) 
+{
+    GL_CHECK(glGenFramebuffers(1, &m_frameBuffer));
+    GL_CHECK(glBindFramebuffer(GL_FRAMEBUFFER, m_frameBuffer));
+
+    for(size_t i = 0; i < count; i++) 
+    {
+        const GLTexture* texture = static_cast<GLTexture*>(attachments[i].pTexture); 
+
+        if(texture->getFormat()) 
+        {
+            glFramebufferTexture2D(GL_FRAMEBUFFER, mBlueprint.attachment, GL_TEXTURE_2D, texture->GetId(), mBlueprint.level);
+        }
+    }
 
     if(texture) 
     {        
-        glGenFramebuffers(1, &mFramebuffer);
-        glBindFramebuffer(GL_FRAMEBUFFER, mFramebuffer);
-        glFramebufferTexture2D(GL_FRAMEBUFFER, mBlueprint.attachment, GL_TEXTURE_2D, texture->GetId(), mBlueprint.level);
-
         if(mBlueprint.renderbufferBlueprint) 
         {
             glGenRenderbuffers(1, &mRenderbuffer);
@@ -26,7 +33,7 @@ GLFramebuffer::GLFramebuffer(GLFramebufferBlueprint blueprint)
     glBindRenderbuffer(GL_RENDERBUFFER, GL_NONE);
 }
 
-void GLFramebuffer::Resize(const uint32_t width, const uint32_t height) 
+void GLFrameBuffer::resize(const uint32_t width, const uint32_t height) 
 {
     mBlueprint.texture->Resize(width, height);
 
@@ -42,7 +49,7 @@ void GLFramebuffer::Resize(const uint32_t width, const uint32_t height)
     }
 }
 
-void GLFramebuffer::Destroy() noexcept 
+void GLFrameBuffer::destroy() noexcept 
 {
     glDeleteFramebuffers(1, &mFramebuffer);
 
@@ -52,4 +59,6 @@ void GLFramebuffer::Destroy() noexcept
     }
 
     delete mBlueprint.renderbufferBlueprint;
+}
+
 }

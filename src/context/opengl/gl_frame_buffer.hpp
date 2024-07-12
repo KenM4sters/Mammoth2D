@@ -11,10 +11,6 @@
 namespace mt 
 {
 
-struct GLFrameBufferBlueprint 
-{
-
-};
 
 /**
  * @brief Configures a glFramebuffer and provides utility to bind and draw to the target texture
@@ -31,9 +27,7 @@ public:
     GLFrameBuffer& operator=(const GLFrameBuffer& other) = delete;
     GLFrameBuffer(const GLFrameBuffer& other) = delete;
  
-    void create(
-
-    );    
+    void create(const Attachment* attachments, size_t count);    
 
     void resize(const uint32_t width, const uint32_t height);
 
@@ -43,7 +37,8 @@ public:
 
 private:
     GLuint m_frameBuffer;
-    std::vector<std::unique_ptr<GLTexture>> m_attachments;
+    Attachment* m_attachments;
+    size_t m_attachmentCount;
 };
 }
 
