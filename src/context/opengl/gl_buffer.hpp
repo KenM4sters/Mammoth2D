@@ -6,15 +6,22 @@
 namespace mt
 {
 
-class GLVertexBuffer final 
+class GLVertexBuffer final : public VertexBuffer 
 { 
-    explicit GLVertexBuffer::GLVertexBuffer() noexcept {}
+public:
+    explicit GLVertexBuffer() noexcept 
+        : m_vbo{0},
+        m_byteSize{0}
+    {}
 
-    void create(const void const* data, const size_t byteSize);
+    GLVertexBuffer(const GLVertexBuffer& other) = delete;
+    GLVertexBuffer& operator=(const GLVertexBuffer& other) = delete;
 
-    void update(const size_t offset, const void const* data, const size_t byteSize);
+    void virtual create(const Memory* memeory, VertexBufferFlags flags) override;
 
-    void destroy();
+    void virtual update(const Memory* memory, size_t byteOffset) override;
+
+    void virtual destroy() override;
 
     [[nodiscard]] constexpr const GLuint& GetGLHandle() const noexcept { return m_vbo; }
     [[nodiscard]] constexpr const size_t& GetByteSize() const noexcept { return m_byteSize; }
@@ -26,7 +33,11 @@ private:
 
 class GLIndexBuffer final 
 {
-    explicit GLIndexBuffer::GLIndexBuffer() noexcept {}
+    explicit GLIndexBuffer() noexcept 
+    {}
+
+    GLIndexBuffer(const GLIndexBuffer& other) = delete;
+    GLIndexBuffer& operator=(const GLIndexBuffer& other) = delete;
 
     void create(const void const* data, const size_t byteSize);
 
@@ -44,7 +55,11 @@ private:
 
 class GLUniformBuffer final 
 {
-    explicit GLUniformBuffer::GLUniformBuffer() noexcept {}
+    explicit GLUniformBuffer() noexcept 
+    {}
+
+    GLUniformBuffer(const GLUniformBuffer& other) = delete;
+    GLUniformBuffer& operator=(const GLUniformBuffer& other) = delete;
 
     void create(const void const* data, const size_t byteSize);
 

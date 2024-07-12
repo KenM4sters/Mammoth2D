@@ -1,5 +1,5 @@
-#ifndef MAMMOTH_2D_GL_SHADER_HPP
-#define MAMMOTH_2D_GL_SHADER_HPP
+#ifndef MAMMOTH_2D_GL_FRAME_BUFFER_HPP
+#define MAMMOTH_2D_GL_FRAME_BUFFER_HPP
 
 #include "gl_texture.hpp"
 
@@ -11,6 +11,11 @@
 namespace mt 
 {
 
+struct GLFrameBufferBlueprint 
+{
+
+};
+
 /**
  * @brief Configures a glFramebuffer and provides utility to bind and draw to the target texture
  * with color, depth or stencil attachments.
@@ -18,12 +23,17 @@ namespace mt
 class GLFrameBuffer final
 {
 public: 
-    GLFrameBuffer()
+    explicit GLFrameBuffer() noexcept
         : m_frameBuffer{0},
-        m_colorAttachment{nullptr} 
+        m_attachments{0} 
     {}
 
-    void create();    
+    GLFrameBuffer& operator=(const GLFrameBuffer& other) = delete;
+    GLFrameBuffer(const GLFrameBuffer& other) = delete;
+ 
+    void create(
+
+    );    
 
     void resize(const uint32_t width, const uint32_t height);
 
@@ -33,13 +43,7 @@ public:
 
 private:
     GLuint m_frameBuffer;
-    std::unique_ptr<GLTexture> m_colorAttachment;
-    
-    union 
-    {
-        GLuint m_renderBuffer;
-        std::unique_ptr<GLTexture> m_depthStencilAttachment;
-    };
+    std::vector<std::unique_ptr<GLTexture>> m_attachments;
 };
 }
 

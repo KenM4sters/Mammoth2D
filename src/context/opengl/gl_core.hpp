@@ -1,7 +1,8 @@
 #ifndef MAMMOTH_2D_GL_CORE_HPP
 #define MAMMOTH_2D_GL_CORE_HPP
 
-#include "api.hpp"
+
+#include <mammoth/mamoth.hpp>
 
 #include <glad/gl.h>
 #include <string>
@@ -11,6 +12,8 @@
     stmt; \
     checkGLError(#stmt, __FILE__, __LINE__); \
 } while (0)
+
+
 
 namespace mt 
 {

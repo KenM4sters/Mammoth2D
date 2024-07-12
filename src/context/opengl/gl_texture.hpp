@@ -8,26 +8,9 @@
 namespace mt 
 {
 
-struct GLSampler final
+struct GLTextureBlueprint 
 {
-    explicit GLSampler(GLenum sWrap, GLenum tWrap, GLenum rWrap, 
-        GLenum minFilter, GLenum magFilter) noexcept
-        : m_sWrap{sWrap},
-        m_tWrap{tWrap},
-        m_rWrap{rWrap},
-        m_minFilter{minFilter},
-        m_magFilter{magFilter} 
-    {}
-    
-    GLenum m_sWrap;
-    GLenum m_tWrap;
-    GLenum m_rWrap;
-    GLenum m_minFilter;
-    GLenum m_magFilter;
-};
-
-struct GLTextureBlueprint final
-{
+    GLboolean isTexture;
     GLenum target;
     GLuint level;
     GLsizei width;
@@ -35,14 +18,19 @@ struct GLTextureBlueprint final
     GLenum internalFormat;
     GLenum format;
     GLenum type;
-    GLuint nMipMaps;
+    GLboolean isBound;
+    GLenum attachment;
+    GLuint unit;
+    uint32_t flags;
 };
+
 
 class GLTexture final 
 {
 public:
     explicit GLTexture() noexcept
-        : m_id{0}, 
+        : m_glHandle{0},
+        m_isTexture{true}, 
         m_target{GL_TEXTURE_2D}, 
         m_level{0}, 
         m_width{0}, 
@@ -53,9 +41,17 @@ public:
         m_unit{GL_TEXTURE0}
     {}
 
-	void create(const GLTextureBlueprint& blueprint, const GLSampler& sampler);
+    GLTexture(const GLTexture& other) = delete;
+    GLTexture& operator=(const GLTexture& other) = delete;
 
-    void update(const GLTextureBlueprint& blueprint);
+	void create(
+        const uint32_t width, 
+        const uint32_t height, 
+        GLenum internalFormat,
+        TextureFlags flags
+        );
+
+    void update(const uint32_t width, const uint32_t height);
 
     void resize(const uint32_t width, const uint32_t height);
 
@@ -68,7 +64,8 @@ public:
     void destroy();
 
     [[nodiscard]] constexpr GLboolean isBound() const noexcept { return m_isBound; } 
-    [[nodiscard]] constexpr GLuint getId() const noexcept { return m_id; } 
+    [[nodiscard]] constexpr GLboolean isTexture() const noexcept { return m_isTexture; } 
+    [[nodiscard]] constexpr GLuint getGLHandle() const noexcept { return m_glHandle; } 
     [[nodiscard]] constexpr GLenum getTarget() const noexcept { return m_target; } 
     [[nodiscard]] constexpr GLuint getLevel() const noexcept { return m_level; } 
     [[nodiscard]] constexpr GLsizei getWidth() const noexcept { return m_width; } 
@@ -79,7 +76,8 @@ public:
     [[nodiscard]] constexpr GLenum getTextureUnit() const noexcept { return m_unit; } 
 
 private:
-    GLuint m_id;
+    GLuint m_glHandle;
+    GLboolean m_isTexture;
     GLenum m_target;
     GLuint m_level;
     GLsizei m_width;
@@ -88,7 +86,9 @@ private:
     GLenum m_format;
     GLenum m_type;
     GLboolean m_isBound;
+    GLenum m_attachment;
     GLuint m_unit;
+    uint32_t m_flags;
 };
 
 }

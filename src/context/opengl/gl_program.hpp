@@ -22,6 +22,9 @@ public:
         : m_program{0} 
     {}
 
+    GLProgram(const GLProgram& other) = delete;
+    GLProgram& operator=(const GLProgram& other) = delete;
+
     void create(const char* vertPath, const char* fragPath);
 
     void bind() const;

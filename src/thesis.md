@@ -1,4 +1,13 @@
 
+## Overview
+
+### Requirements
+- Must provide a concise, simple user api of functions only (I don't want users to 
+create instances of objects themselves)
+- Must be within a single namespace (e.g: mt::function, not mt::graphics::function)  
+- Must provide a very high degree of flexibility that allows the users to interact with the backend api at a low level through the use of custom flags (e.g: sampling address modes, storage/usage specifiers etc)
+
+
 ## Ideas for the end-goal user api (pseudocode)
 
 ### 1. High-level
