@@ -19,6 +19,11 @@ public:
         m_buffer{nullptr}
     {}
 
+    GLResource(const GLResource& other) = delete;
+    GLResource& operator=(const GLResource& other) = delete;
+    GLResource(GLResource&& other) = default;
+    GLResource& operator=(GLResource&& other) = default;
+
     virtual void create(const char* name, ResourceType type, const Memory* memory) override;
 
     virtual void update(const Memory* memory) override;

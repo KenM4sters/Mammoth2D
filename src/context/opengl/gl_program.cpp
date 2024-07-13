@@ -8,6 +8,7 @@
 
 namespace mt 
 {
+
 void GLProgram::create(const char* vertPath, const char* fragPath) 
 {
     const std::vector<char> vertCode = parseShaderFile(vertPath);
@@ -42,6 +43,12 @@ void GLProgram::create(const char* vertPath, const char* fragPath)
     GL_CHECK(glDeleteShader(fShader));
 }
 
+void GLProgram::destroy() 
+{
+    glUseProgram(0);
+    glDeleteProgram(m_program);
+}
+
 std::vector<char> GLProgram::parseShaderFile(const char* filePath) const
 {
     std::ifstream file{filePath, std::ios::ate | std::ios::binary};
@@ -60,15 +67,6 @@ std::vector<char> GLProgram::parseShaderFile(const char* filePath) const
     return buffer;
 }
 
-void GLProgram::bind() const 
-{
-    GL_CHECK(glUseProgram(m_program));
-}
-
-void GLProgram::release() const 
-{
-    GL_CHECK(glUseProgram(GL_NONE));
-}
 
 void GLProgram::checkShaderErrors(GLuint object, std::string type) const
 {

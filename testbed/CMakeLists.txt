@@ -1,2 +1,2 @@
-add_subdirectory(UnitTests)
-add_subdirectory(Tutorial1)
+add_subdirectory(units)
+add_subdirectory(demo)

@@ -17,33 +17,36 @@ public:
         m_isTexture{true}, 
         m_target{GL_TEXTURE_2D}, 
         m_level{0}, 
+        m_internalFormat{GL_RGBA32F}, 
         m_width{0}, 
         m_height{0},
-        m_internalFormat{GL_RGBA32F}, 
-		m_format{GL_RGBA}, 
-		m_type{GL_FLOAT},
-        m_unit{GL_TEXTURE0}
+        m_format{GL_RGBA},
+        m_type{GL_FLOAT},
+        m_numMipMaps{0},
+        m_flags{0},
+        m_sampler{nullptr}
     {}
 
     GLTexture(const GLTexture& other) = delete;
     GLTexture& operator=(const GLTexture& other) = delete;
 
-	void create(
+	virtual void create(
+        TargetType target,
+        uint32_t level,
+        InternalFormat internalFormat,
         uint32_t width, 
         uint32_t height, 
-        GLenum internalFormat,
-        TextureFlags flags,
-        const GLSampler* sampler
-    );
+        Format format,
+        ValueType type,
+        uint32_t nMipMaps,
+        uint32_t flags,
+        const Sampler* sampler
+    ) override;
 
+    virtual void resize(uint32_t width, uint32_t height) override;
 
-    void resize(uint32_t width, uint32_t height);
+    virtual void destroy() override;
 
-    void setTextureUnit(GLuint unit);
-
-    void destroy();
-
-    [[nodiscard]] constexpr GLboolean isBound() const noexcept { return m_isBound; } 
     [[nodiscard]] constexpr GLboolean isTexture() const noexcept { return m_isTexture; } 
     [[nodiscard]] constexpr GLuint getGLHandle() const noexcept { return m_glHandle; } 
     [[nodiscard]] constexpr GLenum getTarget() const noexcept { return m_target; } 
@@ -53,23 +56,27 @@ public:
     [[nodiscard]] constexpr GLenum getInternalFormat() const noexcept { return m_internalFormat; } 
     [[nodiscard]] constexpr GLenum getFormat() const noexcept { return m_format; } 
     [[nodiscard]] constexpr GLenum getType() const noexcept { return m_type; } 
-    [[nodiscard]] constexpr GLenum getTextureUnit() const noexcept { return m_unit; } 
     [[nodiscard]] constexpr uint32_t getFlags() const noexcept { return m_flags; } 
 
 private:
     GLuint m_glHandle;
+
     GLboolean m_isTexture;
+    
     GLenum m_target;
     GLuint m_level;
+    GLenum m_internalFormat;
+    GLenum format;
+    GLenum type;
     GLsizei m_width;
     GLsizei m_height;
-    GLenum m_internalFormat;
     GLenum m_format;
     GLenum m_type;
-    GLboolean m_isBound;
-    GLenum m_attachment;
-    GLuint m_unit;
+    GLuint m_numMipMaps;
+
     uint32_t m_flags;
+
+    const GLSampler* m_sampler;
 };
 
 }

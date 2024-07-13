@@ -3,9 +3,6 @@
 
 #define GLFW_INCLUDE_VULKAN
 
-#include "Window.hpp"
-#include "Events/Bus.hpp"
-
 #include <GLFW/glfw3.h>
 #include <vulkan/vulkan.hpp>
 
@@ -18,7 +15,7 @@ namespace mt
  * @brief Responsible for creating the GLFW window as well as the surface that's used
  * by the renderer to display to.
 */
-class GLFWWindow : public IWindow
+class GLFWWindow 
 {
 public:
     /**

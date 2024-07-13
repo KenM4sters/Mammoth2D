@@ -15,7 +15,7 @@ namespace mt
  * and fragment shader file paths, and optionally a geometry shader file path.
  * Holds the glProgram and nothing else. All functionality is managed externally. 
  */
-class GLProgram final
+class GLProgram final : public Program
 {
 public:
     explicit GLProgram() noexcept
@@ -25,11 +25,9 @@ public:
     GLProgram(const GLProgram& other) = delete;
     GLProgram& operator=(const GLProgram& other) = delete;
 
-    void create(const char* vertPath, const char* fragPath);
+    virtual void create(const char* vertPath, const char* fragPath) override;
 
-    void bind() const;
-
-    void release() const;
+    virtual void destroy() override;
     
     [[nodiscard]] constexpr GLuint getGLHandle() const noexcept { return m_program; }
 

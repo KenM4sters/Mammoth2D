@@ -29,61 +29,46 @@ void checkGLError(const char* stmt, const char* file, int line)
     }
 }
 
-
-
-
-[[nodiscard]] constexpr GLenum convertToGLTopology(Topology topolgy) noexcept 
-{
-    switch(topolgy) 
-    {
-        case Topology::Lines: return GL_LINES;
-        case Topology::LinesList: return GL_LINE_STRIP;
-        case Topology::Triangles: return GL_TRIANGLES;
-        case Topology::TrianglesList: return GL_TRIANGLE_STRIP;
-        case Topology::Points: return GL_POINTS;
-    }
-}
-
-[[nodiscard]] constexpr GLenum convertToGLAddressMode(AddressMode addressMode) noexcept 
+constexpr GLenum convertToGLAddressMode(SamplerAddressMode addressMode) noexcept 
 {
     switch(addressMode) 
     {
-        case AddressMode::ClampToEdge: return GL_CLAMP_TO_EDGE;
-        case AddressMode::ClampToBorder: return GL_CLAMP_TO_BORDER;
-        case AddressMode::Repeat: return GL_REPEAT;
-        case AddressMode::MirroredRepeat: return GL_MIRRORED_REPEAT;
+        case SamplerAddressMode::ClampToEdge: return GL_CLAMP_TO_EDGE;
+        case SamplerAddressMode::ClampToBorder: return GL_CLAMP_TO_BORDER;
+        case SamplerAddressMode::Repeat: return GL_REPEAT;
+        case SamplerAddressMode::MirroredRepeat: return GL_MIRRORED_REPEAT;
     }    
 }
 
-[[nodiscard]] constexpr GLenum convertToGLFilterMode(FilterMode filterMode) noexcept 
+constexpr GLenum convertToGLFilterMode(SamplerFilterMode filterMode) noexcept 
 {
     switch(filterMode) 
     {
-        case FilterMode::Nearest: return GL_NEAREST;
-        case FilterMode::Linear: return GL_LINEAR;
+        case SamplerFilterMode::Nearest: return GL_NEAREST;
+        case SamplerFilterMode::Linear: return GL_LINEAR;
     }    
 }
 
-[[nodiscard]] constexpr GLenum convertToGLMipMapMode(MipMapMode mipMapMode) noexcept 
+constexpr GLenum convertToGLMipMapMode(SamplerMipMapMode mipMapMode) noexcept 
 {
     switch(mipMapMode) 
     {
-        case MipMapMode::MipMapNearest: return GL_NEAREST_MIPMAP_NEAREST;
-        case MipMapMode::MipMapLinear: return GL_LINEAR_MIPMAP_LINEAR;
+        case SamplerMipMapMode::MipMapNearest: return GL_NEAREST_MIPMAP_NEAREST;
+        case SamplerMipMapMode::MipMapLinear: return GL_LINEAR_MIPMAP_LINEAR;
     }    
 }
 
-[[nodiscard]] constexpr GLenum convertToGLAttachmentTarget(AttachmentTarget attachmentTarget) noexcept 
+constexpr GLenum convertToGLTargetType(TargetType type) noexcept 
 {
-    switch(attachmentTarget) 
+    switch(type) 
     {
-        case AttachmentTarget::Texture2D: return GL_TEXTURE_2D;
-        case AttachmentTarget::Texture3D: return GL_TEXTURE_3D;
-        case AttachmentTarget::TextureCube: return GL_TEXTURE_CUBE_MAP;
-    }    
+        case TargetType::Texture2D: return GL_TEXTURE_2D; 
+        case TargetType::TextureCube: return GL_TEXTURE_CUBE_MAP; 
+    }
 }
 
-[[nodiscard]] constexpr GLenum convertToGLInternalFormat(InternalFormat internalFormat) noexcept 
+
+constexpr GLenum convertToGLInternalFormat(InternalFormat internalFormat) noexcept 
 {
     switch(internalFormat) 
     {
@@ -99,7 +84,7 @@ void checkGLError(const char* stmt, const char* file, int line)
     }    
 }
 
-[[nodiscard]] constexpr GLenum convertToGLFormat(Format format) noexcept 
+constexpr GLenum convertToGLFormat(Format format) noexcept 
 {
     switch(format) 
     {
@@ -110,65 +95,30 @@ void checkGLError(const char* stmt, const char* file, int line)
     }    
 }
 
-[[nodiscard]] constexpr GLenum convertToGLAttribute(Attribute attribute) noexcept 
+constexpr GLenum convertToGLValueType(ValueType type) noexcept 
 {
-    // switch(attribute) 
-    // {
-    //     case Attribute::Position: return GL_FLOAT_VEC3;
-    //     case Attribute::LinesList: return GL_LINE_STRIP;
-    //     case Attribute::Triangles: return GL_TRIANGLES;
-    //     case Attribute::TrianglesList: return GL_TRIANGLE_STRIP;
-    //     case Attribute::Points: return GL_POINTS;
-    // }    
-}
-
-[[nodiscard]] constexpr GLenum convertToGLAttributeFormat(AttributeFormat attributeFormat) noexcept 
-{
-    // switch(attributeFormat) 
-    // {
-    //     case AttributeFormat::Float: return GL_FLOAT;
-    //     case AttributeFormat::Int: return GL_INT;
-    //     case AttributeFormat::Vec2i: return GL;
-    //     case AttributeFormat::Vec2f: return GL_TRIANGLE_STRIP;
-    //     case AttributeFormat::Vec3i: return GL_TRIANGLES;
-    //     case AttributeFormat::Vec3f: return GL_TRIANGLE_STRIP;
-    //     case AttributeFormat::Vec4i: return GL_TRIANGLES;
-    //     case AttributeFormat::Vec4f: return GL_TRIANGLE_STRIP;
-    // }    
-}
-
-[[nodiscard]] constexpr GLenum convertToGLAttributeType(AttributeType attributeType) noexcept 
-{
-    // switch(attributeType) 
-    // {
-    //     case Topology::Lines: return GL_LINES;
-    //     case Topology::LinesList: return GL_LINE_STRIP;
-    //     case Topology::Triangles: return GL_TRIANGLES;
-    //     case Topology::TrianglesList: return GL_TRIANGLE_STRIP;
-    //     case Topology::Points: return GL_POINTS;
-    // }    
-}
-
-[[nodiscard]] constexpr GLenum convertToGLShaderResourceType(ResourceType ResourceType) noexcept 
-{
-    // switch(shaderResourceType) 
-    // {
-    //     case ShaderResourceType:: return GL_LINES;
-    //     case ShaderResourceType::LinesList: return GL_LINE_STRIP;
-    //     case ShaderResourceType::Triangles: return GL_TRIANGLES;
-    //     case ShaderResourceType::TrianglesList: return GL_TRIANGLE_STRIP;
-    //     case ShaderResourceType::Points: return GL_POINTS;
-    // }    
-}
-
-[[nodiscard]] constexpr GLenum convertToGLDrawMode(DrawMode drawMode) noexcept 
-{
-    // switch(drawMode) 
-    // {
-    //     case DrawMode::Arrays: return GL_LINES;
-    //     case DrawMode::Indexed: return GL_LINE_STRIP;
-    // }    
+    switch(type) 
+    {
+        case ValueType::UInt: return GL_UNSIGNED_INT;
+        case ValueType::SInt: return GL_INT;
+        case ValueType::UChar: return GL_UNSIGNED_BYTE;
+        case ValueType::SChar: return GL_BYTE;
+        case ValueType::Float: return GL_FLOAT;
+    }    
 }
 
 
+constexpr GLenum convertToGLAttachmentTarget(Attachment attachment) noexcept 
+{
+    switch(attachment) 
+    {
+        case Attachment::Color0: return GL_COLOR_ATTACHMENT0;
+        case Attachment::Color1: return GL_COLOR_ATTACHMENT1;
+        case Attachment::Color2: return GL_COLOR_ATTACHMENT2;
+        case Attachment::Color3: return GL_COLOR_ATTACHMENT3;
+        case Attachment::Depth: return GL_DEPTH_ATTACHMENT;
+        case Attachment::Stencil: return GL_STENCIL_ATTACHMENT;
+        case Attachment::DepthStencil: return GL_DEPTH_STENCIL_ATTACHMENT;
+    } 
+}
 }

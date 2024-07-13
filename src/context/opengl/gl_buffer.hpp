@@ -17,11 +17,11 @@ public:
     GLVertexBuffer(const GLVertexBuffer& other) = delete;
     GLVertexBuffer& operator=(const GLVertexBuffer& other) = delete;
 
-    void virtual create(const Memory* memeory, VertexBufferFlags flags) override;
+    virtual void create(const Memory* memeory, VertexBufferFlags flags) override;
 
-    void virtual update(const Memory* memory, size_t byteOffset) override;
+    virtual void update(const Memory* memory, size_t byteOffset) override;
 
-    void virtual destroy() override;
+    virtual void destroy() override;
 
     [[nodiscard]] constexpr const GLuint& GetGLHandle() const noexcept { return m_vbo; }
     [[nodiscard]] constexpr const size_t& GetByteSize() const noexcept { return m_byteSize; }
@@ -31,19 +31,22 @@ private:
     size_t m_byteSize;
 };
 
-class GLIndexBuffer final 
+class GLIndexBuffer final : public IndexBuffer
 {
+public:
     explicit GLIndexBuffer() noexcept 
+        : m_ebo{0},
+        m_byteSize{0}
     {}
 
     GLIndexBuffer(const GLIndexBuffer& other) = delete;
     GLIndexBuffer& operator=(const GLIndexBuffer& other) = delete;
 
-    void create(const void const* data, const size_t byteSize);
+    virtual void create(const Memory* memory, IndexBufferFlags flags) override;
 
-    void update(const size_t offset, const void const* data, const size_t byteSize);
+    virtual void update(const Memory* memory, size_t byteOffset) override;
 
-    void destroy();
+    virtual void destroy() override;
 
     [[nodiscard]] constexpr const GLuint& GetGLHandle() const noexcept { return m_ebo; }
     [[nodiscard]] constexpr const size_t& GetByteSize() const noexcept { return m_byteSize; }
@@ -53,19 +56,24 @@ private:
     size_t m_byteSize;
 };
 
-class GLUniformBuffer final 
+class GLUniformBuffer final : public UniformBuffer
 {
+public:
     explicit GLUniformBuffer() noexcept 
+        : m_ubo{0},
+        m_byteSize{0}
     {}
 
     GLUniformBuffer(const GLUniformBuffer& other) = delete;
     GLUniformBuffer& operator=(const GLUniformBuffer& other) = delete;
+    GLUniformBuffer(GLUniformBuffer&& other) = default;
+    GLUniformBuffer& operator=(GLUniformBuffer&& other) = default;
 
-    void create(const void const* data, const size_t byteSize);
+    virtual void create(const Memory* memeory, UniformBufferFlags flags) override;
 
-    void update(const size_t offset, const void const* data, const size_t byteSize);
+    virtual void update(const Memory* memory, size_t byteOffset) override;
 
-    void destroy();
+    virtual void destroy() override;
 
     [[nodiscard]] constexpr const GLuint& GetGLHandle() const noexcept { return m_ubo; }
     [[nodiscard]] constexpr const size_t& GetByteSize() const noexcept { return m_byteSize; }

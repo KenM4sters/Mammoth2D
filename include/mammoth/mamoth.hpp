@@ -6,17 +6,17 @@
 #include <iostream>
 
 
-#define MAMMOTH_MAX_VERTEX_BUFFERS 100
-#define MAMMOTH_MAX_INDEX_BUFFERS 100
-#define MAMMOTH_MAX_UNIFORM_BUFFERS 100
-#define MAMMOTH_MAX_PROGRAMS 100
-#define MAMMOTH_MAX_TEXTURES 100
-#define MAMMOTH_MAX_SAMPLERS 100
-#define MAMMOTH_MAX_FRAME_BUFFERS 100
+#define MT_MAX_VERTEX_BUFFERS 100
+#define MT_MAX_INDEX_BUFFERS 100
+#define MT_MAX_UNIFORM_BUFFERS 100
+#define MT_MAX_PROGRAMS 100
+#define MT_MAX_TEXTURES 100
+#define MT_MAX_SAMPLERS 100
+#define MT_MAX_FRAME_BUFFERS 100
 
-#define MAMMOTH_INVALID_HANDLE UINT16_MAX
+#define MT_INVALID_HANDLE UINT16_MAX
 
-#define MAMMOTH_HANDLE(name)                                        \
+#define MT_HANDLE(name)                                             \
     struct name                                                     \
     {                                                               \
         uint16_t m_idx;                                             \
@@ -26,44 +26,80 @@
         }                                                           \
     };                                                             
 
-
 namespace mt 
 {
 
+class Texture;
+class Sampler;
 
+/**
+ * @brief Rendering API of choice. Eventually this will cover OpenGL, Vulka, Metal and DX12,
+ * but for now only OpenGL and Vulkan are being supported.
+ */
 enum class GraphicsBackend 
 {
-    OpenGL,
-    Vulkan
+    OpenGL
 };
 
-enum class AddressMode
+/**
+ * @brief
+ */
+struct GraphicsSettings 
 {
-    Repeat,
-    MirroredRepeat,
-    ClampToEdge,
-    ClampToBorder
+    GraphicsBackend backend;
+    uint32_t pixelViewportWidth;
+    uint32_t pixelViewportHeight;
 };
 
-enum class FilterMode 
+
+/**
+ * @brief Specifies how the sampler will handle texture coordinates outside of the [0, 1]
+ * range.
+ */
+enum class SamplerAddressMode
 {
-    Nearest,
-    Linear,
+    Repeat,                 ///< Wraps back around to [0, 1]
+    MirroredRepeat,         ///< Same as repeat, but reflects the texture.
+    ClampToEdge,            ///< Stretches the texture to the edge (ideal in most situations).
+    ClampToBorder           ///< 
 };
 
-enum class MipMapMode 
+
+/**
+ * @brief Specifies how the sampler will handle texture coordinates that do not map directly
+ * to a texel, which can happen when the image has been scaled. 
+ */
+enum class SamplerFilterMode 
 {
-    MipMapNearest,
-    MipMapLinear
+    Nearest,                ///< Selects the closest texel (pixelated look).
+    Linear                  ///< Linearly interpolates between relative texels (smooth look).
 };
 
-enum class AttachmentTarget 
+
+/**
+ * @brief Specifies how the sampler will handle texture coordinates that do not map directly
+ * to a texel for MipMaps of a texture.
+ */
+enum class SamplerMipMapMode 
+{
+    MipMapNearest,          ///< Selects the closest texel (pixelated look).
+    MipMapLinear            ///< Linearly interpolates between relative texels (smooth look).
+};
+
+
+/**
+ * @brief
+ */
+enum class TargetType 
 {
     Texture2D,
-    Texture3D,
     TextureCube
 };
 
+
+/**
+ * @brief 
+ */
 enum class InternalFormat 
 {
     R32,
@@ -77,15 +113,42 @@ enum class InternalFormat
     Depth24Stencil8
 };
 
+
+/**
+ * @brief
+ */
 enum class Format 
 {
-    R,
     RG,
     RGB,
     RGBA,
     DepthStencil
 };
 
+
+/**
+ * @brief Specifies the different types of frame buffer attachments.
+ * @note Color0 represents the 1st color attachment.
+ */
+enum class Attachment 
+{
+    Color0,
+    Color1,
+    Color2,
+    Color3,
+    Depth,
+    Stencil,
+    DepthStencil
+};
+
+
+/**
+ * @brief An exhaustive list of the possible attributes. Names are important to match in DX12 
+ * so these enum types act as indexes into an array of strings that correspond to the names
+ * in shaders.
+ * 
+ * You should use these types regardless of the GraphicsBackend for consistency.
+ */
 enum class Attribute 
 {
     Position,
@@ -98,12 +161,24 @@ enum class Attribute
     TexCoords
 };
 
-enum class AttributeType 
+
+/**
+ * @brief The possible types of a single value within the context of textures and attributes.
+ * Often it's important to know whether something is an array of floats, characters or integers.
+ */
+enum class ValueType 
 {
-    Int,
+    UInt,
+    SInt,
+    UChar,
+    SChar,
     Float
 };
 
+
+/**
+ * @brief
+ */
 enum class ResourceType 
 {
     Sampler,
@@ -119,48 +194,21 @@ enum class ResourceType
     Mat3x3f
 };
 
-enum class DrawMode 
-{
-    Arrays,
-    Indexed
-};
-
-enum class Topology
-{
-    Triangles,
-    TrianglesList,
-    Lines,
-    LinesList,
-    Points
-};
 
 
-struct TextureBlueprint 
-{
-    AttachmentTarget dimension;
-    InternalFormat internalFormat;
-    uint32_t width;
-    uint32_t height;
-    Format format;
-    ResourceType type;
-    const char* data;
-};
-
-struct SamplerBlueprint 
-{
-    AddressMode sWrap;
-    AddressMode tWrap;
-    AddressMode rWrap;
-    FilterMode min;
-    FilterMode mag;
-};
-
+/**
+ * @brief Encapsulates a void pointer with a size in bytes often used to map data to buffers.
+ */
 struct Memory 
 {
-    void* data;
+    void* data;                
     size_t byteSize;
 };
 
+
+/**
+ * @brief
+ */
 struct TextureFlags 
 {
     enum Enum 
@@ -174,6 +222,9 @@ struct TextureFlags
     };
 };
 
+/**
+ * @brief 
+ */
 struct VertexBufferFlags 
 {
     enum Enum 
@@ -183,6 +234,10 @@ struct VertexBufferFlags
     };
 };
 
+
+/**
+ * @brief
+ */
 struct IndexBufferFlags 
 {
     enum Enum 
@@ -192,6 +247,10 @@ struct IndexBufferFlags
     };
 };
 
+
+/**
+ * @brief
+ */
 struct UniformBufferFlags 
 {
     enum Enum 
@@ -201,29 +260,63 @@ struct UniformBufferFlags
     };
 };
 
-struct Attachment 
+
+/**
+ * @brief
+ */
+struct FrameBufferAttachment 
 {
     Texture* pTexture;
+    Attachment attachment;
 };
 
+
+struct Extent 
+{
+    uint32_t width;
+    uint32_t height;
+};
+
+/**
+ * @brief 
+ */
+struct Transform 
+{
+    float* pModel;
+    size_t matrixCount;
+};
+
+
+/**
+ * @brief
+ */
 struct VertexAttribute 
 {
-    VertexAttribute(Attribute attribute, AttributeType type, size_t count)
+    VertexAttribute(Attribute attribute, ValueType type, size_t count)
         : type{type},
+        count{count},
         byteOffset{0}
     {
         switch(type) 
         {
-            case AttributeType::Int: byteSize = count * 4; break;
-            case AttributeType::Float: byteSize = count * 4; break;
+            case ValueType::UInt: byteSize = count * 4; break;
+            case ValueType::SInt: byteSize = count * 4; break;
+            case ValueType::UChar: byteSize = count * 1; break;
+            case ValueType::SChar: byteSize = count * 1; break;
+            case ValueType::Float: byteSize = count * 4; break;
         }
     }   
     
-    AttributeType type;
+    ValueType type;
+    size_t count;
     size_t byteOffset;
     size_t byteSize;
 };
 
+
+/**
+ * @brief 
+ */
 struct VertexLayout 
 {
     explicit VertexLayout(VertexAttribute* attributes, size_t count) noexcept
@@ -244,7 +337,9 @@ struct VertexLayout
 };
 
 
-
+/**
+ * @brief
+ */
 class VertexBuffer 
 {   
     friend class GLVertexBuffer;
@@ -261,17 +356,21 @@ public:
 private:
     explicit VertexBuffer() noexcept = default;
 
-    virtual ~VertexBuffer() = 0;
+    virtual ~VertexBuffer() {}
 };
 
 
+/**
+ * @brief
+ */
 class IndexBuffer 
 {
+    friend class GLIndexBuffer;
 public:
     IndexBuffer(const IndexBuffer& other) = delete;
     IndexBuffer& operator=(const IndexBuffer& other) = delete;
 
-    virtual void create(const Memory* memory) = 0;
+    virtual void create(const Memory* memory, IndexBufferFlags flags) = 0;
 
     virtual void update(const Memory* memory, size_t byteOffset) = 0;
 
@@ -280,17 +379,23 @@ public:
 private:
     explicit IndexBuffer() noexcept = default;
 
-    virtual ~IndexBuffer() = 0;
+    virtual ~IndexBuffer() {}
 };
 
 
+/**
+ * @brief
+ */
 class UniformBuffer 
 {
+    friend class GLUniformBuffer;
 public:
     UniformBuffer(const UniformBuffer& other) = delete;
     UniformBuffer& operator=(const UniformBuffer& other) = delete;
+    UniformBuffer(UniformBuffer&& other) = default;
+    UniformBuffer& operator=(UniformBuffer&& other) = default;
 
-    virtual void create(const Memory* memory) = 0;
+    virtual void create(const Memory* memory, UniformBufferFlags flags) = 0;
 
     virtual void update(const Memory* memory, size_t byteOffset) = 0;
 
@@ -299,11 +404,16 @@ public:
 private:
     explicit UniformBuffer() noexcept = default;
 
-    virtual ~UniformBuffer() = 0;
+    virtual ~UniformBuffer() {}
 };
 
+
+/**
+ * @brief
+ */
 class Program 
 {
+    friend class GLProgram;
 public:
     Program(const Program& other) = delete;
     Program& operator=(const Program& other) = delete;
@@ -315,24 +425,31 @@ public:
 private:
     explicit Program() noexcept = default;
 
-    virtual ~Program() = 0;
+    virtual ~Program() {}
 };
 
 
-
+/**
+ * @brief
+ */
 class Texture 
 {
     friend class GLTexture;
-
 public: 
     Texture(const Texture& other) = delete;
     Texture& operator=(const Texture& other) = delete;
 
-    virtual void create(
+	virtual void create(
+        TargetType target,
+        uint32_t level,
+        InternalFormat internalFormat,
         uint32_t width, 
         uint32_t height, 
-        InternalFormat format, 
-        TextureFlags flags
+        Format format,
+        ValueType type,
+        uint32_t nMipMaps,
+        uint32_t flags,
+        const Sampler* sampler
     ) = 0;
 
     virtual void resize(uint32_t width, uint32_t height) = 0;
@@ -342,30 +459,33 @@ public:
 private:
     explicit Texture() noexcept = default;
 
-    virtual ~Texture() = 0;
+    virtual ~Texture() {}
 };
 
-
+/**
+ * @brief
+ */
 class Sampler 
 {
+    friend class GLSampler;
 public: 
     Sampler(const Sampler& other) = delete;
     Sampler& operator=(const Sampler& other) = delete;
 
     virtual void create(
-        AddressMode addressModeS,
-        AddressMode addressModeT,
-        AddressMode addressModeR,
-        FilterMode minFilter,
-        FilterMode magFilter
+        SamplerAddressMode addressModeS,
+        SamplerAddressMode addressModeT,
+        SamplerAddressMode addressModeR,
+        SamplerFilterMode minFilter,
+        SamplerFilterMode magFilter
     ) = 0;
 
     virtual void update(
-        AddressMode addressModeS,
-        AddressMode addressModeT,
-        AddressMode addressModeR,
-        FilterMode minFilter,
-        FilterMode magFilter
+        SamplerAddressMode addressModeS,
+        SamplerAddressMode addressModeT,
+        SamplerAddressMode addressModeR,
+        SamplerFilterMode minFilter,
+        SamplerFilterMode magFilter
     ) = 0;
 
     virtual void detroy() = 0;
@@ -373,17 +493,22 @@ public:
 private:
     explicit Sampler() noexcept = default;
 
-    virtual ~Sampler() = 0;
+    virtual ~Sampler() {}
 };
 
 
+
+/**
+ * @brief
+ */
 class FrameBuffer
 {
+    friend class GLFrameBuffer;
 public:
     FrameBuffer(const FrameBuffer& other) = delete;
     FrameBuffer& operator=(const FrameBuffer& other) = delete;
 
-    virtual void create(Attachment* attachements, size_t count) = 0;
+    virtual void create(const FrameBufferAttachment* attachements, size_t count) = 0;
 
     virtual void resize(uint32_t width, uint32_t height) = 0;
 
@@ -392,15 +517,21 @@ public:
 private:
     explicit FrameBuffer() noexcept = default;
 
-    virtual ~FrameBuffer() = 0;
+    virtual ~FrameBuffer() {}
 };
 
+
+/**
+ * @brief
+ */
 class Resource 
 {
     friend class GLResource;
 public:
     Resource(const Resource& other) = delete;
     Resource& operator=(const Resource& other) = delete;
+    Resource(Resource&& other) = default;
+    Resource& operator=(Resource&& other) = default;
 
     virtual void create(const char* name, ResourceType type, const Memory* memory) = 0;
 
@@ -411,9 +542,13 @@ public:
 private:
     explicit Resource() noexcept = default;
 
-    virtual ~Resource() = 0;
+    virtual ~Resource() {}
 };
 
+
+/**
+ * @brief
+ */
 class Shader   
 {
     friend class GLShader;
@@ -421,91 +556,155 @@ public:
     Shader(const Shader& other) = delete;
     Shader& operator=(const Shader& other) = delete;
 
-    virtual void create(Program& program, const Resource* resources, size_t count) = 0;
+    virtual void create(const Program* program, Resource* resources, size_t count) = 0;
 
-    virtual void update(const char* name, const Memory* memory) = 0;
+    virtual void update(std::string name, const Memory* memory) = 0;
 
     virtual void destroy() = 0;
 
 private:
     explicit Shader() noexcept = default;
 
-    virtual ~Shader() = 0; 
+    virtual ~Shader() {} 
 };
 
 
+/**
+ * @brief
+ */
 class VertexInput 
 {
+    friend class GLVertexInput;
 public:
     VertexInput(const VertexInput& other) = delete;
     VertexInput& operator=(const VertexInput& other) = delete;
 
-    virtual void create(VertexBuffer* buffer, VertexLayout* layout, IndexBuffer* indexBuffer) = 0;
+    virtual void create(const VertexBuffer* buffer, const VertexLayout* layout, const IndexBuffer* indexBuffer) = 0;
 
     virtual void destroy() = 0;
 
 private:
     explicit VertexInput() noexcept = default;
 
-    virtual ~VertexInput() = 0;
+    virtual ~VertexInput() {}
 };
 
 
+/**
+ * @brief
+ */
+void Init(const GraphicsSettings& config);
 
-
-VertexBuffer* createVertexBuffer(
+/**
+ * @brief
+ */
+[[nodiscard]] VertexBuffer* createVertexBuffer(
     const Memory*       memory, 
     VertexBufferFlags   flags
 );
 
-
-IndexBuffer* createIndexBuffer(
+/**
+ * @brief
+ */
+[[nodiscard]] IndexBuffer* createIndexBuffer(
     const Memory*       memory, 
     IndexBufferFlags    flags
 );
 
-UniformBuffer* createUniformBuffer(
+
+/**
+ * @brief
+ */
+[[nodiscard]] UniformBuffer* createUniformBuffer(
     const Memory*       memory,
     UniformBufferFlags  flags
 );
 
 
-Program* createProgram(
+/**
+ * @brief
+ */
+[[nodiscard]] Program* createProgram(
     const char*         vertPath,
     const char*         fragPath
 );
 
-Texture* createTexture(
-    uint32_t            width,
-    uint32_t            height,
-    TextureFlags        flags
+
+/**
+ * @brief
+ */
+[[nodiscard]] Texture* createTexture(
+    TargetType          target,  
+    uint32_t            level, 
+    InternalFormat      internalFormat,  
+    uint32_t            width,     
+    uint32_t            height,    
+    Format              format,  
+    ValueType           type, 
+    uint32_t            nMipMaps,  
+    uint32_t            flags, 
+    const Sampler*      sampler  
 );
 
-Sampler* createSampler(
-    AddressMode         addressModeS,
-    AddressMode         addressModeT,
-    AddressMode         addressModeR,
-    FilterMode          minFilter,
-    FilterMode          magFilter
+
+/**
+ * @brief
+ */
+[[nodiscard]] Sampler* createSampler(
+    SamplerAddressMode         addressModeS,
+    SamplerAddressMode         addressModeT,
+    SamplerAddressMode         addressModeR,
+    SamplerFilterMode          minFilter,
+    SamplerFilterMode          magFilter
 );
 
-FrameBuffer* createFrameBuffer(
-    const Attachment*   attachments,
-    size_t              count
+
+/**
+ * @brief
+ */
+[[nodiscard]] FrameBuffer* createFrameBuffer(
+    const FrameBufferAttachment*   attachments,
+    size_t                         count
 );
 
-Resource* createResource(
+
+/**
+ * @brief
+ */
+[[nodiscard]] Resource* createResource(
     const char*         name,
     ResourceType        type,
-    const void*         data
+    const Memory*       memory
 );
 
-Shader* createShader(
-    const Program&      program,
-    const Resource*     resources,
+
+/**
+ * @brief
+ */
+[[nodiscard]] Shader* createShader(
+    const Program*      program,
+    Resource*     resources,
     size_t              count
 );
 
+
+/**
+ * @brief
+ */
+[[nodiscard]] VertexInput* createVertexInput(
+    const VertexBuffer* vBuffer,
+    const VertexLayout* layout,
+    const IndexBuffer* iBuffer
+);
+
+
+/**
+ * @brief
+ */
+void submit(
+    const VertexInput*  input, 
+    const Shader*       shader
+);
 
 
 

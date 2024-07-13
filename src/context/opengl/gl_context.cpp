@@ -5,12 +5,15 @@
 #include "gl_texture.hpp"
 #include "gl_sampler.hpp"
 #include "gl_frame_buffer.hpp"
+#include "gl_resource.hpp"
+#include "gl_shader.hpp"
+#include "gl_vertex_input.hpp"
 
 namespace mt 
 {
 
 
-explicit GLGraphicsContext::GLGraphicsContext() noexcept 
+GLGraphicsContext::GLGraphicsContext() noexcept 
 {
 
 }
@@ -26,6 +29,8 @@ VertexBuffer* GLGraphicsContext::createVertexBuffer(
 )  
 {
     VertexBuffer* vb = static_cast<VertexBuffer*>(new GLVertexBuffer());
+    vb->create(memory, flags);
+    return vb;
 }
 
 IndexBuffer* GLGraphicsContext::createIndexBuffer(
@@ -33,7 +38,9 @@ IndexBuffer* GLGraphicsContext::createIndexBuffer(
     IndexBufferFlags    flags
 )  
 {
-
+    IndexBuffer* ib = static_cast<IndexBuffer*>(new GLIndexBuffer());
+    ib->create(memory, flags);
+    return ib;
 }
 
 UniformBuffer* GLGraphicsContext::createUniformBuffer(
@@ -41,7 +48,9 @@ UniformBuffer* GLGraphicsContext::createUniformBuffer(
     UniformBufferFlags  flags
 )  
 {
-
+    UniformBuffer* ub = static_cast<UniformBuffer*>(new GLUniformBuffer());
+    ub->create(memory, flags);
+    return ub;
 }
 
 Program* GLGraphicsContext::createProgram(
@@ -49,36 +58,86 @@ Program* GLGraphicsContext::createProgram(
     const char*         fragPath
 )  
 {
-
+    Program* p = static_cast<Program*>(new GLProgram());
+    p->create(vertPath, fragPath);
+    return p;
 }
 
 Texture* GLGraphicsContext::createTexture(
-    uint32_t            width, 
-    uint32_t            height, 
-    TextureFlags        flags
-)  
+    TargetType          target, 
+    uint32_t            level, 
+    InternalFormat      internalFormat, 
+    uint32_t            width,  
+    uint32_t            height,  
+    Format              format, 
+    ValueType           type, 
+    uint32_t            nMipMaps, 
+    uint32_t            flags, 
+    const Sampler*    sampler
+)   
 {
-
+    Texture* tex = static_cast<Texture*>(new GLTexture());
+    tex->create(target, level, internalFormat, width, height, format, type, nMipMaps, flags, sampler);
+    return tex;
 }
 
 Sampler* GLGraphicsContext::createSampler(
-    AddressMode         adressModeS, 
-    AddressMode         adressModeT, 
-    AddressMode         adressModeU, 
-    FilterMode          minFilter, 
-    FilterMode          magFilter
+    SamplerAddressMode  addressModeT, 
+    SamplerAddressMode  addressModeS, 
+    SamplerAddressMode  addressModeU, 
+    SamplerFilterMode   minFilter, 
+    SamplerFilterMode   magFilter
 )  
 {
-
+    Sampler* sampler = static_cast<Sampler*>(new GLSampler());
+    sampler->create(addressModeS, addressModeT, addressModeU, minFilter, magFilter);
+    return sampler;
 }
 
-[[nodisacrd]] FrameBuffer* GLGraphicsContext::createFrameBuffer(
-    const Attachment*   attachments, 
+FrameBuffer* GLGraphicsContext::createFrameBuffer(
+    const FrameBufferAttachment*   attachments, 
+    size_t                         count
+)  
+{
+    FrameBuffer* frameBuffer = static_cast<FrameBuffer*>(new GLFrameBuffer());
+    frameBuffer->create(attachments, count);
+    return frameBuffer;
+}   
+
+Resource* GLGraphicsContext::createResource(
+    const char*         name, 
+    ResourceType        type, 
+    const Memory*       memory
+) 
+{
+    Resource* res = static_cast<Resource*>(new GLResource());
+    res->create(name, type, memory);
+    return res;
+}
+
+Shader* GLGraphicsContext::createShader(
+    const Program*      program, 
+    Resource*     resources, 
     size_t              count
-)  
+) 
 {
-
+    Shader* shader = static_cast<Shader*>(new GLShader());
+    shader->create(program, resources, count);
+    return shader;
 }
+
+VertexInput* GLGraphicsContext::createVertexInput(
+    const VertexBuffer* vbuffer, 
+    const VertexLayout* layout, 
+    const IndexBuffer*  ibuffer
+) 
+{
+    VertexInput* vinput = static_cast<VertexInput*>(new GLVertexInput());
+    vinput->create(vbuffer, layout, ibuffer);
+    return vinput;
+}
+
+
 
 
 }

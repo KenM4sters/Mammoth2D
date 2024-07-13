@@ -5,16 +5,8 @@
 
 namespace mt 
 {
-struct GLSamplerBlueprint 
-{
-    GLenum addressModeS;
-    GLenum addressModeT;
-    GLenum addressModeR;
-    GLenum minFilter;
-    GLenum magFilter;
-};
 
-class GLSampler final
+class GLSampler final : public Sampler
 {
 public:
     explicit GLSampler() noexcept
@@ -25,9 +17,23 @@ public:
         m_magFilter{GL_LINEAR} 
     {}
 
-    void create(const GLSamplerBlueprint& blueprint);
+    virtual void create(
+        SamplerAddressMode addressModeS,
+        SamplerAddressMode addressModeT,
+        SamplerAddressMode addressModeR,
+        SamplerFilterMode minFilter,
+        SamplerFilterMode magFilter
+    ) override;
 
-    void destroy();
+    virtual void update(
+        SamplerAddressMode addressModeS,
+        SamplerAddressMode addressModeT,
+        SamplerAddressMode addressModeR,
+        SamplerFilterMode minFilter,
+        SamplerFilterMode magFilter
+    ) override;
+
+    virtual void detroy() override;
 
     [[nodiscard]] constexpr GLuint getGLHandle() const { return m_glHandle; }
     [[nodiscard]] constexpr GLenum getAdressModeS() const { return m_addressModeS; }

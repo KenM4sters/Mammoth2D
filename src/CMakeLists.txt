@@ -1,26 +1,10 @@
 include(../.env.cmake OPTIONAL RESULT_VARIABLE LOCAL_ENV)
-cmake_minimum_required(VERSION 3.1...3.25)
 
-project(
-    Vulkan2D
-    VERSION 0.1.0
-    LANGUAGES C CXX
-)
-
-set(SOURCE_DIR ${CMAKE_SOURCE_DIR}/Sources)
+set(SOURCE_DIR ${CMAKE_SOURCE_DIR}/src)
 
 file(GLOB_RECURSE SOURCES ${SOURCE_DIR}/*.cpp)
 
-add_library(Vulkan2D ${SOURCES})
-
-# Find the Delta library (Custom ECS static library)
-find_library(DeltaLib NAMES Delta PATHS ${CMAKE_SOURCE_DIR}/External/Delta/)
-# Check if the library was found
-if(DeltaLib)
-    message(STATUS "Found Delta library: ${DeltaLib}")
-else()
-    message(FATAL_ERROR "Delta library not found")
-endif()
+add_library(${PROJECT_NAME} ${SOURCES})
 
 
 if (DEFINED VULKAN_SDK_PATH)
@@ -44,7 +28,8 @@ message(STATUS "CREATING BUILD FOR UNIX")
 
 target_include_directories(
   ${PROJECT_NAME} 
-  PUBLIC ${PROJECT_SOURCE_DIR}
+  PUBLIC ${PROJECT_SOURCE_DIR}/include/
+  PUBLIC ${CMAKE_SOURCE_DIR}/src/
   PUBLIC ${CMAKE_SOURCE_DIR}/external/
   PUBLIC ${CMAKE_SOURCE_DIR}/external/Glad/include/
   PUBLIC ${Vulkan_INCLUDE_DIRS}
@@ -52,11 +37,9 @@ target_include_directories(
 
 target_link_libraries(
   ${PROJECT_NAME}
-  DeltaLib 
   glfw 
   glad
-  glm
-  spirv-cross-c-shared 
+  glm 
   ${Vulkan_LIBRARIES}
 )
 
@@ -73,14 +56,14 @@ find_program(GLSL_VALIDATOR glslangValidator HINTS
 
 # Get all .vert and .frag files in shaders directory.s
 file(GLOB_RECURSE GLSL_SOURCE_FILES
-  "${PROJECT_SOURCE_DIR}/Resources/Shaders/*.frag"
-  "${PROJECT_SOURCE_DIR}/Resources/Shaders/*.vert"
+  "${PROJECT_SOURCE_DIR}/resources/*.frag"
+  "${PROJECT_SOURCE_DIR}/resources/*.vert"
 )
 
 foreach(GLSL ${GLSL_SOURCE_FILES})
   get_filename_component(FILE_NAME ${GLSL} NAME)
   message(STATUS "Found shader file at ${FILE_NAME}")
-  set(SPIRV "${PROJECT_SOURCE_DIR}/Resources/Shaders/${FILE_NAME}.spv")
+  set(SPIRV "${PROJECT_SOURCE_DIR}/resources/${FILE_NAME}.spv")
   add_custom_command( 
     OUTPUT ${SPIRV}
     COMMAND ${GLSL_VALIDATOR} -V ${GLSL} -o ${SPIRV}

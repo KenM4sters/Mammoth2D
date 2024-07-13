@@ -4,19 +4,19 @@
 namespace mt 
 {
 
-void GLShader::create(Program& program, const Resource* resources, size_t count) 
+void GLShader::create(const Program* program, Resource* resources, size_t count) 
 {
-    const GLResource* res = static_cast<const GLResource*>(resources);
+    GLResource* res = static_cast<GLResource*>(resources);
 
     for(size_t i = 0; i < count; i++) 
     {
-        const char* name = res[i].getName();
+        std::string name = std::string(res[i].getName());
 
-        m_resources[name] = std::make_unique<GLResource>(res[i]);
+        m_resources[name] = &res[i];
     }
 }
 
-void GLShader::update(const char* name, const Memory* memory) 
+void GLShader::update(std::string name, const Memory* memory) 
 {
     m_resources[name]->update(memory);
 }

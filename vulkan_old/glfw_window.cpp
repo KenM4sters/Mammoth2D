@@ -1,8 +1,11 @@
+
+#include "glfw_window.hpp"
+
 #include <stdexcept>
-#include "GLFWWindow.hpp"
 
 namespace mt 
 {
+    
 bool GLFWWindow::mIsRunning = true;
 
 GLFWWindow::GLFWWindow(const char* name, uint32_t width, uint32_t height)

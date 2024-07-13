@@ -64,7 +64,10 @@
         "unordered_map": "cpp",
         "unordered_set": "cpp",
         "variant": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "memory_resource": "cpp",
+        "functional": "cpp",
+        "memory": "cpp"
     },
     "C_Cpp.default.compilerPath": "/usr/bin/clang++"
 }

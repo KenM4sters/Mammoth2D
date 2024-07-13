@@ -1,5 +1,5 @@
 # Add test executable
-add_executable(ExampleTest ExampleTest.cpp)
+add_executable(ExampleTest example_test.cpp)
 
 
 # Include directories for tests
@@ -14,7 +14,7 @@ target_include_directories(
 # Link test executable against gtest and your project library
 target_link_libraries(
     ExampleTest 
-    Vulkan2D 
+    mammoth 
     glfw 
     glm 
     gtest

@@ -2,8 +2,6 @@
 #define MAMMOTH_2D_INPUT_HPP
 
 #include <GLFW/glfw3.h>
-#include "Events/Bus.hpp"
-#include "Window.hpp"
 
 namespace mt 
 {
