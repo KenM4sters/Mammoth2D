@@ -13,6 +13,7 @@ target_include_directories(
 target_link_libraries(
     Demo 
     mammoth
+    glad
     glfw 
     glm 
 )

@@ -18,25 +18,25 @@
 namespace mt 
 {
     
-std::string getGLErrorString(GLenum error);
+std::string getGLErrorString(GLenum error) noexcept;
 
 void checkGLError(const char* stmt, const char* file, int line);
 
-[[nodiscard]] constexpr GLenum convertToGLTargetType(TargetType type) noexcept;
+[[nodiscard]] GLenum convertToGLTargetType(TargetType type) noexcept;
 
-[[nodiscard]] constexpr GLenum convertToGLValueType(ValueType type) noexcept;
+[[nodiscard]] GLenum convertToGLValueType(ValueType type) noexcept;
 
-[[nodiscard]] constexpr GLenum convertToGLAddressMode(SamplerAddressMode mode) noexcept;
+[[nodiscard]] GLenum convertToGLAddressMode(SamplerAddressMode mode) noexcept;
 
-[[nodiscard]] constexpr GLenum convertToGLFilterMode(SamplerFilterMode mode) noexcept;
+[[nodiscard]] GLenum convertToGLFilterMode(SamplerFilterMode mode) noexcept;
 
-[[nodiscard]] constexpr GLenum convertToGLMipMapMode(SamplerMipMapMode mode) noexcept;
+[[nodiscard]] GLenum convertToGLMipMapMode(SamplerMipMapMode mode) noexcept;
 
-[[nodiscard]] constexpr GLenum convertToGLAttachmentTarget(Attachment attachment) noexcept;
+[[nodiscard]] GLenum convertToGLAttachmentTarget(Attachment attachment) noexcept;
 
-[[nodiscard]] constexpr GLenum convertToGLInternalFormat(InternalFormat format) noexcept;
+[[nodiscard]] GLenum convertToGLInternalFormat(InternalFormat format) noexcept;
 
-[[nodiscard]] constexpr GLenum convertToGLFormat(Format format) noexcept;
+[[nodiscard]] GLenum convertToGLFormat(Format format) noexcept;
 
 }
 

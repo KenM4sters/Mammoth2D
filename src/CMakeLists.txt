@@ -2,9 +2,15 @@ include(../.env.cmake OPTIONAL RESULT_VARIABLE LOCAL_ENV)
 
 set(SOURCE_DIR ${CMAKE_SOURCE_DIR}/src)
 
+# # Add ASan flags
+# set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address")
+# set(CMAKE_LINKER_FLAGS "${CMAKE_LINKER_FLAGS} -fsanitize=address")
+
 file(GLOB_RECURSE SOURCES ${SOURCE_DIR}/*.cpp)
 
 add_library(${PROJECT_NAME} ${SOURCES})
+
+target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -Wpedantic)
 
 
 if (DEFINED VULKAN_SDK_PATH)
@@ -75,11 +81,3 @@ add_custom_target(
     Shaders
     DEPENDS ${SPIRV_BINARY_FILES}
 )
-
-# Enable AddressSanitizer and UndefinedBehaviorSanitizer.
-# Set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address,undefined")
-# Link with sanitizer runtime libraries.
-# Set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fsanitize=address,undefined")
-# Set optimization and debugging flags.
-# Set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -O0 -g")
-

@@ -15,10 +15,18 @@ class IGraphicsContext
 public:
     explicit IGraphicsContext() noexcept {}
 
-    virtual ~IGraphicsContext() = 0;
+    virtual ~IGraphicsContext() {}
 
     IGraphicsContext(const IGraphicsContext& other) = delete;
     IGraphicsContext& operator=(const IGraphicsContext& other) = delete;
+    IGraphicsContext(IGraphicsContext&& other) = default;
+    IGraphicsContext& operator=(IGraphicsContext&& other) = default;
+
+    virtual void init(const GraphicsSettings& settings) = 0;
+
+    virtual void shutdown() = 0;
+
+    [[nodiscard]] virtual Window* getWindow() const = 0;
 
     [[nodiscard]] virtual VertexBuffer* createVertexBuffer(const Memory* memory, VertexBufferFlags flags) = 0;
 

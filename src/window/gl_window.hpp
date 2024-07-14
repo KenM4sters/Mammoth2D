@@ -8,7 +8,7 @@
 namespace mt 
 {
 
-class GLWindow final : public IWindow 
+class GLWindow final : public Window 
 {
 public:
     explicit GLWindow() noexcept 
@@ -19,7 +19,14 @@ public:
 
     virtual void create(const char* name, uint32_t width, uint32_t height) override;
 
+    virtual void run() override;
+
+    virtual bool shouldClose() override;
+
     virtual void destroy() override;
+    
+    virtual GLFWwindow* getNativeWindow() const override { return m_nativeWindow; }
+
 
 private:
     Extent m_extent;

@@ -13,15 +13,29 @@ namespace mt
 {
 
 
-GLGraphicsContext::GLGraphicsContext() noexcept 
-{
-
-}
-
 GLGraphicsContext::~GLGraphicsContext()  
 {
 
 }
+
+void GLGraphicsContext::init(const GraphicsSettings& settings) 
+{
+    m_window = new GLWindow();
+    m_window->create(settings.name, settings.pixelViewportWidth, settings.pixelViewportHeight);
+}
+
+void GLGraphicsContext::shutdown() 
+{
+    m_window->destroy();
+    delete m_window;
+}
+
+
+Window* GLGraphicsContext::getWindow() const 
+{
+    return m_window;
+}
+
 
 VertexBuffer* GLGraphicsContext::createVertexBuffer(
     const Memory*       memory, 

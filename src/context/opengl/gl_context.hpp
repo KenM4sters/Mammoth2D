@@ -3,9 +3,7 @@
 
 
 #include "context/common/context.hpp"
-
-
-
+#include "window/gl_window.hpp"
 
 
 namespace mt 
@@ -14,9 +12,17 @@ namespace mt
 class GLGraphicsContext final : public IGraphicsContext 
 {
 public:
-    explicit GLGraphicsContext() noexcept;
+    explicit GLGraphicsContext() noexcept
+        : m_window{nullptr}
+    {}
 
-    virtual ~GLGraphicsContext() override;
+    virtual ~GLGraphicsContext();
+
+    virtual void init(const GraphicsSettings& settings) override;
+
+    virtual void shutdown() override;
+
+    [[nodiscard]] virtual Window* getWindow() const override;
 
     [[nodiscard]] virtual VertexBuffer* createVertexBuffer(const Memory* memory, VertexBufferFlags flags) override;
 
@@ -38,9 +44,8 @@ public:
     
     [[nodiscard]] virtual VertexInput* createVertexInput(const VertexBuffer* vbuffer, const VertexLayout* layout, const IndexBuffer* ibuffer) override;
 
-
 private:
-
+    GLWindow* m_window;
 };
 
 }

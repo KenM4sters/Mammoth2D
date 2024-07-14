@@ -31,6 +31,7 @@ namespace mt
 
 class Texture;
 class Sampler;
+class Window;
 
 /**
  * @brief Rendering API of choice. Eventually this will cover OpenGL, Vulka, Metal and DX12,
@@ -47,6 +48,7 @@ enum class GraphicsBackend
 struct GraphicsSettings 
 {
     GraphicsBackend backend;
+    const char* name;
     uint32_t pixelViewportWidth;
     uint32_t pixelViewportHeight;
 };
@@ -271,6 +273,9 @@ struct FrameBufferAttachment
 };
 
 
+/**
+ * @brief 
+ */
 struct Extent 
 {
     uint32_t width;
@@ -353,10 +358,11 @@ public:
 
     virtual void destroy() = 0;
 
+    virtual ~VertexBuffer() {}
+    
 private:
     explicit VertexBuffer() noexcept = default;
 
-    virtual ~VertexBuffer() {}
 };
 
 
@@ -376,10 +382,11 @@ public:
 
     virtual void destroy() = 0;
 
+    virtual ~IndexBuffer() {}
+    
 private:
     explicit IndexBuffer() noexcept = default;
 
-    virtual ~IndexBuffer() {}
 };
 
 
@@ -401,10 +408,11 @@ public:
 
     virtual void destroy() = 0;
 
+    virtual ~UniformBuffer() {}
+    
 private:
     explicit UniformBuffer() noexcept = default;
 
-    virtual ~UniformBuffer() {}
 };
 
 
@@ -422,10 +430,11 @@ public:
 
     virtual void destroy() = 0;
 
+    virtual ~Program() {}
+    
 private:
     explicit Program() noexcept = default;
 
-    virtual ~Program() {}
 };
 
 
@@ -456,10 +465,11 @@ public:
 
     virtual void destroy() = 0;
 
+    virtual ~Texture() {}
+    
 private:
     explicit Texture() noexcept = default;
 
-    virtual ~Texture() {}
 };
 
 /**
@@ -490,10 +500,11 @@ public:
 
     virtual void detroy() = 0;
 
+    virtual ~Sampler() {}
+    
 private:
     explicit Sampler() noexcept = default;
 
-    virtual ~Sampler() {}
 };
 
 
@@ -514,10 +525,11 @@ public:
 
     virtual void destroy() = 0;
 
+    virtual ~FrameBuffer() {}
+    
 private:
     explicit FrameBuffer() noexcept = default;
 
-    virtual ~FrameBuffer() {}
 };
 
 
@@ -539,10 +551,11 @@ public:
 
     virtual void destroy() = 0;
 
+    virtual ~Resource() {}
+    
 private:
     explicit Resource() noexcept = default;
 
-    virtual ~Resource() {}
 };
 
 
@@ -562,10 +575,11 @@ public:
 
     virtual void destroy() = 0;
 
+    virtual ~Shader() {} 
+    
 private:
     explicit Shader() noexcept = default;
 
-    virtual ~Shader() {} 
 };
 
 
@@ -583,17 +597,33 @@ public:
 
     virtual void destroy() = 0;
 
+    virtual ~VertexInput() {}
+    
 private:
     explicit VertexInput() noexcept = default;
 
-    virtual ~VertexInput() {}
 };
 
 
 /**
  * @brief
  */
-void Init(const GraphicsSettings& config);
+void init(
+    const GraphicsSettings& config
+);
+
+
+/**
+ * @brief
+ */
+void shutdown();
+
+
+/**
+ * @brief
+ */
+[[nodiscard]] Window* getWindow();
+
 
 /**
  * @brief
@@ -602,6 +632,7 @@ void Init(const GraphicsSettings& config);
     const Memory*       memory, 
     VertexBufferFlags   flags
 );
+
 
 /**
  * @brief

@@ -3,7 +3,7 @@
 namespace mt 
 {
 
-std::string getGLErrorString(GLenum error) 
+std::string getGLErrorString(GLenum error) noexcept
 {
     switch (error) 
     {
@@ -18,7 +18,7 @@ std::string getGLErrorString(GLenum error)
 }
 
 
-void checkGLError(const char* stmt, const char* file, int line) 
+void checkGLError(const char* stmt, const char* file, int line)
 {
     GLenum error = glGetError();
 
@@ -29,7 +29,7 @@ void checkGLError(const char* stmt, const char* file, int line)
     }
 }
 
-constexpr GLenum convertToGLAddressMode(SamplerAddressMode addressMode) noexcept 
+GLenum convertToGLAddressMode(SamplerAddressMode addressMode) noexcept 
 {
     switch(addressMode) 
     {
@@ -40,7 +40,7 @@ constexpr GLenum convertToGLAddressMode(SamplerAddressMode addressMode) noexcept
     }    
 }
 
-constexpr GLenum convertToGLFilterMode(SamplerFilterMode filterMode) noexcept 
+GLenum convertToGLFilterMode(SamplerFilterMode filterMode) noexcept 
 {
     switch(filterMode) 
     {
@@ -49,7 +49,7 @@ constexpr GLenum convertToGLFilterMode(SamplerFilterMode filterMode) noexcept
     }    
 }
 
-constexpr GLenum convertToGLMipMapMode(SamplerMipMapMode mipMapMode) noexcept 
+GLenum convertToGLMipMapMode(SamplerMipMapMode mipMapMode) noexcept 
 {
     switch(mipMapMode) 
     {
@@ -58,7 +58,7 @@ constexpr GLenum convertToGLMipMapMode(SamplerMipMapMode mipMapMode) noexcept
     }    
 }
 
-constexpr GLenum convertToGLTargetType(TargetType type) noexcept 
+GLenum convertToGLTargetType(TargetType type) noexcept 
 {
     switch(type) 
     {
@@ -68,7 +68,7 @@ constexpr GLenum convertToGLTargetType(TargetType type) noexcept
 }
 
 
-constexpr GLenum convertToGLInternalFormat(InternalFormat internalFormat) noexcept 
+GLenum convertToGLInternalFormat(InternalFormat internalFormat) noexcept 
 {
     switch(internalFormat) 
     {
@@ -84,7 +84,7 @@ constexpr GLenum convertToGLInternalFormat(InternalFormat internalFormat) noexce
     }    
 }
 
-constexpr GLenum convertToGLFormat(Format format) noexcept 
+GLenum convertToGLFormat(Format format) noexcept 
 {
     switch(format) 
     {
@@ -95,7 +95,7 @@ constexpr GLenum convertToGLFormat(Format format) noexcept
     }    
 }
 
-constexpr GLenum convertToGLValueType(ValueType type) noexcept 
+GLenum convertToGLValueType(ValueType type) noexcept 
 {
     switch(type) 
     {
@@ -108,7 +108,7 @@ constexpr GLenum convertToGLValueType(ValueType type) noexcept
 }
 
 
-constexpr GLenum convertToGLAttachmentTarget(Attachment attachment) noexcept 
+GLenum convertToGLAttachmentTarget(Attachment attachment) noexcept 
 {
     switch(attachment) 
     {

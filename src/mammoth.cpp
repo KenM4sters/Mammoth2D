@@ -8,12 +8,25 @@ namespace mt
 
 static IGraphicsContext* s_ctx = nullptr;
 
-void Init(const GraphicsSettings& config) 
+void init(const GraphicsSettings& settings) 
 {
-    switch(config.backend) 
+    switch(settings.backend) 
     {
         case GraphicsBackend::OpenGL: s_ctx = static_cast<GLGraphicsContext*>(new GLGraphicsContext());
     }
+
+    s_ctx->init(settings);
+}
+
+void shutdown() 
+{
+    s_ctx->shutdown();
+    delete s_ctx;
+}
+
+Window* getWindow()
+{
+    return s_ctx->getWindow();
 }
 
 VertexBuffer* createVertexBuffer(
