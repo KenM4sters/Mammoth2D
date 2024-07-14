@@ -19,28 +19,28 @@ void GLProgram::create(const char* vertPath, const char* fragPath)
     const char* vertSrc = vertCode.data();
     const char* fragSrc = fragCode.data();
 
-    // vShader = glCreateShader(GL_VERTEX_SHADER);
-    // glShaderSource(vShader, 1, &vertSrc, NULL);
-    // glCompileShader(vShader); 
-    // checkShaderErrors(vShader, "VERTEX");
+    vShader = glCreateShader(GL_VERTEX_SHADER);
+    glShaderSource(vShader, 1, &vertSrc, NULL);
+    glCompileShader(vShader); 
+    checkShaderErrors(vShader, "VERTEX");
 
-    // fShader = glCreateShader(GL_FRAGMENT_SHADER);
-    // glShaderSource(fShader, 1, &fragSrc, NULL);
-    // glCompileShader(fShader);
-    // checkShaderErrors(fShader, "FRAGMENT");
+    fShader = glCreateShader(GL_FRAGMENT_SHADER);
+    glShaderSource(fShader, 1, &fragSrc, NULL);
+    glCompileShader(fShader);
+    checkShaderErrors(fShader, "FRAGMENT");
 
-    // m_program = glCreateProgram();
+    m_program = glCreateProgram();
 
-    // glAttachShader(m_program, vShader);
-    // glAttachShader(m_program, fShader);
-    // glLinkProgram(m_program);
+    glAttachShader(m_program, vShader);
+    glAttachShader(m_program, fShader);
+    glLinkProgram(m_program);
 
-    // checkShaderErrors(m_program, "PROGRAM");
+    checkShaderErrors(m_program, "PROGRAM");
 
-    // // Programs can be cleaned-up now after linking into m_program.
-    // //
-    // GL_CHECK(glDeleteShader(vShader));
-    // GL_CHECK(glDeleteShader(fShader));
+    // Programs can be cleaned-up now after linking into m_program.
+    //
+    GL_CHECK(glDeleteShader(vShader));
+    GL_CHECK(glDeleteShader(fShader));
 }
 
 void GLProgram::destroy() 

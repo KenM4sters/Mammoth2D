@@ -6,6 +6,8 @@ namespace mt
 
 void GLShader::create(const Program* program, Resource* resources, size_t count) 
 {
+    m_program = static_cast<const GLProgram*>(program);
+
     GLResource* res = static_cast<GLResource*>(resources);
 
     for(size_t i = 0; i < count; i++) 

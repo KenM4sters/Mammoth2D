@@ -20,64 +20,63 @@ GLGraphicsContext::~GLGraphicsContext()
 
 void GLGraphicsContext::init(const GraphicsSettings& settings) 
 {
-    m_window = new GLWindow();
+    m_window = std::make_unique<GLWindow>();
     m_window->create(settings.name, settings.pixelViewportWidth, settings.pixelViewportHeight);
 }
 
 void GLGraphicsContext::shutdown() 
 {
     m_window->destroy();
-    delete m_window;
 }
 
 
-Window* GLGraphicsContext::getWindow() const 
+WindowHandle& GLGraphicsContext::getWindow()  
 {
     return m_window;
 }
 
 
-VertexBuffer* GLGraphicsContext::createVertexBuffer(
+VertexBufferHandle GLGraphicsContext::createVertexBuffer(
     const Memory*       memory, 
-    VertexBufferFlags   flags
+    uint32_t   flags
 )  
 {
-    VertexBuffer* vb = static_cast<VertexBuffer*>(new GLVertexBuffer());
+    std::unique_ptr<GLVertexBuffer> vb = std::make_unique<GLVertexBuffer>();
     vb->create(memory, flags);
-    return vb;
+    return std::move(vb);
 }
 
-IndexBuffer* GLGraphicsContext::createIndexBuffer(
+IndexBufferHandle GLGraphicsContext::createIndexBuffer(
     const Memory*       memory,
-    IndexBufferFlags    flags
+    uint32_t    flags
 )  
 {
-    IndexBuffer* ib = static_cast<IndexBuffer*>(new GLIndexBuffer());
+    std::unique_ptr<GLIndexBuffer> ib = std::make_unique<GLIndexBuffer>();
     ib->create(memory, flags);
-    return ib;
+    return std::move(ib);
 }
 
-UniformBuffer* GLGraphicsContext::createUniformBuffer(
+UniformBufferHandle GLGraphicsContext::createUniformBuffer(
     const Memory*       memory, 
-    UniformBufferFlags  flags
+    uint32_t  flags
 )  
 {
-    UniformBuffer* ub = static_cast<UniformBuffer*>(new GLUniformBuffer());
+    std::unique_ptr<GLUniformBuffer> ub = std::make_unique<GLUniformBuffer>();
     ub->create(memory, flags);
-    return ub;
+    return std::move(ub);
 }
 
-Program* GLGraphicsContext::createProgram(
+ProgramHandle GLGraphicsContext::createProgram(
     const char*         vertPath, 
     const char*         fragPath
 )  
 {
-    Program* p = static_cast<Program*>(new GLProgram());
-    p->create(vertPath, fragPath);
-    return p;
+    std::unique_ptr<GLProgram> program = std::make_unique<GLProgram>();
+    program->create(vertPath, fragPath);
+    return std::move(program);
 }
 
-Texture* GLGraphicsContext::createTexture(
+TextureHandle GLGraphicsContext::createTexture(
     TargetType          target, 
     uint32_t            level, 
     InternalFormat      internalFormat, 
@@ -90,12 +89,12 @@ Texture* GLGraphicsContext::createTexture(
     const Sampler*    sampler
 )   
 {
-    Texture* tex = static_cast<Texture*>(new GLTexture());
+    std::unique_ptr<GLTexture> tex = std::make_unique<GLTexture>();
     tex->create(target, level, internalFormat, width, height, format, type, nMipMaps, flags, sampler);
-    return tex;
+    return std::move(tex);
 }
 
-Sampler* GLGraphicsContext::createSampler(
+SamplerHandle GLGraphicsContext::createSampler(
     SamplerAddressMode  addressModeT, 
     SamplerAddressMode  addressModeS, 
     SamplerAddressMode  addressModeU, 
@@ -103,53 +102,79 @@ Sampler* GLGraphicsContext::createSampler(
     SamplerFilterMode   magFilter
 )  
 {
-    Sampler* sampler = static_cast<Sampler*>(new GLSampler());
+    std::unique_ptr<GLSampler> sampler = std::make_unique<GLSampler>(); 
     sampler->create(addressModeS, addressModeT, addressModeU, minFilter, magFilter);
-    return sampler;
+    return std::move(sampler);
 }
 
-FrameBuffer* GLGraphicsContext::createFrameBuffer(
+FrameBufferHandle GLGraphicsContext::createFrameBuffer(
     const FrameBufferAttachment*   attachments, 
     size_t                         count
 )  
 {
-    FrameBuffer* frameBuffer = static_cast<FrameBuffer*>(new GLFrameBuffer());
+    std::unique_ptr<GLFrameBuffer> frameBuffer = std::make_unique<GLFrameBuffer>(); 
     frameBuffer->create(attachments, count);
-    return frameBuffer;
+    return std::move(frameBuffer);
 }   
 
-Resource* GLGraphicsContext::createResource(
+ResourceHandle GLGraphicsContext::createResource(
     const char*         name, 
     ResourceType        type, 
     const Memory*       memory
 ) 
 {
-    Resource* res = static_cast<Resource*>(new GLResource());
+    std::unique_ptr<GLResource> res = std::make_unique<GLResource>(); 
     res->create(name, type, memory);
-    return res;
+    return std::move(res);
 }
 
-Shader* GLGraphicsContext::createShader(
+ShaderHandle GLGraphicsContext::createShader(
     const Program*      program, 
-    Resource*     resources, 
+    Resource*           resources, 
     size_t              count
 ) 
 {
-    Shader* shader = static_cast<Shader*>(new GLShader());
+    std::unique_ptr<GLShader> shader = std::make_unique<GLShader>(); 
     shader->create(program, resources, count);
-    return shader;
+    return std::move(shader);
 }
 
-VertexInput* GLGraphicsContext::createVertexInput(
+VertexInputHandle GLGraphicsContext::createVertexInput(
     const VertexBuffer* vbuffer, 
     const VertexLayout* layout, 
     const IndexBuffer*  ibuffer
 ) 
 {
-    VertexInput* vinput = static_cast<VertexInput*>(new GLVertexInput());
+    std::unique_ptr<GLVertexInput> vinput = std::make_unique<GLVertexInput>(); 
     vinput->create(vbuffer, layout, ibuffer);
-    return vinput;
+    return std::move(vinput);
 }
+
+
+void GLGraphicsContext::begin(const FrameBuffer* frameBuffer) 
+{
+
+}
+
+void GLGraphicsContext::end() 
+{
+
+}
+
+void GLGraphicsContext::submit(const VertexInput* vInput, const Shader* shader) 
+{
+    const GLVertexInput* glVertexInput = static_cast<const GLVertexInput*>(vInput);
+    const GLShader* glShader = static_cast<const GLShader*>(shader);
+
+    GL_CHECK(glUseProgram(glShader->getProgram().getGLHandle()));
+    GL_CHECK(glBindVertexArray(glVertexInput->getGLHandle()));
+
+    GL_CHECK(glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr));
+
+    GL_CHECK(glUseProgram(0));
+    GL_CHECK(glBindVertexArray(0));
+}
+
 
 
 

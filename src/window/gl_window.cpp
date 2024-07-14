@@ -18,6 +18,7 @@ void GLWindow::create(const char* name, uint32_t width, uint32_t height)
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+	glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
 
     m_nativeWindow = glfwCreateWindow(m_extent.width, m_extent.height, m_name, nullptr, nullptr);
 
@@ -37,10 +38,6 @@ void GLWindow::create(const char* name, uint32_t width, uint32_t height)
     });
 
 	gladLoadGL(glfwGetProcAddress);
-
-    glViewport(0, 0, 800, 600);
-    glDepthFunc(GL_LESS);
-    glEnable(GL_DEPTH_TEST);
 }
 
 void GLWindow::run() 

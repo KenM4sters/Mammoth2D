@@ -20,7 +20,7 @@ void GLTexture::create(TargetType target, uint32_t level, InternalFormat interna
     m_flags = flags; 
     m_sampler = static_cast<const GLSampler*>(sampler);
 
-    if(m_flags & TextureFlags::WriteOnly) 
+    if(m_flags & static_cast<uint32_t>(TextureFlags::WriteOnly)) 
     {
         GL_CHECK(glGenRenderbuffers(1, &m_glHandle));
         GL_CHECK(glBindRenderbuffer(GL_RENDERBUFFER, m_glHandle));

@@ -24,38 +24,38 @@ void shutdown()
     delete s_ctx;
 }
 
-Window* getWindow()
+WindowHandle& getWindow()
 {
     return s_ctx->getWindow();
 }
 
-VertexBuffer* createVertexBuffer(
+VertexBufferHandle createVertexBuffer(
     const Memory*       memory, 
-    VertexBufferFlags   flags
+    uint32_t            flags
 ) 
 {
     return s_ctx->createVertexBuffer(memory, flags);
 }
 
-IndexBuffer* createIndexBuffer(
+IndexBufferHandle createIndexBuffer(
     const Memory*       memory, 
-    IndexBufferFlags    flags
+    uint32_t            flags
 ) 
 {
     return s_ctx->createIndexBuffer(memory, flags);
 }
 
 
-UniformBuffer* createUniformBuffer(
+UniformBufferHandle createUniformBuffer(
     const Memory*       memory,
-    UniformBufferFlags  flags
+    uint32_t            flags
 ) 
 {
     return s_ctx->createUniformBuffer(memory, flags);
 }
 
 
-Program* createProgram(
+ProgramHandle createProgram(
     const char*         vertPath,
     const char*         fragPath
 ) 
@@ -64,7 +64,7 @@ Program* createProgram(
 }
 
 
-Texture* createTexture(
+TextureHandle createTexture(
     TargetType          target,  
     uint32_t            level, 
     InternalFormat      internalFormat,  
@@ -82,7 +82,7 @@ Texture* createTexture(
 }
 
 
-Sampler* createSampler(
+SamplerHandle createSampler(
     SamplerAddressMode         addressModeS,
     SamplerAddressMode         addressModeT,
     SamplerAddressMode         addressModeR,
@@ -94,7 +94,7 @@ Sampler* createSampler(
 }
 
 
-FrameBuffer* createFrameBuffer(
+FrameBufferHandle createFrameBuffer(
     const FrameBufferAttachment*   attachments,
     size_t                         count
 ) 
@@ -103,7 +103,7 @@ FrameBuffer* createFrameBuffer(
 }
 
 
-Resource* createResource(
+ResourceHandle createResource(
     const char*         name,
     ResourceType        type,
     const Memory*       memory
@@ -113,7 +113,7 @@ Resource* createResource(
 }
 
 
-Shader* createShader(
+ShaderHandle createShader(
     const Program*      program,
     Resource*     resources,
     size_t              count
@@ -123,7 +123,7 @@ Shader* createShader(
 }
 
 
-VertexInput* createVertexInput(
+VertexInputHandle createVertexInput(
     const VertexBuffer* vBuffer,
     const VertexLayout* layout,
     const IndexBuffer* iBuffer
@@ -138,7 +138,7 @@ void submit(
     const Shader*       shader
 ) 
 {
-
+    s_ctx->submit(input, shader);
 }
 
 

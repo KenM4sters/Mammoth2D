@@ -28,11 +28,11 @@ public:
     
     virtual GLFWwindow* getNativeWindow() const = 0;
 
-
+    virtual ~Window() {}
 private:
     explicit Window() noexcept = default;
+    
 
-    virtual ~Window() {}
 };
 
 }

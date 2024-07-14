@@ -1,8 +1,8 @@
-#version 300 core
+#version 330 core
 
-layout(location = 0) in vec3 a_position;
+layout(location = 0) in vec2 a_position;
 
 void main() 
 {
-    gl_Position = a_position;
+    gl_Position = vec4(a_position, 0.5, 1.0);
 }

@@ -16,22 +16,34 @@
 
 #define MT_INVALID_HANDLE UINT16_MAX
 
-#define MT_HANDLE(name)                                             \
-    struct name                                                     \
-    {                                                               \
-        uint16_t m_idx;                                             \
-        [[nodiscard]] constexpr bool isValid() const noexcept       \
-        {                                                           \
-            return m_idx != MAMMOTH_INVALID_HANDLE;                 \
-        }                                                           \
-    };                                                             
-
+#define MT_HANDLE(Type) typedef std::unique_ptr<Type> Type##Handle;                                                      
+     
 namespace mt 
 {
 
+class VertexBuffer;
+class IndexBuffer;
+class UniformBuffer;
+class Program;
 class Texture;
 class Sampler;
+class FrameBuffer;
+class Resource;
+class Shader;
+class VertexInput;
 class Window;
+
+MT_HANDLE(VertexBuffer);
+MT_HANDLE(IndexBuffer);
+MT_HANDLE(UniformBuffer);
+MT_HANDLE(Program);
+MT_HANDLE(Texture);
+MT_HANDLE(Sampler);
+MT_HANDLE(FrameBuffer);
+MT_HANDLE(Resource);
+MT_HANDLE(Shader);
+MT_HANDLE(VertexInput);
+MT_HANDLE(Window);
 
 /**
  * @brief Rendering API of choice. Eventually this will cover OpenGL, Vulka, Metal and DX12,
@@ -40,17 +52,6 @@ class Window;
 enum class GraphicsBackend 
 {
     OpenGL
-};
-
-/**
- * @brief
- */
-struct GraphicsSettings 
-{
-    GraphicsBackend backend;
-    const char* name;
-    uint32_t pixelViewportWidth;
-    uint32_t pixelViewportHeight;
 };
 
 
@@ -74,19 +75,12 @@ enum class SamplerAddressMode
 enum class SamplerFilterMode 
 {
     Nearest,                ///< Selects the closest texel (pixelated look).
-    Linear                  ///< Linearly interpolates between relative texels (smooth look).
-};
-
-
-/**
- * @brief Specifies how the sampler will handle texture coordinates that do not map directly
- * to a texel for MipMaps of a texture.
- */
-enum class SamplerMipMapMode 
-{
+    Linear,                 ///< Linearly interpolates between relative texels (smooth look).
     MipMapNearest,          ///< Selects the closest texel (pixelated look).
     MipMapLinear            ///< Linearly interpolates between relative texels (smooth look).
 };
+
+
 
 
 /**
@@ -197,6 +191,74 @@ enum class ResourceType
 };
 
 
+//============================================================================
+// Flags to explicity pass single bits of information which change the
+// context's behaviour.
+//============================================================================
+
+
+/**
+ * @brief
+ */
+enum class TextureFlags
+{
+    ReadOnly = 0,
+    WriteOnly = 1 << 0,
+    ReadWrite = 1 << 1,
+    Color = 1 << 3,
+    Depth = 1 << 4,
+    Stencil = 1 << 5,
+};
+
+
+/**
+ * @brief 
+ */
+enum class VertexBufferFlags 
+{
+    Static = 0,
+    Dynamic = 1 << 0
+};
+
+
+/**
+ * @brief
+ */
+enum class IndexBufferFlags 
+{
+    Static = 0,
+    Dynamic = 1 << 0
+};
+
+
+/**
+ * @brief
+ */
+enum class UniformBufferFlags 
+{
+    Static = 0,
+    Dynamic = 1 << 0
+};
+
+
+
+//============================================================================
+// Helper structs to encapsulate variables that should only be used in 
+// conjunction width each other. These are left for the the user to create.
+//============================================================================
+
+
+/**
+ * @brief
+ */
+struct GraphicsSettings 
+{
+    GraphicsBackend backend;
+    const char* name;
+    uint32_t pixelViewportWidth;
+    uint32_t pixelViewportHeight;
+};
+
 
 /**
  * @brief Encapsulates a void pointer with a size in bytes often used to map data to buffers.
@@ -205,61 +267,6 @@ struct Memory
 {
     void* data;                
     size_t byteSize;
-};
-
-
-/**
- * @brief
- */
-struct TextureFlags 
-{
-    enum Enum 
-    {
-        ReadOnly = 1,
-        WriteOnly = 1 >> 1,
-        ReadWrite = 1 >> 2,
-        Color = 1 >> 3,
-        Depth = 1 >> 4,
-        Stencil = 1 >> 5,
-    };
-};
-
-/**
- * @brief 
- */
-struct VertexBufferFlags 
-{
-    enum Enum 
-    {
-        Static,
-        Dynamic
-    };
-};
-
-
-/**
- * @brief
- */
-struct IndexBufferFlags 
-{
-    enum Enum 
-    {
-        Static,
-        Dynamic
-    };
-};
-
-
-/**
- * @brief
- */
-struct UniformBufferFlags 
-{
-    enum Enum 
-    {
-        Static,
-        Dynamic
-    };
 };
 
 
@@ -282,6 +289,7 @@ struct Extent
     uint32_t height;
 };
 
+
 /**
  * @brief 
  */
@@ -290,6 +298,8 @@ struct Transform
     float* pModel;
     size_t matrixCount;
 };
+
+
 
 
 /**
@@ -324,7 +334,7 @@ struct VertexAttribute
  */
 struct VertexLayout 
 {
-    explicit VertexLayout(VertexAttribute* attributes, size_t count) noexcept
+    VertexLayout(VertexAttribute* attributes, size_t count) noexcept
         : attributes{attributes}, 
         count{count},
         stride{0} 
@@ -352,7 +362,7 @@ public:
     VertexBuffer(const VertexBuffer& other) = delete;
     VertexBuffer& operator=(const VertexBuffer& other) = delete;
 
-    virtual void create(const Memory* memory, VertexBufferFlags flags) = 0;
+    virtual void create(const Memory* memory, uint32_t flags) = 0;
 
     virtual void update(const Memory* memory, size_t byteOffset) = 0;
 
@@ -376,7 +386,7 @@ public:
     IndexBuffer(const IndexBuffer& other) = delete;
     IndexBuffer& operator=(const IndexBuffer& other) = delete;
 
-    virtual void create(const Memory* memory, IndexBufferFlags flags) = 0;
+    virtual void create(const Memory* memory, uint32_t flags) = 0;
 
     virtual void update(const Memory* memory, size_t byteOffset) = 0;
 
@@ -402,7 +412,7 @@ public:
     UniformBuffer(UniformBuffer&& other) = default;
     UniformBuffer& operator=(UniformBuffer&& other) = default;
 
-    virtual void create(const Memory* memory, UniformBufferFlags flags) = 0;
+    virtual void create(const Memory* memory, uint32_t flags) = 0;
 
     virtual void update(const Memory* memory, size_t byteOffset) = 0;
 
@@ -417,7 +427,8 @@ private:
 
 
 /**
- * @brief
+ * @brief Base class that each context provides a child class of that manages the creation
+ * of a shader program from filePaths to the shader code.
  */
 class Program 
 {
@@ -439,7 +450,8 @@ private:
 
 
 /**
- * @brief
+ * @brief Base class that each context provides a child of that manages the creation of a buffer 
+ * on the GPU for texture data. 
  */
 class Texture 
 {
@@ -473,7 +485,8 @@ private:
 };
 
 /**
- * @brief
+ * @brief Base class that each context provides a child of that manages the creation of a sampler
+ * object that can be used for many textures that each share the same sampling properties.
  */
 class Sampler 
 {
@@ -510,7 +523,8 @@ private:
 
 
 /**
- * @brief
+ * @brief Base class that each context provides a child of that manages the creation of a FrameBuffer
+ * used for rendering to offscreen buffers. 
  */
 class FrameBuffer
 {
@@ -534,7 +548,10 @@ private:
 
 
 /**
- * @brief
+ * @brief Base class that each context provides a child of that manages the creation of a Resource
+ * which holds and manages data on the CPU that will be made visible to a shader program.
+ * Generally speaking, this can be thought of as a wrapper for "uniforms", although it should
+ * be noted that this also suppots images/samplers (which aren't labelled as uniforms in vulkan).
  */
 class Resource 
 {
@@ -560,7 +577,9 @@ private:
 
 
 /**
- * @brief
+ * @brief Base class that each context provides a child of that manages the creation of a large
+ * wrapper around a program and a number of resources that are intended to be used with that 
+ * program. 
  */
 class Shader   
 {
@@ -584,7 +603,8 @@ private:
 
 
 /**
- * @brief
+ * @brief Base class that each context provides a child of that manages that defines how 
+ * vertex data should be interpreted (as well as providing the vertex and/or index data itself).
  */
 class VertexInput 
 {
@@ -606,7 +626,10 @@ private:
 
 
 /**
- * @brief
+ * @brief Initializes the rendering framework by setting the correct graphics context from
+ * which all following context calls will be made to. 
+ * @note This function MUST be called before any graphics-related functions, otherwise the 
+ * context will considered as null and an error will be thrown.
  */
 void init(
     const GraphicsSettings& config
@@ -614,57 +637,100 @@ void init(
 
 
 /**
- * @brief
+ * @brief Destroys the graphics context in use and other various resources, but importantly
+ * not the ones that were created and returned to the user. The intention with this framework
+ * was to be provide maximum flexibility and, as such, all memory that was created by the user
+ * through the various createX() function should be managed by the user.
+ * @note eventhough smart pointers are returned by createX() functions, the relative destroy()
+ * member function should be called on each object before it goes out of scope, which cleans
+ * up the context-related reources.
  */
 void shutdown();
 
 
 /**
- * @brief
+ * @brief Returns a smart pointer reference to the window (currently using GLFW).
  */
-[[nodiscard]] Window* getWindow();
+[[nodiscard]] WindowHandle& getWindow();
 
 
 /**
- * @brief
+ * @brief Creates a buffer on the GPU, fills it with the given data and returns a smart pointer
+ * to the base class.
+ * @note This should be used to allocate memory for vertex data.
+ * @param memory The memory that the buffer will be filled with.
+ * @param flags n/a for now.
+ * @return A smart pointer to the base VertexBuffer class which abstracts context-related
+ * operations and offers a minimal interface for the user.
  */
-[[nodiscard]] VertexBuffer* createVertexBuffer(
+[[nodiscard]] VertexBufferHandle createVertexBuffer(
     const Memory*       memory, 
-    VertexBufferFlags   flags
+    uint32_t            flags
 );
 
 
 /**
- * @brief
+ * @brief Creates a buffer on the GPU, fills it with the given data and returns a smart pointer
+ * to the base class.
+ * @note This should be used to allocate memory index data.
+ * @param memory The memory that the buffer will be filled with.
+ * @param flags n/a for now.
+ * @return A smart pointer to the base IndexBuffer class which abstracts context-related
+ * operations and offers a minimal interface for the user.
  */
-[[nodiscard]] IndexBuffer* createIndexBuffer(
+[[nodiscard]] IndexBufferHandle createIndexBuffer(
     const Memory*       memory, 
-    IndexBufferFlags    flags
+    uint32_t            flags
 );
 
 
 /**
- * @brief
+ * @brief Creates a buffer on the GPU, fills it with the given data and returns a smart pointer
+ * to the base class.
+ * @note This should be used to allocate memory uniform data.
+ * @param memory The memory that the buffer will be filled with.
+ * @param flags n/a for now.
+ * @return A smart pointer to the base UniformBuffer class which abstracts context-related
+ * operations and offers a minimal interface for the user.
  */
-[[nodiscard]] UniformBuffer* createUniformBuffer(
+[[nodiscard]] UniformBufferHandle createUniformBuffer(
     const Memory*       memory,
-    UniformBufferFlags  flags
+    uint32_t            flags
 );
 
 
 /**
- * @brief
+ * @brief Creates a shader program from the given source code.
+ * @note This should be passed to a Shader object in order for draw calls to be made
+ * to the appropraite pipeline.
+ * @param vertPath filePath to the vertex shader code.
+ * @param fragPath filePath to the fragment shader code.
+ * @return A smart pointer to the base Program class which abstracts context-related
+ * operations and offers a minimal interface for the user.
  */
-[[nodiscard]] Program* createProgram(
+[[nodiscard]] ProgramHandle createProgram(
     const char*         vertPath,
     const char*         fragPath
 );
 
 
 /**
- * @brief
+ * @brief Creates a buffer on the GPU for texture data and defines how it should be sampled.
+ * @note This is the sole object to be used for texture data and can be used in a variety
+ * of different contexts (attachments for FrameBuffers or as texture data for meshes).
+ * @param target texture target type (probably Texture2D).
+ * @param level mip-map level for this texture (probably 0).
+ * @param internalFormat number of channels for the texture data as well as the type (probably RGBA32F).
+ * @param width width of the texture in pixels.
+ * @param height height of the texture in pixels.
+ * @param format similar to internalFormat, but only needs the number of channels (probably RGBA).
+ * @param type the type specified for the internalFormat (probably Float).
+ * @param nMipMaps the number of mip-maps that should be generated. If 0, then no mip-maps are generated.
+ * @param sampler the sampler that will be used with this texture (defines how it should be sampled).
+ * @return A smart pointer to the base Texture class which abstracts context-related
+ * operations and offers a minimal interface for the user.
  */
-[[nodiscard]] Texture* createTexture(
+[[nodiscard]] TextureHandle createTexture(
     TargetType          target,  
     uint32_t            level, 
     InternalFormat      internalFormat,  
@@ -679,9 +745,21 @@ void shutdown();
 
 
 /**
- * @brief
+ * @brief Creates a sampler which are used with Texture instances to define how the texture
+ * data should be sampled (wrapping and filter types).
+ * @note One single sampler can be used with many different textures.
+ * @note For the min and mag filters, if mip maps are intended to be used with the texture that this
+ * sampler will be applied to, they should be set the MipMap variants, otherwise the mip maps
+ * won't be used.
+ * @param addressModeS the wrapping mode along the x-axis of the texture (probably ClampToEdge).
+ * @param addressModeT the wrapping mode along the y-axis of the texture (probably ClampToEdge).
+ * @param addressModeR the wrapping mode along the z-axis of the texture (probably ClampToEdge).
+ * @param minFilter the minification filter used when texture samples don't map 1:1 to pixels (probably Linear).
+ * @param magFilter the magnification filter used when texture samples don't map 1:1 to pixels (probably Linear).
+ * @return A smart pointer to the base Program class which abstracts context-related
+ * operations and offers a minimal interface for the user.
  */
-[[nodiscard]] Sampler* createSampler(
+[[nodiscard]] SamplerHandle createSampler(
     SamplerAddressMode         addressModeS,
     SamplerAddressMode         addressModeT,
     SamplerAddressMode         addressModeR,
@@ -693,7 +771,7 @@ void shutdown();
 /**
  * @brief
  */
-[[nodiscard]] FrameBuffer* createFrameBuffer(
+[[nodiscard]] FrameBufferHandle createFrameBuffer(
     const FrameBufferAttachment*   attachments,
     size_t                         count
 );
@@ -702,7 +780,7 @@ void shutdown();
 /**
  * @brief
  */
-[[nodiscard]] Resource* createResource(
+[[nodiscard]] ResourceHandle createResource(
     const char*         name,
     ResourceType        type,
     const Memory*       memory
@@ -712,9 +790,9 @@ void shutdown();
 /**
  * @brief
  */
-[[nodiscard]] Shader* createShader(
+[[nodiscard]] ShaderHandle createShader(
     const Program*      program,
-    Resource*     resources,
+    Resource*           resources,
     size_t              count
 );
 
@@ -722,10 +800,10 @@ void shutdown();
 /**
  * @brief
  */
-[[nodiscard]] VertexInput* createVertexInput(
+[[nodiscard]] VertexInputHandle createVertexInput(
     const VertexBuffer* vBuffer,
     const VertexLayout* layout,
-    const IndexBuffer* iBuffer
+    const IndexBuffer*  iBuffer
 );
 
 

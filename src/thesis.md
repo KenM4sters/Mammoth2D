@@ -7,6 +7,10 @@ create instances of objects themselves)
 - Must be within a single namespace (e.g: mt::function, not mt::graphics::function)  
 - Must provide a very high degree of flexibility that allows the users to interact with the backend api at a low level through the use of custom flags (e.g: sampling address modes, storage/usage specifiers etc)
 
+### Record of caviets discovered through this project
+- Given that this is an Object-Oriented framework, I wanted functions to return instances that 
+the user could call methods on (not access members though), such as update(), destroy(), add() etc... This does raise the issue though of not being able to soley use unique_ptrs since polymoprhic behaviour is forbidden with those (other classes need to able to cast these pointers to different types for each graphics api), leaving the choice of either shared_ptrs or raw pointers. 
+
 
 ## Ideas for the end-goal user api (pseudocode)
 

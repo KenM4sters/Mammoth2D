@@ -17,7 +17,7 @@ public:
     GLVertexBuffer(const GLVertexBuffer& other) = delete;
     GLVertexBuffer& operator=(const GLVertexBuffer& other) = delete;
 
-    virtual void create(const Memory* memeory, VertexBufferFlags flags) override;
+    virtual void create(const Memory* memeory, uint32_t flags) override;
 
     virtual void update(const Memory* memory, size_t byteOffset) override;
 
@@ -42,7 +42,7 @@ public:
     GLIndexBuffer(const GLIndexBuffer& other) = delete;
     GLIndexBuffer& operator=(const GLIndexBuffer& other) = delete;
 
-    virtual void create(const Memory* memory, IndexBufferFlags flags) override;
+    virtual void create(const Memory* memory, uint32_t flags) override;
 
     virtual void update(const Memory* memory, size_t byteOffset) override;
 
@@ -69,7 +69,7 @@ public:
     GLUniformBuffer(GLUniformBuffer&& other) = default;
     GLUniformBuffer& operator=(GLUniformBuffer&& other) = default;
 
-    virtual void create(const Memory* memeory, UniformBufferFlags flags) override;
+    virtual void create(const Memory* memeory, uint32_t flags) override;
 
     virtual void update(const Memory* memory, size_t byteOffset) override;
 

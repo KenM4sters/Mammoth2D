@@ -3,6 +3,7 @@
 
 #include <mammoth/mamoth.hpp>
 #include "gl_resource.hpp"
+#include "gl_program.hpp"
 
 #include <string>
 #include <unordered_map>
@@ -21,9 +22,13 @@ public:
 
     virtual void destroy() override;
 
+    [[nodiscard]] const GLProgram& getProgram() const { return *m_program; }
+
     [[nodiscard]] const std::unordered_map<std::string, GLResource*>& getResources() const { return m_resources; }
 
 private:
+    const GLProgram* m_program;
+
     std::unordered_map<std::string, GLResource*> m_resources;
 };
 

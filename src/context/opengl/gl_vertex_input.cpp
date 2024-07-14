@@ -12,25 +12,26 @@ void GLVertexInput::create(const VertexBuffer* vbuffer, const VertexLayout* layo
 
     GL_CHECK(glGenVertexArrays(1, &m_vao));
 
-    glBindVertexArray(m_vao);
+    GL_CHECK(glBindVertexArray(m_vao));
     
-    glBindBuffer(GL_ARRAY_BUFFER, vbo->GetGLHandle());
+    GL_CHECK(glBindBuffer(GL_ARRAY_BUFFER, vbo->GetGLHandle()));
+
     if(ebo)
     {
-        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo->GetGLHandle());
+        GL_CHECK(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo->GetGLHandle()));
     }
 
     for(size_t i = 0; i < layout->count; i++) 
     {
         const auto& attrib = layout->attributes[i];
 
-        glVertexAttribPointer(i, attrib.count, GL_FLOAT, GL_FALSE, layout->stride, (void*)attrib.byteOffset);
-        glEnableVertexAttribArray(i);
+        GL_CHECK(glVertexAttribPointer(i, attrib.count, GL_FLOAT, GL_FALSE, layout->stride, (void*)attrib.byteOffset));
+        GL_CHECK(glEnableVertexAttribArray(i));
     }
 
-    glBindVertexArray(GL_NONE);
-    glBindBuffer(GL_ARRAY_BUFFER, GL_NONE);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, GL_NONE);
+    GL_CHECK(glBindVertexArray(0));
+    GL_CHECK(glBindBuffer(GL_ARRAY_BUFFER, 0));
+    GL_CHECK(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0));
 }
 
 void GLVertexInput::destroy() 
